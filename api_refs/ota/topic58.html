@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Check an object out for editing</title>
+    <meta name="Title" content="Check an object out for editing"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Function CheckoutEntity(Entity As Object, comment$, _
+    ByRef CanContinue As Boolean) As IVersionControl
+    
+' Check an object out for editing
+
+' This example demonstrates the behavior when get" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="5382f89b-a215-4968-9199-1feb35cec651"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Check an object out for editing</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-bda8c43f-652f-4878-b552-f7aae93d079a"></a></li>
+    </ul>
+
+    <div id="TabContent-bda8c43f-652f-4878-b552-f7aae93d079a" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Function</span> CheckoutEntity(Entity <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Object</span>, comment$, _
+    <span style="COLOR: #0000ff">ByRef</span> CanContinue <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>) <span style="COLOR: #0000ff">As</span> IVersionControl
+    
+<span style="COLOR: #008000">' Check an object out for editing
+</span>
+<span style="COLOR: #008000">' This example demonstrates the behavior when getting 
+' an IVersionControl reference in a project without 
+' version control enabled. For production code, you
+' may wish to check once if version control is enabled
+' and not attempt checkouts if it is not.
+' See the example,"Check if version control is enabled"
+</span>
+    <span style="COLOR: #008000">'--------------------------------------------------------
+</span>    <span style="COLOR: #008000">' If the project has version control enabled, this routine
+</span>    <span style="COLOR: #008000">' checks out the entity and returns the version
+</span>    <span style="COLOR: #008000">' control object.
+</span>    <span style="COLOR: #008000">' The CanContinue argument is set to true if the Entity
+</span>    <span style="COLOR: #008000">' is successfully checked out or if the project does not
+</span>    <span style="COLOR: #008000">' have version control enabled.
+</span>    <span style="COLOR: #008000">' If the project has version control enabled and the checkout
+</span>    <span style="COLOR: #008000">' throws an exception, CanContinue is set to false.
+</span>    <span style="COLOR: #008000">'--------------------------------------------------------
+</span>     
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> checkout_err
+    
+    CanContinue = <span style="COLOR: #0000ff">True</span>
+    
+    <span style="COLOR: #0000ff">Dim</span> oVerControl <span style="COLOR: #0000ff">As</span> IVersionControl
+    <span style="COLOR: #0000ff">Dim</span> oVE <span style="COLOR: #0000ff">As</span> IVersionedEntity
+    
+    <span style="COLOR: #0000ff">Set</span> oVE = Entity
+    <span style="COLOR: #0000ff">Set</span> oVerControl = oVE.VC
+    
+    <span style="COLOR: #008000">' If the connected project does not have version control
+</span>    <span style="COLOR: #008000">' enabled, oVE.Vc returns null.
+</span>    <span style="COLOR: #0000ff">If</span> oVerControl <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span>
+        <span style="COLOR: #0000ff">Set</span> CheckoutEntity = <span style="COLOR: #0000ff">Nothing</span>
+        <span style="COLOR: #0000ff">Exit Function</span>
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    
+    <span style="COLOR: #008000">' Return the IVersionControl reference for use
+</span>    <span style="COLOR: #008000">' when checking in.
+</span>    <span style="COLOR: #0000ff">Set</span> CheckoutEntity = oVerControl
+    <span style="COLOR: #008000">' Checkout the entity
+</span>    oVerControl.CheckOut comment
+    
+<span style="COLOR: #0000ff">Exit Function</span>
+checkout_err:
+    CanContinue = <span style="COLOR: #0000ff">False</span>
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Check an object out for editing">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

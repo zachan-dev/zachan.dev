@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Getting those test instances that do, and those that do not, cover a requirement</title>
+    <meta name="Title" content="Getting those test instances that do, and those that do not, cover a requirement"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Sub TSTestsCoveringReqs ( _
+        theTestSet As TestSet, Req1 As Req)
+' Getting those test instances that do, and those that do not, cover a requirement
+
+' This example demonstrates using a filter to fi" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="5c236328-1ac9-4a08-910e-90d2532865a6"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Getting those test instances that do, and those that do not, cover a requirement</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-a9293c54-aa70-4b18-b43f-48e3d7c0b15d"></a></li>
+    </ul>
+
+    <div id="TabContent-a9293c54-aa70-4b18-b43f-48e3d7c0b15d" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Sub</span> TSTestsCoveringReqs ( _
+        theTestSet <span style="COLOR: #0000ff">As</span> TestSet, Req1 <span style="COLOR: #0000ff">As</span> Req)
+<span style="COLOR: #008000">' Getting those test instances that do, and those that do not, cover a requirement
+</span>
+<span style="COLOR: #008000">' This example demonstrates using a filter to find
+' those test instances of a given test set that cover
+' a given requirement, and then to find the the test
+' instances that do not cover that requirement.
+</span>    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> RQTest_Err
+    <span style="COLOR: #0000ff">Dim</span> TestInstFilter <span style="COLOR: #0000ff">As</span> TDFilter, xFilter <span style="COLOR: #0000ff">As</span> TDFilter
+    <span style="COLOR: #0000ff">Dim</span> aStr$
+<span style="COLOR: #008000">' Create the first clause of the filter
+'   Get the test instances that belong
+'   to the test set passed to this routine.
+' No filter fields are specified, so all the test instances
+'   of the test set are included.
+</span>    <span style="COLOR: #0000ff">Dim</span> testInstanceF <span style="COLOR: #0000ff">As</span> TSTestFactory
+    <span style="COLOR: #0000ff">Set</span> testInstanceF = theTestSet.TSTestFactory
+    <span style="COLOR: #0000ff">Set</span> TestInstFilter = testInstanceF.Filter
+
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">True</span>)
+    Debug.Print aStr
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">False</span>)
+    Debug.Print aStr
+<span style="COLOR: #008000">'
+' Create the second clause of the filter: The set of
+'   requirements containing the single requirement
+'   passed to the routine.
+</span>    <span style="COLOR: #0000ff">Dim</span> reqF <span style="COLOR: #0000ff">As</span> ReqFactory
+    <span style="COLOR: #0000ff">Set</span> reqF = tdc.ReqFactory <span style="COLOR: #008000">' tdc is the TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> xFilter = reqF.Filter
+    xFilter.Filter(<span style="COLOR: #800000">"RQ_REQ_NAME"</span>) = Req1.name
+
+<span style="COLOR: #008000">' Now combine the two, creating the join criteria:
+' Main clause: Get all the test instances of the given test set.
+' Second clause: Get the Req objects where the name
+' is "Req1".
+'  The result: Get all test instances in the given test set
+'    that are associated with (cover)the given requirement.
+</span>    TestInstFilter.SetXFilter <span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">True</span>, xFilter.Text
+<span style="COLOR: #008000">'    Debug.Print
+'    Debug.Print "TestInstFilter.Text after xFilter set: "
+'    Debug.Print TestInstFilter.Text
+'
+'        TestInstFilter.Text after xFilter set:
+'        [Filter]{
+'        FLT:[X],
+'        TYPE:TSTEST-REQ,
+'        EXISTS_IN_IDS:Y,
+'        IN_IDS:\0000006a\[Filter]{
+'        TableName:REQ,
+'        ColumnName:RQ_REQ_NAME,
+'        LogicalFilter:Req1,
+'        VisualFilter:Req1,
+'        NO_CASE:
+'        }
+'
+'        }
+' Output the results.
+</span>
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">True</span>)
+    Debug.Print <span style="COLOR: #800000">"Inclusive is True:"</span>
+    Debug.Print aStr
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">False</span>)
+    Debug.Print <span style="COLOR: #800000">"--------------------------------------"</span>
+    Debug.Print <span style="COLOR: #800000">"Inclusive is False:"</span>
+    Debug.Print aStr
+
+    
+    <span style="COLOR: #0000ff">Dim</span> aList <span style="COLOR: #0000ff">As</span> List, ListMember <span style="COLOR: #0000ff">As</span> Variant, tmpinstance <span style="COLOR: #0000ff">As</span> TSTest
+    <span style="COLOR: #0000ff">Set</span> aList = testInstanceF.NewList(TestInstFilter.Text)
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> ListMember <span style="COLOR: #0000ff">In</span> aList
+        <span style="COLOR: #0000ff">Set</span> tmpinstance = ListMember
+        Debug.Print tmpinstance.name
+    <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #008000">'    [1] Test_1
+'    [1] Test_3
+'    [2] Test_1
+'
+' Now use the same criteria, but set the "Inclusive" argument
+'   of SetXFilter to False.
+' The filter now means: Get all the test instances of the
+' test set that do NOT cover the specified requirement.
+</span>    TestInstFilter.SetXFilter <span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">False</span>, xFilter.Text
+    Debug.Print <span style="COLOR: #800000">"--------------------------------------"</span>
+    Debug.Print <span style="COLOR: #800000">"TestInstFilter.Text:"</span>
+    Debug.Print TestInstFilter.Text
+    Debug.Print
+    Debug.Print <span style="COLOR: #800000">"--------------------------------------"</span>
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">True</span>)
+    Debug.Print <span style="COLOR: #800000">"Inclusive is True:"</span>
+    Debug.Print aStr
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">False</span>)
+    Debug.Print <span style="COLOR: #800000">"--------------------------------------"</span>
+    Debug.Print <span style="COLOR: #800000">"Inclusive is False:"</span>
+    Debug.Print aStr
+
+
+    <span style="COLOR: #0000ff">Set</span> aList = testInstanceF.NewList(TestInstFilter.Text)
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> ListMember <span style="COLOR: #0000ff">In</span> aList
+        <span style="COLOR: #0000ff">Set</span> tmpinstance = ListMember
+        Debug.Print tmpinstance.name
+    <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #008000">'    [1] Test_2
+'    [1] Test_4
+'    [2] Test_4
+</span>    
+    
+    Debug.Print <span style="COLOR: #800000">"--------------------------------------"</span>
+    aStr = TestInstFilter.GetXFilter(<span style="COLOR: #800000">"TSTEST-REQ"</span>, <span style="COLOR: #0000ff">True</span>)
+    Debug.Print <span style="COLOR: #800000">"Inclusive is True:"</span>
+    Debug.Print aStr
+    
+    <span style="COLOR: #008000">' Note:
+</span>    <span style="COLOR: #008000">'Using the XFilter property (in ITDFilter interface) is equivalent
+</span>    <span style="COLOR: #008000">'to calling SetXFilter with the value TRUE for the parameter InIds.
+</span>    
+    <span style="COLOR: #008000">'
+</span>    <span style="COLOR: #008000">' To get all tests that do NOT have instances in test set that begin with
+</span>    <span style="COLOR: #008000">' MyTestSet (negative filter):
+</span>    <span style="COLOR: #008000">' 1.  Get TDFilter object from TestFactory.
+</span>    <span style="COLOR: #008000">' 2.  Call (remember it's a pseudo code) SetXFilter with the parameters
+</span>    <span style="COLOR: #008000">'     "TEST-TESTSET",FALSE, and text representation of the filter test
+'     set name =  MyTestSet*.
+</span><span style="COLOR: #0000ff">Exit Sub</span>
+RQTest_Err:
+    ErrHandler err, <span style="COLOR: #800000">"Req_TestInstance_Coverage"</span>, err.Description
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Getting those test instances that do, and those that do not, cover a requirement">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,1343 @@
+/*<meta />*/
+/* This header may be removed before distributing to customers. 
+
+FILE:         _HP_IE.css
+DESCRIPTION:  Cascading Style Sheet for HP software products
+MODIFIED:     June 28, 2011
+LEVEL         CSS Level 2 (plus support for Madcap Flare Webhelp)
+VERSION:      2.0
+
+*/
+/*--------------------------------------------------------*/
+/*  HP Service Manager elements and classes 		  */
+/*  Comment out the template versions of:                 */
+/*  1. body                                               */
+/*  2. h1                                                 */
+/*  Uncomment the HP Service Manager versions of:         */
+/*  1. body                                               */
+/*  2. #div1                                              */
+/*  3. h1                                                 */
+/*--------------------------------------------------------*/
+
+/*--------------------------------------------------------*/
+/*  BODY with background image        			  */
+/*--------------------------------------------------------*/
+/*
+body
+ {
+	background-attachment: scroll;
+	background-image: url("images/HPbanner.png");
+	background-position: top left;
+	background-repeat: no-repeat;
+	color: #000000;
+	font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+	font-size: 1.0em;
+	line-height: normal;
+ }
+*/
+
+/*--------------------------------------------------------*/
+/*  DIV for hiding/displaying related topics  		  */
+/*--------------------------------------------------------*/
+
+/*
+#div1
+{
+	visibility: hidden;
+	position: static;
+	width: 400px;
+	padding: 10px;
+	text-align: left;
+	border: #000066 2px solid;
+}
+*/
+
+/*--------------------------------------------------------*/
+/*  H1 with margin-top for background image		  */
+/*--------------------------------------------------------*/
+
+/*
+h1
+ {
+	color: #003366;
+	font-weight: bold;
+	font-size: 150%;
+	line-height: normal;
+	margin-top: 2.5em;
+ }
+*/
+
+/*-------------------------------------------------------*/
+/* Common elements and classes for all help systems      */
+/*-------------------------------------------------------*/
+
+body
+{
+	color: #000000;
+	font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+	font-size: 0.8em;
+	line-height: normal;
+        margin-bottom: 1.1em;
+	mc-hyphenate: never;
+}
+
+p 
+{ 
+       margin-top: 0em;
+       margin-bottom: 1.1em;
+}
+
+/* Links */
+
+a
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+a:link
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+a:visited
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+a.pop
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+/* Miscellaneous Styles */
+abbr
+{
+	font-variant: normal;
+}
+
+acronym
+{
+	font-variant: normal;
+}
+
+address
+{
+	font-style: inherit;
+}
+
+blockquote
+{
+	margin: 0;
+}
+
+/* Headings */
+
+h1
+{
+	color: #003366;
+	font-weight: bold;
+	font-size: 150%;
+	line-height: normal;
+}
+
+h2
+{
+	color: #003366;
+	font-weight: bold;
+	font-size: 130%;
+	line-height: normal;
+}
+
+
+/* Rules */
+
+hr
+{
+	color: #999999;
+	height: 0.05em;
+	width: 100%;
+}
+
+/* Images */
+
+/* Images */
+
+img
+{
+	border: none;
+	
+}
+
+img.floatLeft
+{
+	border: none;
+	display: inline;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 2px;
+	margin-right: 10px;
+}
+
+img.floatRight
+{
+	border: none;
+	display: inline;
+	float: right;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+
+img.noFloat
+{
+	border: none;
+	display: inline;
+	float: none;
+}
+
+img.z_migration_tba_PDF
+{
+	max-width: 100%;
+}
+
+
+/* Definition list tags, used in API docs */
+
+dl
+{
+	margin: 0;
+}
+
+dt
+{
+	margin-top: 0.8em;
+}
+
+dd
+{
+	margin-left: 20px;
+}
+
+/* Lists */
+
+ol
+{
+	margin-left: 20px;
+	margin-top: 0.5em;
+	padding: 0px;
+}
+
+ul
+{
+	margin-left: 8px;
+	margin-top: 0.5em;
+	padding: 0px;
+}
+
+
+ol li
+{
+	list-style-type: decimal;
+	margin-left: 8px;
+	margin-bottom: 0.5em;
+}
+
+ul li
+{
+	list-style-type: disc;
+	margin-left: 8px;
+	margin-bottom: 0.5em;
+}
+
+ol li p,
+ul li p
+{
+	margin-left: 0pt;
+	margin-bottom: 8pt;
+}
+
+ul ul li p,
+ul ol li p,
+ol ul li p,
+ol ol li p
+{
+	margin-left: 0pt;
+	margin-bottom: 8pt;
+}
+
+ul ul ul li p,
+ul ol ol li p,
+ul ul ol li p,
+ul ol ul li p,
+ol ul ul li p,
+ol ol ol li p,
+ol ul ol li p,
+ol ol ul li p
+{
+	margin-left: 0pt;
+	margin-bottom: 8pt;
+}
+
+ol ul li,
+ul ul li
+{
+	list-style-type: square;
+	margin-left: 6px;
+	margin-bottom: 0.5em;
+}
+
+
+ol ol li,
+ul ol li
+{
+	list-style-type: lower-alpha;
+	margin-left: 4px;
+	margin-bottom: 0.5em;
+}
+
+ol ol ol li,
+ol ul ol li,
+ul ol ol li,
+ul ul ol li
+{
+	list-style-type: lower-roman;
+	margin-left: 8px;
+}
+
+ol ul ul li,
+ol ol ul li,
+ul ul ul li,
+ul ol ul li
+{
+	list-style-type: circle;
+	margin-left: 8px;
+}
+
+menu
+{
+	margin: 0;
+}
+
+/* Paragraph Classes */
+
+p.Index1,
+p.Index2,
+p.Index3,
+p.Index4
+{
+	white-space: normal;
+}
+
+/* Admonitons */
+
+div.Admonition_Note, div.Admonition_Caution, div.Admonition_Tip
+{
+                
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 0px;
+                margin-right: 5px;
+                padding-top: 11px;
+                padding-left: 9px;
+                padding-bottom: 0px;
+                background-color: #e4e5e6;
+                border: 1px;
+                border-style: solid;
+		border-color: #e4e5e6;
+}
+
+div.Admonition_Note>p:first-child
+{
+                mc-auto-number-format: '{b}Note: {/b}';
+}
+
+
+div.Admonition_Caution>p:first-child
+{
+                mc-auto-number-format: '{b}Caution: {/b}';
+
+}
+
+div.Admonition_Tip>p:first-child
+{
+                mc-auto-number-format: '{b}Tip: {/b}';
+
+}
+
+/* old admonition styles to be deprecated */
+p.caution
+{
+	color: #000000;
+	margin-top: 0px;
+	margin-bottom: 12px;
+	padding-left: 50px;
+	text-indent: -50px;
+}
+
+p.note
+{
+	color: #000000;
+	margin-top: 0px;
+	margin-bottom: 12px;
+	padding-left: 32px;
+	text-indent: -32px;
+}
+
+p.tip
+{
+	color: #000000;
+	margin-top: 0px;
+	margin-bottom: 12px;
+	padding-left: 22px;
+	text-indent: -22px;
+}
+
+/* Table styles */
+
+table
+{
+	color: #000000;
+	background-color: #F2F3F4;
+	border: none;
+	caption-side: top;
+	font-size: 100%;
+	line-height: normal;
+	margin-bottom: 1.1em;
+	text-align: left;
+}
+
+caption
+{
+	color: #000000;
+	text-align: left;
+	font-weight: bold;
+	font-size: 105%;
+}
+
+th
+{
+	background-color: #003366;
+	border-bottom: thin solid #003366;
+	border-top: .1em solid #003366;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 0.5em;
+	vertical-align: bottom;
+	text-align: left;
+}
+
+th.center
+{
+	text-align: center;
+}
+
+td
+{
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 0.15em #F2F3F4;
+	padding: 0.5em;
+	vertical-align: top;
+	text-align: left;
+}
+
+td.center
+{
+	text-align: center;
+}
+
+th.null
+{
+	border: none;
+	color: #000000;
+}
+
+td.null
+{
+	border: none;
+	border-collapse: collapse;
+	
+}
+
+/* Paragraph Tag for Code */
+
+pre
+{
+	font-family: 'Courier New';
+	font-size: 95%;
+	line-height: 1.25em;
+}
+
+
+/* Character Tag for Code  */
+
+code
+{
+	font-family: 'Courier New';
+	font-size: 100%;
+}
+
+/* backgrounds for examples */
+
+div.example
+{
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 5px;
+	padding-top: 11px;
+	padding-left: 9px;
+	padding-bottom: 0px;
+	background-color: #e4e5e6;
+	border: 1px;
+	border-style: solid;
+	border-color: #e4e5e6;
+}
+
+/* MadCap Flare Styles */
+
+MadCap|breadcrumbsProxy
+{
+	margin-bottom: 4px;
+	padding-bottom: 4px;
+	color: #003366;
+	mc-breadcrumbs-count: 5;
+	mc-breadcrumbs-prefix: ' ';
+	border-bottom: 1px solid #999999;
+}
+
+MadCap|conceptLink
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|conceptLink:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|conceptLink:link
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|conceptLink:hover
+{
+	color: #800080;
+	text-decoration: underline;
+	mc-format: '{quote}{para}{quote}';
+}
+
+MadCap|conceptLink:visited
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|dropDown
+{
+       margin-bottom: 1.1em;
+}
+
+MadCap|dropDownHead
+{
+       margin-bottom: 0.5em;
+}
+
+MadCap|dropDownHead.z_migration_tba_PDF
+{
+       margin-bottom: 0.5em;
+}
+
+MadCap|dropDownBody
+{
+	margin-top: 0.7em;
+}
+
+MadCap|glossaryTerm.Expanding:focus
+{
+	color: #003366;
+}
+
+MadCap|glossaryTerm.Expanding:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+MadCap|glossaryTerm.Expanding
+{
+	color: #003366;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+MadCap|glossaryTerm.Hyperlink
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|glossaryTerm.Hyperlink:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|glossaryTerm.Hyperlink:hover
+{
+	color: #800080;
+	font-weight: normal;
+}
+
+MadCap|glossaryTerm.Popup
+{
+	color: #003366;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+MadCap|glossaryTerm.Popup:hover
+{
+	color: #800080;
+}
+
+MadCap|glossaryTerm:focus
+{
+	color: #003366;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+MadCap|glossaryTerm:hover
+{
+	color: #800080;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+MadCap|helpControlMenu
+{
+	background-color: #ffffff;
+	border-bottom-color: #ffffff;
+	border-color: #ffffff;
+}
+
+MadCap|helpControlMenuItem
+{
+	background-color: #ffffff;
+	background-position: right;
+	border: 1px solid #999999;
+	padding: 2px 2px 2px 2px;
+	color: #999999;
+	border-color: #ffffff;
+}
+
+MadCap|helpControlMenuItem.Highlighted
+{
+	background-color: #ffffff;
+	border-bottom-color: #ffffff;
+	border-top-color: #ffffff;
+	color: #000000;
+}
+
+MadCap|indexProxy
+{
+	border-top-style: none;
+	border-top-width: 0px;
+}
+
+MadCap|keywordLink:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|keywordLink:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+MadCap|keywordLink:link
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|keywordLink:visited
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|miniTocProxy
+{
+	border-top: solid 0px #ffffff;
+}
+
+
+MadCap|popup:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|popup:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+MadCap|popup:link
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|popup:visited
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|popupBody
+{
+	color: #003366;
+	clear: both;
+	float: right;
+	height: auto;
+	border-color: #999999;
+	text-indent: 0;
+}
+
+MadCap|popupHead
+{
+	color: #003366;
+	font-size: 110%;
+	text-decoration: underline;
+}
+
+MadCap|relatedTopics
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|relatedTopics:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|relatedTopics:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+MadCap|toggler:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|toggler:link
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|toggler:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+MadCap|toggler:visited
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|xref
+{
+	color: #003366;
+	text-decoration: underline;
+	mc-format: '{quote}{para}{quote}';
+}
+
+MadCap|xref:focus
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|xref:link
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+MadCap|xref:hover
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+MadCap|xref:visited
+{
+	color: #003366;
+	text-decoration: underline;
+}
+
+span.noGlossary
+{
+	mc-disable-glossary-terms: true;
+}
+
+/* using for Flare 7.1 workaround to include _HP_logo.png in output files */
+/* when Target,Advanced tab, Exclude content not linked directly or indirectly from the target is set */
+ins
+{
+	background-image: url("../MasterPages/_HP_logo.png");
+	background-image: url("../MasterPages/_HP_logo_snowball.png");
+}
+ 
+
+/*------------------------------------------------------------------------------------*/
+/* deprecated tags                                                                    */
+/*------------------------------------------------------------------------------------*/
+
+/* these will be removed in next release of CSS */
+h3
+{
+	font-weight: bold;
+	font-size: 110%;
+	line-height: normal;
+        mc-disabled: true;
+}
+
+h4
+{
+	font-weight: bold;
+	font-size: 100%;
+	line-height: normal;
+	mc-disabled: true;
+}
+
+h5
+{
+	font-weight: bold;
+	font-size: 100%;
+	line-height: normal;
+	mc-disabled: true;
+}
+
+h6
+{
+	font-weight: bold;
+	font-size: 100%;
+	line-height: normal;
+	mc-disabled: true;
+}
+
+/* for bi-directional text */
+/*
+dir
+{
+	margin: 0;
+	display: none;
+}
+*/
+
+
+
+/* Print Output */
+
+@media print
+{
+ 	
+	body
+	{
+		color: #000000;
+		font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+		font-size: 10pt;
+		line-height: normal;
+		margin-bottom: 12pt;
+		padding-left: 16pt;
+		mc-hyphenate: never;
+	}
+
+	p
+	{
+		orphans: 2;
+		widows: 2;
+	}
+
+ 	p.caution
+	{
+		orphans: 2;
+		widows: 2;
+	}
+
+	p.note
+	{
+		orphans: 2;
+		widows: 2;
+	}
+
+	p.tip
+	{
+		orphans: 2;
+		widows: 2;
+	}
+	
+	p.PDFheader
+	{
+		padding-left: -16pt;
+		margin-top: 6pt;
+		margin-bottom: 6pt;
+	}
+
+/* MadCap Flare Styles */
+
+	MadCap|xref
+	{
+		mc-format: '{quote}{paratext}{quote} (on page {page})';
+	}
+
+/* Modifications to Flare styles to show drop-down text  */
+	
+	div.MCDropDownBody, div.MCDropDownBody_0 { display: block !important; } 
+	img.MCDropDownIcon, img.MCDropDownBody_0 { display: none !important; }
+
+	p.pdf
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+	}
+
+
+/* Obsolete FrontMatter tags. */
+
+/*
+	h1.productFamily
+	{
+		color: #000000;
+		font-weight: bold;
+		font-size: 22pt;
+		line-height: normal;
+		margin-left: 0;
+		mc-heading-level: 0;
+	}
+
+	h1.opSysVersion
+	{
+		color: #000000;
+		font-weight: bold;
+		font-size: 14pt;
+		line-height: normal;
+		margin-left: 0;
+		mc-heading-level: 0;
+	}
+
+	h1.bookTitle
+	{
+		color: #003366;
+		font-weight: normal;
+		font-size: 18pt;
+		line-height: normal;
+		margin-left: 0;
+		mc-heading-level: 0;
+	}
+
+	h2.legalSupport
+	{
+		color: #003366;
+		font-weight: normal;
+		font-size: 14pt;
+		line-height: normal;
+		margin-left: 0;
+		mc-heading-level: 0;
+	}
+
+*/
+
+	h3.pdf
+	{
+		color: #003366;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		margin-left: 0;
+		mc-heading-level: 0;
+	}
+
+	hr.pdfTitle
+	{
+		background-color: #003366;
+		height: 9pt;
+		width: 504pt;
+	}
+
+	li.pdf
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		list-style-type: disc;
+		margin-left: 10pt;
+	}
+
+    /* TOC */
+
+	MadCap|tocProxy
+	{
+		border-top-style: none;
+	}
+
+	p.toc1
+	{
+		color: #003366;
+		font-weight: normal;
+		font-size: 12pt;
+		line-height: normal;
+		margin-left: 0in;
+		orphans: 2;
+		widows: 2;
+	}
+
+	p.toc2
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		orphans: 2;
+		widows: 2;
+		margin-left: 0.2in;
+	}
+
+	p.toc3
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		orphans: 2;
+		widows: 2;
+		margin-left: 0.40in;
+	}
+
+	p.toc4
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		orphans: 2;
+		widows: 2;
+		margin-left: 0.6in;
+	}
+
+	p.toc5
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		orphans: 2;
+		widows: 2;
+		margin-left: 0.8in;
+	}
+
+	p.toc6
+	{
+		color: #000000;
+		font-weight: normal;
+		font-size: 10pt;
+		line-height: normal;
+		margin-left: 1.0in;
+		orphans: 2;
+		widows: 2;
+	}
+
+  /* Content */
+
+	h1
+	{
+		color: #003366;
+		font-weight: bold;
+		font-size: 170%;
+		line-height: normal;
+		page-break-after: avoid;
+		padding-left: -14pt;
+	}
+
+	h2
+	{
+		color: #003366;
+		font-size: 150%;
+		font-weight: bold;
+		page-break-after: avoid;
+		padding-left: -14pt;
+	}
+
+	h3
+	{
+		color: #003366;
+		font-size: 130%;
+		font-weight: bold;
+		page-break-after: avoid;
+		padding-left: -14pt;
+	}
+
+	h4
+	{
+		color: #003366;
+		font-size: 120%;
+		font-weight: bold;
+		page-break-after: avoid;
+		padding-left: -14pt;
+	}
+
+	h5
+	{
+		color: #003366;
+		font-weight: bold;
+		font-size: 110%;
+		page-break-after: avoid;
+		padding-left: -14pt;
+	}
+
+	h6
+	{
+		color: #003366;
+		font-weight: bold;
+		line-height: normal;
+		page-break-after: avoid;
+		padding-left: -14pt;
+	}
+
+	img
+	{
+		orphans: 2;
+		widows: 2;
+		float: none;
+		page-break-inside: auto;
+	}
+
+	ol
+	{
+		margin-bottom: 8pt;
+	}
+	
+	ul
+	{
+		margin-bottom: 8pt;
+	}
+	
+	ol li p,
+	ul li p
+	{
+		margin-left: 0pt;
+		margin-bottom: 8pt;
+	}
+	
+	ul ul li p,
+	ul ol li p,
+	ol ul li p,
+	ol ol li p
+	{
+		margin-left: 0pt;
+		margin-bottom: 8pt;
+	}
+
+	ul ul ul li p,
+	ul ol ol li p,
+	ul ul ol li p,
+	ul ol ul li p,
+	ol ul ul li p,
+	ol ol ol li p,
+	ol ul ol li p,
+	ol ol ul li p
+	{
+		margin-left: 0pt;
+		margin-bottom: 8pt;
+	}
+
+	
+	ol li
+	{
+		list-style-type: decimal;
+		margin-bottom: 8pt;
+		margin-left: 5pt;
+	}
+
+	ul li
+	{
+		list-style-type: disc;
+		margin-bottom: 8pt;
+		margin-left: 8pt;
+	}
+
+	ul ol li,
+	ol ol li
+	{
+		list-style-type: lower-alpha;
+		margin-bottom: 8pt;
+		margin-left: 2pt;
+	}
+
+	ul ul li,
+	ol ul li
+	{
+		list-style-type: square;
+		margin-bottom: 8pt;
+		margin-left: 6pt;
+	}
+
+	ol ol ol li,
+	ol ul ol li,
+	ul ol ol li,
+	ul ul ol li
+	{
+		list-style-type: lower-roman;
+		margin-bottom: 8pt;
+		margin-left: 8pt;
+	}
+
+	ul ul ul li,
+	ul ol ul li,
+	ol ul ul li,
+	ol ol ul li
+	{
+		list-style-type: circle;
+		margin-bottom: 8pt;
+		margin-left: 8pt;
+	}
+	
+	table
+	{
+		border-collapse: collapse;
+		margin-bottom: 1.1em;
+		background-color: transparent;
+	}
+
+	td
+	{
+		border: 0.1em solid black;
+		background-color: transparent;
+	}
+	
+	td.null
+	{
+		border: none;
+		border-collapse: collapse;
+		background-color: transparent;
+	}
+	
+	MadCap|dropDownHead.z_migration_tba_PDF
+		{
+		       font-size: 120%;
+		       font-weight: bold;
+		       margin-bottom: 0.5em;
+	}
+	
+/* Admonitons */
+
+div.Admonition_Note, div.Admonition_Caution, div.Admonition_Tip
+{
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+/* backgrounds for examples */
+
+div.example
+{
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+
+/* Glossary and  Index Page Styles */
+
+	MadCap|glossaryProxy 
+	{ 
+		border-top-style: none; 
+		border-top-width: 0px; 
+	} 
+
+	MadCap|indexProxy 
+	{ 
+		border-top-style: none; 
+		border-top-width: 0px; 
+	}
+
+	div.GlossaryPageHeading
+	{
+		color: #000000;
+		font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+		font-size: 10pt;
+		font-weight: bold;
+		line-height: normal;
+		margin-bottom: 1.1em;
+		mc-hyphenate: never;
+	}
+
+	div.GlossaryPageDefinition
+	{
+		color: #000000;
+		font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+		font-size: 10pt;
+		font-weight: normal;
+		line-height: normal;
+		margin-bottom: 1.1em;
+		margin-left: 10pt;
+		mc-hyphenate: never;
+	}
+
+	div.GlossaryPageEntry
+	{
+		font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+		font-size: 10pt;
+		font-weight: bold;
+		line-height: normal;
+		margin-bottom: 1.1em;
+		mc-hyphenate: never;
+		color: #006400;
+	}
+
+	div.GlossaryPageTerm
+	{
+		color: #000000;
+		font-family: Arial, Tahoma, 'Lucida Sans Unicode', sans-serif;
+		font-size: 10pt;
+		font-weight: bold;
+		line-height: normal;
+		margin-bottom: 1.1em;
+		mc-hyphenate: never;
+	}
+
+}
+
+
+/* copyright 2007-2017 EntIT Software LLC */

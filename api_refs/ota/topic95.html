@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Extended storage examples</title>
+    <meta name="Title" content="Extended storage examples"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub GetTestRepository()
+
+' Operations on the test repository
+    
+
+    Dim TestFact As TestFactory
+    Dim ExtStor As IExtendedStorage
+    Dim DownLoadPath As String
+    Dim FilePath As String" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="0545ed9f-760f-4293-9861-81634568a4e7"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Extended storage examples</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-ea14e8bf-cf75-445c-a602-fa63f10d53a0"></a></li>
+    </ul>
+
+    <div id="TabContent-ea14e8bf-cf75-445c-a602-fa63f10d53a0" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> GetTestRepository()
+
+<span style="COLOR: #008000">' Operations on the test repository
+</span>    
+
+    <span style="COLOR: #0000ff">Dim</span> TestFact <span style="COLOR: #0000ff">As</span> TestFactory
+    <span style="COLOR: #0000ff">Dim</span> ExtStor <span style="COLOR: #0000ff">As</span> IExtendedStorage
+    <span style="COLOR: #0000ff">Dim</span> DownLoadPath <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    <span style="COLOR: #0000ff">Dim</span> FilePath <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+<span style="COLOR: #008000">'------------------------------------
+' Get an IExtendedStorage object using
+' TestFactory.RepositoryStorage
+' and examine the local download path.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> TestFact = tdc.TestFactory
+    <span style="COLOR: #0000ff">Set</span> ExtStor = TestFact.RepositoryStorage
+<span style="COLOR: #0000ff">With</span> ExtStor
+    Debug.Print .ClientPath
+<span style="COLOR: #008000">' The output is similar to the output below
+' except that the string "423af35f"
+' will be different on your client.
+' C:\DOCUME~1\&lt;user name&gt;\LOCALS~1\Temp\TD_80\423af35f\Test
+'
+'------------------------------------
+' Clean old files with IExtendedStorage.Delete
+'   by recursively
+'   deleting the entire local copy of
+'   the repository.
+' The "Test" directory and everything under
+' it are deleted.
+</span>    .Delete <span style="COLOR: #800000">"-r"</span>, TDOLE_DELETE_LOCAL
+<span style="COLOR: #008000">'
+'------------------------------------
+' Use IExtendedStorage.Load
+' to refresh the local copy with all new files.
+</span>    DownLoadPath = .Load(<span style="COLOR: #800000">"*"</span>, <span style="COLOR: #0000ff">True</span>)
+<span style="COLOR: #008000">' Note that the download path is the IExtendedStorage
+'   object's Client Path:
+</span>    Debug.Print <span style="COLOR: #800000">"The download path: "</span> &amp; DownLoadPath
+<span style="COLOR: #008000">'The download path: _
+</span>C:\DOCUME~1\&lt;user name&gt;\LOCALS~1\Temp\TD_80\423af35f\Test
+    Debug.Print <span style="COLOR: #800000">"The Extended Storage Client Path: "</span> &amp; .ClientPath
+<span style="COLOR: #008000">'The Extended Storage Client Path: _
+</span>C:\DOCUME~1\&lt;user name&gt;\LOCALS~1\Temp\TD_80\423af35f\Test
+<span style="COLOR: #008000">'
+'------------------------------------
+' Use IExtendedStorage.Delete
+'------------------------------------
+' Delete a specific file.
+'   The file path for deletion starts at
+'   the extended storage root, so the
+' full file path to this file is:
+'   DownLoadPath + \trip_typ\script.vbs
+</span>    FilePath = <span style="COLOR: #800000">"trip_typ\script.vbs"</span>
+    .Delete FilePath, TDOLE_DELETE_LOCAL
+<span style="COLOR: #008000">'
+'------------------------------------
+' Delete all files named batch.bat anywhere
+' in the local copy of the repository.
+</span>    .Delete <span style="COLOR: #800000">"-r batch.bat"</span>, TDOLE_DELETE_LOCAL
+    
+<span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span> <span style="COLOR: #008000">'extstor
+</span><span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Extended storage examples">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

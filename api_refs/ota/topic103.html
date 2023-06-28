@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Save user-entered data in settings</title>
+    <meta name="Title" content="Save user-entered data in settings"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Sub SW_KeepLastValue(action)
+'This function uses the Settings object to save field values
+'entered into the last defect posted by each user.
+'
+' The action passed to the user-defined function SW_KeepLastV" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="bee09558-fafc-45f9-a75f-0125035da236"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Save user-entered data in settings</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-d6d9cffc-4317-4bf0-b0d4-1591f610f721"></a></li>
+    </ul>
+
+    <div id="TabContent-d6d9cffc-4317-4bf0-b0d4-1591f610f721" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Sub</span> SW_KeepLastValue(action)
+<span style="COLOR: #008000">'This function uses the Settings object to save field values
+'entered into the last defect posted by each user.
+'
+' The action passed to the user-defined function SW_KeepLastValue
+' is GET or SET.
+'
+' If the action is SET, the function stores the values of the
+' fields BG_DETECTION_VERSION, BG_USER_01, and BG_USER_03 in
+' the common settings table for the current user.
+'
+' If the action is GET, the function reads the values from the
+' settings object and assigns the values to the appropriate fields.
+'
+</span>    <span style="COLOR: #0000ff">Dim</span> tdc, vals, flds
+    <span style="COLOR: #0000ff">Dim</span> uset, pairs, pair
+    <span style="COLOR: #0000ff">Dim</span> bld
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+
+    bld = <span style="COLOR: #800000">""</span>
+
+    <span style="COLOR: #0000ff">Set</span> tdc = TDConnection
+    <span style="COLOR: #0000ff">Set</span> uset = tdc.UserSettings
+
+    <span style="COLOR: #0000ff">If</span> action = <span style="COLOR: #800000">"SET"</span> <span style="COLOR: #0000ff">Then</span>
+        flds = Array(<span style="COLOR: #800000">"BG_DETECTION_VERSION"</span>, _
+            <span style="COLOR: #800000">"BG_USER_01"</span>, <span style="COLOR: #800000">"BG_USER_03"</span>)
+        vals = <span style="COLOR: #800000">""</span>
+        <span style="COLOR: #0000ff">For</span> i = 0 <span style="COLOR: #0000ff">To</span> <span style="COLOR: #0000ff">UBound</span>(flds)
+            <span style="COLOR: #0000ff">If</span> vals &lt;&gt; <span style="COLOR: #800000">""</span> <span style="COLOR: #0000ff">Then</span> vals = vals &amp; <span style="COLOR: #800000">";"</span>
+            vals = vals &amp; flds(i) &amp; _
+                <span style="COLOR: #800000">"="</span> &amp; Bug_Fields(flds(i).value)
+        <span style="COLOR: #0000ff">Next</span>
+        <span style="COLOR: #008000">' Open category KeepLValueSetting.
+</span>        uset.Open (<span style="COLOR: #800000">"KeepLValueSetting"</span>)
+        <span style="COLOR: #008000">' Set KeepValueFields in category KeepLValueSetting.
+</span>        uset.value(<span style="COLOR: #800000">"KeepValueFields"</span>) = vals
+        uset.Close
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+
+    <span style="COLOR: #0000ff">If</span> action = <span style="COLOR: #800000">"GET"</span> <span style="COLOR: #0000ff">Then</span>
+        uset.Open (<span style="COLOR: #800000">"KeepLValueSetting"</span>)
+        vals = uset.value(<span style="COLOR: #800000">"KeepValueFields"</span>)
+        <span style="COLOR: #0000ff">If</span> vals &lt;&gt; <span style="COLOR: #800000">""</span> <span style="COLOR: #0000ff">Then</span>
+            pairs = <span style="COLOR: #0000ff">Split</span>(vals, <span style="COLOR: #800000">";"</span>)
+            <span style="COLOR: #0000ff">For</span> i = 0 <span style="COLOR: #0000ff">To</span> <span style="COLOR: #0000ff">UBound</span>(pairs)
+                pair = <span style="COLOR: #0000ff">Split</span>(pairs(i), <span style="COLOR: #800000">"="</span>)
+                <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">UBound</span>(pair) = 1 <span style="COLOR: #0000ff">Then</span>
+                    <span style="COLOR: #0000ff">Select</span> <span style="COLOR: #0000ff">Case</span> pair(0)
+                    <span style="COLOR: #0000ff">Case</span> <span style="COLOR: #800000">"BG_USER_03"</span>
+                        bld = pair(1)
+                    <span style="COLOR: #0000ff">Case</span> <span style="COLOR: #0000ff">Else</span>
+                        <span style="COLOR: #0000ff">If</span> Bug_Fields(pair(0).value) = <span style="COLOR: #800000">""</span> <span style="COLOR: #0000ff">Then</span>
+                            Bug_Fields(pair(0).value) = pair(1)
+                        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+                    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">Select</span>
+                    <span style="COLOR: #0000ff">If</span> Bug_Fields(<span style="COLOR: #800000">"BG_DETECTION_VERSION"</span>).value &lt;&gt; <span style="COLOR: #800000">""</span> _
+                    <span style="COLOR: #0000ff">And</span> bld &lt;&gt; <span style="COLOR: #800000">""</span> <span style="COLOR: #0000ff">Then</span>
+                        SW_SetLists_VersionsBuilds _
+                            <span style="COLOR: #800000">"BG_DETECTION_VERSION"</span>, <span style="COLOR: #800000">"BG_USER_03"</span>
+                        Bug_Fields(<span style="COLOR: #800000">"BG_USER_03"</span>).value = bld
+                        <span style="COLOR: #0000ff">If</span> err.Number &lt;&gt; 0 <span style="COLOR: #0000ff">Then</span> err.Clear
+                    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+                <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+            <span style="COLOR: #0000ff">Next</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+
+    uset.Close
+    <span style="COLOR: #0000ff">If</span> err.Number &lt;&gt; 0 <span style="COLOR: #0000ff">Then</span>
+        SW_DisplayError err.Number, err.Description, _
+            <span style="COLOR: #800000">"Keep Last Value ("</span> &amp; action &amp; <span style="COLOR: #800000">")"</span>
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Save user-entered data in settings">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

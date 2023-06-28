@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>td.TASKS_LOG Table</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.db.2012.css" data-mshv2-stylesheet="/stylesheets/dx.db.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.db.2012.mshv1.css" />
+    <script src="script/dx.db.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.db.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="Project Data Tables_db~s-td~t-TASKS_LOG"/>
+    <meta name="Description" content="Log of asynchronous tasks." />
+    
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.dx.db.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">td.TASKS_LOG Table</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic25.html">Project Data Tables Database</a>
+ > <a href="topic27.html">td Schema</a>
+ : td.TASKS_LOG Table</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Log of asynchronous tasks.</div></div>
+			
+            <!-- type="FilteredItemList" scrap="PROPERTY_LIST" namespace="property" source="Item" filter="" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=properties,caption=$$properties$$%%%%filtereditemlist%%</div>" --><!--properties --><!-- end -->
+            <div class="SectionHeading" id="columnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Columns</span></div><div id="columnsSectionContent" class="SectionContent"><table class="ColumnListTable"><tr><th align=middle>&nbsp;</th><th NOWRAP class="pivot-column">Column Name</th><th NOWRAP>Description</th><th NOWRAP>Datatype</th><th NOWRAP>Length</th><th NOWRAP>Allow Nulls</th><th NOWRAP>Default</th><th NOWRAP>Formula</th></tr>
+<tr><td Class=centered NOWRAP><img alt="Primary Key" src="dbimages/primarykey.gif">&nbsp;</td><td class="LinkCell"><STRONG>TASKL_ID</STRONG></td><td class="DescriptionCell">The record ID.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TASKL_TASK_ID</STRONG></td><td class="DescriptionCell">The <a href="topic556.html">TASKS.TASK_ID</a> of the task to which this log entry refers.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TASKL_TYPE</STRONG></td><td class="DescriptionCell">The <a href="topic552.html">TASK_LOG_TYPE.TASKL_TYPE_ID</a>.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TASKL_CREATION_TIME</STRONG></td><td class="DescriptionCell">The server time when this item was created.</td><td>datetime</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TASKL_DESCRIPTION</STRONG></td><td class="DescriptionCell">A free text description of this item.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="indexesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Indexes</span></div><div id="indexesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Index</th><th>Description</th><th>Primary</th><th>Unique</th></tr>
+<tr><td class=LinkCell><A HREF="topic560.html">TASKS_LOG_IX1</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic561.html">TASKS_LOG_PK</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+</table></div>
+            
+            
+            
+            
+            
+            <!-- start type="Source" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=source,caption=$$SQL$$%%<table class="sqlsource" border=0 cellpadding=0><tr><td NOWRAP><CODE>%%Source%%</CODE></td></tr></table></div>" --><!--Source --><!-- end -->
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><h4 class=dxh4>Related Objects</h4><p><a href="topic27.html">td Schema</a>
+<BR/><a href="topic25.html">Project Data Tables Database</a>
+</p>
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference  Documentation Feedback: td.TASKS_LOG Table">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

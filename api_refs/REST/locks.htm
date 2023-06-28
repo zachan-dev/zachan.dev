@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Locks</title>
+    <meta name="Title" content="Locks"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="A lock is a resource that enables only the user who created the lock to edit or delete the resource indicated by the lock's data." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="a7d75827-4c01-4c97-ae9a-46e416a87539"/>
+    <meta name="Microsoft.Help.TocParent" content="fcc99000-a01d-4460-a256-a0dbd461a985"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Locks</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Reference_Topics.htm">Reference</a>
+ > <a href="Resources.htm">REST Resources in this API</a>
+ > Locks</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <p>A lock is a resource that enables only the user who created the lock to edit or delete the resource indicated by the lock's data.</p>
+
+<h2>Remarks</h2>
+
+<p>The locked object is indicated by the <strong>id</strong> and <strong>type</strong> fields of the lock. The <strong>user</strong> field indicates who can edit or delete the locked resource.</p>
+
+<p>If there is no chance that another user might edit or delete&nbsp;a resource, you do not need to create a lock.&nbsp;</p>
+
+<p>If other users might attempt to edit the resource, handle locking explicitly in your code:</p>
+
+<ol>
+    <li>POST a request for a lock. If the resource is already locked, the lock&nbsp;operation fails.</li>
+
+    <li>POST&nbsp;an update request for the locked resource.</li>
+
+    <li>The locked resource is updated.</li>
+
+    <li>Send a DELETE request for the lock.</li>
+</ol>
+
+<p>DELETE&nbsp;any lock you POST, even if you do not update the resource.</p>
+
+<h2>URIs</h2>
+
+<p>/qcbin/api/domains/default/projects/REST/locks</p>
+
+<p>/qcbin/api/domains/default/projects/REST/locks/{ID}</p>
+
+<h2>Limitations</h2>
+
+<ul>
+    <li>
+        <p>See&nbsp;<a href="General_Notes_and_Limitations.htm" data-auto-update-caption="true">General Notes and Limitations</a></p>
+    </li>
+</ul>
+
+<h2>Header Parameters</h2>
+
+<ul>
+    <li>See <a href="Standard_Headers.htm" data-auto-update-caption="true">Standard Headers</a></li>
+</ul>
+
+<h2>Example</h2>
+
+<div class="FilteredContentHTTP" data-title="HTTP" data-itemid="HTTP">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Lock a&nbsp;Defect</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+**** Request ****
+POST http:<span style="COLOR: #008000">//my_server/qcbin/api/domains/DEFAULT/projects/REST/locks HTTP/1.1
+</span>Host: my_server:8081
+Connection: keep-alive
+Content-Length: 143
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8,he;q=0.6
+Cookie: JSESSIONID=1234567890;
+XSRF-TOKEN=1234567890;
+QCSession=1234567890;
+ALM_USER=1234567890;
+LWSSO_COOKIE_KEY=1234567890
+{
+    <span style="COLOR: #800000">"data"</span>: [
+        {
+            <span style="COLOR: #800000">"entity"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 2,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"defect"</span>
+            }
+        }
+    ]  
+}
+
+**** Response ****
+HTTP/1.1 201 Created
+Date: Tue, 06 Jan 2015 13:13:11 GMT
+Set-Cookie: LWSSO_COOKIE_KEY=1234567890;
+Path=/;HTTPOnly
+Content-Type: application/json
+Content-Length: 163
+Server: Jetty(9.1.3.v20140225)
+{
+    <span style="COLOR: #800000">"data"</span>: [
+        {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"lock"</span>,
+            <span style="COLOR: #800000">"id"</span>: 1016,
+            <span style="COLOR: #800000">"entity"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 2,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"defect"</span>
+            },
+            <span style="COLOR: #800000">"user"</span>: <span style="COLOR: #800000">"steves"</span>,
+            <span style="COLOR: #800000">"lock-time"</span>: <span style="COLOR: #800000">"2015-01-06 15:13:11"</span>,
+            <span style="COLOR: #800000">"session-last-touch"</span>: <span style="COLOR: #800000">"2015-01-06 15:13:11"</span>
+        }
+    ]
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div><a name="multipart_form_data_example" id="multipart_form_data_example"></a>
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><div class="SeeAlsoLink">
+<a href="Collections.htm">Collections</a></div>
+<div class="SeeAlsoLink">
+<a href="Instances.htm">Instances</a></div>
+<div class="SeeAlsoLink">
+<a href="Update_an_Instance.htm">Update an Instance</a></div>
+
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Locks">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

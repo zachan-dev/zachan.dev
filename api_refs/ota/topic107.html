@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Getting and setting host properties</title>
+    <meta name="Title" content="Getting and setting host properties"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Sub HostProperties()
+
+' Getting and setting Host properties
+
+    Dim HostFact As HostFactory
+    Dim theHost As Host
+    Dim HList As List
+    
+' Get a Host object.
+    'tdc is the global TDConnectio" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="bca9f461-da7f-4246-a795-81a7b3070f48"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Getting and setting host properties</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-dc067f52-ee2d-4c43-8bc7-af3d09d2888e"></a></li>
+    </ul>
+
+    <div id="TabContent-dc067f52-ee2d-4c43-8bc7-af3d09d2888e" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Sub</span> HostProperties()
+
+<span style="COLOR: #008000">' Getting and setting Host properties
+</span>
+    <span style="COLOR: #0000ff">Dim</span> HostFact <span style="COLOR: #0000ff">As</span> HostFactory
+    <span style="COLOR: #0000ff">Dim</span> theHost <span style="COLOR: #0000ff">As</span> Host
+    <span style="COLOR: #0000ff">Dim</span> HList <span style="COLOR: #0000ff">As</span> List
+    
+<span style="COLOR: #008000">' Get a Host object.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> HostFact = tdc.HostFactory
+    <span style="COLOR: #0000ff">Set</span> HList = HostFact.NewList(<span style="COLOR: #800000">""</span>)
+    Debug.Print <span style="COLOR: #800000">"The number of hosts in the project is "</span> _
+        &amp; HList.Count
+    <span style="COLOR: #0000ff">Set</span> theHost = HList.Item(1)
+    
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #008000">' Print the properities.
+</span>    Debug.Print <span style="COLOR: #800000">"ID """</span> &amp; theHost.ID &amp; <span style="COLOR: #800000">""""</span>
+    Debug.Print <span style="COLOR: #800000">"Description """</span> &amp; theHost.Description &amp; <span style="COLOR: #800000">""""</span>
+    Debug.Print <span style="COLOR: #800000">"Name """</span> &amp; theHost.name &amp; <span style="COLOR: #800000">""""</span>
+    Debug.Print <span style="COLOR: #800000">"RexServer """</span> &amp; theHost.RexServer &amp; <span style="COLOR: #800000">""""</span>
+    Debug.Print <span style="COLOR: #800000">"Modified """</span> &amp; theHost.Modified &amp; <span style="COLOR: #800000">""""</span>
+    Debug.Print <span style="COLOR: #800000">"Virtual """</span> &amp; theHost.Virtual &amp; <span style="COLOR: #800000">""""</span>
+<span style="COLOR: #008000">' Change the description.
+</span>    theHost.Description = <span style="COLOR: #800000">"AQT_HOST_1_Test"</span>
+<span style="COLOR: #008000">' Commit to database.
+</span>    theHost.Post
+<span style="COLOR: #008000">' Check the new value.
+</span>    Debug.Print <span style="COLOR: #800000">"Description """</span> &amp; theHost.Description &amp; <span style="COLOR: #800000">""""</span>
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Getting and setting host properties">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

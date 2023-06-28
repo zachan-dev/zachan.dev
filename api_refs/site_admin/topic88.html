@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>RunQuery Method</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="SACLIENTLib~SAapi~RunQuery"/>
+    <meta name="Description" content="Runs the SQL statement on the project database and retrieves results." />
+    <meta name="Microsoft.Help.TocParent" content="SACLIENTLib~SAapi_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Site Administration API Type Library 12.50 and later</div>
+        <div id="PageTitle"><div id="PageTitleText">RunQuery Method</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic7.html">SAapi Object</a>
+ : RunQuery Method</td></tr></table></div>
+    
+    
+<div id="DomainNamePopupContent" class="PopupContent">
+The domain name.
+</div>
+<div id="ProjectNamePopupContent" class="PopupContent">
+The project name.
+</div>
+<div id="SqlQueryPopupContent" class="PopupContent">
+The SQL statement.
+</div>
+<div id="MaxRecordsPopupContent" class="PopupContent">
+The maximum number of records to return.
+</div>
+<div id="FromRecordPopupContent" class="PopupContent">
+<p>Return records from this record to the end of the record set.&nbsp; For example, if FromRecord is 8, records 0 to 7 are not returned. All records from the ninth (index = 8) on are returned.</p>
+</div>
+
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Runs the SQL statement on the project database and retrieves results.</div></div>
+            <div class="SectionHeading" id="syntaxSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Syntax</span></div><div id="syntaxSectionContent" class="SectionContent"><div class=LanguageSpecific id=Syntax_VB><table class="syntaxtable" width="100%" cellpadding="0" cellspacing="0"><tr><th>Visual Basic</th></tr><tr><td><pre>Public Function RunQuery( _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DomainNamePopupLink" data-popupcontentsource="#DomainNamePopupContent" data-popupshowevent="click mouseenter">DomainName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="ProjectNamePopupLink" data-popupcontentsource="#ProjectNamePopupContent" data-popupshowevent="click mouseenter">ProjectName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="SqlQueryPopupLink" data-popupcontentsource="#SqlQueryPopupContent" data-popupshowevent="click mouseenter">SqlQuery</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="MaxRecordsPopupLink" data-popupcontentsource="#MaxRecordsPopupContent" data-popupshowevent="click mouseenter">MaxRecords</a></i> As Long, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="FromRecordPopupLink" data-popupcontentsource="#FromRecordPopupContent" data-popupshowevent="click mouseenter">FromRecord</a></i> As Long _
+) As String</pre></tr></table></div></div>
+            <div class="SectionHeading" id="parametersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Parameters</span></div><div id="parametersSectionContent" class="SectionContent"><dl>
+<dt><I>DomainName</I></dt>
+<dd>The domain name.</dd>
+<dt><I>ProjectName</I></dt>
+<dd>The project name.</dd>
+<dt><I>SqlQuery</I></dt>
+<dd>The SQL statement.</dd>
+<dt><I>MaxRecords</I></dt>
+<dd>The maximum number of records to return.</dd>
+<dt><I>FromRecord</I></dt>
+<dd><p>Return records from this record to the end of the record set.&nbsp; For example, if FromRecord is 8, records 0 to 7 are not returned. All records from the ninth (index = 8) on are returned.</p></dd>
+</dl></div>
+            <div class="SectionHeading" id="returnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Type</span></div><div id="returnsSectionContent" class="SectionContent"><div class="ReturnsContent">On success, returns an XML string containing&nbsp;selected records according to the SQL statement. ColumnLables show all columns, numbers, and names. DataRows show all the rows that return results. For each row that returns results, only the columns containing data are returned.</div></div>
+            
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Value Details</span></div><div id="remarksSectionContent" class="SectionContent"><p>In both &lt;ColumnLables&gt; and &lt;Rows&gt;, the tag &lt;_<em>n&gt;</em> indicates the column number in the SQL results.</p>
+
+<p>In &lt;ColumnLables&gt;, the text of the element is the name of the column.</p>
+
+<p>In &lt;Rows&gt;, the&nbsp;text of the element is the&nbsp;value of the column.</p></div>
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Value Example</span></div><div id="remarksSectionContent" class="SectionContent">&lt;RunQuery&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ColumnLables&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TDXItem&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_0&gt;RQ_REQ_ID&lt;/_0&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_1&gt;RQ_FATHER_ID&lt;/_1&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_2&gt;RQ_ORDER_ID&lt;/_2&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_3&gt;RQ_ISTEMPLATE&lt;/_3&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_4&gt;RQ_REQ_COMMENT&lt;/_4&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_5&gt;RQ_REQ_REVIEWED&lt;/_5&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_6&gt;RQ_REQ_PATH&lt;/_6&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_7&gt;RQ_REQ_STATUS&lt;/_7&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_8&gt;RQ_REQ_PRIORITY&lt;/_8&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_9&gt;RQ_REQ_TYPE&lt;/_9&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_10&gt;RQ_REQ_PRODUCT&lt;/_10&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_11&gt;RQ_REQ_NAME&lt;/_11&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_12&gt;RQ_REQ_AUTHOR&lt;/_12&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_13&gt;RQ_USER_01&lt;/_13&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_14&gt;RQ_USER_02&lt;/_14&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_15&gt;RQ_USER_03&lt;/_15&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_16&gt;RQ_USER_04&lt;/_16&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_17&gt;RQ_USER_05&lt;/_17&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_18&gt;RQ_USER_06&lt;/_18&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_19&gt;RQ_USER_07&lt;/_19&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_20&gt;RQ_USER_08&lt;/_20&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_21&gt;RQ_USER_09&lt;/_21&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_22&gt;RQ_USER_10&lt;/_22&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_23&gt;RQ_USER_11&lt;/_23&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_24&gt;RQ_USER_12&lt;/_24&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_25&gt;RQ_REQ_VER_STAMP&lt;/_25&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_26&gt;RQ_ATTACHMENT&lt;/_26&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_27&gt;RQ_REQ_DATE&lt;/_27&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_28&gt;RQ_REQ_TIME&lt;/_28&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_29&gt;RQ_NO_OF_SONS&lt;/_29&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_30&gt;RQ_IS_FOLDER&lt;/_30&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_31&gt;RQ_VTS&lt;/_31&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_32&gt;RQ_USER_13&lt;/_32&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_33&gt;RQ_USER_14&lt;/_33&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_34&gt;RQ_USER_15&lt;/_34&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_35&gt;RQ_USER_16&lt;/_35&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_36&gt;RQ_USER_17&lt;/_36&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_37&gt;RQ_USER_18&lt;/_37&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_38&gt;RQ_USER_19&lt;/_38&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_39&gt;RQ_USER_20&lt;/_39&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_40&gt;RQ_USER_21&lt;/_40&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_41&gt;RQ_USER_22&lt;/_41&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_42&gt;RQ_USER_23&lt;/_42&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_43&gt;RQ_USER_24&lt;/_43&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/TDXItem&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ColumnLables&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Rows&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TDXItem&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_0&gt;1&lt;/_0&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_1&gt;-1&lt;/_1&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_2&gt;1&lt;/_2&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_5&gt;Not Reviewed&lt;/_5&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_6&gt;AAA&lt;/_6&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_7&gt;Not Covered&lt;/_7&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_8&gt;3-High&lt;/_8&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_11&gt;Requirement 1&lt;/_11&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_12&gt;admin&lt;/_12&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_25&gt;5&lt;/_25&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_27&gt;8/26/2002&lt;/_27&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_28&gt;09:32:27&lt;/_28&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_29&gt;0&lt;/_29&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_30&gt;Y&lt;/_30&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_31&gt;2002-09-02 14:15:03&lt;/_31&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/TDXItem&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TDXItem&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_0&gt;2&lt;/_0&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_1&gt;-1&lt;/_1&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_2&gt;2&lt;/_2&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_5&gt;Not Reviewed&lt;/_5&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_6&gt;AAB&lt;/_6&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_7&gt;Not Covered&lt;/_7&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_11&gt;Requirement 2&lt;/_11&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_12&gt;admin&lt;/_12&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_25&gt;3&lt;/_25&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_27&gt;9/2/2002&lt;/_27&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_28&gt;14:13:42&lt;/_28&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_29&gt;0&lt;/_29&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_30&gt;N&lt;/_30&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;_31&gt;2002-09-02 14:13:57&lt;/_31&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/TDXItem&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Rows&gt;<br />
+&lt;/RunQuery&gt;</div>
+            
+            
+            
+            <div class="SectionHeading" id="exampleSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Example</span></div><div id="exampleSectionContent" class="SectionContent"><div class="FilteredContentVisual Basic">
+    
+	<div class="TabContainer">
+	    <ul>
+	        <li><a href="#TabContent-1835a883-0b3d-44c1-b3af-05ee07bbe055">Example (Visual Basic)</a></li>
+	    </ul>
+	    <div id="TabContent-1835a883-0b3d-44c1-b3af-05ee07bbe055" class="FilteredContent"><pre><span style="color: #0000FF; ">Private</span> <span style="color: #0000FF; ">Sub</span> RunQuery()
+
+<span style="color: #008000; ">'The following Visual Basic example runs an SQL statement
+' showing the first 25 row results.
+</span>    <span style="color: #0000FF; ">Dim</span> sDomainName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+    <span style="color: #0000FF; ">Dim</span> sProjectName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+    <span style="color: #0000FF; ">Dim</span> sSql <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+    <span style="color: #0000FF; ">Dim</span> sReply <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+
+    <span style="color: #0000FF; ">On</span> <span style="color: #0000FF; ">Error</span> <span style="color: #0000FF; ">GoTo</span> err
+    sDomainName = <span style="color: #800000; ">&quot;MyDomain&quot;</span>
+    sProjectName = <span style="color: #800000; ">&quot;MyProject&quot;</span>
+    sSql = <span style="color: #800000; ">&quot;SELECT * FROM REQ&quot;</span>
+   
+    sReply = m_SAClient.RunQuery _
+        (sDomainName, sProjectName, sSql, 25, 0)
+
+    <span style="color: #0000FF; ">MsgBox</span> sReply
+    <span style="color: #0000FF; ">Exit Sub</span>
+err:
+    <span style="color: #0000FF; ">MsgBox</span> <span style="color: #800000; ">&quot;Program failed:&quot;</span> + err.Description
+<span style="color: #0000FF; ">End Sub</span></pre></div>
+	</div>
+</div>
+</div>
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic7.html">SAapi Object</a>
+&nbsp;|&nbsp;<a href="topic8.html">SAapi Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Site Administration API  Documentation Feedback: RunQuery Method">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

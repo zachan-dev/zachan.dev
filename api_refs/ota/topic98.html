@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Disconnection example showing behavior of properties</title>
+    <meta name="Title" content="Disconnection example showing behavior of properties"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub ReleaseConnections()
+
+
+'------------------------------------------------------------------------
+' This routine disconnects the project and releases the connection
+' At each stage, there are c" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="16e2b001-de09-45ef-be26-2ef120b94ebf"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Disconnection example showing behavior of properties</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-bd9ae189-bfeb-4542-995b-da7fe342afe3"></a></li>
+    </ul>
+
+    <div id="TabContent-bd9ae189-bfeb-4542-995b-da7fe342afe3" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> ReleaseConnections()
+
+
+<span style="COLOR: #008000">'------------------------------------------------------------------------
+' This routine disconnects the project and releases the connection
+' At each stage, there are commented calls to various properties. 
+' Under the calls, are the output you would get if you ran the 
+' property calls.
+'-----------------------------------------------------------------------
+</span>    
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">If</span> tdc <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">Exit Sub</span>
+
+<span style="COLOR: #008000">' Check status.
+'    Debug.Print "Before Disconnect: "
+'    Debug.Print "LoggedIn", """" &amp; tdc.LoggedIn &amp; """"
+'    Debug.Print "Connected", """" &amp; tdc.Connected &amp; """"
+'    Debug.Print "ServerName", """" &amp; tdc.ServerName &amp; """"
+'    Debug.Print "ProjectName", """" &amp; tdc.ProjectName &amp; """"
+'    Debug.Print "ProjectConnected", """" &amp; tdc.ProjectConnected &amp; """"
+'    Debug.Print
+' Before Disconnect - Output of above calls:
+'   LoggedIn      "True"
+'   Connected     "True"
+'   ServerName    "http://server06:8080/qcbin/wcomsrv.dll"
+'   ProjectName   "ota_doc"
+'   ProjectConnected            "True"
+</span>
+<span style="COLOR: #008000">' Disconnect from the project.
+</span>    <span style="COLOR: #0000ff">If</span> tdc.Connected <span style="COLOR: #0000ff">Then</span>
+        tdc.Disconnect
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+<span style="COLOR: #008000">' Check status.
+'    Debug.Print "After Disconnect: "
+'    Debug.Print "LoggedIn", """" &amp; tdc.LoggedIn &amp; """"
+'    Debug.Print "Connected", """" &amp; tdc.Connected &amp; """"
+'    Debug.Print "ServerName", """" &amp; tdc.ServerName &amp; """"
+'    Debug.Print "ProjectName", """" &amp; tdc.ProjectName &amp; """"
+'    Debug.Print "ProjectConnected", """" &amp; tdc.ProjectConnected &amp; """"
+'    Debug.Print
+' After Disconnect - Output of above calls:
+'   LoggedIn      "True"
+'   Connected     "True"
+'   ServerName    "http://server06:8080/qcbin/wcomsrv.dll"
+'   ProjectName   ""
+'   ProjectConnected            "False"
+</span>
+
+<span style="COLOR: #008000">' Log off the server.
+</span>    <span style="COLOR: #0000ff">If</span> tdc.LoggedIn <span style="COLOR: #0000ff">Then</span>
+        tdc.Logout
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+<span style="COLOR: #008000">' Check status.
+'    Debug.Print "After Logout: "
+'    Debug.Print "LoggedIn", """" &amp; tdc.LoggedIn &amp; """"
+'    Debug.Print "Connected", """" &amp; tdc.Connected &amp; """"
+'    Debug.Print "ServerName", """" &amp; tdc.ServerName &amp; """"
+'    Debug.Print "ProjectName", """" &amp; tdc.ProjectName &amp; """"
+'    Debug.Print "ProjectConnected", """" &amp; tdc.ProjectConnected &amp; """"
+'    Debug.Print
+' After Logout - Output of above calls:
+'   LoggedIn      "False"
+'   Connected     "True"
+'   ServerName    "http://server06:8080/qcbin/wcomsrv.dll"
+'   ProjectName   ""
+'   ProjectConnected            "False"
+</span>
+<span style="COLOR: #008000">'Release the TDConnection object.
+</span>    tdc.ReleaseConnection
+
+<span style="COLOR: #008000">' Check status.
+'    Debug.Print "After ReleaseConnection: "
+'    Debug.Print "LoggedIn", """" &amp; tdc.LoggedIn &amp; """"
+'    Debug.Print "LoggedIn Error", err.Description
+'    Debug.Print "Connected", """" &amp; tdc.Connected &amp; """"
+'    Debug.Print "ServerName", """" &amp; tdc.ServerName &amp; """"
+'    Debug.Print "ProjectName", """" &amp; tdc.ProjectName &amp; """"
+'    Debug.Print "ProjectName Error", err.Description
+'    Debug.Print "ProjectConnected", """" &amp; tdc.ProjectConnected &amp; """"
+'    Debug.Print "ProjectConnected Error", err.Description
+' After ReleaseConnection - Output of above calls:
+'   LoggedIn Error              OTA server is not connected.
+'   Connected     "False"
+'   ServerName    ""
+'   ProjectName Error           OTA server is not connected.
+'   ProjectConnected Error      OTA server is not connected.
+</span>    
+    <span style="COLOR: #0000ff">Set</span> tdc = <span style="COLOR: #0000ff">Nothing</span>
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Disconnection example showing behavior of properties">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

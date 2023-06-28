@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Link a defect to a run test step</title>
+    <meta name="Title" content="Link a defect to a run test step"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        Links Examples
+    
+
+    
+        
+Private Function LinkBugToStep() As Boolean
+ 
+ ' Link a defect to a run test step
+
+    Dim linkF As LinkFactory
+    Dim thelink As Link
+    Dim linkableStep As ILinkable
+    Dim BugF As B" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="8f35cf58-3cc6-4d16-ad39-83d04de8aacd"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Link a defect to a run test step</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="Links Examples" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-2a8ad963-ce25-4174-8550-03fc89411b0c">Links Examples</a></li>
+    </ul>
+
+    <div id="TabContent-2a8ad963-ce25-4174-8550-03fc89411b0c" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Function</span> LinkBugToStep() <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+ 
+ <span style="COLOR: #008000">' Link a defect to a run test step
+</span>
+    <span style="COLOR: #0000ff">Dim</span> linkF <span style="COLOR: #0000ff">As</span> LinkFactory
+    <span style="COLOR: #0000ff">Dim</span> thelink <span style="COLOR: #0000ff">As</span> Link
+    <span style="COLOR: #0000ff">Dim</span> linkableStep <span style="COLOR: #0000ff">As</span> ILinkable
+    <span style="COLOR: #0000ff">Dim</span> BugF <span style="COLOR: #0000ff">As</span> BugFactory
+    <span style="COLOR: #0000ff">Dim</span> Bug <span style="COLOR: #0000ff">As</span> Bug
+    <span style="COLOR: #0000ff">Dim</span> stepsList <span style="COLOR: #0000ff">As</span> List
+    
+    <span style="COLOR: #0000ff">Dim</span> RunF <span style="COLOR: #0000ff">As</span> RunFactory
+    <span style="COLOR: #0000ff">Dim</span> run1 <span style="COLOR: #0000ff">As</span> Run
+    <span style="COLOR: #0000ff">Set</span> RunF = tdc.RunFactory
+    <span style="COLOR: #0000ff">Set</span> run1 = RunF.Item(71)
+     
+    <span style="COLOR: #0000ff">Dim</span> StepF <span style="COLOR: #0000ff">As</span> StepFactory
+    <span style="COLOR: #0000ff">Dim</span> step1 <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Step</span>
+    <span style="COLOR: #0000ff">Dim</span> aFilter <span style="COLOR: #0000ff">As</span> TDFilter
+    <span style="COLOR: #0000ff">Dim</span> StepList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Set</span> StepF = run1.StepFactory
+    <span style="COLOR: #0000ff">Set</span> aFilter = StepF.Filter
+    <span style="COLOR: #0000ff">Set</span> stepsList = aFilter.NewList
+    <span style="COLOR: #0000ff">Set</span> step1 = stepsList.Item(1)
+     
+    <span style="COLOR: #0000ff">Set</span> BugF = tdc.BugFactory
+    <span style="COLOR: #0000ff">Set</span> Bug = BugF.Item(26)
+     
+    <span style="COLOR: #0000ff">Set</span> linkableStep = step1
+    <span style="COLOR: #0000ff">Set</span> linkF = linkableStep.BugLinkFactory
+    <span style="COLOR: #0000ff">Set</span> thelink = linkF.AddItem(Bug)
+    thelink.Post
+    
+    LinkBugToStep = SUCCESS
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+    LinkBugToStep = FAILURE
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+
+<p><a href="topic80.html" data-auto-update-caption="true">Defect to defect links</a></p>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Link a defect to a run test step">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

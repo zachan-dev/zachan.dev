@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>SetProjectProperty Method</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="SACLIENTLib~SAapi~SetProjectProperty"/>
+    <meta name="Description" content="Sets the specified property to a selected value and retrieves project properties." />
+    <meta name="Microsoft.Help.TocParent" content="SACLIENTLib~SAapi_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Site Administration API Type Library 12.50 and later</div>
+        <div id="PageTitle"><div id="PageTitleText">SetProjectProperty Method</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic7.html">SAapi Object</a>
+ : SetProjectProperty Method</td></tr></table></div>
+    
+    
+<div id="DomainNamePopupContent" class="PopupContent">
+The domain name.
+</div>
+<div id="ProjectNamePopupContent" class="PopupContent">
+The project name.
+</div>
+<div id="PropertyNumberPopupContent" class="PopupContent">
+<p>The property number you wish to change. You can use the following constants or their values:</p>
+
+<ul>
+    <li>SA_PROJECT_DB_CONNECT_STRING (value: 1)</li>
+
+    <li>SA_PROJECT_DB_USER_PASSWORD (value: 2)</li>
+
+    <li>SA_PROJECT_ACTIVE (value: 3)</li>
+
+    <li>SA_PROJECT_NAME (value: 4)</li>
+
+    <li>SA_PROJECT_SEND_ALL_QUALIFIED (value: 5)</li>
+
+    <li>SA_PROJECT_USER_QUOTA (value: 6)</li>
+
+    <li>SA_PROJECT_DESCRIPTION (value: 7)</li>
+</ul>
+</div>
+<div id="PropertyValuePopupContent" class="PopupContent">
+<p>The property value.</p>
+</div>
+
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Sets the specified property to a selected value and retrieves project properties.</div></div>
+            <div class="SectionHeading" id="syntaxSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Syntax</span></div><div id="syntaxSectionContent" class="SectionContent"><div class=LanguageSpecific id=Syntax_VB><table class="syntaxtable" width="100%" cellpadding="0" cellspacing="0"><tr><th>Visual Basic</th></tr><tr><td><pre>Public Function SetProjectProperty( _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DomainNamePopupLink" data-popupcontentsource="#DomainNamePopupContent" data-popupshowevent="click mouseenter">DomainName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="ProjectNamePopupLink" data-popupcontentsource="#ProjectNamePopupContent" data-popupshowevent="click mouseenter">ProjectName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PropertyNumberPopupLink" data-popupcontentsource="#PropertyNumberPopupContent" data-popupshowevent="click mouseenter">PropertyNumber</a></i> As Long, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PropertyValuePopupLink" data-popupcontentsource="#PropertyValuePopupContent" data-popupshowevent="click mouseenter">PropertyValue</a></i> As String _
+) As String</pre></tr></table></div></div>
+            <div class="SectionHeading" id="parametersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Parameters</span></div><div id="parametersSectionContent" class="SectionContent"><dl>
+<dt><I>DomainName</I></dt>
+<dd>The domain name.</dd>
+<dt><I>ProjectName</I></dt>
+<dd>The project name.</dd>
+<dt><I>PropertyNumber</I></dt>
+<dd><p>The property number you wish to change. You can use the following constants or their values:</p>
+
+<ul>
+    <li>SA_PROJECT_DB_CONNECT_STRING (value: 1)</li>
+
+    <li>SA_PROJECT_DB_USER_PASSWORD (value: 2)</li>
+
+    <li>SA_PROJECT_ACTIVE (value: 3)</li>
+
+    <li>SA_PROJECT_NAME (value: 4)</li>
+
+    <li>SA_PROJECT_SEND_ALL_QUALIFIED (value: 5)</li>
+
+    <li>SA_PROJECT_USER_QUOTA (value: 6)</li>
+
+    <li>SA_PROJECT_DESCRIPTION (value: 7)</li>
+</ul></dd>
+<dt><I>PropertyValue</I></dt>
+<dd><p>The property value.</p></dd>
+</dl></div>
+            <div class="SectionHeading" id="returnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Type</span></div><div id="returnsSectionContent" class="SectionContent"><div class="ReturnsContent"><p>On success, returns an XML string containing the project properties.</p></div></div>
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Remarks</span></div><div id="remarksSectionContent" class="SectionContent"><p>The project must be deactivated in order to change the following properties: SA_PROJECT_DB_CONNECT_STRING, SA_PROJECT_NAME.</p>
+
+<p>Property SA_PROJECT_DB_USER_PASSWORD applies to Oracle databases only.<br /></p></div>
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Value Details</span></div><div id="remarksSectionContent" class="SectionContent"><p>The properties of the XML return string:</p>
+
+<ul>
+    <li><b>PROJECT_ID</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The ID number of the project.</li>
+
+    <li><b>PROJECT_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The project name.</li>
+
+    <li><b>DESCRIPTION</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The project description.</li>
+
+    <li><b>DOMAIN_ID</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The domain ID number.</li>
+
+    <li><b>DOMAIN_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The domain name.</li>
+
+    <li><strong>DB_NAME&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database name.</li>
+
+    <li><strong>DB_TYPE&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database type number: MS SQL (2), Oracle (3).</li>
+
+    <li><strong>CREATE_FROM_PROJECT&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The source project of the created project.</li>
+
+    <li><strong>CREATE_FROM_DOMAIN&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The source domain of the created project.</li>
+
+    <li><strong>PHYSICAL_DIRECTORY&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The physical directory of the project.</li>
+
+    <li><strong>DB_NATIVE_AUTHENTICATION&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;Indicates if user login is handled by the operating system (MS_SQL Windows Authentication). If 'N', the authentication is handled explicitly using the user name and password.</li>
+
+    <li><strong>DB_USER&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database administrator user name.</li>
+
+    <li><strong>DB_USER_PASS&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database administrator password.</li>
+
+    <li><strong>DBSERVER_NAME&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database server name.</li>
+
+    <li><b>DBCONNSTR_FORMAT</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The database connection string.</li>
+
+    <li><b>DB_ENCRYPTED_CONNSTR</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;For internal use.</li>
+
+    <li><strong>DB_DRIVER_CLASS_NAME</strong>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;The name of the database manager connection class (JDBC driver class).&nbsp;</li>
+
+    <li><strong>PR_EXCEPTION_FILE</strong> - The pathname of the file that defines errors that the verify process ignores.</li>
+
+    <li><strong>PROJECT_VERSION</strong>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;The ALM version.&nbsp;</li>
+
+    <li><b>PR_IS_ACTIVE</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;Indicates if the project is active (Y/N).</li>
+
+    <li><b>SAQ_IS_ACTIVE</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;Indicates if SEND ALL QUALIFIED is active (Y/N).</li>
+
+    <li><strong>PR_IS_QPM_AUTO_CALC_ENABLED</strong> - Automatic KPI calculation is enabled (Y/N).</li>
+
+    <li><strong>PR_HAS_VCSDB&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;Indicates if the project includes version control: (Y)es, (N)o, (D)isabled. This field appears only if version control is available.</li>
+
+    <li><strong>USERS_QUOTA&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The maximum number of concurrent connections. -1 indicates an unlimited number of connections.</li>
+
+    <li><strong>PR_LANGUAGE</strong>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The search language.</li>
+
+    <li><strong>PROJECT_TYPE</strong> - The type of project.</li>
+
+    <li><strong>IS_TEMPLATE</strong> - Indicates&nbsp;whether this is a template project (Y/N).</li>
+
+    <li><strong>PROJECT_UID</strong> - The project ID.</li>
+
+    <li><strong>PR_SMART_REPOSITORY_ENABLED</strong> - One of: NO - not a smart repository; YES - smart repository; PENDING - offline migration completed and waiting for online migration; MIGRATING - online migration in progress.</li>
+
+    <li><strong>PR_SR_GC_STATUS</strong> - Optimized repository garbage collection status.</li>
+
+    <li><strong>PR_SR_GC_LAST_RUN_TIME</strong> - Optimized repository garbage collection last run time.</li>
+</ul></div>
+            
+            
+            
+            
+            <div class="SectionHeading" id="exampleSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Example</span></div><div id="exampleSectionContent" class="SectionContent"><div class="FilteredContentVisual Basic">
+    
+	<div class="TabContainer">
+	    <ul>
+	        <li><a href="#TabContent-b9952384-3b64-4177-8b86-dbb8fc01001e">Example (Visual Basic)</a></li>
+	    </ul>
+	    <div id="TabContent-b9952384-3b64-4177-8b86-dbb8fc01001e" class="FilteredContent"><pre><span style="color: #0000FF; ">Private</span> <span style="color: #0000FF; ">Sub</span> SetProjectProperty()
+
+<span style="color: #008000; ">'The following Visual Basic example sets the property
+' for a project name.
+'The project is deactivated, renamed, and
+' then reactivated.
+</span>    <span style="color: #0000FF; ">Dim</span> sDomainName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+    <span style="color: #0000FF; ">Dim</span> sProjectName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+    <span style="color: #0000FF; ">Dim</span> sReply <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>
+
+    <span style="color: #0000FF; ">On</span> <span style="color: #0000FF; ">Error</span> <span style="color: #0000FF; ">GoTo</span> err
+    sDomainName = <span style="color: #800000; ">&quot;MyDomain&quot;</span>
+    sProjectName = <span style="color: #800000; ">&quot;MyProject&quot;</span>
+   
+    sReply = m_SAClient.DeactivateProject _
+        (sDomainName, sProjectName)
+    sReply = m_SAClient.SetProjectProperty _
+        (sDomainName, sProjectName, _
+        SA_PROJECT_NAME, <span style="color: #800000; ">&quot;YourProject&quot;</span>)
+    <span style="color: #0000FF; ">MsgBox</span> sReply
+    sReply = m_SAClient.ActivateProject _
+        (sDomainName, <span style="color: #800000; ">&quot;YourProject&quot;</span>)
+<span style="color: #0000FF; ">Exit Sub</span>
+err:
+    <span style="color: #0000FF; ">MsgBox</span> <span style="color: #800000; ">&quot;Program failed:&quot;</span> + err.Description
+<span style="color: #0000FF; ">End Sub</span></pre></div>
+	</div>
+</div>
+</div>
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic7.html">SAapi Object</a>
+&nbsp;|&nbsp;<a href="topic8.html">SAapi Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Site Administration API  Documentation Feedback: SetProjectProperty Method">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

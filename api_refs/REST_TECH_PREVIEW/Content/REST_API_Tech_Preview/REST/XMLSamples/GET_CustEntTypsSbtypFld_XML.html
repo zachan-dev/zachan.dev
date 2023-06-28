@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<!--QCCR1K4344-->
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="ALM_REST_API_TP.xml" data-mc-path-to-help-system="../../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>GET customization entity subtype fields XML</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+            <link rel="icon" type="image/x-icon" href="https://software.microfocus.com/favicon.ico" />
+		
+			html, body 
+			{
+				height: 100%;
+				margin-right:2em;
+			}
+						
+			.wrapper 
+			{
+				min-height: 100%!important;
+				margin: 0 auto -10em; 
+				padding-left: 0.2em
+						
+			}
+
+			footer, .float 
+			{
+				height: 10em; 
+				margin:0;
+				clear: both;
+			}
+
+			div.roundcorners
+			{
+				-moz-border-radius-bottomleft: 1em;
+				border-bottom-left-radius: 1em;
+				-moz-border-radius-topright: 1em;
+				border-top-right-radius: 1em;
+				background-color: #f2f2f2 ;
+				width: 100% !important;
+				padding: 0em;		 
+			}
+			
+			p.footerlink
+			{
+				font-size: .75em;
+				line-height: 1em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom:.75em;
+			}
+			
+			p.footerlink a,
+			p.footerlink a:visited
+			{
+				color: #5a5a5a;
+			}
+			
+			p.footerlink a:hover
+			{
+				color: #000000!important;
+			}
+						
+			p.spacer
+			{
+				font-size: .5em;
+				line-height: .5em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom: .5em;
+			}
+	
+    </style>
+        <link href="../../../Resources/Stylesheets/API_TechPreview.css" rel="stylesheet" />
+        <script src="../../../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../../../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../../../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../../../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../../../ALM_REST_API_TP.html#REST_API_Tech_Preview/REST/XMLSamples/GET_CustEntTypsSbtypFld_XML.html">Open topic with navigation</a>
+        </p>
+        <div class="wrapper">
+            <h1>GET customization entity subtype fields XML</h1>
+            <div id="pagebody">
+                <div id="mainbody">
+                    <!-- <p>GET:
+/qcbin/rest/domains/{domain}/projects/{project}/<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+customization/entities/test/types/BUSINESS-PROCESS/fields<br>
+
+Accept: application/xml</p>
+
+<p>
+--><pre>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;!--
+GET: /qcbin/rest/domains/DOMAIN_NAME/projects/PROJECT_NAME/customization/entities/test/types/BUSINESS-PROCESS/fields&#160;&#160;
+Accept: application/xml&#160;&#160;--&gt;
+&lt;Fields&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_HAS_DEPENDENCIES" Name="has-dependencies" Label="Asset relation dependencies status"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;true&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_ATTACHMENT" Name="attachment" Label="Attachment"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_START_AUDIT_ACTION_ID" Name="vc-start-audit-action-id" Label="Audit ID for start point for this version"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_END_AUDIT_ACTION_ID" Name="vc-end-audit-action-id" Label="Audit ID that is a end point for this version of the test"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_BASE_TEST_ID" Name="base-test-id" Label="Base Test ID"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_BPTA_CHANGE_DETECTED" Name="bpta-change-detected" Label="Change Status"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Reference&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_DEV_COMMENTS" Name="dev-comments" Label="Comments"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;-1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Memo&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_CONFIGURATIONS_COUNT" Name="configurations-count" Label="Count of configurations links in a test"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;true&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_CREATION_DATE" Name="creation-time" Label="Creation Date"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Date&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_DESCRIPTION" Name="description" Label="Description"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;-1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Memo&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_RESPONSIBLE" Name="owner" Label="Designer"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;60&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;UsersList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_ESTIMATE_DEVTIME" Name="estimate-devtime" Label="Estimated DevTime"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_EXEC_STATUS" Name="exec-status" Label="Execution Status"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;70&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;3&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_HAS_CRITERIA" Name="has-criteria" Label="Indicates if the test has criteria"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;true&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_IS_CHANGE_DETECTABLE" Name="is-change-detectable" Label="Is Test Change Detectable"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;true&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_USER_04" Name="user-04" Label="Level"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;40&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;1106&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;true&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;false&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VTS" Name="last-modified" Label="Modified"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;20&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;DateTime&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_PATH" Name="storage-path" Label="Path"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;255&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_USER_03" Name="user-03" Label="Priority"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;40&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;5&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;true&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;false&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_USER_01" Name="user-01" Label="Reviewed"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;40&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;55&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;true&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;false&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_USER_02" Name="user-02" Label="Reviewer"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;60&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;false&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;UsersList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_STATUS" Name="status" Label="Status"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;70&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;6&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_STEP_PARAM" Name="step-param" Label="Step Param"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_STEPS" Name="steps" Label="Steps"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;5&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_SUBJECT" Name="parent-id" Label="Subject"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;2&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;true&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_TEMPLATE" Name="template" Label="Template"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_TEST_ID" Name="id" Label="Test ID"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_NAME" Name="name" Label="Test Name"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;255&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;true&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_RUNTIME_DATA" Name="runtime-data" Label="Test Runtime Data"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;255&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_TYPE" Name="subtype-id" Label="Type"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;70&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;true&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_CHECKIN_COMMENTS" Name="vc-checkin-comments" Label="Version Check In Comments"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;-1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Memo&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_CHECKIN_DATE" Name="vc-checkin-date" Label="Version Check In Date"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Date&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_CHECKIN_TIME" Name="vc-checkin-time" Label="Version Check In Time"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_CHECKIN_USER_NAME" Name="vc-checkin-user-name" Label="Version Checked In By"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;60&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;UsersList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_COMMENTS" Name="vc-comments" Label="Version Comments"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;-1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Memo&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_DATE" Name="vc-date" Label="Version Date"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Date&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_VERSION_NUMBER" Name="vc-version-number" Label="Version Number"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_USER_NAME" Name="check-out-user-name" Label="Version Owner"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;255&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;UsersList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_STATUS" Name="vc-status" Label="Version Status"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;20&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;List-Id&gt;170&lt;/List-Id&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;LookupList&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;true&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;true&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_VC_TIME" Name="vc-time" Label="Version Time"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;true&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_TIMEOUT" Name="timeout"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;5&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_TEXT_SYNC" Name="text-sync"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;1&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;String&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&#160;&#160;&#160;&#160;&lt;Field PhysicalName="TS_TEST_VER_STAMP" Name="test-ver-stamp"&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Size&gt;10&lt;/Size&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;History&gt;false&lt;/History&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Required&gt;false&lt;/Required&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;System&gt;true&lt;/System&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Type&gt;Number&lt;/Type&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Verify&gt;false&lt;/Verify&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Virtual&gt;false&lt;/Virtual&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Active&gt;false&lt;/Active&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Editable&gt;false&lt;/Editable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Filterable&gt;false&lt;/Filterable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Groupable&gt;false&lt;/Groupable&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;SupportsMultivalue&gt;false&lt;/SupportsMultivalue&gt;
+&#160;&#160;&#160;&#160;&lt;/Field&gt;
+&lt;/Fields&gt;
+
+</pre><a name="seealsobookmark"></a>
+                </div>
+                <div id="nonscrollingpagefooter">
+                    <br />
+                </div>
+            </div>
+            <p>&#160;</p>
+            <!--        hr width="100%" size="4" align="center" padding-bottom="0" style="clear:both" /> -->
+            <div class="float">
+            </div>
+        </div>
+        <div class="footer">
+            <MadCap:conditionalText data-mc-conditions="_rsc_Conditions.Footer">
+                <div class="roundcorners">
+                    <table style="border: none; margin-left: auto;       margin-right: auto;  width: 60%; margin-bottom: 0em">
+                        <tr>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="http://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/software/alm-software-development-testing/try-now" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank" title="ALM on Twitter" alt="ALM on Twitter"><img src="../../../Resources/Images/_rsc_Twitter_blue.png" style="width: 20px;height: 20px;" /></a><a href="https://www.linkedin.com/groups/4855477/profile" target="_blank" title="ALM Customer Forum on LinkedIn" alt="ALM Customer Forum on LinkedIn" data-mc-conditions="Project_Conditions.Removed">&#160;&#160;&#160;<img src="../../../Resources/Images/_rsc_Linkedin_blue.png" style="width: 20px;height: 20px;" data-mc-conditions="Project_Conditions.Removed" /></a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]?subject=Feedback on [%=_rscC_Basic_Variables._rsc_Book_Title%] ([%=_rscC_Basic_Variables._rsc_Product_Name%] [%=_rscC_Basic_Variables._rsc_Product_Version%])" title="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+        </p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_rsc_Conditions.Footer">Send Documentation Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;"><div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a></div><div style="text-align:left"><!-- Localizable --><p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p><p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p><!-- Localizable --><hr /><p>Send us an email with the following information:</p><!-- Localizable --><div id="hp-feedbackBody"><br /><br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div><p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0073E7;">docteam@microfocus.com</a></p><!-- Localizable --><hr /></div></div><div style="display:none;" id="hp-feedback-variables" productName="ALM REST API Reference (Technical Preview)" productVersion="12.5x" commentsEmailAddress="docteam@microfocus.com" productAcronym="ALM" topicTitle="GET customization entity subtype fields XML" skinLine1="ALM 12.5x REST API Reference (Technical Preview)" skinLine2="">&#160;
+		<p style="display:none;"><script src="../../../Resources/MasterPages/_rsc_Feedback.js"></script></p></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/software/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                        </tr>
+                    </table>
+                    <table class="no_lines" style="border-top:1px solid #B9B8BB;  width:80%; margin-left: auto; margin-right: auto;  ">
+                        <tr>
+                            <td style="vertical-align: middle; font-size: .65em; text-align: center;direction: ltr;">Last updated <span class="_rscC_Basic_Variables_rsc_LastUpdatedDate">January 18, 2018</span>&#160;|&#160;<a href="../../../Resources/MasterPages/_rsc_Legal_Notices.htm#1">© <span class="_rscC_Basic_Variables_rsc_Copyright_Date_Range">2002 - 2018</span>&#160;<span class="_rscB_Branding_Variables_rsc_Copyright_Name">EntIT Software LLC</span></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </MadCap:conditionalText>
+            <p style="visibility:hidden"> <![CDATA[ ]]></p>
+            <p><a href="../../../Resources/MasterPages/_rsc_HTML5_bannerTitle.htm" style="visibility: hidden;"></a><a href="../../../Resources/MasterPages/_rsc_aboutSearch.htm" style="visibility: hidden;"></a>
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>CreateUserEx Method</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="SACLIENTLib~SAapi~CreateUserEx"/>
+    <meta name="Description" content="Creates a new user and retrieves the user properties." />
+    <meta name="Microsoft.Help.TocParent" content="SACLIENTLib~SAapi_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Site Administration API Type Library 12.50 and later</div>
+        <div id="PageTitle"><div id="PageTitleText">CreateUserEx Method</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic7.html">SAapi Object</a>
+ : CreateUserEx Method</td></tr></table></div>
+    
+    
+<div id="UserNamePopupContent" class="PopupContent">
+The user name defined in the ALM database.
+</div>
+<div id="FullNamePopupContent" class="PopupContent">
+The full name of the user.
+</div>
+<div id="EmailPopupContent" class="PopupContent">
+The new user email.
+</div>
+<div id="PhonePopupContent" class="PopupContent">
+The new user phone.
+</div>
+<div id="DescriptionPopupContent" class="PopupContent">
+The new user description.
+</div>
+<div id="passwordPopupContent" class="PopupContent">
+The user's password.
+</div>
+<div id="domainAuthPopupContent" class="PopupContent">
+<p>The distinguished name (DN) of the user in the LDAP server.&nbsp;ALM uses the DN&nbsp;to locate the user in the LDAP server and&nbsp;and perform authentication.</p>
+
+<p>Example of a distinguished name:</p>uid=emmaw,ou=qc,dc=mercury,dc=com<br />
+
+<p></p>
+</div>
+
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Creates a new user and retrieves the user properties.</div></div>
+            <div class="SectionHeading" id="syntaxSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Syntax</span></div><div id="syntaxSectionContent" class="SectionContent"><div class=LanguageSpecific id=Syntax_VB><table class="syntaxtable" width="100%" cellpadding="0" cellspacing="0"><tr><th>Visual Basic</th></tr><tr><td><pre>Public Function CreateUserEx( _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="UserNamePopupLink" data-popupcontentsource="#UserNamePopupContent" data-popupshowevent="click mouseenter">UserName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="FullNamePopupLink" data-popupcontentsource="#FullNamePopupContent" data-popupshowevent="click mouseenter">FullName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="EmailPopupLink" data-popupcontentsource="#EmailPopupContent" data-popupshowevent="click mouseenter">Email</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PhonePopupLink" data-popupcontentsource="#PhonePopupContent" data-popupshowevent="click mouseenter">Phone</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DescriptionPopupLink" data-popupcontentsource="#DescriptionPopupContent" data-popupshowevent="click mouseenter">Description</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="passwordPopupLink" data-popupcontentsource="#passwordPopupContent" data-popupshowevent="click mouseenter">password</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="domainAuthPopupLink" data-popupcontentsource="#domainAuthPopupContent" data-popupshowevent="click mouseenter">domainAuth</a></i> As String _
+) As String</pre></tr></table></div></div>
+            <div class="SectionHeading" id="parametersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Parameters</span></div><div id="parametersSectionContent" class="SectionContent"><dl>
+<dt><I>UserName</I></dt>
+<dd>The user name defined in the ALM database.</dd>
+<dt><I>FullName</I></dt>
+<dd>The full name of the user.</dd>
+<dt><I>Email</I></dt>
+<dd>The new user email.</dd>
+<dt><I>Phone</I></dt>
+<dd>The new user phone.</dd>
+<dt><I>Description</I></dt>
+<dd>The new user description.</dd>
+<dt><I>password</I></dt>
+<dd>The user's password.</dd>
+<dt><I>domainAuth</I></dt>
+<dd><p>The distinguished name (DN) of the user in the LDAP server.&nbsp;ALM uses the DN&nbsp;to locate the user in the LDAP server and&nbsp;and perform authentication.</p>
+
+<p>Example of a distinguished name:</p>uid=emmaw,ou=qc,dc=mercury,dc=com<br />
+
+<p></p></dd>
+</dl></div>
+            <div class="SectionHeading" id="returnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Type</span></div><div id="returnsSectionContent" class="SectionContent"><div class="ReturnsContent"><p>On success, returns an XML string containing the user properties.</p></div></div>
+            
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Value Details</span></div><div id="remarksSectionContent" class="SectionContent">The properties of the <strong>CreateUser</strong> XML return string:
+
+<p></p>
+
+<ul>
+    <li><b>USER_ID</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The new user ID number.</li>
+
+    <li><b>USER_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;- &nbsp;&nbsp;&nbsp;&nbsp;The user name.</li>
+
+    <li><b>ACC_IS_ACTIVE</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;For internal use.</li>
+
+    <li><b>FULL_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The full name of the user.</li>
+
+    <li><strong>LAST_UPDATE</strong> - For internal use.</li>
+
+    <li><strong>USERS_VERSION</strong> - For internal use.</li>
+
+    <li><strong>US_REPORT_ROLE</strong> - For internal use.</li>
+
+    <li><b>DOMAIN_ID</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;For internal use.</li>
+
+    <li><b>DOMAIN_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;For internal use.</li>
+
+    <li><b>EMAIL</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The email of the user.</li>
+
+    <li><b>USER_PASSWORD</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The encryption of the user password.</li>
+
+    <li><b>DESCRIPTION</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The description of the user.</li>
+
+    <li><b>PHONE_NUMBER</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The phone number of the user.</li>
+
+    <li><strong>US_DOM_AUTH</strong>&nbsp; - Domain name for use with LDAP&nbsp;authorization.</li>
+</ul>
+
+<p></p></div>
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Value Example</span></div><div id="remarksSectionContent" class="SectionContent"><p>&lt;?xml version="1.0"?&gt;<br />
+&lt;CreateUser&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;USER_ID&gt;253&lt;/USER_ID&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;USER_NAME&gt;alex_td&lt;/USER_NAME&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;ACC_IS_ACTIVE&gt;Y&lt;/ACC_IS_ACTIVE&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;FULL_NAME&gt;Alex Dashevsky&lt;/FULL_NAME&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;LAST_UPDATE&gt;1228211811130&lt;/LAST_UPDATE&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;USERS_VERSION&gt;1228211811130&lt;/USERS_VERSION&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;US_REPORT_ROLE&gt;0&lt;/US_REPORT_ROLE&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;EMAIL&gt;alex_td@abc.com&lt;/EMAIL&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;USER_PASSWORD&gt;460831&lt;/USER_PASSWORD&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;DESCRIPTION&gt;QualityCenter_Demo&lt;/DESCRIPTION&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;PHONE_NUMBER&gt;301-3432778&lt;/PHONE_NUMBER&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;US_DOM_AUTH&gt;&lt;/US_DOM_AUTH&gt;<br />
+&lt;/CreateUser&gt;<br /></p></div>
+            
+            
+            
+            <div class="SectionHeading" id="exampleSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Example</span></div><div id="exampleSectionContent" class="SectionContent"><div class="FilteredContentVisual Basic">
+    
+	<div class="TabContainer">
+	    <ul>
+	        <li><a href="#TabContent-9f1d1ee3-d345-4ad7-90a2-ba1ba7ddaffc">Example (Visual Basic)</a></li>
+	    </ul>
+	    <div id="TabContent-9f1d1ee3-d345-4ad7-90a2-ba1ba7ddaffc" class="FilteredContent"><pre><span style="color: #0000FF; ">Private</span> <span style="color: #0000FF; ">Sub</span> CreateUserEx() 
+<span style="color: #008000; ">'CreateUser Example 
+</span>    <span style="color: #0000FF; ">Dim</span> sReply <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+    sReply = m_SAClient.CreateUserEx _ 
+        (<span style="color: #800000; ">&quot;alex_td&quot;</span>, <span style="color: #800000; ">&quot;Alex Dashevsky&quot;</span>, _ 
+        <span style="color: #800000; ">&quot;alex_td@abc.com&quot;</span>, <span style="color: #800000; ">&quot;301-3432778&quot;</span>, _ 
+        <span style="color: #800000; ">&quot;QualityCenter_Demo&quot;</span>, _ 
+        <span style="color: #800000; ">&quot;alexPassword&quot;</span>, <span style="color: #800000; ">&quot;uid=emmaw,ou=qc,dc=mercury,dc=com&quot;</span>) 
+    Debug.Print sReply 
+    <span style="color: #0000FF; ">MsgBox</span> sReply 
+  
+<span style="color: #0000FF; ">End Sub</span> </pre></div>
+	</div>
+</div>
+</div>
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic7.html">SAapi Object</a>
+&nbsp;|&nbsp;<a href="topic8.html">SAapi Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Site Administration API  Documentation Feedback: CreateUserEx Method">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

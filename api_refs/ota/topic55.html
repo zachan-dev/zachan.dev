@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Example: Setting Up Assets and Relations</title>
+    <meta name="Title" content="Example: Setting Up Assets and Relations"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="For an explanation of this example, see Understanding the Code Example." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="{35E2A3BD-E96A-4DEF-BFC1-7A90AC448BDE}"/>
+    <meta name="Microsoft.Help.TocParent" content="{D239F6A6-70D6-4D41-8A90-9AA6C1C3FAB2}"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Example: Setting Up Assets and Relations</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <p>For an explanation of this example, see <a href="topic54.html" data-auto-update-caption="true">Understanding the Code Example</a>.</p>
+
+<div class="FilteredContentCS">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Example Title</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+Private Sub RunSetupDemo_Click()
+    
+     
+    Dim TreeMgr As TreeManager
+    Dim oRoot As SubjectNode, folder As SubjectNode
+    
+    <span style="COLOR: #800000">'tdc is a TDConnection after logon to a project.
+</span>    Set TreeMgr = tdc.TreeManager
+    Set oRoot = TreeMgr.TreeRoot(<span style="COLOR: #800000">"Subject"</span>)
+    Set folder = oRoot.AddNode(<span style="COLOR: #800000">"newFolder1"</span>)
+
+    Dim rFac As QCResourceFolderFactory
+    Set rFac = tdc.QCResourceFolderFactory
+    Dim rF As QCResourceFolder
+    Set rF = rFac.Root
+
+    ERIDemo folder, rF
+    
+    
+End Sub
+
+Sub ERIDemo(testFolder As SubjectNode, _
+            resourceFolder As QCResourceFolder)
+
+    Dim testFac As TestFactory
+    Set testFac = testFolder.TestFactory
+ 
+    <span style="COLOR: #800000">' Create test QueryAvailability.
+</span>    Dim QueryAvailability As Test
+    Set QueryAvailability = testFac.AddItem(<span style="COLOR: #800000">"QueryAvailability"</span>)
+    QueryAvailability.Type = <span style="COLOR: #800000">"MYTYPE"</span>
+    QueryAvailability.Post
+    
+    <span style="COLOR: #800000">' Create test IssueTicket.
+</span>    Dim IssueTicket As Test
+    Set IssueTicket = testFac.AddItem(<span style="COLOR: #800000">"IssueTicket"</span>)
+    IssueTicket.Type = <span style="COLOR: #800000">"MYTYPE"</span>
+    IssueTicket.Post
+    
+    <span style="COLOR: #800000">' Create user assets representing the subunits
+</span>    <span style="COLOR: #800000">' (TestActions)of test IssueTicket.
+</span>    Dim userAsset1 As userAsset
+    Dim userAsset2 As userAsset
+    Set userAsset1 = _
+        CreateUserAsset _
+            (IssueTicket, <span style="COLOR: #800000">"Authenticate"</span>, <span style="COLOR: #800000">"Subunit 1 of IssueTicket"</span>)
+    Set userAsset2 = _
+        CreateUserAsset _
+            (IssueTicket, <span style="COLOR: #800000">"LaunchJob"</span>, <span style="COLOR: #800000">"Subunit 2 of IssueTicket"</span>)
+      
+    <span style="COLOR: #800000">' Create asset repository items representing the subunits'</span> files.
+    Dim ari1 As AssetRepositoryItem
+    Dim ari2 As AssetRepositoryItem
+    Set ari1 = CreateARI(userAsset1, <span style="COLOR: #800000">"AuthenticateFiles"</span>, 1)
+    Set ari2 = CreateARI(userAsset2, <span style="COLOR: #800000">"LaunchJobFiles"</span>, 1)
+    
+    <span style="COLOR: #800000">' Upload the files for the asset repository items to the
+</span>    <span style="COLOR: #800000">' project repository.
+</span>    <span style="COLOR: #800000">' Because the files are part of a test, we must use the
+</span>    <span style="COLOR: #800000">' test'</span>s ExtendedStorage <span style="COLOR: #0000ff">object</span> to perform the upload.
+    Dim extStorage As ExtendedStorage
+    Set extStorage = IssueTicket.ExtendedStorage
+    extStorage.ClientPath = <span style="COLOR: #800000">"C:\temp"</span>
+    extStorage.Save <span style="COLOR: #800000">"AuthenticateFiles, LaunchJobFiles"</span>, True
+       
+    <span style="COLOR: #800000">' Link test QueryAvailability to subunit Authenticate of test IssueTicket.
+</span>    <span style="COLOR: #800000">' The relation has no condition because it is relevant for all
+</span>    <span style="COLOR: #800000">' types of download.
+</span>    Dim relation1 As AssetRelation
+    Set relation1 = _
+    CreateAssetRelation(QueryAvailability, _
+                        userAsset1.ID, _
+                        <span style="COLOR: #800000">"USER_ASSETS"</span>, 1, <span style="COLOR: #800000">""</span>)
+    
+    <span style="COLOR: #800000">' Create a resource to hold the run-time library.
+</span>    Dim resourceFactory As QCResourceFactory
+    Dim resource As QCResource
+    Set resourceFactory = resourceFolder.QCResourceFactory
+    Set resource = _
+        resourceFactory.AddItem _
+            (<span style="COLOR: #800000">"Resource for running QueryAvailability"</span>)
+    resource.ResourceType = <span style="COLOR: #800000">"MYTYPE test RTL"</span>
+    resource.Post
+    
+    <span style="COLOR: #800000">' Upload the resource file.
+</span>    Dim resourceStorage As IResourceStorage
+    resource.FileName = <span style="COLOR: #800000">"rtl.dll"</span>
+    resource.Post
+    Set resourceStorage = resource
+    resourceStorage.UploadResource <span style="COLOR: #800000">"C:\temp"</span>, True
+     
+    <span style="COLOR: #800000">' Create the relation to the resource from QueryAvailability.
+</span>    <span style="COLOR: #800000">' The resource is needed only when running the test,
+</span>    <span style="COLOR: #800000">' and not when editing it, so
+</span>    <span style="COLOR: #800000">' we add a condition '</span>RUN<span style="COLOR: #800000">' to the relation.
+</span>    Dim relation2 As AssetRelation
+    Set relation2 = CreateAssetRelation _
+                    (QueryAvailability, resource.ID, _
+                    <span style="COLOR: #800000">"RESOURCES"</span>, 2, <span style="COLOR: #800000">"RUN"</span>)
+     
+End Sub
+
+Function CreateAssetRelation _
+       (owner As IBaseField, _
+        relatedId As Integer, _
+        relatedType As String, _
+        iOrder As Integer, _
+        condition As String) As AssetRelation
+    
+    <span style="COLOR: #800000">' Creates an asset relation with a specified order and
+</span>    <span style="COLOR: #800000">' condition between two given entities.
+</span>    Dim supportRelations As ISupportAssetRelations
+    Dim relationFactory As AssetRelationFactory
+    Dim relation As AssetRelation
+    
+    Set supportRelations = owner
+    Set relationFactory = supportRelations.AssetRelationFactory
+    Set relation = relationFactory.AddItem(Null)
+    
+    <span style="COLOR: #800000">' The related ID and related type define uniquely the related entity.
+</span>    <span style="COLOR: #800000">' The related type should be the table name of one of the entities
+</span>    <span style="COLOR: #800000">' that supports relations.
+</span>    relation.Field(<span style="COLOR: #800000">"ASR_RELATED_ID"</span>) = relatedId
+    relation.Field(<span style="COLOR: #800000">"ASR_RELATED_TYPE"</span>) = relatedType
+    relation.Field(<span style="COLOR: #800000">"ASR_ORDER"</span>) = iOrder
+    
+    <span style="COLOR: #800000">' The condition field is optional.
+</span>    <span style="COLOR: #800000">' If it is not defined, a relation is always used when downloading.
+</span>    If condition &lt;&gt; <span style="COLOR: #800000">""</span> Then relation.Field(<span style="COLOR: #800000">"ASR_CONDITION"</span>) = condition
+    relation.Post
+    Set CreateAssetRelation = relation
+End Function
+
+
+Function CreateARI _
+        (owner As IBaseField, sPath As String, iFilter As Integer) _
+        As AssetRepositoryItem
+        
+    <span style="COLOR: #800000">' Creates an asset repository item with a specified path
+</span>    <span style="COLOR: #800000">' and filter and owned by a given entity.
+</span>    Dim supportAri As ISupportAssetRepositoryItems
+    Dim ariFactory As AssetRepositoryItemFactory
+    Dim ari As AssetRepositoryItem
+    
+    Set supportAri = owner
+    Set ariFactory = supportAri.AssetRepositoryItemFactory
+    Set ari = ariFactory.AddItem(Null)
+    ari.Field(<span style="COLOR: #800000">"ARI_PATH"</span>) = sPath
+    ari.Field(<span style="COLOR: #800000">"ARI_FILTER"</span>) = iFilter
+    ari.Post
+    Set CreateARI = ari
+End Function
+
+Function CreateUserAsset _
+    (owner As IBaseField, _
+    name As String, _
+    Descript As String) As userAsset
+    <span style="COLOR: #800000">' Creates a user asset with a specified name and
+</span>    <span style="COLOR: #800000">' description and owned by a given entity.
+</span>    Dim supportAssets As ISupportAssets
+    Dim userAssetFactory As userAssetFactory
+    Dim userAsset As userAsset
+    Set supportAssets = owner
+    Set userAssetFactory = supportAssets.userAssetFactory
+    Set userAsset = userAssetFactory.AddItem(Null)
+    userAsset.Field(<span style="COLOR: #800000">"UAS_NAME"</span>) = name
+    userAsset.Field(<span style="COLOR: #800000">"UAS_DESC"</span>) = Descript
+    userAsset.Field(<span style="COLOR: #800000">"UAS_DISPLAY_TYPE"</span>) = <span style="COLOR: #800000">"Test"</span>
+    userAsset.Post
+    Set CreateUserAsset = userAsset
+End Function
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Example: Setting Up Assets and Relations">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Get the child release folders of a specified release folder</title>
+    <meta name="Title" content="Get the child release folders of a specified release folder"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub FindReleaseFoldersByParentId()
+
+' Get the child release folders of a specified release folder
+
+    Dim folderFactory As ReleaseFolderFactory
+    Dim RelFolderFilter As TDFilter
+    Dim listOf" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="fdd89f02-ba17-4575-96e5-683de8870738"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Get the child release folders of a specified release folder</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-a2364648-48a3-4a27-94c8-a29e164da3f6"></a></li>
+    </ul>
+
+    <div id="TabContent-a2364648-48a3-4a27-94c8-a29e164da3f6" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> FindReleaseFoldersByParentId()
+
+<span style="COLOR: #008000">' Get the child release folders of a specified release folder
+</span>
+    <span style="COLOR: #0000ff">Dim</span> folderFactory <span style="COLOR: #0000ff">As</span> ReleaseFolderFactory
+    <span style="COLOR: #0000ff">Dim</span> RelFolderFilter <span style="COLOR: #0000ff">As</span> TDFilter
+    <span style="COLOR: #0000ff">Dim</span> listOfFolders <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> tempFolder <span style="COLOR: #0000ff">As</span> ReleaseFolder
+
+    <span style="COLOR: #008000">' Get ReleaseFolderFactory from TDConnection.
+</span>    <span style="COLOR: #0000ff">Set</span> folderFactory = tdc.ReleaseFolderFactory
+    <span style="COLOR: #0000ff">Set</span> RelFolderFilter = folderFactory.Filter
+
+    <span style="COLOR: #008000">'Get the list of the ReleaseFolders under the
+</span>    <span style="COLOR: #008000">' specified node.
+</span>    <span style="COLOR: #0000ff">Dim</span> ParentId <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Long</span>
+    ParentId = 102
+    RelFolderFilter.Filter(<span style="COLOR: #800000">"RF_PARENT_ID"</span>) = ParentId
+    <span style="COLOR: #0000ff">Set</span> listOfFolders = RelFolderFilter.NewList
+
+
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> tempFolder <span style="COLOR: #0000ff">In</span> listOfFolders
+        Debug.Print tempFolder.Name
+    <span style="COLOR: #0000ff">Next</span>
+
+
+    <span style="COLOR: #0000ff">Set</span> folderFactory = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> RelFolderFilter = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> listOfFolders = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> tempFolder = <span style="COLOR: #0000ff">Nothing</span>
+
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Get the child release folders of a specified release folder">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

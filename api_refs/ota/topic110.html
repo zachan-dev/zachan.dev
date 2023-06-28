@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Create an alert on a defect</title>
+    <meta name="Title" content="Create an alert on a defect"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub CreateAlert()
+
+' Create an Alert on a defect
+
+    Dim Alrt As Alert
+    Dim Alrtable As IAlertable2
+    
+    Dim bFact As BugFactory
+    Dim bList As IList
+    Dim bg As Bug
+    Dim bID A" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="199e301b-8822-44a7-a5a7-8bf97e47e4d4"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Create an alert on a defect</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-b66384f3-582f-43a7-a076-a92be07eb106"></a></li>
+    </ul>
+
+    <div id="TabContent-b66384f3-582f-43a7-a076-a92be07eb106" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> CreateAlert()
+
+<span style="COLOR: #008000">' Create an Alert on a defect
+</span>
+    <span style="COLOR: #0000ff">Dim</span> Alrt <span style="COLOR: #0000ff">As</span> Alert
+    <span style="COLOR: #0000ff">Dim</span> Alrtable <span style="COLOR: #0000ff">As</span> IAlertable2
+    
+    <span style="COLOR: #0000ff">Dim</span> bFact <span style="COLOR: #0000ff">As</span> BugFactory
+    <span style="COLOR: #0000ff">Dim</span> bList <span style="COLOR: #0000ff">As</span> IList
+    <span style="COLOR: #0000ff">Dim</span> bg <span style="COLOR: #0000ff">As</span> Bug
+    <span style="COLOR: #0000ff">Dim</span> bID <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    
+    <span style="COLOR: #008000">' Get the first bug in the project.
+</span>    <span style="COLOR: #0000ff">Set</span> bFact = tdc.BugFactory
+    <span style="COLOR: #0000ff">Set</span> bList = bFact.NewList(<span style="COLOR: #800000">""</span>)
+    <span style="COLOR: #0000ff">Set</span> bg = bList(1)
+    bID = bg.ID
+    
+    <span style="COLOR: #008000">' Cast the Bug object to IAlertable2.
+</span>    <span style="COLOR: #0000ff">Set</span> Alrtable = bg
+    
+    <span style="COLOR: #008000">'Create the alert.
+</span>    <span style="COLOR: #0000ff">Set</span> Alrt = Alrtable.AddAlert(<span style="COLOR: #800000">"BUG"</span>, bID, <span style="COLOR: #800000">"Bug Alert"</span>, <span style="COLOR: #800000">"Take care of this."</span>)
+ 
+    <span style="COLOR: #0000ff">With</span> Alrt
+        Debug.Print .Subject &amp; <span style="COLOR: #800000">", "</span> &amp; .AlertType &amp; <span style="COLOR: #800000">", "</span> &amp; .Unread
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Create an alert on a defect">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

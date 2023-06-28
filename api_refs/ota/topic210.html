@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Get attributes of TestSets and Test instances</title>
+    <meta name="Title" content="Get attributes of TestSets and Test instances"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub TSTestProperties(theTestSet As TestSet)
+
+' Get attributes of TestSets and TSTests
+    
+    Dim i%
+
+' Get the test set attributes.
+    With theTestSet
+        Debug.Print &quot;Test Set ID = &quot; &amp;a" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="da79acca-5095-433d-9f65-95b1f2a41eb4"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Get attributes of TestSets and Test instances</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-ad4aa715-bb05-4561-b126-75eb399a7e18"></a></li>
+    </ul>
+
+    <div id="TabContent-ad4aa715-bb05-4561-b126-75eb399a7e18" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> TSTestProperties(theTestSet <span style="COLOR: #0000ff">As</span> TestSet)
+
+<span style="COLOR: #008000">' Get attributes of TestSets and TSTests
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> i%
+
+<span style="COLOR: #008000">' Get the test set attributes.
+</span>    <span style="COLOR: #0000ff">With</span> theTestSet
+        Debug.Print <span style="COLOR: #800000">"Test Set ID = "</span> &amp; .ID &amp; <span style="COLOR: #800000">", Name = "</span> _
+            &amp; .Name &amp; <span style="COLOR: #800000">",  TestSetFolder = "</span> &amp; .TestSetFolder
+<span style="COLOR: #008000">'Output:
+'Test Set ID = 14, Name = OTA_TS_2, TestSetFolder = OTA_Demo_TestSets
+</span>    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span> <span style="COLOR: #008000">' theTestSet
+</span>    
+<span style="COLOR: #008000">' Get the TSTest factory and list of TSTests.
+</span>    <span style="COLOR: #0000ff">Dim</span> TSTestFact <span style="COLOR: #0000ff">as</span> TSTestFactory
+    <span style="COLOR: #0000ff">Dim</span> TestSetTestsList <span style="COLOR: #0000ff">as</span> List
+    
+    <span style="COLOR: #0000ff">Set</span> TSTestFact = theTestSet.TSTestFactory
+    <span style="COLOR: #0000ff">Set</span> TestSetTestsList = TSTestFact.NewList(<span style="COLOR: #800000">""</span>)
+    
+    <span style="COLOR: #0000ff">Dim</span> sID$, theTSTest <span style="COLOR: #0000ff">As</span> TSTest
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> theTSTest <span style="COLOR: #0000ff">In</span> TestSetTestsList
+        i = i + 1: <span style="COLOR: #0000ff">If</span> i &gt; 10 <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+        <span style="COLOR: #0000ff">With</span> theTSTest
+            Debug.Print <span style="COLOR: #800000">"TSTest Name: "</span> &amp; .Name, <span style="COLOR: #800000">"ID: "</span> &amp; .ID, _
+                <span style="COLOR: #800000">"TestID: "</span> &amp; .testID, <span style="COLOR: #800000">"Instance: "</span> &amp; .instance
+            sID = theTSTest.ID <span style="COLOR: #008000">'Save the last ID
+</span>        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">Next</span> theTSTest
+<span style="COLOR: #008000">'Output:
+'TSTest Name: [1]TEST1.1.1.1_A ID: 95~1 TestID: 95 Instance: 1
+'TSTest Name: [1]TEST1.1.1.1_B ID: 96~1 TestID: 96 Instance: 1
+'TSTest Name: [2]TEST1.1.1.1_A ID: 95~2 TestID: 95 Instance: 2
+'TSTest Name: [2]TEST1.1.1.1_B ID: 96~2 TestID: 96 Instance: 2
+'TSTest Name: [3]TEST1.1.1.1_A ID: 95~3 TestID: 95 Instance: 3
+</span>
+    Debug.Print <span style="COLOR: #800000">"Last TSTestID = "</span> &amp; sID
+<span style="COLOR: #008000">'Output:
+'Last TSTestID = 95~3
+</span>
+<span style="COLOR: #008000">' Set a specific TSTest by the ID.
+</span>    <span style="COLOR: #0000ff">Set</span> theTSTest = TSTestFact.Item(sID)
+    <span style="COLOR: #0000ff">With</span> theTSTest
+    Debug.Print <span style="COLOR: #800000">"TSTest by ID Name: "</span> &amp; .Name, <span style="COLOR: #800000">"ID: "</span> &amp; .ID, _
+        <span style="COLOR: #800000">"TestID: "</span> &amp; .testID, <span style="COLOR: #800000">"Instance: "</span> &amp; .instance
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+<span style="COLOR: #008000">'Output:
+'TSTest by ID Name: [3]TEST1.1.1.1_A ID: 95~3 TestID: 95 Instance: 3
+</span>
+<span style="COLOR: #0000ff">Exit Sub</span>
+
+
+<span style="COLOR: #008000">' #Region "TestSetLinks"
+</span><span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> TestSetLinks()
+
+<span style="COLOR: #008000">' Get a list of links from a Test Set
+</span>
+    <span style="COLOR: #0000ff">Dim</span> TSetFact <span style="COLOR: #0000ff">As</span> TestSetFactory
+    <span style="COLOR: #0000ff">Dim</span> tsFact <span style="COLOR: #0000ff">As</span> TSTestFactory
+    <span style="COLOR: #0000ff">Dim</span> aTestSet <span style="COLOR: #0000ff">As</span> TestSet
+    <span style="COLOR: #0000ff">Dim</span> tsSets <span style="COLOR: #0000ff">As</span> List, Links <span style="COLOR: #0000ff">As</span> List
+    
+<span style="COLOR: #008000">' Get the list of test sets from the test set factory.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> TSetFact = tdc.TestSetFactory
+    <span style="COLOR: #0000ff">Set</span> tsSets = TSetFact.NewList(<span style="COLOR: #800000">""</span>)
+<span style="COLOR: #008000">' Get any test set (for demonstration purposes).
+</span>    <span style="COLOR: #0000ff">Set</span> aTestSet = tsSets.Item(1)
+    Debug.Print aTestSet.ID, aTestSet.Name
+<span style="COLOR: #008000">' To get the BugLinkFactory,
+' cast the test set variable to an ILinkable
+' reference. Note that implemented interfaces are
+' not directly accessible, so this won't work:
+'   Set LinkF = TestSet.BugLinkFactory
+'
+</span>    <span style="COLOR: #0000ff">Dim</span> linkableTestSet <span style="COLOR: #0000ff">As</span> ILinkable
+<span style="COLOR: #008000">' The cast:
+</span>    <span style="COLOR: #0000ff">Set</span> linkableTestSet = aTestSet
+<span style="COLOR: #008000">' Get the factory from the iLinkable reference.
+</span>    <span style="COLOR: #0000ff">Dim</span> linkF <span style="COLOR: #0000ff">As</span> LinkFactory
+    <span style="COLOR: #0000ff">Set</span> linkF = linkableTestSet.BugLinkFactory
+<span style="COLOR: #008000">' Now use the factory.
+'
+'-------------------------------------
+' Application code.
+</span>    <span style="COLOR: #0000ff">Set</span> Links = linkF.NewList(<span style="COLOR: #800000">""</span>)
+    Debug.Print Links.Count
+    <span style="COLOR: #008000">' etc.
+'-------------------------------------
+</span><span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Get attributes of TestSets and Test instances">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

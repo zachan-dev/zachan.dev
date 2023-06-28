@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--QCCR1K4344-->
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="ALM_REST_API_TP.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Example Application">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>UpdateExample</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+            <link rel="icon" type="image/x-icon" href="https://software.microfocus.com/favicon.ico" />
+		
+			html, body 
+			{
+				height: 100%;
+				margin-right:2em;
+			}
+						
+			.wrapper 
+			{
+				min-height: 100%!important;
+				margin: 0 auto -10em; 
+				padding-left: 0.2em
+						
+			}
+
+			footer, .float 
+			{
+				height: 10em; 
+				margin:0;
+				clear: both;
+			}
+
+			div.roundcorners
+			{
+				-moz-border-radius-bottomleft: 1em;
+				border-bottom-left-radius: 1em;
+				-moz-border-radius-topright: 1em;
+				border-top-right-radius: 1em;
+				background-color: #f2f2f2 ;
+				width: 100% !important;
+				padding: 0em;		 
+			}
+			
+			p.footerlink
+			{
+				font-size: .75em;
+				line-height: 1em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom:.75em;
+			}
+			
+			p.footerlink a,
+			p.footerlink a:visited
+			{
+				color: #5a5a5a;
+			}
+			
+			p.footerlink a:hover
+			{
+				color: #000000!important;
+			}
+						
+			p.spacer
+			{
+				font-size: .5em;
+				line-height: .5em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom: .5em;
+			}
+	
+    </style>
+        <link href="../../Resources/Stylesheets/API_TechPreview.css" rel="stylesheet" />
+        <script src="../../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../../ALM_REST_API_TP.html#REST_API_Tech_Preview/CodeSamples/UpdateExample.htm">Open topic with navigation</a>
+        </p>
+        <div class="wrapper">
+            <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span><a class="MCBreadcrumbsLink" href="../General/Example_Application.html">Example Application</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">UpdateExample</span>
+            </div>
+            <h1>UpdateExample</h1><pre xml:space="preserve">&#160;
+package org.hp.qc.web.restapi.docexamples.docexamples;
+
+import org.hp.qc.web.restapi.docexamples.docexamples.infrastructure.*;
+import org.hp.qc.web.restapi.docexamples.docexamples.infrastructure.Entity.Fields.Field;
+
+import java.net.HttpURLConnection;
+        import java.util.HashMap;
+        import java.util.List;
+        import java.util.Map;
+
+/**
+ * This example shows how to change data on already existing entities.
+ *
+ */
+
+public class UpdateExample {
+
+    public static void main(String[] args) throws Exception {
+        new UpdateExample().updateExample(
+                "http://" + Constants.HOST + ":" +
+                        Constants.PORT + "/qcbin",
+                Constants.DOMAIN,
+                Constants.PROJECT,
+                Constants.USERNAME,
+                Constants.PASSWORD);
+    }
+
+    public void updateExample(final String serverUrl, final String domain,
+                              final String project, String username, String password)
+            throws Exception {
+
+        RestConnector con =
+                RestConnector.getInstance().init(
+                        new HashMap&lt;String, String&gt;(),
+                        serverUrl,
+                        domain,
+                        project);
+
+        AuthenticateLoginLogoutExample login =
+                new AuthenticateLoginLogoutExample();
+        CreateDeleteExample writeExample = new CreateDeleteExample();
+        UpdateExample example = new UpdateExample();
+
+        // We use the example code of how to login to handle our login
+        // in this example.
+        boolean loginResponse = login.login(username, password);
+        Assert.assertTrue("login failed", loginResponse);
+
+        String exampleEntityType = "requirement";
+        String requirementsUrl =
+                con.buildEntityCollectionUrl(exampleEntityType);
+
+        // We use the example code of creating an entity to make an entity
+        // for us to update.
+        String newEntityToUpdateUrl =
+                writeExample.createEntity(requirementsUrl,
+                        Constants.entityToPostXml);
+
+        //create xml that when posted modifies the entity
+        String updatedField = "request-note";
+        String updatedFieldInitialUpdateValue = "I'm an updated value";
+
+        String updatedEntityXml =
+                generateSingleFieldUpdateXml(updatedField,
+                        updatedFieldInitialUpdateValue);
+
+        //checkout (or lock) the entity - depending on versioning support.
+        boolean isVersioned = Constants.isVersioned(exampleEntityType,
+                domain, project);
+        String preModificationXml = null;
+        if (isVersioned) {
+
+            // Note that we selected an entity that supports versioning
+            // on a project that supports versioning. Would fail otherwise.
+            String firstCheckoutComment = "check out comment1";
+            preModificationXml = example.checkout(newEntityToUpdateUrl,
+                    firstCheckoutComment, -1);
+            Assert.assertTrue(
+                    "checkout comment missing",
+                    preModificationXml.contains(Constants.generateFieldXml(
+                            "vc-checkout-comments",
+                            firstCheckoutComment)));
+        }
+
+        else {
+
+            preModificationXml = example.lock(newEntityToUpdateUrl);
+        }
+
+        Assert.assertTrue(
+                "posted field value not found",
+                preModificationXml.contains(Constants.entityToPostFieldXml));
+
+        //update the entity
+        String put = example.update(newEntityToUpdateUrl,
+                updatedEntityXml).toString();
+        Assert.assertTrue("posted field value not found",
+                put.contains(Constants.generateFieldXml(
+                        updatedField,
+                        updatedFieldInitialUpdateValue)));
+
+        //checkin (or unlock) the entity - depending on versioning support.
+        if (isVersioned) {
+
+            String firstCheckinComment = "check in comment1";
+            boolean checkin = example.checkin(newEntityToUpdateUrl,
+                    firstCheckinComment, false);
+            Assert.assertTrue("checkin failed", checkin);
+        }
+
+        else {
+
+            boolean unlock = example.unlock(newEntityToUpdateUrl);
+            Assert.assertTrue("unlock failed", unlock);
+        }
+
+        /*
+
+         now we do the same thing again, only this time with marshalling
+
+         */
+
+        //checkout
+        if (isVersioned) {
+
+            preModificationXml =
+                    example.checkout(newEntityToUpdateUrl, "check out comment2", -1);
+        }
+
+        else {
+
+            preModificationXml = example.lock(newEntityToUpdateUrl);
+        }
+
+        Assert.assertTrue(
+                "posted field value not found",
+                preModificationXml.contains(Constants.generateFieldXml(
+                        updatedField,
+                        updatedFieldInitialUpdateValue)));
+
+        //create update string
+        String updatedFieldUpdatedValue =
+                "updating via marshal / unmarhsalling";
+        String entityUpdateXml =
+                generateSingleFieldUpdateXml(updatedField,
+                        updatedFieldUpdatedValue);
+        // Create entity (we could have instantiated the entity
+        // and used methods to set the new values
+        Entity e =
+                EntityMarshallingUtils.marshal(Entity.class, entityUpdateXml);
+
+        // Do update operation
+        String updateResponseEntityXml =
+                example.update(
+                        newEntityToUpdateUrl,
+                        EntityMarshallingUtils.unmarshal(Entity.class, e)).toString();
+
+        // Entity xml from server -&gt; entity class instance
+        Entity updateResponseEntity =
+                EntityMarshallingUtils.marshal(Entity.class,
+                        updateResponseEntityXml);
+
+        boolean updatedValueEncountered = false;
+        List&lt;Field&gt; fields = updateResponseEntity.getFields().getField();
+        for (Field field : fields) {
+            if (field.getName().equals(updatedField)) {
+                Assert.assertEquals(
+                        "updated value different than expected",
+                        field.getValue().iterator().next(),
+                        updatedFieldUpdatedValue);
+                updatedValueEncountered = true;
+                break;
+            }
+        }
+        Assert.assertTrue("did not encounter updated value",
+                updatedValueEncountered);
+
+        //checkin
+        if (isVersioned) {
+            boolean checkin =
+                    example.checkin(newEntityToUpdateUrl, null, false);
+            Assert.assertTrue("checkin failed", checkin);
+        }
+
+        else {
+
+            boolean unlock = example.unlock(newEntityToUpdateUrl);
+            Assert.assertTrue("unlock failed", unlock);
+        }
+
+        //cleanup
+        writeExample.deleteEntity(newEntityToUpdateUrl);
+        login.logout();
+
+    }
+
+    private RestConnector con;
+
+    /**
+     * @param
+     */
+    public UpdateExample() {
+        con = RestConnector.getInstance();
+    }
+
+    /**
+     * @param entityUrl
+     *            of the entity to checkout
+     * @param comment
+     *            to keep on the server side of why you checked this entity out
+     * @param version
+     *            to checkout or -1 if you want the latest
+     * @return a string description of the checked out entity
+     * @throws Exception
+     */
+    public String checkout(String entityUrl, String comment, int version)
+            throws Exception {
+
+        String commentXmlBit =
+                ((comment != null) &amp;&amp; !comment.isEmpty()
+                        ? "&lt;Comment&gt;" + comment + "&lt;/Comment&gt;"
+                        : "");
+
+        String versionXmlBit =
+                (version &gt;= 0 ? "&lt;Version&gt;" + version + "&lt;/Version&gt;" : "");
+
+        String xmlData = commentXmlBit + versionXmlBit;
+
+        String xml =
+                xmlData.isEmpty() ? "" : "&lt;CheckOutParameters&gt;"
+                        + xmlData + "&lt;/CheckOutParameters&gt;";
+
+        Map&lt;String, String&gt; requestHeaders = new HashMap&lt;String, String&gt;();
+        requestHeaders.put("Content-Type", "application/xml");
+        requestHeaders.put("Accept", "application/xml");
+
+        Response response =
+                con.httpPost(entityUrl + "/versions/check-out", xml.getBytes(), requestHeaders);
+
+        if (response.getStatusCode() != HttpURLConnection.HTTP_OK) {
+            throw new Exception(response.toString());
+        }
+
+        return response.toString();
+    }
+
+    /**
+     * @param entityUrl
+     *            to checkin
+     * @param comment
+     *            this will override any comment you made in the checkout
+     * @param overrideLastVersion
+     *            this will override last version
+     * @return true if operation is successful
+     * @throws Exception
+     */
+    public boolean checkin(String entityUrl, String comment,
+                           boolean overrideLastVersion) throws Exception {
+
+        final String commentXmlBit =
+                ((comment != null) &amp;&amp; !comment.isEmpty()
+                        ? "&lt;Comment&gt;" + comment + "&lt;/Comment&gt;"
+                        : "");
+
+        final String overrideLastVersionBit =
+                overrideLastVersion == true ?
+                        "&lt;OverrideLastVersion&gt;true&lt;/OverrideLastVersion&gt;" : "" ;
+
+        final String xmlData = commentXmlBit + overrideLastVersionBit;
+
+        final String xml =
+                xmlData.isEmpty() ? "" : "&lt;CheckInParameters&gt;" + xmlData + "&lt;/CheckInParameters&gt;";
+
+        final Map&lt;String, String&gt; requestHeaders =
+                new HashMap&lt;String, String&gt;();
+        requestHeaders.put("Content-Type", "application/xml");
+
+        //just execute a post operation on the checkin resource of your entity
+        Response response =
+                con.httpPost(entityUrl + "/versions/check-in", xml.getBytes(),
+                        requestHeaders);
+
+        boolean ret = response.getStatusCode() == HttpURLConnection.HTTP_OK;
+
+        return ret;
+    }
+
+    /**
+     * @param entityUrl
+     *            to lock
+     * @return the locked entity xml
+     * @throws Exception
+     */
+    public String lock(String entityUrl) throws Exception {
+
+        Map&lt;String, String&gt; requestHeaders = new HashMap&lt;String, String&gt;();
+        requestHeaders.put("Accept", "application/xml");
+
+        Response lockResponse = con.httpPost(entityUrl + "/lock", null,
+                requestHeaders);
+        if (lockResponse.getStatusCode() != HttpURLConnection.HTTP_OK) {
+            throw new Exception(lockResponse.toString());
+        }
+        return lockResponse.toString();
+    }
+
+    /**
+     * @param entityUrl
+     *            to unlock
+     * @return
+     * @throws Exception
+     */
+    public boolean unlock(String entityUrl) throws Exception {
+
+        return con.httpDelete(entityUrl + "/lock", null).getStatusCode() == HttpURLConnection.HTTP_OK;
+    }
+
+    /**
+     * @param field
+     *            the field name to update
+     * @param value
+     *            the new value to use
+     * @return an xml that can be used to update an entity's single
+     *          given field to given value
+     */
+    private static String generateSingleFieldUpdateXml(String field,
+                                                       String value) {
+        return "&lt;Entity Type=\"requirement\"&gt;&lt;Fields&gt;"
+                + Constants.generateFieldXml(field, value)
+                + "&lt;/Fields&gt;&lt;/Entity&gt;";
+    }
+
+    /**
+     * @param entityUrl
+     *            to update
+     * @param updatedEntityXml
+     *            New entity descripion. Only lists updated fields.
+     *            Unmentioned fields will not change.
+     *
+     * @return xml description of the entity on the serverside, after update.
+     * @throws Exception
+     */
+    private Response update(String entityUrl, String updatedEntityXml)
+            throws Exception {
+
+        Map&lt;String, String&gt; requestHeaders = new HashMap&lt;String, String&gt;();
+        requestHeaders.put("Content-Type", "application/xml");
+        requestHeaders.put("Accept", "application/xml");
+
+        Response putResponse =
+                con.httpPut(entityUrl, updatedEntityXml.getBytes(), requestHeaders);
+
+        if (putResponse.getStatusCode() != HttpURLConnection.HTTP_OK) {
+            throw new Exception(putResponse.toString());
+        }
+
+        return putResponse;
+    }
+
+}
+
+
+		</pre>
+            <p>&#160;</p>
+            <!--        hr width="100%" size="4" align="center" padding-bottom="0" style="clear:both" /> -->
+            <div class="float">
+            </div>
+        </div>
+        <div class="footer">
+            <MadCap:conditionalText data-mc-conditions="_rsc_Conditions.Footer">
+                <div class="roundcorners">
+                    <table style="border: none; margin-left: auto;       margin-right: auto;  width: 60%; margin-bottom: 0em">
+                        <tr>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="http://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/software/alm-software-development-testing/try-now" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank" title="ALM on Twitter" alt="ALM on Twitter"><img src="../../Resources/Images/_rsc_Twitter_blue.png" style="width: 20px;height: 20px;" /></a><a href="https://www.linkedin.com/groups/4855477/profile" target="_blank" title="ALM Customer Forum on LinkedIn" alt="ALM Customer Forum on LinkedIn" data-mc-conditions="Project_Conditions.Removed">&#160;&#160;&#160;<img src="../../Resources/Images/_rsc_Linkedin_blue.png" style="width: 20px;height: 20px;" data-mc-conditions="Project_Conditions.Removed" /></a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]?subject=Feedback on [%=_rscC_Basic_Variables._rsc_Book_Title%] ([%=_rscC_Basic_Variables._rsc_Product_Name%] [%=_rscC_Basic_Variables._rsc_Product_Version%])" title="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+        </p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_rsc_Conditions.Footer">Send Documentation Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;"><div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a></div><div style="text-align:left"><!-- Localizable --><p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p><p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p><!-- Localizable --><hr /><p>Send us an email with the following information:</p><!-- Localizable --><div id="hp-feedbackBody"><br /><br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div><p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0073E7;">docteam@microfocus.com</a></p><!-- Localizable --><hr /></div></div><div style="display:none;" id="hp-feedback-variables" productName="ALM REST API Reference (Technical Preview)" productVersion="12.5x" commentsEmailAddress="docteam@microfocus.com" productAcronym="ALM" topicTitle="UpdateExample" skinLine1="ALM 12.5x REST API Reference (Technical Preview)" skinLine2="">&#160;
+		<p style="display:none;"><script src="../../Resources/MasterPages/_rsc_Feedback.js"></script></p></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/software/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                        </tr>
+                    </table>
+                    <table class="no_lines" style="border-top:1px solid #B9B8BB;  width:80%; margin-left: auto; margin-right: auto;  ">
+                        <tr>
+                            <td style="vertical-align: middle; font-size: .65em; text-align: center;direction: ltr;">Last updated <span class="_rscC_Basic_Variables_rsc_LastUpdatedDate">January 18, 2018</span>&#160;|&#160;<a href="../../Resources/MasterPages/_rsc_Legal_Notices.htm#1">© <span class="_rscC_Basic_Variables_rsc_Copyright_Date_Range">2002 - 2018</span>&#160;<span class="_rscB_Branding_Variables_rsc_Copyright_Name">EntIT Software LLC</span></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </MadCap:conditionalText>
+            <p style="visibility:hidden"> <![CDATA[ ]]></p>
+            <p><a href="../../Resources/MasterPages/_rsc_HTML5_bannerTitle.htm" style="visibility: hidden;"></a><a href="../../Resources/MasterPages/_rsc_aboutSearch.htm" style="visibility: hidden;"></a>
+            </p>
+        </div>
+    </body>
+</html>

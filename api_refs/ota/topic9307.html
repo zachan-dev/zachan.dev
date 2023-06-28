@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>BuildTrendGraph Method</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="TDAPIOLELib~TestFactory~BuildTrendGraph"/>
+    <meta name="Description" content="Creates graph that shows the number of defect status changes over time." />
+    <meta name="Microsoft.Help.TocParent" content="TDAPIOLELib~TestFactory_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Type Library Version 12.5x</div>
+        <div id="PageTitle"><div id="PageTitleText">BuildTrendGraph Method</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic9297.html">TestFactory Object</a>
+ : BuildTrendGraph Method</td></tr></table></div>
+    
+    
+<div id="GroupByFieldPopupContent" class="PopupContent">
+A database field representing the name of the graph y-axis. All data in the graph is grouped according to this parameter.
+</div>
+<div id="SumOfFieldPopupContent" class="PopupContent">
+For internal use.
+</div>
+<div id="MaxColsPopupContent" class="PopupContent">
+The maximum number of groups represented in the graph. A value of 0 signifies no limit.
+</div>
+<div id="FilterPopupContent" class="PopupContent">
+A <a href="topic9080.html">TDFilter Object</a> that sets the filter criteria for the graph.
+</div>
+<div id="FRDatePopupContent" class="PopupContent">
+Only items with a change date after this date are reflected in the graph.
+</div>
+<div id="ForceRefreshPopupContent" class="PopupContent">
+<p>Determines whether or not to refresh graph data on the server side. Possible values are:</p>
+
+<ul>
+    <li>TRUE - The graph is refreshed.</li>
+
+    <li>FALSE - The graph is not refreshed</li>
+</ul>
+</div>
+<div id="ShowFullPathPopupContent" class="PopupContent">
+<p>Group instances by name or show individually based on location (path), in the created graph.</p>
+
+<p>A value of True shows the full path of each instance, thus treating them as unique.</p>
+</div>
+
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Creates graph that shows the number of defect status changes over time.</div></div>
+            <div class="SectionHeading" id="syntaxSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Syntax</span></div><div id="syntaxSectionContent" class="SectionContent"><div class=LanguageSpecific id=Syntax_VB><table class="syntaxtable" width="100%" cellpadding="0" cellspacing="0"><tr><th>Visual Basic</th></tr><tr><td><pre><pre><span style="color: #0000FF; ">Public</span> <span style="color: #0000FF; ">Function</span> BuildTrendGraph( _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="GroupByFieldPopupLink" data-popupcontentsource="#GroupByFieldPopupContent" data-popupshowevent="click mouseenter">GroupByField</a></i> <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> = <span style="color: #800000; ">&quot;&quot;</span>, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="SumOfFieldPopupLink" data-popupcontentsource="#SumOfFieldPopupContent" data-popupshowevent="click mouseenter">SumOfField</a></i> <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> = <span style="color: #800000; ">&quot;&quot;</span>, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="MaxColsPopupLink" data-popupcontentsource="#MaxColsPopupContent" data-popupshowevent="click mouseenter">MaxCols</a></i> <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">Long</span> = 0, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="FilterPopupLink" data-popupcontentsource="#FilterPopupContent" data-popupshowevent="click mouseenter">Filter</a></i> <span style="color: #0000FF; ">As</span> Variant, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="FRDatePopupLink" data-popupcontentsource="#FRDatePopupContent" data-popupshowevent="click mouseenter">FRDate</a></i> <span style="color: #0000FF; ">As</span> Variant, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="ForceRefreshPopupLink" data-popupcontentsource="#ForceRefreshPopupContent" data-popupshowevent="click mouseenter">ForceRefresh</a></i> <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">Boolean</span> = <span style="color: #0000FF; ">False</span>, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="ShowFullPathPopupLink" data-popupcontentsource="#ShowFullPathPopupContent" data-popupshowevent="click mouseenter">ShowFullPath</a></i> <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">Boolean</span> = <span style="color: #0000FF; ">False</span> _
+) <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">Object</span></pre></pre></tr></table></div></div>
+            <div class="SectionHeading" id="parametersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Parameters</span></div><div id="parametersSectionContent" class="SectionContent"><dl>
+<dt><I>GroupByField</I></dt>
+<dd>A database field representing the name of the graph y-axis. All data in the graph is grouped according to this parameter.</dd>
+<dt><I>SumOfField</I></dt>
+<dd>For internal use.</dd>
+<dt><I>MaxCols</I></dt>
+<dd>The maximum number of groups represented in the graph. A value of 0 signifies no limit.</dd>
+<dt><I>Filter</I></dt>
+<dd>A <a href="topic9080.html">TDFilter Object</a> that sets the filter criteria for the graph.</dd>
+<dt><I>FRDate</I></dt>
+<dd>Only items with a change date after this date are reflected in the graph.</dd>
+<dt><I>ForceRefresh</I></dt>
+<dd><p>Determines whether or not to refresh graph data on the server side. Possible values are:</p>
+
+<ul>
+    <li>TRUE - The graph is refreshed.</li>
+
+    <li>FALSE - The graph is not refreshed</li>
+</ul></dd>
+<dt><I>ShowFullPath</I></dt>
+<dd><p>Group instances by name or show individually based on location (path), in the created graph.</p>
+
+<p>A value of True shows the full path of each instance, thus treating them as unique.</p></dd>
+</dl></div>
+            <div class="SectionHeading" id="returnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Type</span></div><div id="returnsSectionContent" class="SectionContent"><div class="ReturnsContent">A new <a href="topic2206.html">Graph Object</a>.</div></div>
+            
+            
+            
+            
+            
+            
+            
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic9297.html">TestFactory Object</a>
+&nbsp;|&nbsp;<a href="topic9298.html">TestFactory Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference  Documentation Feedback: BuildTrendGraph Method (TestFactory)">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

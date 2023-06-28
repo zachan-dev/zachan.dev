@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>td Schema</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.db.2012.css" data-mshv2-stylesheet="/stylesheets/dx.db.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.db.2012.mshv1.css" />
+    <script src="script/dx.db.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.db.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="Project Data Tables_db~s-td"/>
+    <meta name="Description" content="Schema for ALM Project Databases" />
+    
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.dx.db.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">td Schema</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic25.html">Project Data Tables Database</a>
+ : td Schema</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Schema for ALM Project Databases</div></div>
+            <div class="SectionHeading" id="tablesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Tables</span></div><div id="tablesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th NOWRAP>Table</th><th>Description</th></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic28.html">td.ACTIONS</A></td><td class="DescriptionCell">Used internally by ALM to manage some aspects of user actions performed from the user interface.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic31.html">td.ALERT</A></td><td class="DescriptionCell">Information for managing automatic alerts and user-defined follow-ups.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic36.html">td.ALL_LISTS</A></td><td class="DescriptionCell">Test Plan folders.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic40.html">td.ANALYSIS_ITEM_FILES</A></td><td class="DescriptionCell">For internal use. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic44.html">td.ANALYSIS_ITEM_FOLDERS</A></td><td class="DescriptionCell">Folders for reports and graphs.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic49.html">td.ANALYSIS_ITEM_RESULTS</A></td><td class="DescriptionCell">For internal use. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic53.html">td.ANALYSIS_ITEMS</A></td><td class="DescriptionCell">Reports and graphs.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic57.html">td.ANALYSIS_SEGMENTS</A></td><td class="DescriptionCell">For internal use. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic61.html">td.ASSET_RELATIONS</A></td><td class="DescriptionCell">A link table between two entities that support asset relations. These entities may come from one of the following tables: <a href="topic122.html">BPM_MODELS</a>, <a href="topic126.html">BPM_PATHS</a>, <a href="topic161.html">COMPONENT</a>, <a href="topic482.html">RESOURCES</a>, <a href="topic564.html">TEST</a>, <a href="topic575.html">TEST_CONFIGS</a>, or <a href="topic615.html">USER_ASSETS</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic67.html">td.ASSET_REPOSITORY_ITEMS</A></td><td class="DescriptionCell">The files or folders that are owned by an asset.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic74.html">td.AUDIT_LOG</A></td><td class="DescriptionCell">Events on which history is recorded.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic78.html">td.AUDIT_PROPERTIES</A></td><td class="DescriptionCell">Details of the changes recorded in the AUDIT_LOG table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic82.html">td.BASELINE_ROOTS</A></td><td class="DescriptionCell">The root folder from which a baseline is created.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic86.html">td.BASELINES</A></td><td class="DescriptionCell">Baseline records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic88.html">td.BP_ITER_PARAM</A></td><td class="DescriptionCell">The design-time value of a business component parameter for a specific iteration.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic92.html">td.BP_ITERATION</A></td><td class="DescriptionCell">The order of component iterations in a test.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic95.html">td.BP_PARAM</A></td><td class="DescriptionCell">Associates a parameter to a test and component.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic99.html">td.BP_STEP_PARAM</A></td><td class="DescriptionCell">Values of business component parameters with relation to run steps.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic103.html">td.BPM_ELEMENT_TYPES</A></td><td class="DescriptionCell">Types of elements that can be used in business process modeling.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic105.html">td.BPM_ELEMENTS</A></td><td class="DescriptionCell">Parts of a business process model.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic109.html">td.BPM_GRAPH_RESULTS</A></td><td class="DescriptionCell">Cached records of graphs of business modeling status.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic113.html">td.BPM_LINKS</A></td><td class="DescriptionCell">Associations between a representative requirement of a model entity (model, path, element) and other requirements.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic118.html">td.BPM_MODEL_FOLDERS</A></td><td class="DescriptionCell">Business process model folders.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic122.html">td.BPM_MODELS</A></td><td class="DescriptionCell">Business process models.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic126.html">td.BPM_PATHS</A></td><td class="DescriptionCell">Paths in a business process model.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic130.html">td.BPTA_CHANGE_STATUS</A></td><td class="DescriptionCell">For internal use by QuickTest Professional. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic132.html">td.BPTEST_TO_COMPONENTS</A></td><td class="DescriptionCell">Iteration settings and order of execution for Business Process Components&nbsp;in the context of the design tests that contain them.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic137.html">td.BUG</A></td><td class="DescriptionCell">Information about defects.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic145.html">td.BUG_MULTIVALUE</A></td><td class="DescriptionCell">Values&nbsp;for defect a columns of a record where&nbsp;the column has more than one value.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic148.html">td.BUG_TOKENS</A></td><td class="DescriptionCell">An&nbsp;associative table linking defects and tokens.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic151.html">td.BUSINESS_VIEWS</A></td><td class="DescriptionCell">Business views on which graphs or reports can be built.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic155.html">td.CACHE</A></td><td class="DescriptionCell">The Cache table is for internal use. Do not change data.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic156.html">td.COMMENTS</A></td><td class="DescriptionCell">For internal use.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic157.html">td.COMMON_SETTINGS</A></td><td class="DescriptionCell">User settings and third party data.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic159.html">td.COMPARISON_NODES</A></td><td class="DescriptionCell">For internal use. This table contains temporary data used by the ALM user interface.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic160.html">td.COMPARISONS</A></td><td class="DescriptionCell">For internal use. This table contains temporary data used by the ALM user interface.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic161.html">td.COMPONENT</A></td><td class="DescriptionCell">Business Process Components.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic165.html">td.COMPONENT_FOLDER</A></td><td class="DescriptionCell">Business Process Component Folders.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic169.html">td.COMPONENT_MULTIVALUE</A></td><td class="DescriptionCell">Values for defect a columns of a record where the column has more than one value.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic172.html">td.COMPONENT_STEP</A></td><td class="DescriptionCell">Steps of Business Process Components.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic175.html">td.COMPONENT_STEP_PARAMS</A></td><td class="DescriptionCell">An&nbsp;associative table linking the Business Process Component steps to their parameters.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic179.html">td.CONFIGURATION_COVERAGE</A></td><td class="DescriptionCell">An&nbsp;associative table linking requirement coverage&nbsp;by a Test to the Test Configurations that cover the requirement.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic184.html">td.CONTENT_DEFINITIONS</A></td><td class="DescriptionCell">Sub-groups used for KPI calculations.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic187.html">td.CONTENT_PARTS</A></td><td class="DescriptionCell">Data about the entity types in a library or content definition entities.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic191.html">td.CONTENT_ROOTS</A></td><td class="DescriptionCell">The root folders of content definitions.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic194.html">td.CRITERION_COVERAGE</A></td><td class="DescriptionCell">A requirement coverage by a test criterion.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic199.html">td.CROS_REF</A></td><td class="DescriptionCell">Attachments.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic202.html">td.CYCL_FOLD</A></td><td class="DescriptionCell">The test set folder tree.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic206.html">td.CYCLE</A></td><td class="DescriptionCell">Test sets.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic211.html">td.CYCLE_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values&nbsp;for test set records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic214.html">td.DASHBOARD_FOLDERS</A></td><td class="DescriptionCell">Folders for dashboard pages.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic219.html">td.DASHBOARD_PAGE_ITEMS</A></td><td class="DescriptionCell">The items for display on a dashboard page.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic223.html">td.DASHBOARD_PAGES</A></td><td class="DescriptionCell">Dashboard pages.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic227.html">td.DATACONST</A></td><td class="DescriptionCell">Global project constants.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic229.html">td.DELETED_ASSETS_INFO</A></td><td class="DescriptionCell">Records of deleted assets for tracing.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic233.html">td.DESSTEPS</A></td><td class="DescriptionCell">A single step of a Design Test in Test Plan module.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic237.html">td.ENTITY_ATTRIBUTES</A></td><td class="DescriptionCell">Attributes of an entity.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic239.html">td.ENTITY_SUBTYPE_ATTRIBUTES</A></td><td class="DescriptionCell">Attributes for a specific entity subtype.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic241.html">td.ENTITY_SUBTYPE_FIELDS</A></td><td class="DescriptionCell">Fields that do not necessarily belong to all subtypes of an entity.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic243.html">td.ENTITY_SUBTYPE_RELATIONS</A></td><td class="DescriptionCell">Relations between subtypes of related entities.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic245.html">td.ENTITY_SUBTYPES</A></td><td class="DescriptionCell">Subtypes of standard entities.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic247.html">td.ENVIRONMENTS</A></td><td class="DescriptionCell">Testing environments.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic251.html">td.EVENT_LOG</A></td><td class="DescriptionCell">Records of events.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic253.html">td.EXTENSIONS</A></td><td class="DescriptionCell">The ALM extensions that are enabled for this project.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic255.html">td.FACETS</A></td><td class="DescriptionCell">Metadata on an implementation of a business component.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic258.html">td.FAVORITE_FOLDERS</A></td><td class="DescriptionCell">Folders for Favorite items.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic263.html">td.FAVORITES</A></td><td class="DescriptionCell">User-defined settings that are saved for reuse.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic267.html">td.FORM_LAYOUT_FIELDS</A></td><td class="DescriptionCell"><p>For internal use by HP.</p></td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic268.html">td.FORM_LAYOUTS</A></td><td class="DescriptionCell"><p>For internal use by HP.</p></td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic269.html">td.FRAMEWORK_PARAM</A></td><td class="DescriptionCell">Parameters for Business Process Components.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic273.html">td.GROUPS</A></td><td class="DescriptionCell">Groups of users with a common set of privileges.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic277.html">td.HOST_GROUP</A></td><td class="DescriptionCell">Logical groups of computers.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic280.html">td.HOST_IN_GROUP</A></td><td class="DescriptionCell">An associative table that links HOSTS with HOST_GROUPs.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic281.html">td.HOSTS</A></td><td class="DescriptionCell">Computers on the network.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic284.html">td.LIB_MULTIVALUE</A></td><td class="DescriptionCell">For internal use. Do not change&nbsp;data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic287.html">td.LIBRARIES</A></td><td class="DescriptionCell">Libraries.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic290.html">td.LIBRARY_CLOSURE</A></td><td class="DescriptionCell">No longer in use. Retained for backward compatibility.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic291.html">td.LIBRARY_FOLDERS</A></td><td class="DescriptionCell">Library Folders.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic295.html">td.LIBRARY_MAPPINGS</A></td><td class="DescriptionCell">The mapping of individual items between libraries.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic300.html">td.LIBRARY_PARTS_DEFS</A></td><td class="DescriptionCell">The individual items in a library</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic304.html">td.LIBRARY_USED_BY</A></td><td class="DescriptionCell">Links to&nbsp;importers of Libraries.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic307.html">td.LINK</A></td><td class="DescriptionCell">Associations between defects and other entities.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic312.html">td.LINKED_TEMPLATE_ITEMS</A></td><td class="DescriptionCell">An association between project items and template items.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic315.html">td.LISTS</A></td><td class="DescriptionCell">System and custom lists and folder trees.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic320.html">td.LOCKS</A></td><td class="DescriptionCell">Locks to control access to the same item by different user sessions. For internal use. Do not change values in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic325.html">td.MAILCOND</A></td><td class="DescriptionCell">Rules for sending defect notifications to individual users.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic327.html">td.MAPPING_UPGRADE_LOG</A></td><td class="DescriptionCell">For future use.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic331.html">td.MODULES</A></td><td class="DescriptionCell">Permissions by group for accessing modules in the user interface.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic333.html">td.POLICY_ENFORCEMENT_STATUS</A></td><td class="DescriptionCell">The&nbsp;data required for applying customization between projects.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic335.html">td.PUBLIC_ENTITY_KEYS</A></td><td class="DescriptionCell">Permissions granted on public resources to users of the REST API that do not log on to ALM.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic337.html">td.QPM_KPI_BREAKDOWN_RESULTS</A></td><td class="DescriptionCell">KPI breakdown results.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic342.html">td.QPM_KPI_BREAKDOWN_TYPES</A></td><td class="DescriptionCell">KPI Breakdown Types.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic345.html">td.QPM_KPI_CALCULATION_RESULTS</A></td><td class="DescriptionCell">Results of KPI calculations.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic349.html">td.QPM_KPI_CALCULATIONS</A></td><td class="DescriptionCell">Status of KPI calculation jobs.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic352.html">td.QPM_KPI_DEN_DRILLDOWN</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic353.html">td.QPM_KPI_DEN_DRILLDOWN_EXT1</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic354.html">td.QPM_KPI_DEN_DRILLDOWN_EXT2</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic355.html">td.QPM_KPI_DEN_DRILLDOWN_EXT3</A></td><td class="DescriptionCell">For internal use.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic356.html">td.QPM_KPI_DEN_DRILLDOWN_PERS</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic357.html">td.QPM_KPI_MILESTONE_SCOPEITEM</A></td><td class="DescriptionCell">An association table between <a href="topic371.html">QPM_KPIS</a>&nbsp;and <a href="topic378.html">QPM_MILESTONE_SCOPEITEM.</a></td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic358.html">td.QPM_KPI_MULTIVALUE</A></td><td class="DescriptionCell">Values for defect a columns of a record where the column has more than one value.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic361.html">td.QPM_KPI_NUM_DRILLDOWN</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic362.html">td.QPM_KPI_NUM_DRILLDOWN_EXT1</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic363.html">td.QPM_KPI_NUM_DRILLDOWN_EXT2</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic364.html">td.QPM_KPI_NUM_DRILLDOWN_EXT3</A></td><td class="DescriptionCell">For internal use.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic365.html">td.QPM_KPI_NUM_DRILLDOWN_PERS</A></td><td class="DescriptionCell">For internal use by HP.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic366.html">td.QPM_KPI_TYPES</A></td><td class="DescriptionCell">Measurement definitions KPIs Entities are based on.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic371.html">td.QPM_KPIS</A></td><td class="DescriptionCell">KPIs based on <a href="topic366.html">QPM_KPI_TYPES</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic375.html">td.QPM_MILESTONE_MULTIVALUE</A></td><td class="DescriptionCell">Values for defect a columns of a record where the column has more than one value.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic378.html">td.QPM_MILESTONE_SCOPEITEM</A></td><td class="DescriptionCell">An association table between <a href="topic380.html">QPM_MILESTONES</a>&nbsp;and <a href="topic385.html">QPM_SCOPE_ITEM</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic380.html">td.QPM_MILESTONES</A></td><td class="DescriptionCell">Significant periods for quality measurements in the context of a <a href="topic420.html">RELEASE</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic385.html">td.QPM_SCOPE_ITEM</A></td><td class="DescriptionCell">Elements of the content of a <a href="topic420.html">RELEASE</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic388.html">td.QPM_SCOPE_ITEM_MULTIVALUE</A></td><td class="DescriptionCell">Values for defect a columns of a record where the column has more than one value.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic391.html">td.QPM_THRESHOLD_VALUES</A></td><td class="DescriptionCell">Limits of measured KPI values by date.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic394.html">td.RBT_CUSTOMIZATION</A></td><td class="DescriptionCell">Risk-based&nbsp;quality management&nbsp;settings.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic397.html">td.RBT_CUSTOMIZATION_ANSWERS</A></td><td class="DescriptionCell">Possible values for risk-based quality management criteria.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic400.html">td.RBT_CUSTOMIZATION_QUESTIONS</A></td><td class="DescriptionCell">Risk-based&nbsp;quality management&nbsp;criteria.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic402.html">td.RECENT_ITEMS</A></td><td class="DescriptionCell">For internal use.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic403.html">td.RELEASE_CYCLES</A></td><td class="DescriptionCell">Details of&nbsp;cycles.&nbsp;A release can contain a number of cycles.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic407.html">td.RELEASE_FOLDERS</A></td><td class="DescriptionCell">Folders for release records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic411.html">td.RELEASE_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values&nbsp;for&nbsp;release records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic414.html">td.RELEASECYCLE_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values for release cycle&nbsp;records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic417.html">td.RELEASEFOLDER_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values for release folder records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic420.html">td.RELEASES</A></td><td class="DescriptionCell">Information about a product release.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic424.html">td.REPORT_PROJECT_TEMPLATES</A></td><td class="DescriptionCell">For internal use. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic428.html">td.REPORT_TO_RPT_LINKS</A></td><td class="DescriptionCell">Association table between report configuration items and the report project templates they use.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic433.html">td.REPORT_USER_TEMPLATES</A></td><td class="DescriptionCell">For internal use. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic436.html">td.REQ</A></td><td class="DescriptionCell">Details of individual requirements and the structure of the requirements tree.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic445.html">td.REQ_COVER</A></td><td class="DescriptionCell">An&nbsp;associative table linking requirements to the tests that cover the requirements.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic450.html">td.REQ_CYCLES</A></td><td class="DescriptionCell">An&nbsp;associative table linking requirements to release cycles.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic454.html">td.REQ_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values&nbsp;for requirement records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic457.html">td.REQ_RELEASES</A></td><td class="DescriptionCell">An&nbsp;associative table linking requirements to releases.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic461.html">td.REQ_TRACE</A></td><td class="DescriptionCell">Associations&nbsp;between requirements.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic468.html">td.REQ_TYPE</A></td><td class="DescriptionCell">Types of requirements.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic471.html">td.REQ_TYPE_FIELD</A></td><td class="DescriptionCell">Specifies which fields are required for each requirement type.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic474.html">td.REQ_TYPE_HIER_RULES</A></td><td class="DescriptionCell">The hierarchy rules&nbsp;for requirement types&nbsp;in the requirement tree. For internal use. Do not change values in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic478.html">td.RESOURCE_FOLDERS</A></td><td class="DescriptionCell">Folders for resources.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic482.html">td.RESOURCES</A></td><td class="DescriptionCell">A&nbsp;file or folder stored in the ALM repository that is represented by&nbsp;a resource.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic485.html">td.RESOURCES_MULTIVALUE</A></td><td class="DescriptionCell">Values for defect a columns of a record where the column has more than one value.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic488.html">td.RESULTS</A></td><td class="DescriptionCell">The results of a RUN.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic491.html">td.ROUTE_TABLE_1</A></td><td class="DescriptionCell">For internal use by HP. Supports coverage analysis calculations. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic492.html">td.ROUTE_TABLE_2</A></td><td class="DescriptionCell">For internal use by HP. Supports coverage analysis calculations. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic493.html">td.RULES</A></td><td class="DescriptionCell">Conditions for generating automatic alerts.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic495.html">td.RUN</A></td><td class="DescriptionCell">Execution records for test instances.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic505.html">td.RUN_CRITERIA</A></td><td class="DescriptionCell">Instances of Test Criteria created when the associated Test Configuration is run.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic510.html">td.RUN_ITERATIONS</A></td><td class="DescriptionCell">Iterations of a test run.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic514.html">td.RUN_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values&nbsp;for run records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic517.html">td.RUNTIME_PARAM</A></td><td class="DescriptionCell">Parameters defined at design time for Business Process Tests.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic520.html">td.SEQUENCES</A></td><td class="DescriptionCell">A system table to manage IDs and other system numerators. Do not change values in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic522.html">td.SITE_ACTIONS</A></td><td class="DescriptionCell">Permissions&nbsp;of users of this project on actions on entities of a central project.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic524.html">td.SITE_ENTITIES</A></td><td class="DescriptionCell">Permissions&nbsp;of users of this project on entities of a central project.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic526.html">td.SITE_FIELD</A></td><td class="DescriptionCell">Permissions&nbsp;of users of this project on actions on fields&nbsp;entities of a central project. This table contains only permissions that are different from the defaults in <a href="topic524.html">SITE_ENTITIES.SIENT_DEFAULT_FIELD</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic528.html">td.SMART_REPOSITORY_LOGICAL_FILE</A></td><td class="DescriptionCell">For internal use by HP. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic533.html">td.SMART_REPOSITORY_PHYSICAL_FILE</A></td><td class="DescriptionCell">For internal use by HP. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic536.html">td.STEP</A></td><td class="DescriptionCell">Test steps performed during a test instance run.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic541.html">td.STEP_PARAMS</A></td><td class="DescriptionCell">The values of the parameters in the <a href="topic590.html">TEST_PARAMS Table</a>.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic545.html">td.SYSTEM_FIELD</A></td><td class="DescriptionCell">Meta-data about data fields in other tables. Stores settings from project entity customizations and system defaults.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic548.html">td.SYSTRANSLATE</A></td><td class="DescriptionCell">For backward compatibility. This table may be removed in future versions.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic550.html">td.TABLES</A></td><td class="DescriptionCell">Permissions by user group to change data.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic552.html">td.TASK_LOG_TYPE</A></td><td class="DescriptionCell">Severity levels for task log entries.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic554.html">td.TASK_STATE</A></td><td class="DescriptionCell">Status values for asynchronous tasks.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic556.html">td.TASKS</A></td><td class="DescriptionCell">Tracking of asynchronous tasks.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic559.html">td.TASKS_LOG</A></td><td class="DescriptionCell">Log of asynchronous tasks.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic562.html">td.TEMPORARY_DATA_FOOTPRINT</A></td><td class="DescriptionCell">This table is for internal use. Do not change data.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic564.html">td.TEST</A></td><td class="DescriptionCell">Details of the design test from the test&nbsp;plan module.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic575.html">td.TEST_CONFIGS</A></td><td class="DescriptionCell">The data to be used in the run of a Test.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic582.html">td.TEST_CRITERIA</A></td><td class="DescriptionCell">Items that can be used for coverage independently of the rest of the test.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic587.html">td.TEST_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values of test records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic590.html">td.TEST_PARAMS</A></td><td class="DescriptionCell">Parameters in design tests.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic593.html">td.TEST_VC_INFO</A></td><td class="DescriptionCell">Used internally by version control plug-in. Do not change values in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic595.html">td.TESTCYCL</A></td><td class="DescriptionCell">Instances of design tests in test sets.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic606.html">td.TESTCYCL_MULTIVALUE</A></td><td class="DescriptionCell">Multiple values of test cycle - test instance records.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic609.html">td.TO_ALERT</A></td><td class="DescriptionCell">For internal use. Do not change data in this table.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic610.html">td.TOKENS</A></td><td class="DescriptionCell">Assists in searching for similar defects.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic613.html">td.TRAN_RULES</A></td><td class="DescriptionCell">Permitted status changes per group.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic615.html">td.USER_ASSETS</A></td><td class="DescriptionCell">Entities of external tools of a type not known to ALM.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic619.html">td.USER_SETTINGS</A></td><td class="DescriptionCell"><span class="hs-buildflag-markup" data-build-flags="D9E9C928-BC1A-434C-B062-5417E6BCCD0E">User settings in a web client. This table is not in use with the standard ALM client. See the COMMON_SETTINGS table.</span></td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic623.html">td.USERS</A></td><td class="DescriptionCell">System users who can access this project.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic625.html">td.VER_CTRL</A></td><td class="DescriptionCell">Version control locking for Tests.</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic629.html">td.WORKSPACE_SHARES</A></td><td class="DescriptionCell">The WORKSPACE_SHARES Table is for internal use. Do not change data.</td></tr>
+</table></div>
+            <div class="SectionHeading" id="viewsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Views</span></div><div id="viewsSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th NOWRAP>View</th><th>Description</th></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic633.html">td.V_TESTSET_REQ_COVER</A></td><td class="DescriptionCell">&nbsp;</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic634.html">td.VF_FAVORITE_HAS_SHARES</A></td><td class="DescriptionCell">&nbsp;</td></tr>
+</table></div>
+            
+            
+            
+            
+            
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><h4 class=dxh4>Related Objects</h4><p><a href="topic25.html">Project Data Tables Database</a>
+</p>
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference  Documentation Feedback: td Schema">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

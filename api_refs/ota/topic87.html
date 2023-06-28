@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>New version of an attachment</title>
+    <meta name="Title" content="New version of an attachment"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+                
+  " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="bc626e25-87c6-479c-bac9-8e4beca883d8"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">New version of an attachment</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Function</span> NewVersionOfDefectAttachment(BugNum <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Long</span>) <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+
+<span style="COLOR: #008000">' Download an attachment, edit it, and upload new version
+</span>
+
+    <span style="COLOR: #0000ff">Dim</span> BugFact <span style="COLOR: #0000ff">As</span> BugFactory
+    <span style="COLOR: #0000ff">Dim</span> bugObj <span style="COLOR: #0000ff">As</span> Bug
+    <span style="COLOR: #0000ff">Dim</span> attachFact <span style="COLOR: #0000ff">As</span> AttachmentFactory
+    <span style="COLOR: #0000ff">Dim</span> attachObj <span style="COLOR: #0000ff">As</span> Attachment
+    <span style="COLOR: #0000ff">Dim</span> FilePath <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>, AttachmentName$
+    <span style="COLOR: #0000ff">Dim</span> rc
+    
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+    
+<span style="COLOR: #008000">' Get the bug factory from the TDConnection.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> BugFact = tdc.BugFactory
+<span style="COLOR: #008000">' Get a bug object.
+</span>    <span style="COLOR: #0000ff">Set</span> bugObj = BugFact.Item(BugNum)
+<span style="COLOR: #008000">' Get the bug attachment factory.
+</span>    <span style="COLOR: #0000ff">Set</span> attachFact = bugObj.Attachments
+    <span style="COLOR: #0000ff">Dim</span> lst <span style="COLOR: #0000ff">As</span> TDAPIOLELib.List
+    <span style="COLOR: #0000ff">Set</span> lst = attachFact.NewList(<span style="COLOR: #800000">""</span>)
+<span style="COLOR: #008000">' Find SampleAttachment.txt.
+</span>    <span style="COLOR: #0000ff">Dim</span> pos%, zeroName$, oneName$
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> attachObj <span style="COLOR: #0000ff">In</span> lst
+        <span style="COLOR: #008000">'For documentation purposes, demonstrate the effect of
+</span>        <span style="COLOR: #008000">'  the ViewFormat argument to Attachment.Name:
+</span>        zeroName = attachObj.name(0)
+        oneName = attachObj.name(1)
+        Debug.Print <span style="COLOR: #800000">"0: "</span> &amp; zeroName &amp; <span style="COLOR: #800000">"  1: "</span> &amp; oneName
+        <span style="COLOR: #008000">'0: BUG_1_SampleAttachment.txt  1: SampleAttachment.txt
+</span>        <span style="COLOR: #008000">'Wasn't that interesting? And now, back to the main
+</span>        <span style="COLOR: #008000">'  theme of this example.
+</span>        pos = <span style="COLOR: #0000ff">InStr</span>(attachObj.name, <span style="COLOR: #800000">"SampleAttachment.txt"</span>)
+        <span style="COLOR: #0000ff">If</span> pos &gt; 0 <span style="COLOR: #0000ff">Then</span>
+            AttachmentName = attachObj.name
+Debug.Print _
+<span style="COLOR: #800000">"The attachment name for SampleAttachment.txt is "</span> &amp; AttachmentName
+<span style="COLOR: #008000">' Output: The attachment name for SampleAttachment.txt is SampleAttachment.txt
+</span>            <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    <span style="COLOR: #0000ff">Next</span>
+    <span style="COLOR: #0000ff">Set</span> lst = <span style="COLOR: #0000ff">Nothing</span>
+<span style="COLOR: #008000">'-----------------------------------------
+'Use Attachment.Load to
+' get a local copy of the file.
+</span>    attachObj.Load <span style="COLOR: #0000ff">True</span>, FilePath
+    Debug.Print <span style="COLOR: #800000">"FilePath = "</span> &amp; FilePath
+<span style="COLOR: #008000">' Append the file name to the path.
+</span>    FilePath = FilePath &amp; <span style="COLOR: #800000">"\"</span> &amp; AttachmentName
+<span style="COLOR: #008000">' Make a change in the file.
+</span>    Open FilePath <span style="COLOR: #0000ff">For</span> Append <span style="COLOR: #0000ff">As</span> #1
+    <span style="COLOR: #0000ff">Print</span> #1, vbCrLf &amp; <span style="COLOR: #800000">"This is the emended version"</span>
+    Close #1
+<span style="COLOR: #008000">'-----------------------------------------
+'Use Attachment.Save to
+' save the emended version.
+</span>    attachObj.Save <span style="COLOR: #0000ff">True</span>
+    
+<span style="COLOR: #008000">' Modify the attachment description.
+</span>    attachObj.Description = <span style="COLOR: #800000">"Emended Bug 1 Sample Attachment"</span>
+<span style="COLOR: #008000">' Update the description in the project database.
+</span>    attachObj.Post
+    
+    NewVersionOfDefectAttachment = SUCCESS
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+    NewVersionOfDefectAttachment = FAILURE
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: New version of an attachment">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

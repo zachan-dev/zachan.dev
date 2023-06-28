@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>RestoreProjectEx Method</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="SACLIENTLib~SAapi~RestoreProjectEx"/>
+    <meta name="Description" content="Restores an existing project to a domain." />
+    <meta name="Microsoft.Help.TocParent" content="SACLIENTLib~SAapi_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Site Administration API Type Library 12.50 and later</div>
+        <div id="PageTitle"><div id="PageTitleText">RestoreProjectEx Method</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic7.html">SAapi Object</a>
+ : RestoreProjectEx Method</td></tr></table></div>
+    
+    
+<div id="DomainNamePopupContent" class="PopupContent">
+The logical group of projects in the ALM database.
+</div>
+<div id="ProjectNamePopupContent" class="PopupContent">
+The name of the project in the ALM database.
+</div>
+<div id="DbTypePopupContent" class="PopupContent">
+<p>The type of database. Use the following constants or their values:</p>
+
+<ul>
+    <li>SA_MSSQL_DB_TYPE (value: 2)</li>
+
+    <li>SA_ORACLE_DB_TYPE (value: 3)</li>
+</ul>
+</div>
+<div id="PhysicalDirectoryPopupContent" class="PopupContent">
+The location of the project's repository.
+</div>
+<div id="DbNamePopupContent" class="PopupContent">
+The database name.
+</div>
+<div id="DbServerNamePopupContent" class="PopupContent">
+The database server name.
+</div>
+<div id="ConnStrPopupContent" class="PopupContent">
+The JDBC connection string,&nbsp;for example:<br />
+jdbc:inetdae7://stamina:1433?charset=MS1252
+</div>
+<div id="DbUserPassPopupContent" class="PopupContent">
+Database user password.
+</div>
+<div id="PrIsActivePopupContent" class="PopupContent">
+Activate the project (Y/N).
+</div>
+<div id="PrHasVcsDbPopupContent" class="PopupContent">
+Is the project integrated with a version control system (Y/N).
+</div>
+<div id="SaqIsActivePopupContent" class="PopupContent">
+Activate Send All Qualified to send defect emails automatically (Y/N).
+</div>
+<div id="UserQuotaPopupContent" class="PopupContent">
+The maximum number of concurrent user connections. For no limit, set to -1.
+</div>
+<div id="VmRepositoryPopupContent" class="PopupContent">
+No longer in use. Pass empty string ("").
+</div>
+<div id="DescriptionPopupContent" class="PopupContent">
+Description of the project.
+</div>
+<div id="ProjectTypePopupContent" class="PopupContent">
+Pass the value "STANDARD".
+</div>
+<div id="PrIsTemplatePopupContent" class="PopupContent">
+<p>Pass true if this is a template project.</p>
+</div>
+<div id="ProjectUIDPopupContent" class="PopupContent">
+The project identifier, a GUID.
+</div>
+<div id="replaceProjectPopupContent" class="PopupContent">
+If replaceProject is true and if there is already a project with this ProjectUID, this action replaces the existing project.
+</div>
+
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Restores an existing project to a domain.</div></div>
+            <div class="SectionHeading" id="syntaxSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Syntax</span></div><div id="syntaxSectionContent" class="SectionContent"><div class=LanguageSpecific id=Syntax_VB><table class="syntaxtable" width="100%" cellpadding="0" cellspacing="0"><tr><th>Visual Basic</th></tr><tr><td><pre>Public Function RestoreProjectEx( _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DomainNamePopupLink" data-popupcontentsource="#DomainNamePopupContent" data-popupshowevent="click mouseenter">DomainName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="ProjectNamePopupLink" data-popupcontentsource="#ProjectNamePopupContent" data-popupshowevent="click mouseenter">ProjectName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DbTypePopupLink" data-popupcontentsource="#DbTypePopupContent" data-popupshowevent="click mouseenter">DbType</a></i> As Integer, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PhysicalDirectoryPopupLink" data-popupcontentsource="#PhysicalDirectoryPopupContent" data-popupshowevent="click mouseenter">PhysicalDirectory</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DbNamePopupLink" data-popupcontentsource="#DbNamePopupContent" data-popupshowevent="click mouseenter">DbName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DbServerNamePopupLink" data-popupcontentsource="#DbServerNamePopupContent" data-popupshowevent="click mouseenter">DbServerName</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="ConnStrPopupLink" data-popupcontentsource="#ConnStrPopupContent" data-popupshowevent="click mouseenter">ConnStr</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DbUserPassPopupLink" data-popupcontentsource="#DbUserPassPopupContent" data-popupshowevent="click mouseenter">DbUserPass</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PrIsActivePopupLink" data-popupcontentsource="#PrIsActivePopupContent" data-popupshowevent="click mouseenter">PrIsActive</a></i> As Boolean, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PrHasVcsDbPopupLink" data-popupcontentsource="#PrHasVcsDbPopupContent" data-popupshowevent="click mouseenter">PrHasVcsDb</a></i> As Boolean, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="SaqIsActivePopupLink" data-popupcontentsource="#SaqIsActivePopupContent" data-popupshowevent="click mouseenter">SaqIsActive</a></i> As Boolean, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="UserQuotaPopupLink" data-popupcontentsource="#UserQuotaPopupContent" data-popupshowevent="click mouseenter">UserQuota</a></i> As Long, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="VmRepositoryPopupLink" data-popupcontentsource="#VmRepositoryPopupContent" data-popupshowevent="click mouseenter">VmRepository</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="DescriptionPopupLink" data-popupcontentsource="#DescriptionPopupContent" data-popupshowevent="click mouseenter">Description</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="ProjectTypePopupLink" data-popupcontentsource="#ProjectTypePopupContent" data-popupshowevent="click mouseenter">ProjectType</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="PrIsTemplatePopupLink" data-popupcontentsource="#PrIsTemplatePopupContent" data-popupshowevent="click mouseenter">PrIsTemplate</a></i> As Boolean, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="ProjectUIDPopupLink" data-popupcontentsource="#ProjectUIDPopupContent" data-popupshowevent="click mouseenter">ProjectUID</a></i> As String, _
+&nbsp;&nbsp;&nbsp;ByVal <i><a class="PopupLink" id="replaceProjectPopupLink" data-popupcontentsource="#replaceProjectPopupContent" data-popupshowevent="click mouseenter">replaceProject</a></i> As Boolean _
+) As String</pre></tr></table></div></div>
+            <div class="SectionHeading" id="parametersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Parameters</span></div><div id="parametersSectionContent" class="SectionContent"><dl>
+<dt><I>DomainName</I></dt>
+<dd>The logical group of projects in the ALM database.</dd>
+<dt><I>ProjectName</I></dt>
+<dd>The name of the project in the ALM database.</dd>
+<dt><I>DbType</I></dt>
+<dd><p>The type of database. Use the following constants or their values:</p>
+
+<ul>
+    <li>SA_MSSQL_DB_TYPE (value: 2)</li>
+
+    <li>SA_ORACLE_DB_TYPE (value: 3)</li>
+</ul></dd>
+<dt><I>PhysicalDirectory</I></dt>
+<dd>The location of the project's repository.</dd>
+<dt><I>DbName</I></dt>
+<dd>The database name.</dd>
+<dt><I>DbServerName</I></dt>
+<dd>The database server name.</dd>
+<dt><I>ConnStr</I></dt>
+<dd>The JDBC connection string,&nbsp;for example:<br />
+jdbc:inetdae7://stamina:1433?charset=MS1252</dd>
+<dt><I>DbUserPass</I></dt>
+<dd>Database user password.</dd>
+<dt><I>PrIsActive</I></dt>
+<dd>Activate the project (Y/N).</dd>
+<dt><I>PrHasVcsDb</I></dt>
+<dd>Is the project integrated with a version control system (Y/N).</dd>
+<dt><I>SaqIsActive</I></dt>
+<dd>Activate Send All Qualified to send defect emails automatically (Y/N).</dd>
+<dt><I>UserQuota</I></dt>
+<dd>The maximum number of concurrent user connections. For no limit, set to -1.</dd>
+<dt><I>VmRepository</I></dt>
+<dd>No longer in use. Pass empty string ("").</dd>
+<dt><I>Description</I></dt>
+<dd>Description of the project.</dd>
+<dt><I>ProjectType</I></dt>
+<dd>Pass the value "STANDARD".</dd>
+<dt><I>PrIsTemplate</I></dt>
+<dd><p>Pass true if this is a template project.</p></dd>
+<dt><I>ProjectUID</I></dt>
+<dd>The project identifier, a GUID.</dd>
+<dt><I>replaceProject</I></dt>
+<dd>If replaceProject is true and if there is already a project with this ProjectUID, this action replaces the existing project.</dd>
+</dl></div>
+            <div class="SectionHeading" id="returnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Type</span></div><div id="returnsSectionContent" class="SectionContent"><div class="ReturnsContent"><p>On success, returns an XML string containing the retored project's properties.</p></div></div>
+            
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Return Value Details</span></div><div id="remarksSectionContent" class="SectionContent"><p>The properties of the XML return string:</p>
+
+<ul>
+    <li><b>PROJECT_ID</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The ID number of the project.</li>
+
+    <li><b>PROJECT_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The project name.</li>
+
+    <li><b>DESCRIPTION</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The project description.</li>
+
+    <li><b>DOMAIN_ID</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The domain ID number.</li>
+
+    <li><b>DOMAIN_NAME</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The domain name.</li>
+
+    <li><strong>DB_NAME&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database name.</li>
+
+    <li><strong>DB_TYPE&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database type number: MS SQL (2), Oracle (3).</li>
+
+    <li><strong>CREATE_FROM_PROJECT&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The source project of the created project.</li>
+
+    <li><strong>CREATE_FROM_DOMAIN&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The source domain of the created project.</li>
+
+    <li><strong>PHYSICAL_DIRECTORY&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The physical directory of the project.</li>
+
+    <li><strong>DB_NATIVE_AUTHENTICATION&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;Indicates if user login is handled by the operating system (MS_SQL Windows Authentication). If 'N', the authentication is handled explicitly using the user name and password.</li>
+
+    <li><strong>DB_USER&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database administrator user name.</li>
+
+    <li><strong>DB_USER_PASS&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database administrator password.</li>
+
+    <li><strong>DBSERVER_NAME&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The database server name.</li>
+
+    <li><b>DBCONNSTR_FORMAT</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The database connection string.</li>
+
+    <li><b>DB_ENCRYPTED_CONNSTR</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;For internal use.</li>
+
+    <li><strong>DB_DRIVER_CLASS_NAME</strong>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;The name of the database manager connection class (JDBC driver class).&nbsp;</li>
+
+    <li><strong>PR_EXCEPTION_FILE</strong> - The pathname of the file that defines errors that the verify process ignores.</li>
+
+    <li><strong>PROJECT_VERSION</strong>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;The ALM version.&nbsp;</li>
+
+    <li><b>PR_IS_ACTIVE</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;Indicates if the project is active (Y/N).</li>
+
+    <li><b>SAQ_IS_ACTIVE</b>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;Indicates if SEND ALL QUALIFIED is active (Y/N).</li>
+
+    <li><strong>PR_IS_QPM_AUTO_CALC_ENABLED</strong> - Automatic KPI calculation is enabled (Y/N).</li>
+
+    <li><strong>PR_HAS_VCSDB&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;Indicates if the project includes version control: (Y)es, (N)o, (D)isabled. This field appears only if version control is available.</li>
+
+    <li><strong>USERS_QUOTA&nbsp;&nbsp;&nbsp;&nbsp;-</strong>&nbsp;&nbsp;&nbsp;&nbsp;The maximum number of concurrent connections. -1 indicates an unlimited number of connections.</li>
+
+    <li><strong>PR_LANGUAGE</strong>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;The search language.</li>
+
+    <li><strong>PROJECT_TYPE</strong> - The type of project.</li>
+
+    <li><strong>IS_TEMPLATE</strong> - Indicates&nbsp;whether this is a template project (Y/N).</li>
+
+    <li><strong>PROJECT_UID</strong> - The project ID.</li>
+
+    <li><strong>PR_SMART_REPOSITORY_ENABLED</strong> - One of: NO - not a smart repository; YES - smart repository; PENDING - offline migration completed and waiting for online migration; MIGRATING - online migration in progress.</li>
+
+    <li><strong>PR_SR_GC_STATUS</strong> - Optimized repository garbage collection status.</li>
+
+    <li><strong>PR_SR_GC_LAST_RUN_TIME</strong> - Optimized repository garbage collection last run time.</li>
+</ul></div>
+            
+            
+            
+            
+            <div class="SectionHeading" id="exampleSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Example</span></div><div id="exampleSectionContent" class="SectionContent"><div class="FilteredContentVisual Basic">
+    
+	<div class="TabContainer">
+	    <ul>
+	        <li><a href="#TabContent-dd6216b4-ddb2-4726-bf22-e184ef991779">Example (Visual Basic)</a></li>
+	    </ul>
+	    <div id="TabContent-dd6216b4-ddb2-4726-bf22-e184ef991779" class="FilteredContent"><pre><span style="color: #0000FF; ">Private</span> <span style="color: #0000FF; ">Sub</span> RestoreProjectEx() 
+<span style="color: #008000; ">'The following Visual Basic example restores a project 
+' that was saved in the MyProject subdirectory. 
+</span>    <span style="color: #0000FF; ">Dim</span> sDomainName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+    <span style="color: #0000FF; ">Dim</span> sProjectName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+    <span style="color: #0000FF; ">Dim</span> sServerName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+                <span style="color: #0000FF; ">Dim</span> sPhysicalDirectory <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+                <span style="color: #0000FF; ">Dim</span> sProjectType <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+                <span style="color: #0000FF; ">Dim</span> sProjectUID <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+    <span style="color: #0000FF; ">Dim</span> sReply <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span> 
+    <span style="color: #0000FF; ">On</span> <span style="color: #0000FF; ">Error</span> <span style="color: #0000FF; ">GoTo</span> err 
+    sDomainName = <span style="color: #800000; ">&quot;MyDomain&quot;</span> 
+    sProjectName = <span style="color: #800000; ">&quot;MyProject&quot;</span> 
+                sPhysicalDirectory = <span style="color: #800000; ">&quot;C:\TD_Dir\MYDOMAIN\MyProject&quot;</span> 
+    sServerName = <span style="color: #800000; ">&quot;http://myserver/qcbin&quot;</span> 
+                sProjectType = <span style="color: #800000; ">&quot;Standard&quot;</span> 
+                sProjectUID = <span style="color: #800000; ">&quot;a01aa632-e9c7-4e63-9b7f-5241cc5e29cb&quot;</span> 
+    sReply = m_SAClient.RestoreProjectEx( _ 
+        sDomainName, sProjectName, SA_ORACLE_DB_TYPE, _ 
+        sPhysicalDirectory, sProjectName, _ 
+        sServerName, <span style="color: #800000; ">&quot;jdbc:inetora:myserver:1521:myserver&quot;</span>, _ 
+        sUserPassWord, <span style="color: #0000FF; ">True</span>, <span style="color: #0000FF; ">True</span>, <span style="color: #0000FF; ">True</span>, 20, <span style="color: #800000; ">&quot;&quot;</span>, _ 
+        <span style="color: #800000; ">&quot;New Project1 for testing&quot;</span>, _ 
+                                sProjectType, <span style="color: #0000FF; ">False</span>, sProjectUID, <span style="color: #0000FF; ">True</span>) 
+        
+    <span style="color: #0000FF; ">MsgBox</span> sReply 
+    <span style="color: #0000FF; ">Exit Sub</span> 
+err: 
+    <span style="color: #0000FF; ">MsgBox</span> <span style="color: #800000; ">&quot;Program failed:&quot;</span> + err.Description 
+<span style="color: #0000FF; ">End Sub</span></pre></div>
+	</div>
+</div>
+</div>
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic7.html">SAapi Object</a>
+&nbsp;|&nbsp;<a href="topic8.html">SAapi Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Site Administration API  Documentation Feedback: RestoreProjectEx Method">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

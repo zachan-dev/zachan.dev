@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>td.REQ Table</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.db.2012.css" data-mshv2-stylesheet="/stylesheets/dx.db.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.db.2012.mshv1.css" />
+    <script src="script/dx.db.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.db.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="Project Data Tables_db~s-td~t-REQ"/>
+    <meta name="Description" content="Details of individual requirements and the structure of the requirements tree." />
+    
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.dx.db.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">td.REQ Table</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic25.html">Project Data Tables Database</a>
+ > <a href="topic27.html">td Schema</a>
+ : td.REQ Table</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Details of individual requirements and the structure of the requirements tree.</div></div>
+			<div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Remarks</span></div><div id="remarksSectionContent" class="SectionContent"><p>The tree structure is stored in two ways. First, each record holds a pointer to the parent in RQ_FATHER_ID. Within the children of each parent, the order is set with RQ_ORDER_ID. Thus, a self-join between REQ parent and REQ child ordered by child.RQ_FATHER_ID, child.RQ_ORDER_ID can be used to recreate the tree.</p>
+
+<p>The second way the tree is stored is in RQ_REQ_PATH. The highest level nodes (RQ_FATHER_ID = -1) are ordered from AAA to ZZZ. Each child node down the tree inherits the parent path, and within the parent node, the requirements are ordered AAA to ZZZ where the current level numeration is concatenated to the inherited path. For example, the child requirements of the first node (AAA) have paths of AAA<font color="navy">AAA</font>, AAA<font color="navy">AAB</font>, AAA<font color="navy">AAC</font>, and so on. The characters V and W are not used.</p>
+
+<p>Use of a self-join is easy to program when recreating the entire tree or a sub-tree. The path&nbsp;can be used&nbsp;when looking for the children of a given node since the child paths are the parent path plus three more characters.</p>
+
+<p>To identify the tests and test steps that cover the requirements, see the <a href="topic445.html">REQ_COVER Table</a>.</p>
+
+<p>Multiple values for fields are maintained in the <a href="topic454.html">REQ_MULTIVALUE Table</a>.</p>
+
+<p>Many of the integer values are ENUMs. For possible values, see the API reference.</p></div>
+            <!-- type="FilteredItemList" scrap="PROPERTY_LIST" namespace="property" source="Item" filter="" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=properties,caption=$$properties$$%%%%filtereditemlist%%</div>" --><!--properties --><!-- end -->
+            <div class="SectionHeading" id="columnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Columns</span></div><div id="columnsSectionContent" class="SectionContent"><table class="ColumnListTable"><tr><th align=middle>&nbsp;</th><th NOWRAP class="pivot-column">Column Name</th><th NOWRAP>Description</th><th NOWRAP>Datatype</th><th NOWRAP>Length</th><th NOWRAP>Allow Nulls</th><th NOWRAP>Default</th><th NOWRAP>Formula</th></tr>
+<tr><td Class=centered NOWRAP><img alt="Primary Key" src="dbimages/primarykey.gif">&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_ID</STRONG></td><td class="DescriptionCell">The record ID.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_FATHER_ID</STRONG></td><td class="DescriptionCell">The ID of the requirement for which this requirement is a sub-requirement. Top level requirements have a father ID of <nobr>-1</nobr>.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_ORDER_ID</STRONG></td><td class="DescriptionCell">The order in which the requirement appears in the user interface among other requirements at the same level of the requirements hierarchy.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_ISTEMPLATE</STRONG></td><td class="DescriptionCell"><p>For backward compatibility. Field may be removed in future version.</p></td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_COMMENT</STRONG></td><td class="DescriptionCell">The requirement comment.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_REVIEWED</STRONG></td><td class="DescriptionCell">Indicates whether or not the user responsible for the project has reviewed the requirement.<br />
+The values are from the Review Status custom list.<br />
+Typical values are:&nbsp; Changed, Not Reviewed, Reviewed.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_PATH</STRONG></td><td class="DescriptionCell">See table remarks.</td><td>varchar</td><td>255</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_STATUS</STRONG></td><td class="DescriptionCell"><p>The aggregated status of previous runs of tests in the requirement coverage. Indicates whether any test that covers the requirement fails.</p>
+
+<p>The values are from the&nbsp;Status&nbsp;custom list. Typical values are:&nbsp;No Run, Failed, Passed, Not Completed, N/A. In addition to the values from the list, the Not Covered value can be assigned.</p></td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_PRIORITY</STRONG></td><td class="DescriptionCell">The requirement priority level.<br />
+The values are from the&nbsp;Priority&nbsp;custom list.<br />
+Typical values are: 1-Low, 2-Medium, 3-High, 4-Very High, 5-Urgent.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_TYPE</STRONG></td><td class="DescriptionCell">Obsolete. In previous versions, the requirement type. The values are from the Requirement Type custom list.<br />
+Typical values are: Change, Functional, Guideline, Quality, Standard, System.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_PRODUCT</STRONG></td><td class="DescriptionCell">The product for which the requirement is designed.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_NAME</STRONG></td><td class="DescriptionCell">The name assigned to the requirement by the tester who designed the requirement.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_AUTHOR</STRONG></td><td class="DescriptionCell">The user name of the person who designed the requirement.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_IGNORE_IN_ANALYSIS</STRONG></td><td class="DescriptionCell">A value of&nbsp;Y indicates that this requirement is not included in&nbsp;risk-based quality management analysis&nbsp;regardless of filter and other settings.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_BSNS_IMPACT</STRONG></td><td class="DescriptionCell">The Business&nbsp;Criticality value calculated by ALM. A value of enum TD_RBT_BI_LEVELS.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_CUSTOM_BSNS_IMPACT</STRONG></td><td class="DescriptionCell"><p>A Business&nbsp;Criticality value set by&nbsp;a user.&nbsp; A value of enum TD_RBT_BI_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_USE_CUSTOM_BSNS_IMPACT</STRONG></td><td class="DescriptionCell"><p>If true, RQ_RBT_CUSTOM_BSNS_IMPACT is used.</p>
+
+<p>If false, RQ_RBT_BSNS_IMPACT is used.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_EFFECTIVE_BSNS_IMPACT</STRONG></td><td class="DescriptionCell">The Business&nbsp;Criticality value&nbsp;used by the risk-based quality management analysis algorithm to analyze the&nbsp;Testing Level and testing&nbsp;time&nbsp;of this requirement.&nbsp; The value depends on the RQ_RBT_USE_CUSTOM_BSNS_IMPACT setting.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_FAIL_PROB</STRONG></td><td class="DescriptionCell"><p>The Failure Probability value calculated by ALM.&nbsp;&nbsp;A value of enum TD_RBT_FP_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_CUSTOM_FAIL_PROB</STRONG></td><td class="DescriptionCell"><p>A&nbsp;Failure Probability&nbsp;value set by&nbsp;a user. A value of enum TD_RBT_FP_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_USE_CUSTOM_FAIL_PROB</STRONG></td><td class="DescriptionCell"><p>If true, RQ_CUSTOM_FAIL_PROB is used.</p>
+
+<p>If false, RQ_FAIL_PROB is used.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_EFFECTIVE_FAIL_PROB</STRONG></td><td class="DescriptionCell">The Failure Probability value used by the risk-based quality management analysis algorithm. The value depends on the RQ_RBT_USE_CUSTOM_FAIL_PROB setting.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_RISK</STRONG></td><td class="DescriptionCell"><p>The Risk calculated by ALM. A value of enum TDAPI_RBT_RISK_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_CUSTOM_RISK</STRONG></td><td class="DescriptionCell"><p>A Risk value entered by a user. A value of enum TDAPI_RBT_RISK_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_USE_CUSTOM_RISK</STRONG></td><td class="DescriptionCell">If Y, use the RQ_RBT_CUSTOM_RISK instead of the calculated risk.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_EFFECTIVE_RISK</STRONG></td><td class="DescriptionCell">The&nbsp;Risk value used by the risk-based quality management analysis algorithm to analyze the Testing Level and testing time of this requirement.&nbsp; The value depends on the RQ_RBT_USE_CUSTOM_RISK setting.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_FUNC_CMPLX</STRONG></td><td class="DescriptionCell"><p>The Functional Complexity calculated by ALM. A value of&nbsp;enum TDAPI_RBT_FC_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_CUSTOM_FUNC_CMPLX</STRONG></td><td class="DescriptionCell"><p>A Functional Complexity value entered by a user. A value of&nbsp;enum TDAPI_RBT_FC_LEVELS.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_USE_CUSTOM_FUNC_CMPLX</STRONG></td><td class="DescriptionCell">If Y, use the RQ_RBT_CUSTOM_FUNC_CMPLX instead of the calculated Functional Complexity.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_EFFECTIVE_FUNC_CMPLX</STRONG></td><td class="DescriptionCell">The&nbsp;Functional Complexity&nbsp;value used by the risk-based quality management analysis algorithm to analyze the Testing Level and testing time of this requirement.&nbsp; The value depends on the RQ_RBT_USE_CUSTOM_FUNC_CMPLX setting.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_TESTING_LEVEL</STRONG></td><td class="DescriptionCell"><p>Testing Level set by the risk-based quality management analysis.&nbsp; A value of enum TD_RBT_TESTING_LEVELS.</p></td><td>varchar</td><td>70</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_CUSTOM_TESTING_LEVEL</STRONG></td><td class="DescriptionCell"><p>Testing Level value set by&nbsp;a user.&nbsp;A value of enum TD_RBT_TESTING_LEVELS.</p></td><td>varchar</td><td>70</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_TESTING_HOURS</STRONG></td><td class="DescriptionCell">The testing time that was&nbsp;estimated&nbsp;for this&nbsp;requirement by the risk-based quality management analysis.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_CUSTOM_TESTING_HOURS</STRONG></td><td class="DescriptionCell">Testing&nbsp;time value set by&nbsp;a user.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_USE_CUSTOM_TL_AND_TE</STRONG></td><td class="DescriptionCell"><p>Indicates whether to use custom or calculated Testing Level and testing time for risk-based quality management calculations.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_RND_ESTIM_EFFORT_HOURS</STRONG></td><td class="DescriptionCell">Estimated development time.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_ASSESSMENT_DATA</STRONG></td><td class="DescriptionCell"><p>The&nbsp;values assigned to the risk-based quality management assessment criteria. Edit this value in the ALM user interface. Do not to write directly to the database.</p></td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_ANALYSIS_PARENT_REQ_ID</STRONG></td><td class="DescriptionCell">The RQ_REQ_ID of the requirement on which was performed the last analysis that was used to calculate the RQ_TESTING_LEVEL and RQ_TESTING_HOURS fields of this requirement.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_ANALYSIS_SETUP_DATA</STRONG></td><td class="DescriptionCell"><p>The settings used to perform the last risk-based quality management analysis of the sub-tree of this requirement, including the filter, the policy, and the allocated time.</p>
+
+<p>Edit this value in the ALM user interface. Do not write directly to the database.</p></td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_ANALYSIS_RESULT_DATA</STRONG></td><td class="DescriptionCell"><p>The aggregated results of the latest risk-based quality management analysis.</p>
+
+<p>Edit this value in the ALM user interface. Do not write directly to the database.</p></td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_RBT_LAST_ANALYSIS_DATE</STRONG></td><td class="DescriptionCell">The date and time of the last analysis.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_01</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_02</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_03</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_04</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_05</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_06</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_07</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_08</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_09</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_10</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_11</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_12</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_VER_STAMP</STRONG></td><td class="DescriptionCell">The revision number of this requirement. Increments each time the record is updated.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_ATTACHMENT</STRONG></td><td class="DescriptionCell">A value of Y indicates that the requirement has at least one attachment.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_DATE</STRONG></td><td class="DescriptionCell">The date the requirement was created according to the database server clock.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_TIME</STRONG></td><td class="DescriptionCell">The time the requirement was created according to the database server clock.</td><td>varchar</td><td>10</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_NO_OF_SONS</STRONG></td><td class="DescriptionCell">The number of requirements that have this requirement as a parent requirement, that is, have their RQ_FATHER_ID field set to this requirement’s ID.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_IS_FOLDER</STRONG></td><td class="DescriptionCell">Obsolete. May be deleted in a future version.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VTS</STRONG></td><td class="DescriptionCell">The time stamp&nbsp;of the last time the record was updated according to the database server clock.</td><td>varchar</td><td>20</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_13</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_14</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_15</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_16</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_17</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_18</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_19</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_20</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_21</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_22</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_23</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_USER_24</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_ID</STRONG></td><td class="DescriptionCell">The ITG request ID. Used internally for ITG-QC integration.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_TEXT_SYNC</STRONG></td><td class="DescriptionCell">For internal use. Do not change data.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_SERVER</STRONG></td><td class="DescriptionCell">The URL of the ITG server. Used internally for ITG-QC integration.</td><td>varchar</td><td>120</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_TYPE</STRONG></td><td class="DescriptionCell">ITG request type. Used internally for ITG-QC integration.</td><td>varchar</td><td>120</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_STATUS</STRONG></td><td class="DescriptionCell">ITG request status. Used internally for ITG-QC integration.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_UPDATES</STRONG></td><td class="DescriptionCell">ITG request updates information. Used internally for ITG-QC integration.</td><td>varchar</td><td>120</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_ASSIGN_TO</STRONG></td><td class="DescriptionCell">The user to whom the requirement is assigned.</td><td>varchar</td><td>120</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQUEST_NOTE</STRONG></td><td class="DescriptionCell">The notes added to the request in ITG.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_TYPE_ID</STRONG></td><td class="DescriptionCell"><p>The <a href="topic468.html">REQ_TYPE.TPR_TYPE_ID</a>.</p>
+
+<p>A value of 0 indicates that the requirement type is not defined.</p></td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_TARGET_RCYC_VARCHAR</STRONG></td><td class="DescriptionCell">The IDs of the ReleaseCycles this requirement is associated with.</td><td>varchar</td><td>4000</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_TARGET_REL_VARCHAR</STRONG></td><td class="DescriptionCell">The IDs of the&nbsp;Releases this requirement is associated with.</td><td>varchar</td><td>4000</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_TARGET_RCYC</STRONG></td><td class="DescriptionCell">For internal use. Do not write to this field. The link to the target cycle is in the <a href="topic450.html" data-auto-update-caption="true">td.REQ_CYCLES Table</a>.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_TARGET_REL</STRONG></td><td class="DescriptionCell">For internal use. Do not write to this field. The link to the target release is in the <a href="topic457.html" data-auto-update-caption="true">td.REQ_RELEASES Table</a></td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_DEV_COMMENTS</STRONG></td><td class="DescriptionCell">Comments about the requirement.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_HAS_RICH_CONTENT</STRONG></td><td class="DescriptionCell"><p>Requirement has rich-text content.</p>
+
+<p>The&nbsp;use of this field&nbsp;may be discontinued in future&nbsp;versions.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_VERSION_NUMBER</STRONG></td><td class="DescriptionCell">The version ID of the entity.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_STATUS</STRONG></td><td class="DescriptionCell">The version status: Checked in, checked out, or read only.</td><td>varchar</td><td>20</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKIN_USER_NAME</STRONG></td><td class="DescriptionCell">The user who checked in this version of the item. If this item has not been checked in, the field is blank.</td><td>varchar</td><td>60</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKIN_DATE</STRONG></td><td class="DescriptionCell">The date this version was checked in according to the server clock.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKIN_TIME</STRONG></td><td class="DescriptionCell">The time this version was checked in according to the server clock.</td><td>varchar</td><td>10</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKIN_COMMENTS</STRONG></td><td class="DescriptionCell">Comments.The user's comments when checking in the item.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKOUT_USER_NAME</STRONG></td><td class="DescriptionCell">The user who checked out the item under version control. If the item is not checked out, this field is blank.</td><td>varchar</td><td>60</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKOUT_DATE</STRONG></td><td class="DescriptionCell">The date the version was checked out according to the server clock.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKOUT_TIME</STRONG></td><td class="DescriptionCell">The time this version was checked out according to the server clock.</td><td>varchar</td><td>10</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_VC_CHECKOUT_COMMENTS</STRONG></td><td class="DescriptionCell">Comments.The user's comments when checking out the item.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>RQ_REQ_RICH_CONTENT</STRONG></td><td class="DescriptionCell">HTML data.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="indexesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Indexes</span></div><div id="indexesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Index</th><th>Description</th><th>Primary</th><th>Unique</th></tr>
+<tr><td class=LinkCell><A HREF="topic437.html">RQ_FATHER_NAME_LWR_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic438.html">RQ_PRIMARYKEY</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic439.html">RQ_REQ_PATH_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic440.html">RQ_REQ_STATUS_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic441.html">RQ_TYPE_ID_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic442.html">RQ_VTS_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+</table></div>
+            
+            <div class="SectionHeading" id="triggersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Triggers</span></div><div id="triggersSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th NOWRAP>Trigger</th><th>Description</th></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic443.html">AUTR81022_REQ</A></td><td class="DescriptionCell">&nbsp;</td></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic444.html">MVTR_REQ</A></td><td class="DescriptionCell">&nbsp;</td></tr>
+</table></div>
+            
+            <div class="SectionHeading" id="childrenSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Objects that depend on td.REQ </span></div><div id="childrenSectionContent" class="SectionContent"><table class="DependencyListTable"><tr><th>&nbsp;</th><th NOWRAP>Database Object</th><th NOWRAP>Object Type</th><th class="DescriptionCell">Description</th><th NOWRAP>Dep Level</tr>
+<tr><td><img src="dbimages/db-trigger.gif" alt="AUTR81022_REQ trigger"></td><td class="namecell"><a href="topic443.html">AUTR81022_REQ</a></td><td NOWRAP>Trigger</td><td class="DescriptionCell">&nbsp;</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-trigger.gif" alt="MVTR_REQ trigger"></td><td class="namecell"><a href="topic444.html">MVTR_REQ</a></td><td NOWRAP>Trigger</td><td class="DescriptionCell">&nbsp;</td><td align="right">1</tr>
+</table></div>
+            <div class="SectionHeading" id="parentsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Objects that td.REQ depends on</span></div><div id="parentsSectionContent" class="SectionContent"><table class="DependencyListTable"><tr><th>&nbsp;</th><th NOWRAP>Database Object</th><th NOWRAP>Object Type</th><th class="DescriptionCell">Description</th><th NOWRAP>Dep Level</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.AUDIT_LOG table"></td><td class="namecell"><a href="topic74.html">td.AUDIT_LOG</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Events on which history is recorded.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.AUDIT_PROPERTIES table"></td><td class="namecell"><a href="topic78.html">td.AUDIT_PROPERTIES</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Details of the changes recorded in the AUDIT_LOG table.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.REQ_MULTIVALUE table"></td><td class="namecell"><a href="topic454.html">td.REQ_MULTIVALUE</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Multiple values&nbsp;for requirement records.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.REQ_TYPE table"></td><td class="namecell"><a href="topic468.html">td.REQ_TYPE</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Types of requirements.</td><td align="right">1</tr>
+</table></div>
+            <!-- start type="Source" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=source,caption=$$SQL$$%%<table class="sqlsource" border=0 cellpadding=0><tr><td NOWRAP><CODE>%%Source%%</CODE></td></tr></table></div>" --><!--Source --><!-- end -->
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><h4 class=dxh4>Related Objects</h4><p><a href="topic27.html">td Schema</a>
+<BR/><a href="topic25.html">Project Data Tables Database</a>
+</p>
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference  Documentation Feedback: td.REQ Table">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

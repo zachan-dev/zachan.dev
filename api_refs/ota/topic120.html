@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Get licence descriptions</title>
+    <meta name="Title" content="Get licence descriptions"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Private Sub ShowLicenses()
+' Get licence descriptions
+
+    Dim Licenses As String
+    Dim idx As Integer
+    Dim tagTDLICENSE_CLIENT_Vals, tagTDLICENSE_CLIENT_Str
+
+'Set up arrays of constant values and" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="26d74a4e-08b4-49c7-a919-ab5e5330363e"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Get licence descriptions</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-f67da924-c379-4c5f-a0e5-83eac4b07820"></a></li>
+    </ul>
+
+    <div id="TabContent-f67da924-c379-4c5f-a0e5-83eac4b07820" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Sub</span> ShowLicenses()
+<span style="COLOR: #008000">' Get licence descriptions
+</span>
+    <span style="COLOR: #0000ff">Dim</span> Licenses <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    <span style="COLOR: #0000ff">Dim</span> idx <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    <span style="COLOR: #0000ff">Dim</span> tagTDLICENSE_CLIENT_Vals, tagTDLICENSE_CLIENT_Str
+
+<span style="COLOR: #008000">'Set up arrays of constant values and descriptors.
+</span>tagTDLICENSE_CLIENT_Vals = Array( _
+                TDLICENSE_BUG, _
+                TDLICENSE_LAB, _
+                TDLICENSE_REQ, _
+                TDLICENSE_COLLAB, _
+                TDLICENSE_DASHBOARD, _
+                TDLICENSE_COMPONENTS)
+
+tagTDLICENSE_CLIENT_Str = Array( _
+                <span style="COLOR: #800000">"TDLICENSE_BUG"</span>, _
+                <span style="COLOR: #800000">"TDLICENSE_LAB"</span>, _
+                <span style="COLOR: #800000">"TDLICENSE_REQ"</span>, _
+                <span style="COLOR: #800000">"TDLICENSE_COLLAB"</span>, _
+                <span style="COLOR: #800000">"TDLICENSE_DASHBOARD"</span>, _
+                <span style="COLOR: #800000">"TDLICENSE_COMPONENTS"</span>)
+         
+    <span style="COLOR: #0000ff">For</span> idx = <span style="COLOR: #0000ff">LBound</span>(tagTDLICENSE_CLIENT_Vals) <span style="COLOR: #0000ff">To</span> <span style="COLOR: #0000ff">UBound</span>(tagTDLICENSE_CLIENT_Vals)
+        
+        Debug.Print tagTDLICENSE_CLIENT_Str(idx); _
+            tagTDLICENSE_CLIENT_Vals(idx); _
+            <span style="COLOR: #800000">"("</span> &amp; toBin(tagTDLICENSE_CLIENT_Vals(idx)) &amp; <span style="COLOR: #800000">")"</span>
+
+<span style="COLOR: #008000">' Get licenses
+</span>        <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>        tdc.GetLicenses tagTDLICENSE_CLIENT_Vals(idx), Licenses
+        
+        Debug.Print Licenses
+        Debug.Print
+    <span style="COLOR: #0000ff">Next</span> idx
+<span style="COLOR: #008000">'*******************************************************
+'The structure of the output is:
+'Debug information:
+' &lt;The license type&gt; &lt;license code&gt; &lt;license code in hexidecimal&gt;
+'The output of the GetLicenses call:
+' { MUID: "{The machine ID}",
+'  &lt;Licence Code&gt;:"&lt;error code&gt;,&lt;error string&gt;:
+'  MUID [{&lt;The machine ID&gt;}] Client Type[&lt;License Code&gt;]",....}
+'
+'*******************************************************
+'The output from this procedure on a sample site is:
+'   TDLICENSE_BUG 1 (1)
+'   {
+'   MUID:"{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}",
+'   1:"0,License Approved:  MUID [{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}] Client Type [1]"
+'   }
+'
+'   TDLICENSE_LAB 2 (10)
+'   {
+'   MUID:"{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}",
+'   2:"0,License Approved:  MUID [{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}] Client Type [2]"
+'   }
+'
+'   TDLICENSE_REQ 4 (100)
+'   {
+'   MUID:"{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}",
+'   3:"0,License Approved:  MUID [{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}] Client Type [3]"
+'   }
+'
+'   TDLICENSE_COLLAB 32 (100000)
+'   {
+'   MUID:"{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}",
+'   6:"1056,License Denied:  MUID [{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}] Client Type [6]"
+'   }
+'
+'   TDLICENSE_DASHBOARD 2048 (100000000000)
+'   {
+'   MUID:"{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}",
+'   12:"0,License Approved:  MUID [{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}] Client Type [12]"
+'   }
+'
+'   TDLICENSE_COMPONENTS 4096 (1000000000000)
+'   {
+'   MUID:"{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}",
+'   13:"0,License Approved:  MUID [{1BCEF8E4-FD5E-4577-9D3E-A5F43C397FB9}] Client Type [13]"
+'   }End Sub
+</span><span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Get licence descriptions">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

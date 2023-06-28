@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--DXMETADATA start type="MetaCharset" --><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+<!--DXMETADATA end-->
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <!--DXMETADATA start type="IsTemplateFileFeatureEnabled" name="Responsive" format="<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"" />" --><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="Literal" condition="helpversion:value=3" value="<meta name=""Microsoft.Help.SelfBranded"" content=""true"" />" --><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="ItemTitle" format="<title>%%ItemTitle%%</title>" --><title>Implement Versioning</title><!--DXMETADATA end-->
+    <!--DXMETADATA start type="ItemTitle" format="<meta name=""Title"" content=""%%ItemTitleNoQuotes%%""/>" --><meta name="Title" content="Implement Versioning"/><!--DXMETADATA end-->    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    <!--DXMETADATA start type="Literal" condition="communityenabled" value="<link rel=""stylesheet"" type=""text/css"" href=""stylesheets/community.css"" />" --><!--DXMETADATA end-->
+	<!--DXMETADATA start type="Literal" condition="communityenabled" value="<script src=""script/community.js""></script>" --><!--DXMETADATA end -->
+
+    <!--DXMETADATA start type="Synopsis" StripHtmlTags="True" MaxLength="250" format="<meta name=""Description"" content=""%%Synopsis%%"" />"--><meta name="Description" content="Code for Versioning
+
+Custom tests that change ALM entities that are subject to versioning must check in and out when changing the entities affected.  Use TDAPIOLELib.IVersionControl.CheckOut and CheckIn. For more information, see the Open Test Arch" /><!--DXMETADATA end-->
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <!--DXMETADATA start type="TopicId" format="<meta name=""Microsoft.Help.Id"" content=""%%TopicId%%""/>" --><meta name="Microsoft.Help.Id" content="118d6f2b-d7b6-497b-b907-56a05502d8ce"/><!--DXMETADATA end-->
+    <!--DXMETADATA start type="TocParentId" format="<meta name=""Microsoft.Help.TocParent"" content=""%%TocParentId%%""/>" --><meta name="Microsoft.Help.TocParent" content="-1"/><!--DXMETADATA end-->
+    <!--DXMETADATA start type="TocOrdinal" format="<meta name=""Microsoft.Help.TocOrder"" content=""%%TocOrdinal%%""/>" --><meta name="Microsoft.Help.TocOrder" content="4"/><!--DXMETADATA end-->
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <!--DXMETADATA start type="MshvKeywords" condition="helpversion:value=3" --><!--DXMETADATA end-->
+    <!--DXMETADATA start type="MshvMetaTags" condition="helpversion:value=3" --><!--DXMETADATA end-->
+    <!--DXMETADATA start type="Help3CatalogLocale" condition="helpversion:value=3" format="<meta name=""Microsoft.Help.Locale"" content=""%%Help3CatalogLocale%%"" />"--><!--DXMETADATA end-->
+    <!--DXMETADATA start type="Help3CatalogLocale" condition="helpversion:value=3" format="<meta name=""Microsoft.Help.TopicLocale"" content=""%%Help3CatalogLocale%%"" />"--><!--DXMETADATA end-->
+    
+    <!--DXMETADATA start type="Stylesheets" --><link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link><!--DXMETADATA end-->
+    <!--DXMETADATA start type="Scripts" --><script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="DesignTime"--><!--DXMETADATA end-->
+    <!--DXMETADATA start type="IsNew" format="<script type=""text/javascript"">isNew = true;</script>" --><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="Scrap" condition="communityenabled" name="_COMMUNITY_PROPERTIES" --><!--DXMETADATA end -->
+
+    <!--DXMETADATA start type="CustomHeadContent" --><!--DXMETADATA end-->
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        <!--DXMETADATA start type="Literal" condition="communityenabled" value="%%scrap:name=_COMMUNITY_RATING%%" --><!--DXMETADATA end -->
+            <!--DXMETADATA start type="LogoImage" --><!--DXMETADATA end-->
+            <div id="ProjectTitle"><!--DXMETADATA start type="ProjectTitle" -->ALM Custom Test Type Developer Guide (12.50 and later)<!--DXMETADATA end--></div>
+        <div id="PageTitle"><div id="PageTitleText"><!--DXMETADATA start type="ItemTitle" -->Implement Versioning<!--DXMETADATA end--></div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel"><!--DXMETADATA start type="Phrase" name="COLLAPSE_ALL" -->Collapse All<!--DXMETADATA end--></label>
+                <label id="ExpandAllLabel" style="display: none;"><!--DXMETADATA start type="Phrase" name="EXPAND_ALL" -->Expand All<!--DXMETADATA end--></label>
+            </span><!--DXMETADATA start type="Literal" condition="communityenabled" value="%%scrap:name=_COMMUNITY_DROPDOWN%%" --><!--DXMETADATA end -->
+        <!--DXMETADATA start type="IsWebOutputRootPageLinkEnabled" format="<a href='#' class='PageLink' id='viewInFrameLink' title='$$VIEW_WITH_NAVIGATION_TOOLS_TIP$$' style='display: none' data-root-page='%%WebOutputRootPage%%%%OutputFileExtension%%' target='_top'>$$VIEW_WITH_NAVIGATION_TOOLS_TEXT$$</a>" --><!--DXMETADATA end-->
+    </div>
+    <!--DXMETADATA start type="Breadcrumbs" scrap="_BREADCRUMBS" --><!--DXMETADATA end -->
+    
+    
+    <div id="BodyContent">
+        <!--DXMETADATA start type="TopicSection" name="BodyText"--><h2>Code for Versioning</h2>
+
+<p>Custom tests that change ALM entities that are subject to versioning must check in and out when changing the entities affected.&nbsp; Use <span class="Code">TDAPIOLELib.IVersionControl.CheckOut</span> and <span class="Code">CheckIn</span>. For more information, see the Open Test Architecture Reference.</p>
+
+<p>To support pinning a test set to a version, implement the&nbsp;<a href="topic68.html" data-auto-update-caption="true">run Method</a> so that it acquires the OTA <code>Test</code> reference from the <code>TSTest</code>. The <code>Test</code> reference returned by the <code>TSTest.Test</code> property is the correct pinned version.</p>
+
+<h2>Configure Support for Versioning and Baselining</h2>
+
+<p>To enable the versioning and baseline functionality,&nbsp; provide a configuration file. The file provides meta-data for versioning and baseline-related operations on the custom test. Legacy test type applications will run without adding this file. However, we strongly recommend that you add this file to your application to improve performance and reduce storage requirements.</p>
+
+<p>No code changes are required to support Baselining beyond providing this configuration file.</p>
+
+<p>Place the versioning configuration file on the Application Lifecycle Management server at <span class="Code">\sa\DomsInfo\MetaData\TEST\</span>.</p>
+
+<p class="hs-toggler">Sample Versioning Configuration File</p>
+
+<div class="hs-toggler-container" style="DISPLAY: none">
+    <div class="FilteredContentXML" data-title="XML" data-itemid="XML">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>Versioning File</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Test </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="MyTestType"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Repository</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Folders </span><span style="COLOR: #ff0000">Filter</span><span style="COLOR: #0000ff">="MyFolder|My2ndFolder"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Folders </span><span style="COLOR: #ff0000">Filter</span><span style="COLOR: #0000ff">="MySubFolder|My2ndSubFolder"</span><span style="COLOR: #ff0000"> BlindCopy</span><span style="COLOR: #0000ff">="true"</span><span style="COLOR: #0000ff">&gt;</span>
+                        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Folders</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Files </span><span style="COLOR: #ff0000">ID</span><span style="COLOR: #0000ff">="FileSet1"</span><span style="COLOR: #ff0000"> Filter</span><span style="COLOR: #0000ff">="*.mSF1|*.mSF2"</span><span style="COLOR: #0000ff">/&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Files </span><span style="COLOR: #ff0000">ID</span><span style="COLOR: #0000ff">="FileSet2"</span><span style="COLOR: #ff0000"> Filter</span><span style="COLOR: #0000ff">="myFile1.ext|myFile2.ext"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Folders</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Repository</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Versioning </span><span style="COLOR: #ff0000">Enabled</span><span style="COLOR: #0000ff">="true"</span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Baselining </span><span style="COLOR: #ff0000">Enabled</span><span style="COLOR: #0000ff">="true"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Pinning </span><span style="COLOR: #ff0000">Enabled</span><span style="COLOR: #0000ff">="true"</span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Baselining</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Test</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p class="hs-toggler">XML Elements</p>
+
+<div class="hs-toggler-container" style="DISPLAY: none">
+    <table>
+        <tbody>
+            <tr>
+                <th>Element</th>
+
+                <th>Description</th>
+            </tr>
+
+            <tr>
+                <td>TestType</td>
+
+                <td>The name of the custom test type.</td>
+            </tr>
+
+            <tr>
+                <td>Repository</td>
+
+                <td>The container for files and folders to be copied when creating new versions.</td>
+            </tr>
+
+            <tr>
+                <td>Folders</td>
+
+                <td>The configuration of the directory tree to copy.<br />
+                A <em>Folders</em> element must have a <em>Filter</em> attribute. The <em>ID</em> and <em>BlindCopy</em> attributes are optional. If there is more than one <em>Folders</em> element at the same level in the same containing element, the <em>ID</em> attribute is mandatory.<br />
+                A <em>Folders</em> element can contain <em>Folders</em> elements and <em>Files</em> elements.</td>
+            </tr>
+
+            <tr>
+                <td>Files</td>
+
+                <td>The configuration of the files to be copied in the folders defined in the containing <em>Folders</em> element.<br />
+                The <em>Filter</em> and <em>ID</em> attribute are optional. If there is more than one <em>Files</em> element at the same level in the same <em>Folders</em> container, the <em>ID</em> attribute is mandatory.</td>
+            </tr>
+
+            <tr>
+                <td>Versioning</td>
+
+                <td>The value of the boolean <em>Enabled</em> attribute indicates whether versioning is enabled for the test type. Set <em>Enabled</em> to <em>true</em> if your implementation supports Versioning.</td>
+            </tr>
+
+            <tr>
+                <td>Baselining</td>
+
+                <td>The value of the boolean <em>Enabled</em> attribute indicates whether baselining is enabled for the test type. Set <em>Enabled</em> to <em>true</em> if your implementation supports <em>Baselining</em>. The <em>Baselining</em> element can contain a <em>Pinning</em> element.</td>
+            </tr>
+
+            <tr>
+                <td>Pinning</td>
+
+                <td>The value of the boolean <em>Enabled</em> attribute indicates whether pinning a run to a test set version is enabled for the test type. If this attribute is set <em>true</em> but the custom test type code does not support pinning, the most recent version of the test is used.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p class="hs-toggler">XML Attributes</p>
+
+<div class="hs-toggler-container" style="DISPLAY: none">
+    <table>
+        <tbody>
+            <tr>
+                <th>Attribute</th>
+
+                <th>Description</th>
+            </tr>
+
+            <tr>
+                <td>BlindCopy</td>
+
+                <td>If <em>BlindCopy</em> is <em>true</em>, the complete trees whose roots are the folders specified by the <em>Filter</em> are copied. If there is a <em>Files</em> element contained in the <em>Folders</em> element, it is ignored.<br />
+                To copy only selected files in a tree, do not use <em>BlindCopy</em>. Use nested <em>Folders</em> elements that contain <em>Files</em> elements with the appropriate <em>Filter</em> attributes.<br />
+                If <em>BlindCopy</em> is <em>false</em> or not present, only the files specified in the contained <em>Files</em> elements are copied. If there are no contained <em>Files</em> elements, the folders specified in the <em>Filter</em> attribute are created and remain empty.</td>
+            </tr>
+
+            <tr>
+                <td>Enabled</td>
+
+                <td>Set to <em>true</em> if your implementation supports the feature.<br />
+                To support <em>Pinning</em>, get the Test object from the TSTest in the&nbsp;<a href="topic68.html" data-auto-update-caption="true">run Method</a>.<br />
+                &nbsp;If your application changes any entity that is subject to version control, use the REST check-in and check-out resources or the <em>TDAPIOLELib.IVersionControl.CheckOut</em> and <em>CheckIn</em> when changing the entity.</td>
+            </tr>
+
+            <tr>
+                <td>Filter</td>
+
+                <td>The <em>Folder</em> or <em>File</em> items to include. Wildcards are supported.</td>
+            </tr>
+
+            <tr>
+                <td>ID</td>
+
+                <td>An identifier for an element is required when more than one element of the same type exists and the elements are direct children of the same parent element. The value of the <em>ID</em> must be unique among children of the same parent.</td>
+            </tr>
+        </tbody>
+    </table>
+</div><!--DXMETADATA end-->
+            <a name="seealsobookmark"></a>
+            <!--DXMETADATA start type="FilteredItemList" scrap="CATEGORISED_LINKS" namespace="linkcategory" source="Item" filter="" NoHeader="True" NoFooter="True" format="%%replaceinquotes:value=false%%%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=seealso,caption=""%%phrase:name=SeeAlso%%%%designlist:tagidentifier=seealso,itemtype=See Also%%""%%%%filtereditemlist%%</div>"--><!--DXMETADATA end-->
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <!--DXMETADATA start type="Scrap" Name="_Merc_Copyright_Link" --><a href="_rsc_Legal_Notices.htm#1">&copy 1995 - 2018 EntIT Software LLC</a> | Last updated: January 2018<!--DXMETADATA end -->
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<!--DXMETADATA start type="Scrap" Name="_Merc_FeedBack_Link" --><a href="mailto:docteam@microfocus.com?subject=ALM Custom Test Type Developer Guide 12.50 and later Documentation Feedback: Implement Versioning">Documentation Feedback</a><!--DXMETADATA end -->
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

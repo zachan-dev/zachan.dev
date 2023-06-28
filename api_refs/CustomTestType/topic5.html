@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--DXMETADATA start type="MetaCharset" --><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+<!--DXMETADATA end-->
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <!--DXMETADATA start type="IsTemplateFileFeatureEnabled" name="Responsive" format="<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"" />" --><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="Literal" condition="helpversion:value=3" value="<meta name=""Microsoft.Help.SelfBranded"" content=""true"" />" --><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="ItemTitle" format="<title>%%ItemTitle%%</title>" --><title>Deploy the Test Type and Remote Agent</title><!--DXMETADATA end-->
+    <!--DXMETADATA start type="ItemTitle" format="<meta name=""Title"" content=""%%ItemTitleNoQuotes%%""/>" --><meta name="Title" content="Deploy the Test Type and Remote Agent"/><!--DXMETADATA end-->    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    <!--DXMETADATA start type="Literal" condition="communityenabled" value="<link rel=""stylesheet"" type=""text/css"" href=""stylesheets/community.css"" />" --><!--DXMETADATA end-->
+	<!--DXMETADATA start type="Literal" condition="communityenabled" value="<script src=""script/community.js""></script>" --><!--DXMETADATA end -->
+
+    <!--DXMETADATA start type="Synopsis" StripHtmlTags="True" MaxLength="250" format="<meta name=""Description"" content=""%%Synopsis%%"" />"--><meta name="Description" content="You are creating a custom test type to integrate a testing tool with ALM. This tool must be deployed on the computers that will run the tests using the testing tool. The deployment method of this testing tool depends on the tool and is not discussed " /><!--DXMETADATA end-->
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <!--DXMETADATA start type="TopicId" format="<meta name=""Microsoft.Help.Id"" content=""%%TopicId%%""/>" --><meta name="Microsoft.Help.Id" content="588f0466-dd69-4d6a-9e9b-8bfa6b342d2b"/><!--DXMETADATA end-->
+    <!--DXMETADATA start type="TocParentId" format="<meta name=""Microsoft.Help.TocParent"" content=""%%TocParentId%%""/>" --><meta name="Microsoft.Help.TocParent" content="-1"/><!--DXMETADATA end-->
+    <!--DXMETADATA start type="TocOrdinal" format="<meta name=""Microsoft.Help.TocOrder"" content=""%%TocOrdinal%%""/>" --><meta name="Microsoft.Help.TocOrder" content="5"/><!--DXMETADATA end-->
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    <!--DXMETADATA start type="MshvKeywords" condition="helpversion:value=3" --><!--DXMETADATA end-->
+    <!--DXMETADATA start type="MshvMetaTags" condition="helpversion:value=3" --><!--DXMETADATA end-->
+    <!--DXMETADATA start type="Help3CatalogLocale" condition="helpversion:value=3" format="<meta name=""Microsoft.Help.Locale"" content=""%%Help3CatalogLocale%%"" />"--><!--DXMETADATA end-->
+    <!--DXMETADATA start type="Help3CatalogLocale" condition="helpversion:value=3" format="<meta name=""Microsoft.Help.TopicLocale"" content=""%%Help3CatalogLocale%%"" />"--><!--DXMETADATA end-->
+    
+    <!--DXMETADATA start type="Stylesheets" --><link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link><!--DXMETADATA end-->
+    <!--DXMETADATA start type="Scripts" --><script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="DesignTime"--><!--DXMETADATA end-->
+    <!--DXMETADATA start type="IsNew" format="<script type=""text/javascript"">isNew = true;</script>" --><!--DXMETADATA end-->
+
+    <!--DXMETADATA start type="Scrap" condition="communityenabled" name="_COMMUNITY_PROPERTIES" --><!--DXMETADATA end -->
+
+    <!--DXMETADATA start type="CustomHeadContent" --><!--DXMETADATA end-->
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        <!--DXMETADATA start type="Literal" condition="communityenabled" value="%%scrap:name=_COMMUNITY_RATING%%" --><!--DXMETADATA end -->
+            <!--DXMETADATA start type="LogoImage" --><!--DXMETADATA end-->
+            <div id="ProjectTitle"><!--DXMETADATA start type="ProjectTitle" -->ALM Custom Test Type Developer Guide (12.50 and later)<!--DXMETADATA end--></div>
+        <div id="PageTitle"><div id="PageTitleText"><!--DXMETADATA start type="ItemTitle" -->Deploy the Test Type and Remote Agent<!--DXMETADATA end--></div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel"><!--DXMETADATA start type="Phrase" name="COLLAPSE_ALL" -->Collapse All<!--DXMETADATA end--></label>
+                <label id="ExpandAllLabel" style="display: none;"><!--DXMETADATA start type="Phrase" name="EXPAND_ALL" -->Expand All<!--DXMETADATA end--></label>
+            </span><!--DXMETADATA start type="Literal" condition="communityenabled" value="%%scrap:name=_COMMUNITY_DROPDOWN%%" --><!--DXMETADATA end -->
+        <!--DXMETADATA start type="IsWebOutputRootPageLinkEnabled" format="<a href='#' class='PageLink' id='viewInFrameLink' title='$$VIEW_WITH_NAVIGATION_TOOLS_TIP$$' style='display: none' data-root-page='%%WebOutputRootPage%%%%OutputFileExtension%%' target='_top'>$$VIEW_WITH_NAVIGATION_TOOLS_TEXT$$</a>" --><!--DXMETADATA end-->
+    </div>
+    <!--DXMETADATA start type="Breadcrumbs" scrap="_BREADCRUMBS" --><!--DXMETADATA end -->
+    
+    
+    <div id="BodyContent">
+        <!--DXMETADATA start type="TopicSection" name="BodyText"--><p>You are creating a custom test type to integrate a testing tool with ALM. This tool must be deployed on the&nbsp;computers that will run the tests using the testing tool. The deployment method of this testing tool depends on the tool and is not discussed in this guide.</p>
+
+<h2>Create the Test Type Files CAB</h2>
+
+<p>These instructions apply to the test type assemblies and the COM interop that you created when you implemented the test type. See&nbsp;<a href="topic3.html" data-auto-update-caption="true">Implement the Remote Agent and Test Type</a>. These assemblies are:</p>
+
+<ul>
+    <li>Script Viewer assembly (<span class="Code">ScriptViewerControl class</span><span class="Code">)</span></li>
+
+    <li>Execution Configuration Viewer assembly (<span class="Code">ExecConfigViewerControl <font size="3">class</font></span><span class="Code">)</span></li>
+
+    <li>Result Viewer assembly (<span class="Code">ResultViewerControl <font size="3">class</font></span>)</li>
+
+    <li>Test Type Image Provider assembly (<span class="Code">ImageProvider <font size="3">class</font></span>)</li>
+
+    <li>Interop.TDAPIOLELib.dll</li>
+</ul>
+
+<ol>
+    <li>Copy the test type assemblies, the interop, and any support files your test type requires to a local folder named x:\...\<span class="UI_Element">Extensions\&lt;your_test_type_name&gt;</span>.&nbsp; The following instructions are performed in that folder.</li>
+
+    <li>Change the file extensions by reversing the letters. For example, rename *.dll to *.lld, rename *.ocx to *.xco, and so on. Rename *.exe to *.xxx.</li>
+
+    <li>Digitally sign each file. See <a href="topic11.html" data-auto-update-caption="true">Signing Files with Digital Signature</a>.</li>
+
+    <li>Create an <span class="Code">INI</span> file that lists the application files and gives the location.
+
+        <p class="hs-toggler">Sample INI File</p>
+
+        <div class="hs-toggler-container" style="DISPLAY: none">
+            <pre>
+             
+[File_0000]
+URLName=%URL%/Extensions/MyTestType/MyTestType.lld
+Shortname=MyTestType.dll
+Description=My Test Type
+
+[File_0001]
+URLName=%URL%/Extensions/MyTestType/MyScriptViewer.lld
+Shortname=MyScriptViewer.ocx
+Description=My Script Viewer
+
+[File_0002]
+Extract=Y
+URLName=%URL%/Extensions/my_test_type.manifest.cab
+Shortname=my_test_type.manifest.cab
+Description=my test type manifest cab
+CheckMD5=d4fb7dc6e6678826971e936eb1324f42
+</pre>
+        </div>
+
+        <p class="hs-toggler">INI file Parameters</p>
+
+        <div class="hs-toggler-container" style="DISPLAY: none">
+            <table>
+                <colgroup>
+                    <col />
+                    <col />
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+
+                        <th>Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>URLName</td>
+
+                        <td>The location of the source file to be downloaded. Must start with %URL% and continue with the relative location under the main web server virtual directory. For example:<br />
+                        <code>URLName=%URL%/Extensions/MyTestType/MyFile.xco</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>shortname</td>
+
+                        <td>
+                            The file name extension&nbsp;is the runtime extension. For example: <code>MyFile.dll (not lld)</code>.<br />
+                            The options are:
+
+                            <ol>
+                                <li>The file name - the file is downloaded to the default destination directory.</li>
+
+                                <li>The file name with the full path - the file is downloaded to the specified directory.</li>
+
+                                <li>The file name with a partial path - the file is downloaded to the specified subdirectory of the default directory.</li>
+                            </ol>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>description</td>
+
+                        <td>Optional. A free text description that is displayed during file download. For example: <code>Description=My Test Type Manager</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Extract</td>
+
+                        <td>For archives (cab).<br />
+                        "Y" - Extract the contents of the archive.<br />
+                        Default is "N"</td>
+                    </tr>
+
+                    <tr>
+                        <td>version</td>
+
+                        <td>Optional. Relevant only for files that have compiled version information. If there is a COM server on the client machine with the same prog ID and the same version, the file is not downloaded. For example: <code>Version=1.48.9.2089</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>CheckMD5</td>
+
+                        <td>Optional. The MD5 checksum. Relevant only if the ProgID and Version items are omitted. If there is a file with the same name and checksum in the destination directory, the file is not downloaded.<br />
+                        For example: <code>CheckMD5=45168d267a09274d1d1a8cda605b3159</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>DotNet</td>
+
+                        <td>Optional.<br />
+                        "Y" - the COM dll was developed under .NET and must be registered with regasm.<br />
+                        The default is "N"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+
+    <li>
+        <p>Create a CAB file containing the&nbsp;INI file. For example, run:</p>
+
+        <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p><code>cabarc -s 6144 n CTT4Net.cab CTT4Net.ini</code></p>
+        </blockquote>
+    </li>
+
+    <li>
+        <p>Digitally sign above CAB file. For example, run:</p>
+
+        <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p><code>signtool sign /v /f X:\ALM\Issue\CTT\MyCodeSig.pfx /p 123 X:\ALM\Issue\CTT\Deploy\Extensions\CTT4Net.cab</code></p>
+        </blockquote>
+    </li>
+</ol>
+
+<h2>Create the Remote Agent Registration XML</h2>
+
+<ol>
+    <li>Register the remote agent to get a GUID.<br />
+    Run command: <code>C:\Windows\Microsoft.NET\Framework\&lt;version&gt;\RegSvcs.exe X:\out\MyRemoteAgent.dll</code></li>
+
+    <li>Search the registry for "CSRemoteAgent", you should get a key like "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{F5FD313D-8716-4D8D-A78D-502EF1821CAF}"</li>
+
+    <li>Create an XML file similar to the Example Registration XML below, and place it into “CustomTestTypes” folder; except that, the node &lt;CLSID&gt;&nbsp;is a GUID that you create, and the node &lt;RemoteAgentCLSID&gt;&nbsp;is the value from your registry.<br />
+    The format of the assembly CLSIDs is the fully qualified name of the .NET class, a comma (,), and the .NET assembly name. The maximum length of an assembly CLSID is&nbsp;50 characters.</li>
+
+    <li>Install the remote agent on each of the hosts where the testing tool runs the tests you want to track in ALM.</li>
+
+    <li>Register the remote agent on the testing hosts using the <code>RegSvcs.exe</code> utility. See the first step in this procedure.</li>
+</ol>
+
+<p class="hs-toggler">Example Registration XML</p>
+
+<div class="hs-toggler-container" style="DISPLAY: none">
+    <div class="FilteredContentXML" data-title="XML" data-itemid="XML">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>testtypes.xml</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="UTF-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+  <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TestTypes</span><span style="COLOR: #0000ff">&gt;</span>
+      <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TestType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="CTT4Net"</span><span style="COLOR: #0000ff">&gt;</span>
+          <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">CLSID</span><span style="COLOR: #0000ff">&gt;</span>25C17E63-1021-46b2-BEB1-DCCD5B40A276<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">CLSID</span><span style="COLOR: #0000ff">&gt;</span>
+          <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ImageProviderCLSID</span><span style="COLOR: #0000ff">&gt;</span>CTT4Net.ImageProvider,CTT4Net<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ImageProviderCLSID</span><span style="COLOR: #0000ff">&gt;</span>
+          <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ScriptViewerCLSID</span><span style="COLOR: #0000ff">&gt;</span>CTT4Net.ScriptViewerControl,CTT4Net<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ScriptViewerCLSID</span><span style="COLOR: #0000ff">&gt;</span>
+          <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ExecutionConfigurationViewerCLSID</span><span style="COLOR: #0000ff">&gt;</span>CTT4Net.ExecConfigViewerControl,CTT4Net<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ExecutionConfigurationViewerCLSID</span><span style="COLOR: #0000ff">&gt;</span>
+          <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ResultViewerCLSID</span><span style="COLOR: #0000ff">&gt;</span>CTT4Net.ResultScriptViewerControl,CTT4Net<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ResultViewerCLSID</span><span style="COLOR: #0000ff">&gt;</span>
+          <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">RemoteAgentCLSID</span><span style="COLOR: #0000ff">&gt;</span>479DFA08-CF6D-4890-AAAF-7CAFC39B6974<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">RemoteAgentCLSID</span><span style="COLOR: #0000ff">&gt;</span>
+      <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TestType</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TestTypes</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>Folder Structure</h3>
+
+<p>When you have prepared all the files for deployment, the folder structure is:</p>
+
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+    <p><span class="Code">..\CustomTestTypes\testtypes.xml</span></p>
+
+    <p><span class="Code">..\Extensions\CTT4Net\CTT4Net.cab</span></p>
+
+    <p><span class="Code">..\Extensions\CTT4Net\CTT4Net.lld</span></p>
+
+    <p><span class="Code">..\Extensions\CTT4Net\Interop.TDAPIOLELib.lld</span></p>
+</blockquote>
+
+<h2>Install on the Server and Client</h2>
+
+<p>Copy the <span class="Code">Extension</span> and <span class="Code">CustomTestTypes</span> folders to the web root folder where your ALM server is installed.</p>
+
+<p>Restart the ALM service.</p>
+
+<p>Register the remote agent on the remote client computer. Run command:</p>
+
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+    <p><code class="Code">C:\Windows\Microsoft.NET\Framework\&lt;version&gt;\RegSvcs.exe X:\out\MyRemoteAgent.dll</code></p>
+</blockquote>
+
+<p>Register the ALM client files on client side by getting the following URL: http:///qcbin/start_a.jsp?Common=true</p><!--DXMETADATA end-->
+            <a name="seealsobookmark"></a>
+            <!--DXMETADATA start type="FilteredItemList" scrap="CATEGORISED_LINKS" namespace="linkcategory" source="Item" filter="" NoHeader="True" NoFooter="True" format="%%replaceinquotes:value=false%%%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=seealso,caption=""%%phrase:name=SeeAlso%%%%designlist:tagidentifier=seealso,itemtype=See Also%%""%%%%filtereditemlist%%</div>"--><div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><div class="SeeAlsoLink">
+<a href="topic12.html">Calculating the MD5 Checksum</a></div>
+
+</div><!--DXMETADATA end-->
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <!--DXMETADATA start type="Scrap" Name="_Merc_Copyright_Link" --><a href="_rsc_Legal_Notices.htm#1">&copy 1995 - 2018 EntIT Software LLC</a> | Last updated: January 2018<!--DXMETADATA end -->
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<!--DXMETADATA start type="Scrap" Name="_Merc_FeedBack_Link" --><a href="mailto:docteam@microfocus.com?subject=ALM Custom Test Type Developer Guide 12.50 and later Documentation Feedback: Deploy the Test Type and Remote Agent">Documentation Feedback</a><!--DXMETADATA end -->
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

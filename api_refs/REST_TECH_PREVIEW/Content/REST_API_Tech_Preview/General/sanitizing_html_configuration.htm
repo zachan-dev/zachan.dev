@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--QCCR1K4344-->
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="ALM_REST_API_TP.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Sanitizing Output">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Output Sanitization Whitelist</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+            <link rel="icon" type="image/x-icon" href="https://software.microfocus.com/favicon.ico" />
+		
+			html, body 
+			{
+				height: 100%;
+				margin-right:2em;
+			}
+						
+			.wrapper 
+			{
+				min-height: 100%!important;
+				margin: 0 auto -10em; 
+				padding-left: 0.2em
+						
+			}
+
+			footer, .float 
+			{
+				height: 10em; 
+				margin:0;
+				clear: both;
+			}
+
+			div.roundcorners
+			{
+				-moz-border-radius-bottomleft: 1em;
+				border-bottom-left-radius: 1em;
+				-moz-border-radius-topright: 1em;
+				border-top-right-radius: 1em;
+				background-color: #f2f2f2 ;
+				width: 100% !important;
+				padding: 0em;		 
+			}
+			
+			p.footerlink
+			{
+				font-size: .75em;
+				line-height: 1em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom:.75em;
+			}
+			
+			p.footerlink a,
+			p.footerlink a:visited
+			{
+				color: #5a5a5a;
+			}
+			
+			p.footerlink a:hover
+			{
+				color: #000000!important;
+			}
+						
+			p.spacer
+			{
+				font-size: .5em;
+				line-height: .5em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom: .5em;
+			}
+	
+    </style>
+        <link href="../../Resources/Stylesheets/API_TechPreview.css" rel="stylesheet" />
+        <script src="../../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../../ALM_REST_API_TP.html#REST_API_Tech_Preview/General/sanitizing_html_configuration.htm">Open topic with navigation</a>
+        </p>
+        <div class="wrapper">
+            <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span><a class="MCBreadcrumbsLink" href="sanitizing_output.htm">Sanitizing Output</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Output Sanitization Whitelist</span>
+            </div>
+            <h1>Output Sanitization Whitelist</h1>
+            <p>To specify which tags, attributes, and protocols are returned as-is when using HTML sanitization, create a custom whitelist file named  <code>sanitizer-whitelist.xml</code>. Place  the file in directory: <code>%ALM_INSTALL_DIR%/HP/ALM/webapps/qcbin/WEB-INF/classes/</code>. On Windows platforms the default path is <code>C:\ProgramData\HP\ALM\webapps\qcbin\WEB-INF\classes\</code>. On Linux platforms the default path is <code>/var/opt/HP/ALM/webapps/qcbin/WEB-INF/classes/</code>. The whitelist takes effect when the <span class="QCPCALM">ALM</span> service is restarted.</p>
+            <p>In a cluster environment, put the whitelist on each node.</p>
+            <p>The whitelist contains three collections.</p>
+            <ul>
+                <li value="1">The tags collection contains the tags that are returned unchanged. The contents of the element for a tag may change if there are attributes or protocols that are not themselves whitelisted.</li>
+                <li value="2">The attributes collection contains lists of the attributes allowed for each specified tag.</li>
+                <li value="3">The protocols collection contains lists of the protocols allowed for each specified tag-attribute pair. </li>
+            </ul>
+            <p><b>See also </b>
+            </p>
+            <p><a href="sanitizing_output.htm" class="MCXref xref">Sanitizing Output</a>
+            </p>
+            <div class="MCDropDown MCDropDown_Open dropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHead MCDropDownHotSpot_"><img class="MCDropDown_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />Sample sanitizer-whitelist.xml</a>
+                <div class="MCDropDownBody dropDownBody"><pre xml:space="preserve">
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">root</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tags</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #008000">&lt;!--
+           Collection of tags not changed by sanitizer. Content of elements may still be changed
+           if contained attributes and protocols are not whitelisted.
+           Tags not in this collection are HTML encoded so they are rendered by browser as plain text.
+        --&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>html<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>head<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>meta<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>body<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>a<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>b<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tag</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">tags</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">attributes</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #008000">&lt;!--
+            Collection of attributes not removed by sanitizer if they are used in the specified tag.
+            For example, in this definition, in a "meta" element, only the attributes
+            "http-equiv" and "content" are allowed.
+               Input: &lt;meta content="INDEX,NOFOLLOW" name="my_meta"/&gt;
+               Output: &lt;meta content="INDEX,NOFOLLOW" /&gt;
+
+           Attributes defined for the special tag ":all" are allowed for any tag in the "tags" collection.
+        --&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">attribute </span><span style="COLOR: #ff0000">tag</span><span style="COLOR: #0000ff">=":all"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>style<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>class<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>align<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">attribute</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">attribute </span><span style="COLOR: #ff0000">tag</span><span style="COLOR: #0000ff">="meta"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>http-equiv<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>content<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">attribute</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">attributes</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">protocols</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #008000">&lt;!--
+            Collection of protocols not removed by sanitizer if they are used
+            in the specified attribute and tag.
+           For example, in this definition, in the "src" attribute of an "img" element,
+           only "http" and  "https" are allowed.
+               Input: &lt;img src="http://somewebsite.com/a.png" /&gt;
+               Output: &lt;img src="http://somewebsite.com/a.png" /&gt;
+
+               Input: &lt;img src="ftp://somewebsite.com/a.png" /&gt;
+               Output: &lt;img /&gt;
+        --&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">protocol </span><span style="COLOR: #ff0000">tag</span><span style="COLOR: #0000ff">="img"</span><span style="COLOR: #ff0000"> attribute</span><span style="COLOR: #0000ff">="src"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>http<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>https<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">protocol</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">protocol </span><span style="COLOR: #ff0000">tag</span><span style="COLOR: #0000ff">="a"</span><span style="COLOR: #ff0000"> attribute</span><span style="COLOR: #0000ff">="href"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>http<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>https<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>mailto<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">value</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">protocol</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">protocols</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">root</span><span style="COLOR: #0000ff">&gt;</span>
+				</pre>
+                </div>
+            </div>
+            <div class="MCDropDown MCDropDown_Open dropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHead MCDropDownHotSpot_"><img class="MCDropDown_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />Sanitizer-whitelist Schema</a>
+                <div class="MCDropDownBody dropDownBody"><pre xml:space="preserve">
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="UTF-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:schema </span><span style="COLOR: #ff0000">attributeFormDefault</span><span style="COLOR: #0000ff">="unqualified"</span><span style="COLOR: #ff0000"> elementFormDefault</span><span style="COLOR: #0000ff">="qualified"</span><span style="COLOR: #ff0000">
+           xmlns:xs</span><span style="COLOR: #0000ff">="http://www.w3.org/2001/XMLSchema"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="root"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="rootType"</span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:complexType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="tagsType"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="xs:string"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="tag"</span><span style="COLOR: #ff0000"> maxOccurs</span><span style="COLOR: #0000ff">="unbounded"</span><span style="COLOR: #ff0000"> minOccurs</span><span style="COLOR: #0000ff">="0"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:complexType</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:complexType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="protocolType"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="xs:string"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="value"</span><span style="COLOR: #ff0000"> maxOccurs</span><span style="COLOR: #0000ff">="unbounded"</span><span style="COLOR: #ff0000"> minOccurs</span><span style="COLOR: #0000ff">="0"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:attribute </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="xs:string"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="tag"</span><span style="COLOR: #ff0000"> use</span><span style="COLOR: #0000ff">="required"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:attribute </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="xs:string"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="attribute"</span><span style="COLOR: #ff0000"> use</span><span style="COLOR: #0000ff">="required"</span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:complexType</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:complexType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="rootType"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="tagsType"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="tags"</span><span style="COLOR: #0000ff">/&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="attributesType"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="attributes"</span><span style="COLOR: #0000ff">/&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="protocolsType"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="protocols"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:complexType</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:complexType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="attributesType"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="attributeType"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="attribute"</span><span style="COLOR: #ff0000"> maxOccurs</span><span style="COLOR: #0000ff">="unbounded"</span><span style="COLOR: #ff0000"> minOccurs</span><span style="COLOR: #0000ff">="0"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:complexType</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:complexType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="attributeType"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="xs:string"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="value"</span><span style="COLOR: #ff0000"> maxOccurs</span><span style="COLOR: #0000ff">="unbounded"</span><span style="COLOR: #ff0000"> minOccurs</span><span style="COLOR: #0000ff">="0"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:attribute </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="xs:string"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="tag"</span><span style="COLOR: #ff0000"> use</span><span style="COLOR: #0000ff">="required"</span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:complexType</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:complexType </span><span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="protocolsType"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">xs:element </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="protocolType"</span><span style="COLOR: #ff0000"> name</span><span style="COLOR: #0000ff">="protocol"</span><span style="COLOR: #ff0000"> maxOccurs</span><span style="COLOR: #0000ff">="unbounded"</span><span style="COLOR: #ff0000"> minOccurs</span><span style="COLOR: #0000ff">="0"</span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:sequence</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:complexType</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">xs:schema</span><span style="COLOR: #0000ff">&gt;</span>
+				</pre>
+                </div>
+            </div>
+            <p>&#160;</p>
+            <!--        hr width="100%" size="4" align="center" padding-bottom="0" style="clear:both" /> -->
+            <div class="float">
+            </div>
+        </div>
+        <div class="footer">
+            <MadCap:conditionalText data-mc-conditions="_rsc_Conditions.Footer">
+                <div class="roundcorners">
+                    <table style="border: none; margin-left: auto;       margin-right: auto;  width: 60%; margin-bottom: 0em">
+                        <tr>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="http://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/software/alm-software-development-testing/try-now" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank" title="ALM on Twitter" alt="ALM on Twitter"><img src="../../Resources/Images/_rsc_Twitter_blue.png" style="width: 20px;height: 20px;" /></a><a href="https://www.linkedin.com/groups/4855477/profile" target="_blank" title="ALM Customer Forum on LinkedIn" alt="ALM Customer Forum on LinkedIn" data-mc-conditions="Project_Conditions.Removed">&#160;&#160;&#160;<img src="../../Resources/Images/_rsc_Linkedin_blue.png" style="width: 20px;height: 20px;" data-mc-conditions="Project_Conditions.Removed" /></a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]?subject=Feedback on [%=_rscC_Basic_Variables._rsc_Book_Title%] ([%=_rscC_Basic_Variables._rsc_Product_Name%] [%=_rscC_Basic_Variables._rsc_Product_Version%])" title="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+        </p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_rsc_Conditions.Footer">Send Documentation Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;"><div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a></div><div style="text-align:left"><!-- Localizable --><p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p><p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p><!-- Localizable --><hr /><p>Send us an email with the following information:</p><!-- Localizable --><div id="hp-feedbackBody"><br /><br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div><p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0073E7;">docteam@microfocus.com</a></p><!-- Localizable --><hr /></div></div><div style="display:none;" id="hp-feedback-variables" productName="ALM REST API Reference (Technical Preview)" productVersion="12.5x" commentsEmailAddress="docteam@microfocus.com" productAcronym="ALM" topicTitle="Output Sanitization Whitelist" skinLine1="ALM 12.5x REST API Reference (Technical Preview)" skinLine2="">&#160;
+		<p style="display:none;"><script src="../../Resources/MasterPages/_rsc_Feedback.js"></script></p></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/software/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                        </tr>
+                    </table>
+                    <table class="no_lines" style="border-top:1px solid #B9B8BB;  width:80%; margin-left: auto; margin-right: auto;  ">
+                        <tr>
+                            <td style="vertical-align: middle; font-size: .65em; text-align: center;direction: ltr;">Last updated <span class="_rscC_Basic_Variables_rsc_LastUpdatedDate">January 18, 2018</span>&#160;|&#160;<a href="../../Resources/MasterPages/_rsc_Legal_Notices.htm#1">© <span class="_rscC_Basic_Variables_rsc_Copyright_Date_Range">2002 - 2018</span>&#160;<span class="_rscB_Branding_Variables_rsc_Copyright_Name">EntIT Software LLC</span></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </MadCap:conditionalText>
+            <p style="visibility:hidden"> <![CDATA[ ]]></p>
+            <p><a href="../../Resources/MasterPages/_rsc_HTML5_bannerTitle.htm" style="visibility: hidden;"></a><a href="../../Resources/MasterPages/_rsc_aboutSearch.htm" style="visibility: hidden;"></a>
+            </p>
+        </div>
+    </body>
+</html>

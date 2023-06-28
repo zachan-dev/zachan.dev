@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Add a parameter and step to a component</title>
+    <meta name="Title" content="Add a parameter and step to a component"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+                
+  " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="637a40e4-e823-4024-9b64-050ab060db54"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Add a parameter and step to a component</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Sub</span> AddParamAndStep(<span style="COLOR: #0000ff">ByRef</span> myComponent)
+
+<span style="COLOR: #008000">' Add a parameter and step to a component
+</span>
+    <span style="COLOR: #0000ff">Dim</span> compParamFactory <span style="COLOR: #0000ff">As</span> ComponentParamFactory
+    <span style="COLOR: #0000ff">Dim</span> compParam1 <span style="COLOR: #0000ff">As</span> ComponentParam
+    <span style="COLOR: #0000ff">Dim</span> compStepFactory <span style="COLOR: #0000ff">As</span> ComponentStepFactory
+    <span style="COLOR: #0000ff">Dim</span> compStep1 <span style="COLOR: #0000ff">As</span> ComponentStep
+    
+<span style="COLOR: #008000">' This example adds a parameter and step to the Component.
+</span>    <span style="COLOR: #0000ff">Set</span> compParamFactory = myComponent.ComponentParamFactory
+    <span style="COLOR: #0000ff">Set</span> compStepFactory = myComponent.ComponentStepFactory
+<span style="COLOR: #008000">' Create a parameter and set the properties.
+</span>    <span style="COLOR: #0000ff">Set</span> compParam1 = compParamFactory.AddItem(Null)
+    <span style="COLOR: #008000">' Output parameter. For ComponentParam.IsOut, 1 true and 0 is false
+</span>    compParam1.IsOut = 1
+    compParam1.name = <span style="COLOR: #800000">"OutParam"</span>
+    compParam1.desc = <span style="COLOR: #800000">"Description for output parameter"</span>
+    compParam1.ValueType = <span style="COLOR: #800000">"String"</span>
+    compParam1.order = 1
+    compParam1.Post
+    
+<span style="COLOR: #008000">' Create a step
+</span>    <span style="COLOR: #0000ff">Set</span> compStep1 = compStepFactory.AddItem(Null)
+    compStep1.StepName = <span style="COLOR: #800000">"First Step"</span>
+<span style="COLOR: #008000">' Add description and expected results that contain parameters.
+</span>    <span style="COLOR: #0000ff">Dim</span> pString <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    <span style="COLOR: #008000">'Input parameter. For this example, assume that InParam was previously created.
+</span>    <span style="COLOR: #008000">'   pString ="Description can contain &lt;&lt;&lt;InParam&gt;&gt;&gt; that are verified by QC"
+</span>    pString = <span style="COLOR: #800000">"&lt;html&gt;&lt;body&gt;Description can contain "</span> _
+        &amp; <span style="COLOR: #800000">"&amp;lt;&amp;lt;&amp;lt;InParam&amp;gt;&amp;gt;&amp;gt;"</span> _
+        &amp; <span style="COLOR: #800000">"that are verified by QC&lt;/body&gt;&lt;/html&gt;"</span>
+    compStep1.StepDescription = pString
+    <span style="COLOR: #008000">'Output parameter. OutParam was previously created. badParamName was not.
+</span>    <span style="COLOR: #008000">'   pString ="Can also contain &lt;&lt;&lt;OutParam&gt;&gt;&gt; and &lt;&lt;&lt;badParamName&gt;&gt;&gt;"
+</span>    <span style="COLOR: #008000">'Given that badParamName is not the name of any parameter,
+</span>    <span style="COLOR: #008000">'   &lt;&lt;&lt;badParamName&gt;&gt;&gt; will be replaced by &lt;badParamName&gt;, so that
+</span>    <span style="COLOR: #008000">'   the user can see in the user interface that it is not recognized.
+</span>    pString = <span style="COLOR: #800000">"&lt;html&gt;&lt;body&gt;Can also contain "</span> _
+        &amp; <span style="COLOR: #800000">"&amp;lt;&amp;lt;&amp;lt;OutParam&amp;gt;&amp;gt;&amp;gt;"</span> _
+        &amp; <span style="COLOR: #800000">"and &amp;lt;&amp;lt;&amp;lt;badParamName&amp;gt;&amp;gt;&amp;gt;"</span> _
+        &amp; <span style="COLOR: #800000">"  &lt;/body&gt;&lt;/html&gt;"</span>
+    compStep1.StepExpectedResult = pString
+
+<span style="COLOR: #008000">'Set the execution order
+</span>    compStep1.order = 1
+<span style="COLOR: #008000">'Finish the step
+</span>    <span style="COLOR: #008000">'Validate will throw an exception because of the badParamName.
+</span>    <span style="COLOR: #008000">'  In real production code, you may wish to catch the exception
+</span>    <span style="COLOR: #008000">'  and take action rather than continuing as this example does.
+</span>    <span style="COLOR: #008000">'On Error GoTo myInvalidStepHandler
+</span>    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+    compStep1.Validate
+    compStep1.Post
+    
+    
+    <span style="COLOR: #008000">' Save changes and unlock the component.
+</span>    myComponent.Post
+    
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Add a parameter and step to a component">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

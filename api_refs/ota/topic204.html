@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>C# Create a test with configurations</title>
+    <meta name="Title" content="C# Create a test with configurations"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                Example Title
+
+                
+                    
+                        Copy Code
+                    
+                
+            
+
+            
+                
+                    
+" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="8171bf8b-f895-4ec2-b2b8-b4ca3e0ba7fd"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    <script type="text/javascript">isNew = true;</script>
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">C# Create a test with configurations</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentCS">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Example Title</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+<span style="COLOR: #008000">/*
+ * How to call:
+     TestFactory tF = (TestFactory)tdConnection.TestFactory;
+     TDFilter tFilter = tF.Filter;
+     tFilter["TS_NAME"] = "test5";
+     List tList = tFilter.NewList();
+     Test tTest = (Test)tList[1];
+     CheckoutEntity(tTest, "Hello", true);
+
+     QCResourceFolderFactory qcResourceFolderF = tdConnection.QCResourceFolderFactory;
+     TDFilter tFilterQC = qcResourceFolderF.Filter;
+     tFilterQC["RFO_NAME"] = "test";
+     List tLists = tFilterQC.NewList();
+
+     QCResourceFolder qcResourceFolder = tLists[1];
+     QCResourceFactory qcResourceF = (QCResourceFactory) qcResourceFolder.QCResourceFactory;//tdConnection.QCResourceFactory;
+     TDFilter tf1 = qcResourceF.Filter;
+     tf1["RSC_CREATED_BY"] = "sa";
+     List tfLists = tf1.NewList();
+    QCResource configResource = tfLists[2];
+    QCResource testResource = tfLists[3];
+
+    CreateTestWithConfigurations(tTest, qcResourceFolder, testResource, configResource);
+ */</span>
+<span style="COLOR: #0000ff">private</span> <span style="COLOR: #0000ff">bool</span> CreateTestWithConfigurations(Test checkLoginTest, QCResourceFolder resourceRootFolder, QCResource testResource, QCResource configResource)
+{
+  <span style="COLOR: #0000ff">try</span>
+  {
+    QCResourceFactory resourceRootFolderFactory;
+    IResourceStorage testResourceStorage;
+    ISupportDataRelation testDataRelation;
+    IResourceStorage configResourceStorage;
+    ISupportDataRelation cDataRelation;
+
+    TestConfigFactory cFact;
+    TestConfig configVIP;
+
+    String theDataMapping = String.Empty;
+    String errmsg = String.Empty;
+
+    <span style="COLOR: #008000">//Check out the test. For code of CheckoutTest(), see example "Checking out a Test"
+</span>    VCS testVCS;
+    <span style="COLOR: #0000ff">bool</span> checkInOutOK = <span style="COLOR: #0000ff">true</span>;
+
+    testVCS = CheckoutTest(checkLoginTest, <span style="COLOR: #800000">"Create Configurations"</span>, <span style="COLOR: #0000ff">ref</span> checkInOutOK);
+    <span style="COLOR: #0000ff">if</span> (!checkInOutOK)
+    {
+      errmsg = <span style="COLOR: #800000">"Error checking out checkLoginTest"</span>;
+      <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+    }
+    
+    resourceRootFolderFactory = resourceRootFolder.QCResourceFactory;
+    <span style="COLOR: #008000">//Create a resource to hold the parameter data at the test level
+</span>    errmsg = <span style="COLOR: #800000">"Error creating resourceRootFolderFactory"</span>;
+    testResource = resourceRootFolderFactory.AddItem(<span style="COLOR: #800000">"Test Data Resource"</span>);
+    testResource.ResourceType = <span style="COLOR: #800000">"Data table"</span>;
+    testResource.FileName = <span style="COLOR: #800000">"test.xml"</span>;
+    testResource.Post();
+
+    errmsg = <span style="COLOR: #800000">"Error loading testResourceStorage"</span>;        
+    testResourceStorage = (IResourceStorage)testResource;
+    testResourceStorage.UploadResource(<span style="COLOR: #800000">@"C:\temp"</span>, <span style="COLOR: #0000ff">true</span>);
+
+    <span style="COLOR: #008000">//Set the resource to be the data resource at the test level
+</span>    errmsg = <span style="COLOR: #800000">"Error creating testDataRelation"</span>;        
+    testDataRelation = (ISupportDataRelation)checkLoginTest;
+    
+    theDataMapping =
+      <span style="COLOR: #800000">@"&lt;MappingData&gt;&lt;MappingElement&gt;&lt;ParameterName&gt;&lt;![CDATA[FlightNo]]&gt;&lt;/ParameterName&gt;&lt;MappedToName&gt;&lt;![CDATA[flight_number]]&gt;&lt;/MappedToName&gt;&lt;/MappingElement&gt;&lt;/MappingData&gt;"</span>;
+    testDataRelation.CreateDataRelation(testResource.ID, theDataMapping);
+
+    <span style="COLOR: #008000">//Create a new configuration for the test
+</span>    errmsg = <span style="COLOR: #800000">"Error creating configVIP"</span>;
+
+    cFact = checkLoginTest.TestConfigFactory;
+    configVIP = cFact.AddItem(DBNull.Value);
+    configVIP[<span style="COLOR: #800000">"TSC_NAME"</span>] = <span style="COLOR: #800000">"Configuration for VIP user"</span>;
+    configVIP[<span style="COLOR: #800000">"TSC_DESC"</span>] = <span style="COLOR: #800000">"Check login with VIP user"</span>;
+    configVIP.Post();
+
+    <span style="COLOR: #008000">//Create a resource to hold the parameter data at the configuration level
+</span>    errmsg = <span style="COLOR: #800000">"Error creating configResource"</span>;
+    configResource = resourceRootFolderFactory.AddItem(<span style="COLOR: #800000">"Configuration Data Resource"</span>);
+    configResource.ResourceType = <span style="COLOR: #800000">"Data table"</span>;
+    configResource.FileName = <span style="COLOR: #800000">"config.xml"</span>;
+    configResource.Post();
+
+    errmsg = <span style="COLOR: #800000">"Error loading configResource"</span>;       
+    configResourceStorage = (IResourceStorage)configResource;
+    configResourceStorage.UploadResource(<span style="COLOR: #800000">@"C:\temp"</span>, <span style="COLOR: #0000ff">true</span>);
+
+    <span style="COLOR: #008000">//Set the resource to be the data resource at the configuration level
+</span>    errmsg = <span style="COLOR: #800000">"Error creating cDataRelation"</span>;        
+    cDataRelation = (ISupportDataRelation)configVIP;
+    cDataRelation.CreateDataRelation(configResource.ID, <span style="COLOR: #800000">""</span>);
+
+    <span style="COLOR: #008000">//Set the configuration to use the data resource at the configuration level
+</span>    errmsg = <span style="COLOR: #800000">"Error setting configVIP data state"</span>;
+    configVIP[<span style="COLOR: #800000">"TSC_DATA_STATE"</span>] = 2;
+    configVIP.Post();
+
+    <span style="COLOR: #008000">//See example "Checking in a Test"
+    //checkInOutOK = CheckinTest(testVCS, "Created configurations");
+</span>    <span style="COLOR: #0000ff">if</span> (!checkInOutOK)
+    {
+      errmsg = <span style="COLOR: #800000">"Error checking in checkLoginTest"</span>;
+      <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+    }
+    <span style="COLOR: #0000ff">else</span>
+    {
+      <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">true</span>;
+    }
+  }
+  <span style="COLOR: #0000ff">catch</span> (Exception)
+  {
+    <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+  }
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: C# Create a test with configurations">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

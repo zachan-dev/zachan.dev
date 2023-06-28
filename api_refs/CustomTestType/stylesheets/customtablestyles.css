@@ -1,0 +1,11 @@
+/* This StyleSheet contains custom styles for this project */
+
+
+.ExampleTable
+{
+    background-color: #E6E6E6;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}

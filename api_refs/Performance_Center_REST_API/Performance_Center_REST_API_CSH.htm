@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html data-mc-runtime-file-type="CSH">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" /><title></title>
+        <script src="Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="Resources/Scripts/MadCapAll.js">
+        </script>
+        <script>
+        //<![CDATA[
+        $(Init);
+
+        function Init()
+        {
+            var cshid = null;
+            var skinName = null;
+            var searchQuery = null;
+            var firstPick = null;
+
+            if (document.location.hash.length > 0)
+            {
+                var hash = document.location.hash.substring(1);
+                var parts = hash.split("?");
+				if (hash.indexOf('?')!==-1) {
+					hash = parts[0];
+                    searchQuery = parts[1];
+				}
+
+				parts = hash.split("|");
+                cshid = parts[0];
+
+                if (parts.length == 2)
+                    skinName = parts[1];
+            }
+
+            if (document.location.search.length > 0)
+            {
+                var search = document.location.search.substring(1);
+                var parts = search.split("|");
+
+                searchQuery = parts[0];
+
+                if (parts.length == 2)
+                    firstPick = parts[1];
+            }
+
+            var url = new MadCap.Utilities.Url(document.location.href);
+			var currentPath = url.PlainPath;
+            var urlName = url.Name.substring(0, url.Name.length - "_CSH".length);
+            url = url.ToFolder().AddFile(urlName + "." + url.Extension);
+            var path = url.PlainPath;
+
+            var isFirst = true;
+
+            if (!MadCap.String.IsNullOrEmpty(cshid))
+            {
+                if (isFirst)
+                    path += "#";
+
+                isFirst = false;
+
+                path += "cshid=" + cshid;
+            }
+
+            if (!MadCap.String.IsNullOrEmpty(skinName))
+            {
+                if (isFirst)
+                    path += "#";
+                else
+                    path += "&";
+
+                isFirst = false;
+
+                path += "skinName=" + skinName;
+            }
+
+            if (!MadCap.String.IsNullOrEmpty(searchQuery)) {
+                if (searchQuery.indexOf('path=')!==-1) {
+                    var parts=searchQuery.split('&');
+
+                    for (var i=0; i<parts.length; i++) {
+                        if (parts[i].indexOf('path=')!==-1) {
+                            var switchPath=parts.splice(i,1)[0];
+                            switchPath=switchPath.split('=')[1];
+
+                            if (typeof(Storage)!=="undefined" && typeof(sessionStorage)!=="undefined") {
+                                sessionStorage.currentPath = currentPath;
+                                sessionStorage.switchPath = switchPath;
+                                sessionStorage.switchStatus =
+                                    (location.protocol.indexOf('file:')===0) ? 'offline' : 'online';
+							}
+							if (typeof(document.cookie)!=='undefined') {
+								setCookie('currentPath', currentPath, 1);
+								setCookie('switchPath', switchPath, 1);
+								setCookie('switchStatus',
+									(location.protocol.indexOf('file:')===0) ? 'offline' : 'online', 1);
+                            }
+                        }
+                    }
+                    searchQuery = parts.join();
+                } else {
+                    if(typeof(Storage)!=="undefined" && typeof(sessionStorage)!=="undefined") {
+                        sessionStorage.currentPath = path;
+                        sessionStorage.switchPath = null;
+                        sessionStorage.switchStatus = 'other';
+                    }
+					if (typeof(document.cookie)!=='undefined') {
+						setCookie('currentPath', path, 1);
+						setCookie('switchPath', null, 1);
+						setCookie('switchStatus', 'other', 1);
+					}
+                }
+
+				if (searchQuery.indexOf('topic=')!==-1) {
+                    var parts=searchQuery.split('&');
+
+                    for (var i=0; i<parts.length; i++) {
+                        if (parts[i].indexOf('topic=')!==-1) {
+                            var topic=parts.splice(i,1)[0];
+                            topic=topic.split('=')[1];
+                        }
+                    }
+
+					path = url.ToFolder().PlainPath + topic;
+                    searchQuery = parts.join();
+                }
+            }
+
+            if (!MadCap.String.IsNullOrEmpty(searchQuery))
+            {
+                if (isFirst)
+                    path += "#";
+                else
+                    path += "&";
+
+                path += "searchQuery=" + searchQuery;
+
+                if (!MadCap.String.IsNullOrEmpty(firstPick))
+                    path += "&firstPick=true";
+            }
+
+            document.location.replace(path);
+        }
+
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + "; " + expires;
+		}
+        //]]></script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>ActionEnabled Property</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="TDAPIOLELib~IActionPermission~ActionEnabled"/>
+    <meta name="Description" content="Checks if the user has rights to perform the specified action." />
+    <meta name="Microsoft.Help.TocParent" content="TDAPIOLELib~IActionPermission_properties"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Type Library Version 12.5x</div>
+        <div id="PageTitle"><div id="PageTitleText">ActionEnabled Property</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic2354.html">IActionPermission Interface</a>
+ : ActionEnabled Property</td></tr></table></div>
+    
+    
+<div id="ActionIdentityPopupContent" class="PopupContent">
+<p>Specifies the action. To get the full list of actions at your site, see the</p>
+
+<p>ACTIONS table using the Site Administrator UI.</p>
+
+<p>The most common options are:</p>
+
+<p>ac_add_bug, ac_add_common_settings, ac_add_cover, ac_add_cycle, ac_add_cyclefolder, ac_add_cycle_to_cyclefolder, ac_add_desstep, ac_add_folder, ac_add_private_settings, ac_add_r&amp;d_comments, ac_add_req ac_add_reqfolder, ac_add_test, ac_add_test_to_testcycl, ac_change_password, ac_clear_history, ac_configure_mail, ac_copy_cycle, ac_copy_folder, ac_copy_cyclefolder, ac_create_rbr_files, ac_create_views, ac_create_wr_script, ac_customize_fields, ac_delete_bug, ac_delete_common_settings, ac_delete_cover, ac_delete_cycle, ac_delete_cycle_from_cyclefolder, ac_delete_cyclefolder, ac_delete_desstep, ac_delete_folder, ac_delete_private_settings, ac_delete_req, ac_delete_run, ac_delete_test, ac_delete_test_from_testcycl, ac_import_bugs_from_file, ac_import_bugs_from_mail, ac_import_bugs_settings, ac_import_wr_tests, ac_modify_bug, ac_modify_common_settings, ac_modify_cycle, ac_modify_desstep, ac_modify_folder, ac_modify_hosts, ac_modify_private_settings, ac_modify_req, ac_modify_reqfolder, ac_modify_run, ac_modify_test, ac_modify_test_in_testcycl, ac_move_folder, ac_move_cyclefolder, ac_remove_reqfolder, ac_reset_cycle, ac_run_auto_test, ac_run_manual_test, ac_send_all_qualified, ac_test_exec_params, ac_users, ac_wr_settings</p>
+</div>
+<div id="ActionTargetPopupContent" class="PopupContent">
+<p>The object on which the specified action is performed, or the user performing the action.</p>
+
+<p>To determine whether the action can be performed by the current user on a specific test or other object, the <code>ActionTarget</code> parameter value should be a reference to the object.</p>
+
+<p>To determine whether the specified action can be performed by a specific user, the <code>ActionTarget</code> parameter value should be the user name (string).</p>
+</div>
+
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Checks if the user has rights to perform the specified action.</div></div>
+            <div class="SectionHeading" id="propertytypeSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Property type</span></div><div id="propertytypeSectionContent" class="SectionContent">Read-only property</div>
+            <div class="SectionHeading" id="syntaxSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Syntax</span></div><div id="syntaxSectionContent" class="SectionContent"><div class=LanguageSpecific id=Syntax_VB><table class="syntaxtable" width="100%" cellpadding="0" cellspacing="0"><tr><th>Visual Basic</th></tr><tr><td><pre><pre><span style="color: #0000FF; ">Public</span> <span style="color: #0000FF; ">Property</span> ActionEnabled( _
+   <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="ActionIdentityPopupLink" data-popupcontentsource="#ActionIdentityPopupContent" data-popupshowevent="click mouseenter">ActionIdentity</a></i> <span style="color: #0000FF; ">As</span> Variant, _
+   <span style="color: #0000FF; ">Optional</span> <span style="color: #0000FF; ">ByVal</span> <i><a class="PopupLink" id="ActionTargetPopupLink" data-popupcontentsource="#ActionTargetPopupContent" data-popupshowevent="click mouseenter">ActionTarget</a></i> <span style="color: #0000FF; ">As</span> Variant _
+) <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">Boolean</span></pre></pre></tr></table></div></div>
+            <div class="SectionHeading" id="parametersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Parameters</span></div><div id="parametersSectionContent" class="SectionContent"><dl>
+<dt><I>ActionIdentity</I></dt>
+<dd><p>Specifies the action. To get the full list of actions at your site, see the</p>
+
+<p>ACTIONS table using the Site Administrator UI.</p>
+
+<p>The most common options are:</p>
+
+<p>ac_add_bug, ac_add_common_settings, ac_add_cover, ac_add_cycle, ac_add_cyclefolder, ac_add_cycle_to_cyclefolder, ac_add_desstep, ac_add_folder, ac_add_private_settings, ac_add_r&amp;d_comments, ac_add_req ac_add_reqfolder, ac_add_test, ac_add_test_to_testcycl, ac_change_password, ac_clear_history, ac_configure_mail, ac_copy_cycle, ac_copy_folder, ac_copy_cyclefolder, ac_create_rbr_files, ac_create_views, ac_create_wr_script, ac_customize_fields, ac_delete_bug, ac_delete_common_settings, ac_delete_cover, ac_delete_cycle, ac_delete_cycle_from_cyclefolder, ac_delete_cyclefolder, ac_delete_desstep, ac_delete_folder, ac_delete_private_settings, ac_delete_req, ac_delete_run, ac_delete_test, ac_delete_test_from_testcycl, ac_import_bugs_from_file, ac_import_bugs_from_mail, ac_import_bugs_settings, ac_import_wr_tests, ac_modify_bug, ac_modify_common_settings, ac_modify_cycle, ac_modify_desstep, ac_modify_folder, ac_modify_hosts, ac_modify_private_settings, ac_modify_req, ac_modify_reqfolder, ac_modify_run, ac_modify_test, ac_modify_test_in_testcycl, ac_move_folder, ac_move_cyclefolder, ac_remove_reqfolder, ac_reset_cycle, ac_run_auto_test, ac_run_manual_test, ac_send_all_qualified, ac_test_exec_params, ac_users, ac_wr_settings</p></dd>
+<dt><I>ActionTarget</I></dt>
+<dd><p>The object on which the specified action is performed, or the user performing the action.</p>
+
+<p>To determine whether the action can be performed by the current user on a specific test or other object, the <code>ActionTarget</code> parameter value should be a reference to the object.</p>
+
+<p>To determine whether the specified action can be performed by a specific user, the <code>ActionTarget</code> parameter value should be the user name (string).</p></dd>
+</dl></div>
+            
+            
+            
+            			
+            
+            
+            
+            
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic2354.html">IActionPermission Interface</a>
+&nbsp;|&nbsp;<a href="topic2355.html">IActionPermission Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference  Documentation Feedback: ActionEnabled Property (IActionPermission)">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

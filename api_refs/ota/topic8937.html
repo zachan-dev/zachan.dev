@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>TDConnection Object</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="TDAPIOLELib~TDConnection"/>
+    <meta name="Description" content="Represents a single server connection." />
+    <meta name="Microsoft.Help.TocParent" content="TDAPIOLELib~-_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Type Library Version 12.5x</div>
+        <div id="PageTitle"><div id="PageTitleText">TDConnection Object</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <a class="PageLink" href="topic8938.html">Members</a>&nbsp;<!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Represents a single server connection.</div></div>
+            
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Remarks</span></div><div id="remarksSectionContent" class="SectionContent"><p>The TDConnection object is the object instantiated at the beginning of an Open Test Architecture application run. Nearly all other objects can be created from the TDConnection object or from objects created from the TDConnection object. A small number of utility objects are the only objects created without reference to the TDConnection object.</p>
+
+<p>Before initiating the connection, you can configure it for single sign on using the <a href="topic8973.html" data-auto-update-caption="true">SetBasicAuthHeaderMode Method</a> andthe <a href="topic8976.html" data-auto-update-caption="true">SetServerCredentials Method</a>. To initiate with single sign on, call the <a href="topic8960.html">InitConnectionEx Method</a> after configuration.</p>
+
+<p>If you are not using single sign on, call the <a href="topic8960.html" data-auto-update-caption="true">InitConnectionEx Method</a>. After the connection is initialized, authenticate a user with the <a href="topic8962.html" data-auto-update-caption="true">Login Method</a> and connect the user session to a project with the <a href="topic8942.html" data-auto-update-caption="true">Connect Method</a>. Call the <a href="topic8946.html" data-auto-update-caption="true">Disconnect Method</a> at the end of each project session.</p>
+
+<p>Before the application exits, call the <a href="topic8967.html" data-auto-update-caption="true">ReleaseConnection Method</a>.</p>
+
+<h3>States after method calls</h3>
+
+<p>This table shows the status of some TDConnection properties from the initial state (new TDConnection) until the connection is released. The columns are the states after the invocation of the method in the top row.</p>
+
+<table class="mercury_constants_tbl">
+    <thead>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Method<br />
+            Property</strong></td>
+
+            <td><strong>(Initial)</strong></td>
+
+            <td><strong>Init-<br />
+            ConnectionEx</strong></td>
+
+            <td><strong>Login</strong></td>
+
+            <td><strong>Connect</strong></td>
+
+            <td><strong>Disconnect</strong></td>
+
+            <td><strong>Logout</strong></td>
+
+            <td><em><strong>Release-</strong><br />
+            <strong>Connection</strong></em></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><strong>LoggedIn</strong></td>
+
+            <td>Error</td>
+
+            <td>False</td>
+
+            <td>True</td>
+
+            <td>True</td>
+
+            <td>True</td>
+
+            <td>False</td>
+
+            <td>Error</td>
+        </tr>
+
+        <tr>
+            <td><strong>Connected</strong></td>
+
+            <td>False</td>
+
+            <td>True</td>
+
+            <td>True</td>
+
+            <td>True</td>
+
+            <td>True</td>
+
+            <td>True</td>
+
+            <td>False</td>
+        </tr>
+
+        <tr>
+            <td><strong>ServerName</strong></td>
+
+            <td>Empty<br />
+            String</td>
+
+            <td>Server<br />
+            name</td>
+
+            <td>Server<br />
+            name</td>
+
+            <td>Server<br />
+            name</td>
+
+            <td>Server<br />
+            name</td>
+
+            <td>Server<br />
+            name</td>
+
+            <td>Empty<br />
+            String</td>
+        </tr>
+
+        <tr>
+            <td><strong>ProjectName</strong></td>
+
+            <td>Error</td>
+
+            <td>Empty<br />
+            String</td>
+
+            <td>Empty<br />
+            String</td>
+
+            <td>Project<br />
+            name</td>
+
+            <td>Empty<br />
+            String</td>
+
+            <td>Empty<br />
+            String</td>
+
+            <td>Error</td>
+        </tr>
+
+        <tr>
+            <td><strong>Project-<br />
+            Connected</strong></td>
+
+            <td>Error</td>
+
+            <td>False</td>
+
+            <td>False</td>
+
+            <td>True</td>
+
+            <td>False</td>
+
+            <td>False</td>
+
+            <td>Error</td>
+        </tr>
+    </tbody>
+</table></div>
+            <div class="SectionHeading" id="interfacesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Interfaces</span></div><div id="interfacesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Implemented Interface</th><th>Description</th></tr>
+<tr><td class=LinkCell><A href="topic9073.html">ITDConnection_SendMailWithCC</A></td><td class="DescriptionCell">Send Email</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="exampleSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Example</span></div><div id="exampleSectionContent" class="SectionContent"><div class="FilteredContentCS">
+    
+	<div class="TabContainer">
+	    <ul>
+	        <li><a href="#TabContent-2be9ffec-e156-46fe-8c4e-2570e6c30377">Single sign on connection (C#)</a></li>
+	    </ul>
+	    <div id="TabContent-2be9ffec-e156-46fe-8c4e-2570e6c30377" class="FilteredContent"><pre><span style="color: #008000; ">// configure connection settings      
+</span>ConnectionSettings cs = <span style="color: #0000FF; ">new</span> ConnectionSettings(); 
+
+cs.ExecutionMode =  
+    TDAPI_EXECUTION_MODES.EXECUTION_MODE_INTERACTIVE; 
+    
+cs.BasicAuthHeaderMode = 
+   TDAPI_BASIC_AUTH_HEADER_MODES.HEADER_MODE_ONCE;
+    
+cs.SetWebServerCredentials(<span style="color: #800000; ">&quot;login&quot;</span>, <span style="color: #800000; ">&quot;pass&quot;</span>);  
+
+<span style="color: #008000; ">// import to OTA Connection      
+</span>TDConnection otaConnection = <span style="color: #0000FF; ">new</span> TDConnection();      
+
+otaConnection.ImportConnectionSettings(cs);
+
+<span style="color: #008000; ">// pre-configure the connection to add Basic Auth Header at first request 
+</span>
+otaConnection.SetBasicAuthHeaderMode(TDAPI_BASIC_AUTH_HEADER_MODES.HEADER_MODE_ONCE); 
+
+<span style="color: #008000; ">// set user credentials        
+</span>
+otaConnection.SetServerCredentials(<span style="color: #800000; ">&quot;Login&quot;</span>, <span style="color: #800000; ">&quot;Password&quot;</span>); 
+
+<span style="color: #008000; ">// init connect to ALM server       
+</span>
+otaConnection.InitConnection(<span style="color: #800000; ">&quot;http://&lt;server URL&gt;/qcbin&quot;</span>);</pre></div>
+	</div>
+</div>
+</div>
+            
+            <div class="SectionHeading" id="publicmethodsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Public Methods</span></div><div id="publicmethodsSectionContent" class="SectionContent"><table class="FilteredItemListTable">
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8939.html">ApplyClientCert</a></td><td class="DescriptionCell">Apply client certificate to connection, the parameter should be valid CERT_CONTEXT structure.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8940.html">ApplyCookie</a></td><td class="DescriptionCell">Applies cookie to connection</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8941.html">ChangePassword</a></td><td class="DescriptionCell">Changes the password for the currently logged in user.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8942.html">Connect</a></td><td class="DescriptionCell">Connects the logged-in user to the specified project in the domain.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8943.html">ConnectToVCSAs</a></td><td class="DescriptionCell">Obsolete. Do not invoke.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8944.html">CreateBSTRMap</a></td><td class="DescriptionCell">Create an IBSTRMap, If you create it you must release it. In C#: System.Runtime.InteropServices.Marshal.ReleaseComObject(map);</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8945.html">CreateSession</a></td><td class="DescriptionCell">Creates application session on server, similar to login operation but for SSO configuration.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8946.html">Disconnect</a></td><td class="DescriptionCell">Disconnects the user from the currently connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8947.html">DisconnectProject</a></td><td class="DescriptionCell">Disconnects from the project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8948.html">GetAllVisibleProjectDescriptors</a></td><td class="DescriptionCell">The list of project descriptors under all domains that the current logged in user is allowed to connect to.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8949.html">GetCommonFavoriteFactory</a></td><td class="DescriptionCell">Returns the factory that manages favorites.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8950.html">GetCommonFavoriteFolderFactory</a></td><td class="DescriptionCell">Returns the factory that manages favorite folders.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8951.html">GetLicenses</a></td><td class="DescriptionCell">Allocates multiple licenses types according to the LicensesType parameter.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8952.html">GetLicensesEx</a></td><td class="DescriptionCell">Allocates multiple licenses types according to the LicensesType parameter.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8953.html">GetLicenseStatus</a></td><td class="DescriptionCell">The license status for the specified client type.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8954.html">GetLinkedProjects</a></td><td class="DescriptionCell">The project list of linked projects to this project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8955.html">GetTDParamsNames</a></td><td class="DescriptionCell">Returns the names of the site's parameters.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8956.html">GetTDVersion</a></td><td class="DescriptionCell">The major and minor versions of the OTA API.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8957.html">GetTDVersionEx</a></td><td class="DescriptionCell">The major, minor, minor-minor versions and build number of the OTA API.</td></tr>
+<tr><td class=LinkCell IsNew><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8958.html">ImportConnectionSettings</a></td><td class="DescriptionCell">Import of connection settings to connection</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8959.html">InitAndCheckServerCompatibility</a></td><td class="DescriptionCell">Initialize connection and check whether server version is compatible with OTA</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8960.html">InitConnectionEx</a></td><td class="DescriptionCell">Initializes the connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8961.html">IsSSPREnabled</a></td><td class="DescriptionCell">Returns whether Self-Service Password Reset is enabled.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8962.html">Login</a></td><td class="DescriptionCell">Authorizes the user. On success, , the user is logged in and can connect to projects.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8963.html">Logout</a></td><td class="DescriptionCell">Terminates the user's session on this TDConnection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8964.html">PurgeRuns</a></td><td class="DescriptionCell">Deletes the specified runs.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8965.html">PurgeRuns2</a></td><td class="DescriptionCell">Deletes the specified runs.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8966.html">RefreshConnectionState</a></td><td class="DescriptionCell">Refreshes the connection state: updates the Connected, LoggedIn, and ProjectConnected properties.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8967.html">ReleaseConnection</a></td><td class="DescriptionCell">Releases the COM pointer created when the connection is initialized.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8968.html">SendFramedMail</a></td><td class="DescriptionCell">Sends Mail.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8969.html">SendFramedMailEx</a></td><td class="DescriptionCell">Sends Mail.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8970.html">SendMail</a></td><td class="DescriptionCell">Sends Mail.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8971.html">SendMailEx</a></td><td class="DescriptionCell">Sends Mail.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8972.html">SendMailWithCC</a></td><td class="DescriptionCell">Sends Mail.</td></tr>
+<tr><td class=LinkCell IsNew><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8973.html">SetBasicAuthHeaderMode</a></td><td class="DescriptionCell">Set basic auth header mode</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8974.html">SetExecutionMode</a></td><td class="DescriptionCell">Set execution mode to WebClient</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8975.html">SetProxyCredentials</a></td><td class="DescriptionCell">Sets credentials for authentication on proxy.</td></tr>
+<tr><td class=LinkCell IsNew><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8976.html">SetServerCredentials</a></td><td class="DescriptionCell">Sets credentials for authentication on server.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8977.html">SSPRChangePassword</a></td><td class="DescriptionCell">Send the new password, SSPR_CIPHER, name (the user name that user entered in change password window, if it is impersonate this meby different from the real user name), to the server.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8978.html">SSPRSendMail</a></td><td class="DescriptionCell">Send email that contain SSPR_LINK (URL + Cipher (user name + GUID) ) for change password window.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8979.html">SynchronizeFollowUps</a></td><td class="DescriptionCell">Obsolete. Do not invoke.</td></tr>
+<tr><td class=LinkCell IsNew><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8980.html">UseInstanceCache</a></td><td class="DescriptionCell">Use instance cache of settings storages</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="publicpropertiesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Public Properties</span></div><div id="publicpropertiesSectionContent" class="SectionContent"><table class="FilteredItemListTable">
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8981.html">ActionPermission</a></td><td class="DescriptionCell">The ActionPermission object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8982.html">AlertManager</a></td><td class="DescriptionCell">The AlertManager object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8983.html">AssetRelationFactory</a></td><td class="DescriptionCell">The AssetsRelationFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8984.html">AssetRepositoryItemFactory</a></td><td class="DescriptionCell">The AssetRepositoryItemFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8985.html">AsyncMailEnabled</a></td><td class="DescriptionCell">Checks if asynchronous mailing is enabled for the project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8986.html">AuditPropertyFactory</a></td><td class="DescriptionCell">The global AuditProperty factory, not associated with a specific entity.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8987.html">AuditRecordFactory</a></td><td class="DescriptionCell">The global AuditRecord factory, not associated with a specific entity.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8988.html">BPComponentFactory</a></td><td class="DescriptionCell">The BPComponentFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8989.html">BPIterationFactory</a></td><td class="DescriptionCell">The BPIterationFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8990.html">BPIterationParamFactory</a></td><td class="DescriptionCell">Get BPIterationParamFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8991.html">BPModelElementFactory</a></td><td class="DescriptionCell">The BPModelElementFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8992.html">BPModelFactory</a></td><td class="DescriptionCell">The BPModelFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8993.html">BPModelFolderFactory</a></td><td class="DescriptionCell">The BPModelFolderFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8994.html">BPModelPathFactory</a></td><td class="DescriptionCell">The BPModelPathFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8995.html">BPParamFactory</a></td><td class="DescriptionCell">Get BPParamFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8996.html">BugFactory</a></td><td class="DescriptionCell">The Bug Factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8997.html">CheckoutRepository</a></td><td class="DescriptionCell">The path of the checkout repository.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8998.html">Command</a></td><td class="DescriptionCell">The Command object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8999.html">CommonSettings</a></td><td class="DescriptionCell">The Settings object for all users in this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9000.html">ComponentFolderFactory</a></td><td class="DescriptionCell">The Component Folder Factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9001.html">ComponentParamFactory</a></td><td class="DescriptionCell">The ComponentParamFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9002.html">ComponentStepFactory</a></td><td class="DescriptionCell">The ComponentStepFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9003.html">Connected</a></td><td class="DescriptionCell">Checks if the Open Test Architecture API server connection is initialized.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9004.html">CoverageFactory</a></td><td class="DescriptionCell">The CoverageFactory for the connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9005.html">Customization</a></td><td class="DescriptionCell">The Customization object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9006.html">DBName</a></td><td class="DescriptionCell">The name of the database.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9007.html">DBType</a></td><td class="DescriptionCell">The database type.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9008.html">DeletedAssetInfoFactory</a></td><td class="DescriptionCell">The DeletedAssetInfoFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9009.html">DesignStepFactory</a></td><td class="DescriptionCell">The DesignStepFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9010.html">DirectoryPath</a></td><td class="DescriptionCell">The path of the server side repository directory for the database repository type.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9011.html">DomainName</a></td><td class="DescriptionCell">The current domain.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9012.html">DomainsList</a></td><td class="DescriptionCell">The domain names for this site.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9013.html">ExtendedStorage</a></td><td class="DescriptionCell">Disabled by default security settings. Use the entity-level extended storage property.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9014.html">ExternalAuthenticationEnabled</a></td><td class="DescriptionCell">Checks if external authentication enabled on server</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9015.html">Fields</a></td><td class="DescriptionCell">A list of fields for the table specified in the DataType argument.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9016.html">GraphBuilder</a></td><td class="DescriptionCell">The GraphBuilder object for the connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9017.html">HostFactory</a></td><td class="DescriptionCell">The Hosts Factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9018.html">HostGroupFactory</a></td><td class="DescriptionCell">The HostGroupFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9019.html">IgnoreHtmlFormat</a></td><td class="DescriptionCell">Indicates if formatted memo and description fields are returned as plain text without HTML tags.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9020.html">IsSearchSupported</a></td><td class="DescriptionCell">Checks if the search function is enabled for the project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9021.html">IsServerCompatible</a></td><td class="DescriptionCell">Get Compatibility of OTA to Server</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9022.html">LoggedIn</a></td><td class="DescriptionCell">Checks if the user is currently logged in on this TDConnection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9023.html">LoginMetadata</a></td><td class="DescriptionCell">Gets metadata on different project types.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9024.html">LoginSessionId</a></td><td class="DescriptionCell">The login session ID.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9025.html">MailConditions</a></td><td class="DescriptionCell">The TDMailConditions object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9026.html">ModuleVisible</a></td><td class="DescriptionCell">Checks if the specified module is visible to the connected user. This property is used for Quality Center UI programming and has no function in third-party applications.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9027.html">PolicyStatus</a></td><td class="DescriptionCell">The Policy Enforcement Status object of the connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9028.html">ProductInfo</a></td><td class="DescriptionCell">An IProductInfo reference pointing to the current build information.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9029.html">ProjectConnected</a></td><td class="DescriptionCell">Checks if the TDConnection is connected to a project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9030.html">ProjectName</a></td><td class="DescriptionCell">The name of the connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9031.html">ProjectProperties</a></td><td class="DescriptionCell">The ProjectProperties object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9032.html">ProjectSessionId</a></td><td class="DescriptionCell">The project session ID.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9033.html">ProjectsList</a></td><td class="DescriptionCell">The projects that are available in the domain to which Quality Center is connected.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9034.html">ProjectsListEx</a></td><td class="DescriptionCell">The projects available within the specified domain.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9035.html">QCResourceFactory</a></td><td class="DescriptionCell">The QC resource factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9036.html">QCResourceFolderFactory</a></td><td class="DescriptionCell">The QC resource folder factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9037.html">ReleaseFolderFactory</a></td><td class="DescriptionCell">The factory that manages release folders.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9038.html">ReportRole</a></td><td class="DescriptionCell">The report role of the connected user.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9039.html">ReqFactory</a></td><td class="DescriptionCell">The ReqFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9040.html">Rules</a></td><td class="DescriptionCell">The RuleManager object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9041.html">RunCriterionFactory</a></td><td class="DescriptionCell">The RunCriterionFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9042.html">RunFactory</a></td><td class="DescriptionCell">The RunFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9043.html">RunIterationFactory</a></td><td class="DescriptionCell">The RunIterationFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9044.html">ServerName</a></td><td class="DescriptionCell">The name of the connected Open Test Architecture API server.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9045.html">ServerTime</a></td><td class="DescriptionCell">The time and date of the application server.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9046.html">ServerURL</a></td><td class="DescriptionCell">The URL of the connected server.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9047.html">ServiceChangeFactory</a></td><td class="DescriptionCell">The service change factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9048.html">ServiceFactory</a></td><td class="DescriptionCell">The service factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9049.html">ServiceFolderFactory</a></td><td class="DescriptionCell">The service folder factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9050.html">ServiceGroupFactory</a></td><td class="DescriptionCell">The service group factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9051.html">StepFactory</a></td><td class="DescriptionCell">The Step Factory for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9052.html">TDParams</a></td><td class="DescriptionCell">Gets the value of the parameter whose name is specified by Request.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9053.html">TemplateManager</a></td><td class="DescriptionCell">The Template Manager object of the connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9054.html">TestConfigFactory</a></td><td class="DescriptionCell">The TestConfigFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9055.html">TestCriterionFactory</a></td><td class="DescriptionCell">The TestCriterionFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9056.html">TestFactory</a></td><td class="DescriptionCell">The Test Factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9057.html">TestFolderFactory</a></td><td class="DescriptionCell">The TestFolderFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9058.html">TestLabFolderFactory</a></td><td class="DescriptionCell">The TestLabFolderFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9059.html">TestRepository</a></td><td class="DescriptionCell">The path of the tests directory of the connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9060.html">TestSetFactory</a></td><td class="DescriptionCell">The Test Set Factory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9061.html">TestSetTreeManager</a></td><td class="DescriptionCell">The TestSetTreeManager object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9062.html">TreeManager</a></td><td class="DescriptionCell">The TreeManager object for the system tree.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9063.html">TSTestFactory</a></td><td class="DescriptionCell">The factory that manages test instances in test sets.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9064.html">UserAssetFactory</a></td><td class="DescriptionCell">The UserAssetFactory object for this connection.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9065.html">UserGroupsList</a></td><td class="DescriptionCell">The names of the user groups of the currently connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9066.html">UserName</a></td><td class="DescriptionCell">The user connected to the project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9067.html">UserSettings</a></td><td class="DescriptionCell">The Settings object for the logged-on user.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9068.html">UsersList</a></td><td class="DescriptionCell">The names of the users of the currently connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9069.html">UsingProgress</a></td><td class="DescriptionCell">Indicates if a progress bar is displayed.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9070.html">VcsDbRepository</a></td><td class="DescriptionCell">The path of the VCS database of the connected project.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9071.html">VisibleDomains</a></td><td class="DescriptionCell">The list of domain names that the current logged in user is permitted to view.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic9072.html">VisibleProjects</a></td><td class="DescriptionCell">The list of projects in the specified domain that the current logged in user is allowed to connect to.</td></tr>
+</table></div>
+            
+            
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic8938.html">TDConnection Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference  Documentation Feedback: TDConnection Object">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

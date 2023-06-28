@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Performance_Center_REST_API.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Getting Started">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Exceptions</title>
+        <!-- WEBHELP-ONLY: The following statement fixes cropping errors when customers use IE7 at 120 dpi (for example, list numbering problems) -->
+        <!--[if lt IE 8]>
+            <style type="text/css"> 
+                body
+                {
+                        padding-left: 16px;
+                }
+            </style>
+         <![endif]-->
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+			p.footerlink  
+			{
+
+			font-size: 85%;
+			text-align: right;
+			}
+
+			<!--QCCR1K4344--></style>
+        <link href="Resources/Stylesheets/_HP_IE_Experience.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Performance_Center_REST_API.htm#Exceptions.htm">Open topic with navigation</a>
+        </p>
+        <h1>Exceptions</h1>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Exception</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PC_​API_​ADD_​UPDATE_​GROUP_​FAILED</td>
+                    <td>Failed to create or change group '{0}'. Reason: {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​AUTHENTICATION_​FAILURE_​GENERAL_​REASON</td>
+                    <td>Authentication failed.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​BASIC_​SCHEDULER_​DO_​NOT_​NEED_​VUSERS_​AMOUNT_​IN_​START_​VUSERS_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Do not provide the number of Vusers in a Basic Scheduler Start Vusers action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​BASIC_​SCHEDULER_​DO_​NOT_​NEED_​VUSERS_​AMOUNT_​IN_​START_​VUSERS_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Do not provide the number of Vusers in a Basic Scheduler Start Vusers action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​BASIC_​SCHEDULER_​DO_​NOT_​NEED_​VUSERS_​AMOUNT_​IN_​STOP_​VUSERS_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Do not provide the number of Vusers in a Basic Scheduler Stop Vusers action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​BASIC_​SCHEDULER_​DO_​NOT_​NEED_​VUSERS_​AMOUNT_​IN_​STOP_​VUSERS_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Do not provide the number of Vusers in a Basic Scheduler Stop Vusers action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​EMPTY_​RUN_​REQESUT</td>
+                    <td>Failed to extract Run data from the request. Ensure that: data passed to the HTTP request body is the same type as the Content-Type header value; the namespace matches the documentation specification; the XMLS root element is {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​RETERIVE_​LOCK_​FOR_​EDIT_​LOAD_​TEST</td>
+                    <td>Test {0} is locked by other user.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​AUTHENTICATE</td>
+                    <td>Authentication failed.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​CREATE_​LOAD_​TEST</td>
+                    <td>Failed to create performance test. domain: {0}, project: {1} . Reason: {2}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​CREATE_​RESERVATION_​FOR_​RUN</td>
+                    <td>Failed to create reservation for new run.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​DELETE_​GROUP</td>
+                    <td>Failed to delete group. domain {0}, project {1}, load test {2}, group {3}. Reason: {4}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​DELETE_​GROUPS</td>
+                    <td>Failed to delete groups. domain {0}, project {1}, load test {2}. Reason: {3}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​DELETE_​LOAD_​TEST</td>
+                    <td>Failed to delete test {0}. Reason: {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​DOWNLOAD_​RUN_​RESULT_​DATA</td>
+                    <td>Failed to download data of result {0} of run {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​GET_​RUN_​RESULTS_​DATA</td>
+                    <td>Failed to retrieve results data for run {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​GET_​RUN_​RESULT_​DATA</td>
+                    <td>Failed to retrieve data of result {0} of run {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​LOGOUT</td>
+                    <td>Failed to log off server. Resend request.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​RETRIEVE_​ALL_​RUNS</td>
+                    <td>Failed to retrieve Runs data from domain {0}, project {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​RETRIEVE_​ALL_​RUNS_​FILTERED</td>
+                    <td>Failed to retrieve Runs data from domain {0}, project {1}. {2}</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​RETRIEVE_​RESERVATION_​AVAILABILITY_​INFORMATION</td>
+                    <td>Failed to retrieve reservation availability information.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​RETRIEVE_​RESERVATION_​INFORMATION</td>
+                    <td>Failed to retrieve reservation information for reservation {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​RETRIEVE_​RUN_​INFORMATION</td>
+                    <td>Failed to retrieve run {0} information from domain {1}, project {2}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​START_​RUN</td>
+                    <td>Failed to start run. domain: {0}, project: {1}, test instance {2}, test {3}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​START_​RUN_​INVALID_​RESERATION</td>
+                    <td>Failed to start run. Reservation {5} does not apply. domain {0}, project {1}, test set {2}, test instance {3}, test {4}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​START_​RUN_​WITH_​FAILURE_​DETAILS</td>
+                    <td>Failed to start run because {4}. domain: {0}, project: {1}, test instance {2}, test {3}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​STOP_​RUN</td>
+                    <td>Failed to stop run {0}, domain: {1}, project: {2}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FAILED_​TO_​STOP_​RUN_​FAILURE_​IN_​RETRIEVING_​RUN_​DATA</td>
+                    <td>Failed to stop run {0} due to failure retrieving run data. Resend stop request. domain: {1}, project: {2}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FORBIDDEN_​STOP_​VUSERS_​ACTION_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Stop Vusers Action is valid only after Duration action of type 'Run For'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​FORBIDDEN_​STOP_​VUSERS_​ACTION_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'.  Stop Vusers Action is valid only after Duration action of type 'Run For'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​GENERAL_​ERROR</td>
+                    <td>Operation failed.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​GET_​GROUPS_​LOAD_​TEST_​FAILED</td>
+                    <td>Failed to get groups of performance test with ID {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​GET_​GROUP_​LOAD_​TEST_​FAILED</td>
+                    <td>Failed to get group {1}  of performance test with ID {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​GET_​LOAD_​TESTS_​FAILED</td>
+                    <td>Failed to get performance tests.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​GET_​LOAD_​TEST_​FAILED</td>
+                    <td>Failed to get performance test with ID {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​GROUP_​NOT_​EXISTS</td>
+                    <td>Group '{0}' does not exist in load test with ID {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​HOST_​DOES_​NOT_​EXISTS</td>
+                    <td>Host '{0}' does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​ILLEGAL_​RUN_​OPERATION</td>
+                    <td>Invalid run operation. '{0}' is illegal operation, please check PC API documentation for legal run operations.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​ILLEGAL_​TOTAL_​VUSER_​FEILED</td>
+                    <td>Illegal design load request. 'TotalVusers' is allowed only when scheduler is basic, by test and percentage mode.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INCONSITENT_​GROUP_​NAME</td>
+                    <td>Inconsistent group name. The Group name is '{0}'. The Group name in the request is '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​ADD_​LICENSES_​REQUEST_​WRONG_​PROJECT</td>
+                    <td>Invalid add licenses request. Verify that the project name is 'LAB_​PROJECT'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​CREATE_​TEST_​INSTANCE_​REQUEST</td>
+                    <td>Invalid request. Ensure that the request starts with a 'TestInstance' tag and contains a PC API namespace.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​DURATION_​ACTION_​IN_​REAL_​WORLD_​SCHEDULER_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In the Real-World Scheduler, a Duration action must be of type 'Run For'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​DURATION_​ACTION_​IN_​REAL_​WORLD_​SCHEDULER_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, a Duration action must be of type 'Run For'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​DURATION_​FOR_​REAL_​WORLD_​SCHEDULER_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In the Real-World Scheduler, a Duration action must be of type 'Run For'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​DURATION_​FOR_​REAL_​WORLD_​SCHEDULER_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, a Duration action must be of type 'Run For'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​DURATION_​TYPE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. A Duration type must be one of '{0}','{1}', or '{2}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​DURATION_​TYPE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. A Duration type must be one of '{0}','{1}', or '{2}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GLOBAL_​SCHEDLUER_​CONTAINS_​START_​GROUP_​ACTIONS</td>
+                    <td>Invalid Global Scheduler. Global Scheduler cannot contain 'StartGroup' action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GLOBAL_​SCHEDLUER_​EMPTY_​ACTION</td>
+                    <td>Invalid Global Scheduler. Ensure that each action contains one of the following 'StartGroup', 'Initilize', 'StartVusers' , 'Duration', or 'StopVusers'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GLOBAL_​SCHEDLUER_​MORE_​THAN_​ONE_​ACTION</td>
+                    <td>Invalid Global Scheduler. Ensure that each action contains only one of the following 'StartGroup', 'Initilize', 'StartVusers' , 'Duration' or 'StopVusers'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GLOBAL_​SCHEDULER_​CANNOT_​STOP_​VUSERS_​MORE_​THAN_​STARTED</td>
+                    <td>Invalid Global Scheduler. Total stopped vusers must be less than or equal to total started vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GROUPS_​SCHEDULER_​START_​GROUPS_​CONTAINS_​CYCLES</td>
+                    <td>Invalid Groups Schedulers. Ensure that 'Start Group' phase does not contain cycles.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GROUP_​SCHEDLUER_​EMPTY_​ACTION</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Ensure that each action contains only one of the following 'StartGroup', 'Initilize', 'StartVusers' , 'Duration' or 'StopVusers'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​GROUP_​SCHEDLUER_​MORE_​THAN_​ONE_​ACTION</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Ensure that each action contains only one of the following 'StartGroup', 'Initilize', 'StartVusers' , 'Duration' or 'StopVusers'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​HOSTS_​ASSIGNMENT_​MODE_​ASSIGN_​ALL</td>
+                    <td>Hosts cannot be assigned if the Load Generator distribution mode is 'Assign all Load Generators to each group'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​HOSTS_​ASSIGNMENT_​MODE_​ASSIGN_​MANUALLY</td>
+                    <td>Hosts must be assigned if the Load Generator distribution mode is 'Assign Load Generator to group manually'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​HOST_​TYPE</td>
+                    <td>Invalid Host type. Host type must be {0} or {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​GRADUALLY_​TIME_​INTERVAL_​MISSING_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. An Initialize action of type 'Gradually' must contain a time interval description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​GRADUALLY_​TIME_​INTERVAL_​MISSING_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. An Initialize action of type 'Gradually' must contain a time interval description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​GRADUALLY_​VUSERS_​AMOUNT_​ABOVE_​TOTAL_​VUSERS_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In an Initialize action of type 'Gradually', the number of Vusers must be less than the total Vusers allocated to the test.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​GRADUALLY_​VUSERS_​AMOUNT_​ABOVE_​TOTAL_​VUSERS_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In an Initialize action of type 'Gradually', the number of Vusers must be less than the total Vusers allocated to the group.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​GRADUALLY_​VUSERS_​AMOUNT_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In an Initialize action of type 'Gradually', the number of Vusers must be an integer greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​GRADUALLY_​VUSERS_​AMOUNT_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. An Initialize action of type 'Simultaneously' or 'Gradually' must contain a 'Waiting after' initialization description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​WAIT_​AFTER_​INIT_​MISSING_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. An Initialize action of type 'Simultaneously' or 'Gradually' must contain a 'Waiting after' initialization description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​DATA_​WAIT_​AFTER_​INIT_​MISSING_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. An Initialize action of type 'Simultaneously' or 'Gradually' must contain a 'Waiting after' initialization description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​TYPE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler'. An Initialize action type must be one of '{0}', '{1}' or '{2}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​INIT_​TYPE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. An Initialize action type must be one of '{0}', '{1}' or '{2}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​ALL_​READY_​EXISTS</td>
+                    <td>Invalid design performance test request. A performance test named '{0}' in folder '{1}' already exists.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​CONTROLLER_​NOT_​EXISTS</td>
+                    <td>Invalid design performance test request. Controller '{0}' does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​GROUP_​NAME_​CANNOT_​BE_​EMPTY_​STRING</td>
+                    <td>Invalid design performance test request. Group name cannot be an empty string.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​ILLEGAL_​LG_​DISTRIBUTION</td>
+                    <td>Invalid design performance test request. Load Generators distribution must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​ILLEGAL_​WORLOAD_​SUBTYPE</td>
+                    <td>Invalid design performance test request. Workload subtype must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​ILLEGAL_​WORLOAD_​TYPE</td>
+                    <td>Invalid design performance test request. Workload type must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​ILLEGAL_​WORLOAD_​VUSERS_​DISTRIBUTION</td>
+                    <td>Invalid design performance test request. Vuser distribution must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​AMOUNT_​OF_​LGS</td>
+                    <td>Invalid design performance test request. The number of Load Generators must be an integer greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​GROUP</td>
+                    <td>Invalid design performance test request. Ensure that each 'Group' is defined correctly under 'Groups'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​GROUPS</td>
+                    <td>Invalid design performance test request. Ensure that 'Groups' is defined correctly under 'Content'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​WORKLOAD</td>
+                    <td>Invalid design performance test request. Ensure that 'Workload' is defined correctly under 'Content'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​WORKLOAD_​SUBTYPE</td>
+                    <td>Invalid design performance test request. Ensure that 'SubType' is defined correctly under 'Workload'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​WORKLOAD_​TYPE</td>
+                    <td>Invalid design performance test request. Ensure that 'Type' is defined correctly under 'Workload'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​INVALID_​WORKLOAD_​VUSERS_​DISTRIBUTION</td>
+                    <td>Invalid design performance test request. When Workload 'Type' is 'By Test', you must configure 'VuserDistribution' under 'Workload'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​MISSING_​LG_​DISTRIBUTION</td>
+                    <td>Invalid design performance test request. Ensure that 'Type' is defined correctly under 'LGDistribution'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​NOT_​ALLOWED_​WORLOAD_​VUSERS_​DISTRIBUTION</td>
+                    <td>Invalid design performance test request. When Workload 'Type' is 'By Group', you cannot define 'VuserDistribution' under 'Workload'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​CONTENT_​TOTAL_​VUSER_​AMOUNT_​MUST_​BE_​NON_​NEGIATIVE_​INTEGER</td>
+                    <td>Invalid design performance test request. When Workload type is 'Basic', subtype is 'By Test', and Vusers distribution is 'By Percentage', you must configure 'TotalVusers' as an integer greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​ID</td>
+                    <td>Invalid load test ID: {0}. The ID must be an integer greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​REQUEST</td>
+                    <td>Invalid design performance test request.Ensure that tag name is 'Test' and the request must contain a PC API namespace. Verify that all mandatory fields  are defined.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​REQUEST_​MISSING_​CONTENT</td>
+                    <td>Invalid design performance test request. Ensure that 'Content' is defined correctly under 'Test'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​LOAD_​TEST_​UPDATE_​REQUEST</td>
+                    <td>Invalid design performance test request. Ensure that tag name is 'Content' and contains PC API namespace.Verify that all mandatory fields (as define in the PC API documentation) are defined.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​META_​DATA_​REQUEST_​ILLEGAL_​TEST_​NAME</td>
+                    <td>Invalid design performance test request. Test name  '{0}' cannot contain one of the following characters '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​META_​DATA_​REQUEST_​INVALID_​TEST_​NAME</td>
+                    <td>Invalid design performance test request. Ensure that 'Name' is defined correctly.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​META_​DATA_​REQUEST_​MISSING_​TEST_​FOLDER_​PATH</td>
+                    <td>Invalid design performance test request. Ensure that 'TestFolderPath' is defined correctly.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​META_​DATA_​REQUEST_​MISSING_​TEST_​NAME</td>
+                    <td>Invalid design performance test request. Test name cannot be an empty string.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​META_​DATA_​REQUEST_​NOT_​EXISTED_​TEST_​FOLDER_​PATH</td>
+                    <td>Invalid design performance test request. Folder path '{0}' not found.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​REQUEST</td>
+                    <td>Invalid Request. Verify that all mandatory fields are defined and that root element contains a PC API namespace.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​ILLEGAL_​CACHE_​SIZE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'CacheSize' must be an integer between 1 and 100.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​DISABLED_​UNEXPECTED_​ADVANCE_​TRACE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'Log' is of type '{1}', do not specify an 'AdvanceTrace'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​DISABLED_​UNEXPECTED_​DATA_​RETURNED_​BY_​SERVER</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'Log' is of type '{1}', do not specify a 'DataReturnByServer'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​DISABLED_​UNEXPECTED_​LOG_​OPTIONS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When Log is disabled, do not specify 'LogOptions'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​LOG_​OPTION_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'LogOptions' type must be either '{1}' or '{2}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​MIN_​PERCENTAGE_​HIGHER_​THAN_​MAX_​PERCENTAGE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'MinPercentage' must be less than or equal to 'MaxPercentage'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​MISSING_​LOG_​OPTION_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. Missing 'Type' under 'LogOptions' in 'Log'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​MISSING_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. Missing 'Type' in 'Log'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​NEGATIVE_​LIMIT_​THINK_​TIME_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'LimitThinkTimeSeconds' must be an integer greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​NEGATIVE_​MAX_​PERCENTAGE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'MaxPercentage' must be an integer greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​NEGATIVE_​MIN_​PERCENTAGE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'MinPercentage' must be an integer greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​NON_​POSITIVE_​MULTIPLY_​FACTOR</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'MultiplyFactor' must be an integer greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'Log' type must be either '{1}', '{2}', or '{3}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​UNEXPECTED_​LINIT_​THINK_​TIME_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'ThinkTime' is of type '{1}', do not specify 'LimitThinkTimeSeconds'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​UNEXPECTED_​MAX_​PERCENTAGE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'ThinkTime' is of type '{1}', do not specify 'MaxPercentage'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​UNEXPECTED_​MIN_​PERCENTAGE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'ThinkTime' is of type '{1}', do not specify 'MinPercentage'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​UNEXPECTED_​MULTIPLY_​FACTOR</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'ThinkTime' is of type '{1}', do not specify 'MultiplyFactor'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​LOG_​UNEXPECTED_​PARAMERTERS_​SUBSTITUTION</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'Log' is of type '{1}', do not specify 'ParametersSubstituion'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​DELAY_​AT_​RANGE_​OF_​SECONDS_​HIGHER_​THAN_​DELAY_​AT_​RANGE_​TO_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'DelayAtRangeOfSeconds' must be less than or equal to 'DelayAtRangeToSeconds'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​MISSING_​START_​NEW_​ITERATION_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. Missing 'Type' under 'StartNewIteration' in Pacing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​NEGATIVE_​DELAY_​AT_​RANGE_​OF_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'DelayAtRangeOfSeconds' must be greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​NEGATIVE_​DELAY_​AT_​RANGE_​TO_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'DelayAtRangeToSeconds' must be greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​NEGATIVE_​DELAY_​OF_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'DelayOfSeconds' must be greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​NEGATIVE_​NUM_​OF_​ITERATIONS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. In Pacing, the number of iterations must be an integer greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'StartNewIteration' type must be one of '{1}', '{2}', '{3}', '{4}' or '{5}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​UNEXPECTED_​PARAMETER_​DELAY_​AT_​RANGE_​OF_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'StartNewIteration' is of type '{1}', do not specify a 'DelayAtRangeOfSeconds'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​UNEXPECTED_​PARAMETER_​DELAY_​AT_​RANGE_​TO_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'StartNewIteration' is of type '{1}', do not specify a 'DelayAtRangeToSeconds'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​PACING_​UNEXPECTED_​PARAMETER_​DELAY_​OF_​SECONDS</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'StartNewIteration' is of type '{1}', do not specify a 'DelayOfSeconds'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​THINK_​TIME_​MISSING_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. Missing 'Type' in 'ThinkTime'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​THINK_​TIME_​TYPE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. 'ThinkTime' type must be one of '{1}', '{2}','{3}' or '{4}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RTS_​UNEXPECTED_​CACHE_​SIZE</td>
+                    <td>Invalid Run-Time Setting of group '{0}'. When 'LogOptions' is of type 'always', do not specify a 'Cache size'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RUN_​ID</td>
+                    <td>Invalid run ID: {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​RUN_​STATE_​FOR_​STOP_​REQUEST</td>
+                    <td>Run {0} cannot stop because the run state is {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​SCRIPT_​DATA</td>
+                    <td>The group entity does not contain a valid script entity.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP</td>
+                    <td>The Group Scheduler of group '{0}' contains more than one 'Start Group' action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP_​DATA_​GROUP_​DOES_​NOT_​EXISTS</td>
+                    <td>Invalid Group Scheduler of group '{0}'. You cannot schedule group '{0}' to start after group '{1}' because group '{1}' does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP_​DATA_​GROUP_​NAME_​MISSING</td>
+                    <td>Invalid Group Scheduler of group '{0}'. A Start Group of type 'Start after group' must contain a group name description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP_​DATA_​TIME_​INTERVAL_​MISSING</td>
+                    <td>Invalid Group Scheduler of group '{0}'. A Start Group of type 'start with delay' must contain a time interval description.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP_​IN_​GLOBAL_​SCHEDULER</td>
+                    <td>Invalid Global Scheduler. A Start Group action can be defined only in the Group Scheduler.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP_​TYPE</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The Start Group type must be '{1}', '{2}', or '{3}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​GROUP_​USAGE</td>
+                    <td>Invalid Scheduler action. Start Group is not a valid action in Global Scheduler.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​VUSERS_​TYPE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Start Vusers type must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​START_​VUSERS_​TYPE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Start Vusers type must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​STOP_​OPTION</td>
+                    <td>Invalid stop option '{0}' for run {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​STOP_​VUSERS_​TYPE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Stop Vusers type must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​STOP_​VUSERS_​TYPE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Stop Vusers type must be '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​USER_​CREDENTIALS</td>
+                    <td>Invalid user name or password.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​WORKLOAD_​SUBTYPE</td>
+                    <td>Invalid create/design performance test request. Ensure that 'SubType' in 'Workload type' is '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​INVALID_​WORKLOAD_​TYPE</td>
+                    <td>Invalid create/design performance test request. Ensure that 'Type' in 'Workload type' is '{0}' or '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​LOAD_​TEST_​NOT_​EXISTS</td>
+                    <td>Load Test {0} does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​ACTIONS_​IN_​REAL_​WORLD_​SCHEDULER_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In the Real-World Scheduler, at least one action in addition to Initialize must be defined.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​ACTIONS_​IN_​REAL_​WORLD_​SCHEDULER_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, at least one action in addition to Initialize must be defined.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​AUTHENTICATION_​INFORMATION</td>
+                    <td>Authentication information is missing from request header.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​DURATION_​ACTION_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. The Duration Action is missing or in the wrong order. In the Basic Global Scheduler, if the duration is of type 'Run For', the order must be: Initialize, Start Vusers, Duration, and Stop Vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​DURATION_​ACTION_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The Duration Action is missing or in the wrong order. In the Basic Global Scheduler, if the duration is of type 'Run For', the order must be: Start Group, Initialize, Start Vusers, Duration, and Stop Vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​GROUP_​SCHEDULER</td>
+                    <td>No Group Scheduler for group '{0}'. If workload is scheduled by group, ensure that the group has a valid Group Scheduler.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​HOST_​NAME</td>
+                    <td>Host name is missing. Ensure that all hosts entities have a name.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​HOST_​TYPE</td>
+                    <td>Host type in missing. Ensure that all hosts entities have a type.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​INIT_​GROUP_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Initialize Action is missing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​INIT_​GROUP_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Initialize Action is missing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​RAMP_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Provide a Ramp field in Start/Stop Vusers of type 'Gradually'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​RAMP_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Provide a Ramp field in Start/Stop Vusers of type 'Gradually'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​START_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The first action must be of type 'Start Group'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​START_​VUSER_​ACTION_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. The Start Vusers Action is missing or in the wrong order. In the Basic Global Scheduler, if the duration is of type 'Run For', the order must be: Initialize, Start Vusers, Duration, and Stop Vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​START_​VUSER_​ACTION_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The Start Vusers Action is missing or in the wrong order. In the Basic Global Scheduler, if the duration is of type 'Run For', the order must be: Start Group, Initialize, Start Vusers, Duration, and Stop Vusers'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​STOP_​VUSERS_​ACTION_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. The Stop Vusers Action is missing or in the wrong order. In the Basic Global Scheduler, if the duration is of type 'Run For', the order must be: Initialize, Start Vusers, Duration and Stop Vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​STOP_​VUSERS_​ACTION_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The Stop Vusers Action is missing or in the wrong order. In the Basic Global Scheduler, if the duration is of type 'Run For', the order must be: Start Group, Initialize, Start Vusers, Duration, and Stop Vusers .</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​TIME_​INTERVAL_​IN_​DURATION_​ACTION_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. The time interval in Duration is missing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​TIME_​INTERVAL_​IN_​DURATION_​ACTION_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The time interval in Duration is missing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​TIME_​INTEVAL_​IN_​RAMP_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. The time interval in Ramp of Start/Stop Vusers of type 'Gradually' is missing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​TIME_​INTEVAL_​IN_​RAMP_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The time interval in Ramp of Start/Stop Vusers of type 'Gradually' is missing.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​VUSERS_​IN_​RAMP_​GLOBAL</td>
+                    <td>Invalid Global Scheduler'. Provide the number of Vusers in Ramp of Start/Stop Vusers of type 'Gradually'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​VUSERS_​IN_​RAMP_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Provide the number of Vusers in Ramp of Start/Stop Vusers of type 'Gradually'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​WORKLOAD</td>
+                    <td>Invalid create/design performance test request. Ensure that tag name 'WorkloadType' exists under 'Content'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​WORKLOAD_​SUBTYPE</td>
+                    <td>Invalid create/design performance test request. Ensure that tag name is 'SubType' is exists under 'WorkloadType'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MISSING_​WORKLOAD_​TYPE</td>
+                    <td>Invalid create/design performance test request. Ensure that tag name is 'Type' is exists under 'WorkloadType'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MORE_​THAN_​ONE_​INIT_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Initialize must be the first action in the Global Scheduler. Initalize can be used only once in the schedule.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​MORE_​THAN_​ONE_​INIT_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Initialize must be the second action in the Group Scheduler. Initalize can be used only once in the schedule.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NEGATIVE_​VUSERS_​AMOUNT_​OR_​PERCENTAGE</td>
+                    <td>Vusers must be greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NON_​SUPPORTED_​OPERATION</td>
+                    <td>The operation requested is not supported for resource {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NOT_​NECESSARY_​GROUP_​SCHEDULER</td>
+                    <td>Invalid group data. When the Global Scheduler is set, you cannot define a Group Scheduler.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NOT_​SUPPORTED_​ACCEPT_​TYPE</td>
+                    <td>Invalid request. The Accept header must be one of {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NOT_​SUPPORTED_​CONTENT_​TYPE</td>
+                    <td>Invalid request. The Content-Type header must be one of {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NO_​DATA_​ARRIVED</td>
+                    <td>Could not extract the requested post run action data from the request. Ensure that the following conditions are met: The data passed in the HTTP request body is the same type as the Content-Type header value. The namespace conforms to the documentation specification. The XML root element is {0}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​NO_​RESOURCE_​TO_​HANDLE_​THE_​REQUEST</td>
+                    <td>Resource not found. See the PC API documentation for syntax details.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​PC_​FAILED_​TO_​CREAT_​TEST_​INSTANCE</td>
+                    <td>Failed to create test instance.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​PC_​TEST_​SET_​DO_​NOT_​EXISTS</td>
+                    <td>Test set '{0}'of type 'Performance' does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​POST_​RUN_​OPERATION_​DOES_​NOT_​ALLOWED</td>
+                    <td>Post run operation '{0}'  is not allowed when run state is '{1}'.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​REQUIRED_​VUSERS_​AMOUNT_​IN_​START_​VUSERS_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In the Real-World Scheduler, in the Start Vusers action, provide the number of Vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​REQUIRED_​VUSERS_​AMOUNT_​IN_​START_​VUSERS_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, in the Start Vusers action, provide the number of Vusers.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​VUSERS_​AMOUNT_​IN_​START_​VUSERS_​HIGHER_​EXCEEDED_​TOTAL_​VUSERS_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In the Real-World Scheduler, in the Start Vusers action, the number of Vusers is more than the total Vusers assigned to groups.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​VUSERS_​AMOUNT_​IN_​START_​VUSERS_​HIGHER_​EXCEEDED_​TOTAL_​VUSERS_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, in the Start Vusers action, the number of Vusers is more than the total Vusers assigned to groups.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​VUSERS_​AMOUNT_​IN_​STOP_​VUSERS_​HIGHER_​EXCEEDED_​TOTAL_​VUSERS_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. In the Real-World Scheduler, in the Stop Vusers action, the number of Vusers is more than the total Vusers assigned to groups.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​VUSERS_​AMOUNT_​IN_​STOP_​VUSERS_​HIGHER_​EXCEEDED_​TOTAL_​VUSERS_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, in the Stop Vusers action, the number of Vusers is more than the total Vusers assigned to groups.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​VUSERS_​AMOUNT_​IN_​STOP_​VUSERS_​SHOULD_​BE_​NON_​NEGATIVE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler'. In the Real-World Scheduler, in the Stop Vusers action, Vusers must be an integer greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​REAL_​WORLD_​SCHEDULER_​VUSERS_​AMOUNT_​IN_​STOP_​VUSERS_​SHOULD_​BE_​NON_​NEGATIVE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. In the Real-World Scheduler, in the Stop Vusers action, Vusers must be an integer greater than or equal to zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​RUN_​ID_​DOES_​NOT_​EXISTS</td>
+                    <td>Run with id '{0}' does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​RUN_​RESULT_​FILE_​DOES_​NOT_​EXIST</td>
+                    <td>Result file {0} of run {1} not found.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​RUN_​STARTED_​BUT_​FAILED_​TO_​RETRIEVE_​RUN_​INFORMATION</td>
+                    <td>Run was started with ID {0}, but there was a failure retrieving the run information. You can access the run by appending the run ID to the URL that was used for the Run creation request.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​SCRIPT_​DOES_​NOT_​EXISTS</td>
+                    <td>Script {0} does not exist.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​START_​GROUP_​CONTAINS_​CYCLE</td>
+                    <td>The Groups Scheduler contains circular start group conditions.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​DURATION_​ACTION_​IS_​NOT_​POSITIVE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Set the time interval in Duration greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​DURATION_​ACTION_​IS_​NOT_​POSITIVE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Set the time interval in Duration greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​INIT_​IS_​NOT_​POSITIVE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. If Initialize is of type 'Gradually', set the time interval greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​INIT_​IS_​NOT_​POSITIVE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. If Initialize is of type 'Gradually', set the time interval greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​RAMP_​IS_​NOT_​POSITIVE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Set the time interval in Ramp of Start/Stop Vusers of type 'Gradually' greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​RAMP_​IS_​NOT_​POSITIVE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Set the time interval in Ramp of Start/Stop Vusers of type 'Gradually' greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​TIME_​INTERVAL_​IN_​START_​GROUP_​IS_​NOT_​POSITIVE</td>
+                    <td>Invalid Group Scheduler of group '{0}'. If Start Group is of type 'With Delay', set the time interval greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​UNATHORIZATION_​EXCEPTION</td>
+                    <td>User unauthorized. Check permissions.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​UPDATE_​GROUP_​RTS_​FAILED</td>
+                    <td>Failed to update Run-Time Settings of group '{0}'. Reason: {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​UPDATE_​LOAD_​TEST_​FAILED</td>
+                    <td>Failed to update performance test {0}. Reason: {1}.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​VUSERS_​IN_​RAMP_​EXCEEDED_​ALLOWED_​AMOUNT_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. The number of Vusers in Ramp of Start/Stop Vusers of type 'Gradually' is either more than the total number of Vusers assigned to groups or more than the number of Vusers allocated to this action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​VUSERS_​IN_​RAMP_​EXCEEDED_​ALLOWED_​AMOUNT_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. The number of Vusers in Ramp of Start/Stop Vusers of type 'Gradually' is either more than the total number of Vusers assigned to groups or more than the number of Vusers allocated to this action.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​WAIT_​AFTER_​INIT_​IS_​NOT_​POSITIVE_​GLOBAL</td>
+                    <td>Invalid Global Scheduler. Set the wait time after initialize greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​API_​WAIT_​AFTER_​INIT_​IS_​NOT_​POSITIVE_​GROUP</td>
+                    <td>Invalid Group Scheduler of group '{0}'. Set the wait time after initialize greater than zero.</td>
+                </tr>
+                <tr>
+                    <td>PC_​INVALID_​ADD_​UPDATE_​GROUP</td>
+                    <td>Invalid group data.</td>
+                </tr>
+                <tr>
+                    <td>PC_​INVALID_​UPDATE_​GROUP_​RTS</td>
+                    <td>Invalid Run-Time Settings of group '{0}'.</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- hr = horizontal rule -->
+        <hr width="100%" size="0" align="center" padding-bottom="0" style="clear:both" />
+        <table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td style="border: none; border-collapse: collapse;">
+                        <p id="Copyright" style="font-size: 85%; text-align: left;direction: ltr;"><a href="Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2004 - 2015</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                        </p>
+                    </td>
+                    <td style="border: none;">
+                        <div id="Feedback">
+                            <p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Documentation Feedback</a>
+                            </p>
+                            <!-- Localizable -->
+                            <div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;">
+                                <div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a>
+                                </div>
+                                <div style="text-align:left">
+                                    <!-- Localizable -->
+                                    <p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p>
+                                    <p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                    <p>Send us an email with the following information:</p>
+                                    <!-- Localizable -->
+                                    <div id="hp-feedbackBody">
+                                        <br />
+                                        <br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div>
+                                    <p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0066CC;">docteam@hpe.com</a></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                </div>
+                            </div>
+                            <div style="display:none;" id="hp-feedback-variables" productName="ALM Performance Center REST API Reference" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="Exceptions" skinLine1="ALM Performance Center REST API Reference" skinLine2="">&#160;
+		<p style="display:none;"><script src="Resources/MasterPages/_HP_Feedback.js"></script></p></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--QCCR1K4298 START-->
+        <div style="display:none;" id="HPb-Branding-Variables" Footer="Yes" Feedback="Yes">&#160;
+		</div>
+        <script>/* <![CDATA[ */
+			var BrandingVariables = document.getElementById("HPb-Branding-Variables");
+			if(BrandingVariables.getAttribute('Footer')=="No"){document.getElementById('Copyright').style.display = 'none';}
+			if(BrandingVariables.getAttribute('Feedback')=="No"){document.getElementById('Feedback').style.display = 'none';}
+		/* ]]> */</script>
+        <!--QCCR1K4298 END-->
+        <p> <a href="Resources/MasterPages/_HP_aboutSearch_WebHelp.htm" style="visibility: hidden;"></a></p>
+    </body>
+</html>

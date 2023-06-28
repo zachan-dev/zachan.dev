@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Collections</title>
+    <meta name="Title" content="Collections"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="A collection resource is a container for instance resources of a single type. For example, the defects collection contains resources that represent ALM defects." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="1ff98e9b-e514-445a-8bea-070237a9d140"/>
+    <meta name="Microsoft.Help.TocParent" content="f82848d6-6e42-4b58-b253-17e49c016d48"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Collections</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Working_with_API.htm">Working with the API</a>
+ > Collections</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <p>A collection resource is a container for instance resources of a single type. For example, the defects collection contains resources that represent ALM defects.</p>
+
+<p>A collection resource is accessed with a URI of format: &nbsp;<code>https://{server}[:port]/qcbin/api/domains/{domain name}/projects/{project name}/{collection name}</code>. For example: <code>https://myserver:8080/qcbin/api/domains/DEFAULT/projects/PEMBERLY/defects</code></p>
+
+<p>Collections support HTTP methods:</p>
+
+<ul>
+    <li>GET</li>
+
+    <li>DELETE</li>
+
+    <li>PUT</li>
+
+    <li>POST</li>
+</ul>
+
+<h2>Actions on Collections</h2>
+
+<p><a href="Query_a_Collection.htm" data-auto-update-caption="true">Query a Collection</a></p>
+
+<p><a href="Create_an_Instance.htm" data-auto-update-caption="true">Create an Instance</a></p>
+
+<p><a href="Update_Multiple_Instances.htm" data-auto-update-caption="true">Update Multiple Instances</a></p>
+
+<p>Delete:&nbsp;Use a&nbsp;<a href="query_Clause.htm">query</a> to delete multiple instances.&nbsp;</p>
+
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+    <strong>Caution</strong>: It is possible to delete or update all of the instances in a collection if no query is specified, or if the query fails to return&nbsp;a limited set of IDs.&nbsp;
+
+    <p>For example:<br />
+    &nbsp;This will successfully delete all locks in the project: &nbsp;</p>
+    <pre>
+DELETE /qcbin/api/domains/{domain}/projects/{project}/locks<br />
+</pre>
+
+    <p>This will update all test instances in the project to FAILED status</p>
+    <pre>
+PUT /qcbin/rest/domains/{domain}/projects/{project}/test-instances/ 
+</pre>
+    <pre>
+{parameter:entity type=test-instance, field name=status, value=FAILED}
+</pre>
+</blockquote>
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><div class="SeeAlsoLink">
+<a href="Fields.htm">Fields</a></div>
+
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Collections">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

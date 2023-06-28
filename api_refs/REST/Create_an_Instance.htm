@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Create an Instance</title>
+    <meta name="Title" content="Create an Instance"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="To create an instance, perform a POST on the collection, passing a JSON string that contains at least the required fields." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="1ce2292e-3a65-4f86-907f-3a73e11104e5"/>
+    <meta name="Microsoft.Help.TocParent" content="cab1366f-280a-495c-9944-12c55b5e6e44"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Create an Instance</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Working_with_API.htm">Working with the API</a>
+ > <a href="How_To.htm">How Do I...</a>
+ > Create an Instance</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <p>To create an instance, perform a POST on the collection, passing a JSON string that contains at least the required fields.</p>
+
+<p>Creating an instance:</p>
+
+<ol>
+    <li value="1">Get the list of fields.<br />
+    To get the list of fields, get the <a href="Fields.htm" data-auto-update-caption="true">Fields</a> metadata. The required fields have input validation "Not Null".<br />
+    If a field is linked to a list, get the possible values from <a href="list-items.htm">list-items</a>.<br />
+    Do not use the field list returned by retrieving a single instance. The data returned for an instance may contain calculated fields that cannot be POSTed or PUT.</li>
+
+    <li value="2">Create a string that has data for all the required fields and any additional fields you want to initialize. The JSON input must be in the same format returned by a GET operation on members of the collection.</li>
+
+    <li value="3">POST the data to the collection.</li>
+
+    <li value="4">On success, the HTTP return value is 201. The returned string is the complete data of the new instance. The new instance has the default values for any field not specified in the POST input.<br />
+    The Location header contains the URI of the created instance.<br />
+    &nbsp;&nbsp;&nbsp;</li>
+</ol>
+
+<div class="FilteredContentHTML" data-title="HTML" data-itemid="HTML">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Post a defect</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+*** Request ***
+POST /qcbin/api/domains/DEFAULT/projects/rest_documentation/defects HTTP/1.1
+Host: my-server:8081
+Connection: keep-alive
+Content-Length: 347
+Accept: application/json
+Origin: chrome-extension://cokgbflfommojglbmbpenpphppikmonn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8,he;q=0.6
+Cookie: JSESSIONID=1234567890;
+XSRF-TOKEN=1234567890;
+QCSession=1234567890;
+ALM_USER=1234567890;
+LWSSO_COOKIE_KEY=1234567890
+
+{
+    "data": [
+        {
+            "type": "defect",
+            "name": "Willoughby dissaffected with Marianne",
+            "description": "Refuses to acknowledge her.",
+            "priority": "4-Very High",
+            "detected-by": "steves",
+            "severity": "2-Medium",
+            "creation-time": "2014-11-30"
+        }
+    ]
+}
+
+*** Response ***
+HTTP/1.1 201 Created
+Date: Thu, 15 Jan 2015 08:37:23 GMT
+Set-Cookie: LWSSO_COOKIE_KEY=WdhlNKVnUHXbeQGuQCSMu5Zo0rWKK6tJwOZTUKw-jNrwDh3G1G8dUPrm32PHWxNEF96PnVF42mtlkfN66RAxteImU63J0WmyegrMTrZpsWVm7JMl8SUnaYu76tVOH1gfaZWo3c2HjqRnErl-PrrgRd3JI9iel1oYGIp_9Chb8nHnpFgJsHJRl-E1Cz3LfuSTYgVVnso7eXsM2DMvgQAkreEsB3PMQRFvKmYG10YCPj_lSSsuAIKvr7A8ZdzleWCfpi_8WeNOd0AW9CUG-4__gneoEx5SCxvw5v88d2i6N4R7EXJwz3ZBJ7Tbe0GajSBP;Path=/;HTTPOnly
+Content-Type: application/json
+Content-Length: 955
+Server: Jetty(9.1.3.v20140225)
+Location: http://my-server:8081/qcbin/api/domains/DEFAULT/projects/rest_documentation/defects/6
+
+{
+    "type": "defect",
+    "has-change": null,
+    "planned-closing-ver": null,
+    "test-reference": null,
+    "subject": null,
+    "reproducible": null,
+    "request-id": null,
+    "request-server": null,
+    "id": 6,
+    "ver-stamp": 1,
+    "has-others-linkage": "N",
+    "description": "<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;&lt;</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>\nRefuses to acknowledge her.\n<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span>",
+    "priority": "4-Very High",
+    "name": "Willoughby dissaffected with Marianne",
+    "has-linkage": "N",
+    "run-reference": null,
+    "cycle-reference": null,
+    "dev-comments": null,
+    "creation-time": "2014-11-30",
+    "to-mail": null,
+    "request-note": null,
+    "closing-version": null,
+    "cycle-id": null,
+    "detection-version": null,
+    "last-modified": "2015-01-15 11:03:44",
+    "status": null,
+    "closing-date": null,
+    "detected-in-rcyc": null,
+    "detected-in-rel": null,
+    "severity": "2-Medium",
+    "attachment": null,
+    "extended-reference": null,
+    "estimated-fix-time": null,
+    "project": null,
+    "target-rel": null,
+    "detected-by": "steves",
+    "environment": null,
+    "step-reference": null,
+    "owner": null,
+    "target-rcyc": null,
+    "actual-fix-time": null,
+    "request-type": null
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Create an Instance">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

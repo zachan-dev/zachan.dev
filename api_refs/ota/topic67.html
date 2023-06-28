@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Get audit logs</title>
+    <meta name="Title" content="Get audit logs"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+            " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="edafb892-463f-4823-ace9-5b717516b145"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Get audit logs</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <a id="Add_Audit_Record" name="Add_Audit_Record"></a>
+
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> GetAuditLogs()
+
+<span style="COLOR: #008000">' Get all audit logs.
+</span> 
+    <span style="COLOR: #0000ff">Dim</span> TstFilterList <span style="COLOR: #0000ff">As</span> TDAPIOLELib.List
+    <span style="COLOR: #0000ff">Dim</span> AuditRecF <span style="COLOR: #0000ff">As</span> AuditRecordFactory
+    
+<span style="COLOR: #008000">'tdc is a TDConnection object. The user is authenticated and
+' connected to a project before this routine is run.
+</span>    <span style="COLOR: #0000ff">Set</span> AuditRecF = tdc.AuditRecordFactory
+    
+    <span style="COLOR: #0000ff">Dim</span> testFilter <span style="COLOR: #0000ff">As</span> TDAPIOLELib.TDFilter
+<span style="COLOR: #008000">' Get list of audit records on changes in defect status.
+</span>    <span style="COLOR: #0000ff">Set</span> testFilter = AuditRecF.Filter
+    testFilter.Filter(<span style="COLOR: #800000">"AU_ENTITY_TYPE"</span>) = <span style="COLOR: #800000">"BUG"</span>
+    testFilter.Filter(<span style="COLOR: #800000">"AP_FIELD_NAME"</span>) = <span style="COLOR: #800000">"BG_STATUS"</span>
+    <span style="COLOR: #0000ff">Set</span> TstFilterList = testFilter.NewList
+                     <span style="COLOR: #008000">'
+</span>    <span style="COLOR: #0000ff">Dim</span> actionID <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Long</span>, i&amp;, j&amp;
+    <span style="COLOR: #0000ff">Dim</span> msg <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>, oldVal$, newVal$
+    <span style="COLOR: #0000ff">Dim</span> oldDate <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Date</span>, newDate <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Date</span>
+    <span style="COLOR: #0000ff">Dim</span> AuditRec <span style="COLOR: #0000ff">As</span> AuditRecord
+    <span style="COLOR: #0000ff">Dim</span> AuditPropF <span style="COLOR: #0000ff">As</span> AuditPropertyFactory
+    <span style="COLOR: #0000ff">Dim</span> propList <span style="COLOR: #0000ff">As</span> TDAPIOLELib.List
+<span style="COLOR: #008000">' Get the audit records.
+</span>    <span style="COLOR: #0000ff">For</span> i = 1 <span style="COLOR: #0000ff">To</span> TstFilterList.Count
+        <span style="COLOR: #0000ff">Set</span> AuditRec = TstFilterList.Item(i)
+        <span style="COLOR: #0000ff">With</span> AuditRec
+            actionID = .actionID
+            msg = <span style="COLOR: #800000">"SessionID: "</span> &amp; .sessionID &amp; vbCrLf
+            msg = msg &amp; <span style="COLOR: #800000">"Action: "</span> &amp; .action &amp; vbCrLf
+            msg = msg &amp; <span style="COLOR: #800000">"Entity Type: "</span> &amp; .entityType &amp; <span style="COLOR: #800000">" ("</span> &amp; .entityID &amp; <span style="COLOR: #800000">")"</span> &amp; vbCrLf
+            msg = msg &amp; <span style="COLOR: #800000">"Description: """</span> &amp; .Description &amp; <span style="COLOR: #800000">""""</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+        <span style="COLOR: #0000ff">MsgBox</span> msg
+<span style="COLOR: #008000">' Get the audit property records.
+</span>        <span style="COLOR: #0000ff">Set</span> AuditPropF = AuditRec.AuditPropertyFactory
+        <span style="COLOR: #0000ff">Set</span> propList = AuditPropF.NewList(<span style="COLOR: #800000">""</span>)
+        <span style="COLOR: #0000ff">If</span> propList.Count = 0 <span style="COLOR: #0000ff">Then</span>
+            <span style="COLOR: #0000ff">MsgBox</span> <span style="COLOR: #800000">"No properties for action "</span> &amp; <span style="COLOR: #0000ff">Str</span>(actionID)
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+        
+        <span style="COLOR: #0000ff">For</span> j = 1 <span style="COLOR: #0000ff">To</span> propList.Count
+            <span style="COLOR: #0000ff">Dim</span> ap <span style="COLOR: #0000ff">As</span> AuditProperty
+            <span style="COLOR: #0000ff">Set</span> ap = propList.Item(j)
+            <span style="COLOR: #0000ff">With</span> ap
+                msg = <span style="COLOR: #800000">"Action ID: "</span> &amp; <span style="COLOR: #0000ff">Str</span>(actionID) &amp; vbCrLf
+                msg = msg &amp; <span style="COLOR: #800000">"Field: "</span> &amp; .TableName &amp; <span style="COLOR: #800000">"."</span> &amp; .FieldName &amp; vbCrLf
+                msg = msg &amp; <span style="COLOR: #800000">"FieldName: "</span> &amp; .FieldName &amp; vbCrLf
+               
+                <span style="COLOR: #0000ff">Dim</span> xx
+                xx = ap.oldValue
+            <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+            <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">IsDate</span>(xx) <span style="COLOR: #0000ff">Then</span>
+                oldDate = xx: oldVal = <span style="COLOR: #800000">""</span>
+            <span style="COLOR: #0000ff">Else</span>
+                oldVal = xx: oldDate = Now
+            <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+            <span style="COLOR: #0000ff">Dim</span> yy
+            yy = ap.newValue
+            <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">IsDate</span>(yy) <span style="COLOR: #0000ff">Then</span>
+                newDate = yy: newVal = <span style="COLOR: #800000">""</span>
+            <span style="COLOR: #0000ff">Else</span>
+                newVal = yy: newDate = Now
+            <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+            msg = msg &amp; <span style="COLOR: #800000">"Old Value = """</span> &amp; oldVal &amp; <span style="COLOR: #800000">""", New Value = """</span> &amp; newVal &amp; <span style="COLOR: #800000">""""</span> &amp; vbCrLf
+            msg = msg &amp; <span style="COLOR: #800000">"OldDate = "</span> &amp; oldDate &amp; <span style="COLOR: #800000">", NewDate = "</span> &amp; newDate
+            <span style="COLOR: #0000ff">MsgBox</span> msg
+        
+        <span style="COLOR: #0000ff">Next</span> j
+    <span style="COLOR: #0000ff">Next</span> i
+    
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Get audit logs">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

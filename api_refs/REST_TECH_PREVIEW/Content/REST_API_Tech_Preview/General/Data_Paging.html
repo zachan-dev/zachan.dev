@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--QCCR1K4344-->
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="ALM_REST_API_TP.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="How to Do Common Tasks|Query a Collection of Entities">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Data Paging</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+            <link rel="icon" type="image/x-icon" href="https://software.microfocus.com/favicon.ico" />
+		
+			html, body 
+			{
+				height: 100%;
+				margin-right:2em;
+			}
+						
+			.wrapper 
+			{
+				min-height: 100%!important;
+				margin: 0 auto -10em; 
+				padding-left: 0.2em
+						
+			}
+
+			footer, .float 
+			{
+				height: 10em; 
+				margin:0;
+				clear: both;
+			}
+
+			div.roundcorners
+			{
+				-moz-border-radius-bottomleft: 1em;
+				border-bottom-left-radius: 1em;
+				-moz-border-radius-topright: 1em;
+				border-top-right-radius: 1em;
+				background-color: #f2f2f2 ;
+				width: 100% !important;
+				padding: 0em;		 
+			}
+			
+			p.footerlink
+			{
+				font-size: .75em;
+				line-height: 1em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom:.75em;
+			}
+			
+			p.footerlink a,
+			p.footerlink a:visited
+			{
+				color: #5a5a5a;
+			}
+			
+			p.footerlink a:hover
+			{
+				color: #000000!important;
+			}
+						
+			p.spacer
+			{
+				font-size: .5em;
+				line-height: .5em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom: .5em;
+			}
+	
+    </style>
+        <link href="../../Resources/Stylesheets/API_TechPreview.css" rel="stylesheet" />
+        <script src="../../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../../ALM_REST_API_TP.html#REST_API_Tech_Preview/General/Data_Paging.html">Open topic with navigation</a>
+        </p>
+        <div class="wrapper">
+            <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span><a class="MCBreadcrumbsLink" href="How_to_Do_Common_Tasks.html">How to Do Common Tasks</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Query_a_Collection_of_Entities.html">Query a Collection of Entities</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Data Paging</span>
+            </div>
+            <div id="pagebody">
+                <div id="mainbody">
+                    <h1>Data Paging</h1>
+                    <p align="left">When a query returns a large set of data, the results are returned in a series of pages. The client requests the next page after handling the data already received.</p>
+                    <p>On large collections, performance degrades when retrieving the later pages. To avoid stress on the database server, restrict the size of data returned by the query by <a href="Filtering.html">filtering</a> and retrieving only the data you actually need.</p>
+                    <p>The client can indicate the number of entities to return in each page using the query parameter <code>page-size="n"</code>. For example:<br /><code>/qcbin/rest/domains/{domain}/projects/{project}/tests?page-size=20</code></p>
+                    <p>If no page size is specified in the query, the number of returned entities on each page is the value of the site parameter <code>REST_API_DEFAULT_PAGE_SIZE</code>. If the site parameter is not defined, the page size is 100.</p>
+                    <p>If the specified <code>page-size</code> is greater than the maximum page size, an exception is thrown. The maximum page size can be specified by the site parameter <code>REST_API_MAX_PAGE_SIZE</code>. If the site parameter is not defined, the maximum page size is 2000. The requested page size can be set equal to the maximum by specifying <code>page-size=max</code>.</p>
+                    <p>The client indicates the position of the next entity to retrieve with the query parameter <code>start-index</code>.</p>
+                    <p>The total number of entities is returned in the Entities element of the XML response. For example:<br /><span style="color: blue;"><span style="color: blue;">&lt;</span></span><span style="color: maroon;"><span style="color: maroon;">Entities</span></span> <span style="color: red;"><span style="color: red;">TotalResults</span></span><span style="color: blue;"><span style="color: blue;">="</span></span><span>200</span><span style="color: blue;"><span style="color: blue;">"&gt;</span></span></p>
+                    <p>In the JSON&#160;format, the total number of entities is returned as the <code>total-count</code>.</p>
+                    <p>The following URL gets the third page of a query that has 10 entities per page:<br /><code>http://SERVER:PORT/qcbin/rest/domains/{domain}/projects/{project}/defects?page-size=10&amp;start-index=31</code></p>
+                </div>
+            </div>
+            <p>&#160;</p>
+            <!--        hr width="100%" size="4" align="center" padding-bottom="0" style="clear:both" /> -->
+            <div class="float">
+            </div>
+        </div>
+        <div class="footer">
+            <MadCap:conditionalText data-mc-conditions="_rsc_Conditions.Footer">
+                <div class="roundcorners">
+                    <table style="border: none; margin-left: auto;       margin-right: auto;  width: 60%; margin-bottom: 0em">
+                        <tr>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="http://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/software/alm-software-development-testing/try-now" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank" title="ALM on Twitter" alt="ALM on Twitter"><img src="../../Resources/Images/_rsc_Twitter_blue.png" style="width: 20px;height: 20px;" /></a><a href="https://www.linkedin.com/groups/4855477/profile" target="_blank" title="ALM Customer Forum on LinkedIn" alt="ALM Customer Forum on LinkedIn" data-mc-conditions="Project_Conditions.Removed">&#160;&#160;&#160;<img src="../../Resources/Images/_rsc_Linkedin_blue.png" style="width: 20px;height: 20px;" data-mc-conditions="Project_Conditions.Removed" /></a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]?subject=Feedback on [%=_rscC_Basic_Variables._rsc_Book_Title%] ([%=_rscC_Basic_Variables._rsc_Product_Name%] [%=_rscC_Basic_Variables._rsc_Product_Version%])" title="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+        </p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_rsc_Conditions.Footer">Send Documentation Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;"><div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a></div><div style="text-align:left"><!-- Localizable --><p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p><p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p><!-- Localizable --><hr /><p>Send us an email with the following information:</p><!-- Localizable --><div id="hp-feedbackBody"><br /><br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div><p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0073E7;">docteam@microfocus.com</a></p><!-- Localizable --><hr /></div></div><div style="display:none;" id="hp-feedback-variables" productName="ALM REST API Reference (Technical Preview)" productVersion="12.5x" commentsEmailAddress="docteam@microfocus.com" productAcronym="ALM" topicTitle="Data Paging" skinLine1="ALM 12.5x REST API Reference (Technical Preview)" skinLine2="">&#160;
+		<p style="display:none;"><script src="../../Resources/MasterPages/_rsc_Feedback.js"></script></p></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/software/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                        </tr>
+                    </table>
+                    <table class="no_lines" style="border-top:1px solid #B9B8BB;  width:80%; margin-left: auto; margin-right: auto;  ">
+                        <tr>
+                            <td style="vertical-align: middle; font-size: .65em; text-align: center;direction: ltr;">Last updated <span class="_rscC_Basic_Variables_rsc_LastUpdatedDate">January 18, 2018</span>&#160;|&#160;<a href="../../Resources/MasterPages/_rsc_Legal_Notices.htm#1">© <span class="_rscC_Basic_Variables_rsc_Copyright_Date_Range">2002 - 2018</span>&#160;<span class="_rscB_Branding_Variables_rsc_Copyright_Name">EntIT Software LLC</span></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </MadCap:conditionalText>
+            <p style="visibility:hidden"> <![CDATA[ ]]></p>
+            <p><a href="../../Resources/MasterPages/_rsc_HTML5_bannerTitle.htm" style="visibility: hidden;"></a><a href="../../Resources/MasterPages/_rsc_aboutSearch.htm" style="visibility: hidden;"></a>
+            </p>
+        </div>
+    </body>
+</html>

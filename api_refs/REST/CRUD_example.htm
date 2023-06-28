@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>CRUD example</title>
+    <meta name="Title" content="CRUD example"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                Javascript Example
+
+                
+                    
+                        Copy Code
+                    
+                
+            
+
+            
+                
+                 " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="e11fa199-1ea2-426c-8fc1-5d12f51b65cf"/>
+    <meta name="Microsoft.Help.TocParent" content="56054b2a-8165-43b5-8fca-ff5a532e908b"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">CRUD example</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Code_Samples.htm">Code Samples</a>
+ > CRUD example</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentJavascript">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Javascript Example</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// CRUD_Instance.js
+</span>
+<span style="COLOR: #0000ff">function</span> performCRUDInstance(){
+    console.log(<span style="COLOR: #800000">"&gt;&gt;performCRUDInstance was called..."</span>);
+    <span style="COLOR: #008000">// create entity Defect
+</span>    <span style="COLOR: #0000ff">var</span> createdEntity = postNewDefect(<span style="COLOR: #800000">"name of new defect"</span>);
+    printEntity(<span style="COLOR: #800000">"created entity"</span>, createdEntity);
+
+    <span style="COLOR: #008000">// read created entity
+</span>    <span style="COLOR: #0000ff">var</span> entity = getEntityById(createdEntity.type, createdEntity.id);
+    printEntity(<span style="COLOR: #800000">"entity"</span>, entity);
+
+    <span style="COLOR: #008000">// update 
+</span>    <span style="COLOR: #0000ff">var</span> updatedEntity = updateEntityNameById(entity.type, entity.id, <span style="COLOR: #800000">"new name of "</span> + entity.type + <span style="COLOR: #800000">" "</span>+ entity.id);
+    printEntity(<span style="COLOR: #800000">"updated entity"</span>, updatedEntity);
+
+    <span style="COLOR: #008000">// delete 
+</span>    <span style="COLOR: #0000ff">var</span> deletedEntity = deleteEntityById(entity.type, entity.id);
+    printEntity(<span style="COLOR: #800000">"deleted entity"</span>, deletedEntity);
+    console.log(<span style="COLOR: #800000">"&gt;&gt;performCRUDInstance end."</span>);
+}
+
+<span style="COLOR: #0000ff">function</span> getEntityById(type, id)
+{
+    <span style="COLOR: #0000ff">var</span> entity;
+    console.log(<span style="COLOR: #800000">"getEntityById was called..."</span>);
+    <span style="COLOR: #0000ff">var</span> req = <span style="COLOR: #0000ff">new</span> XMLHttpRequest();
+    req.open(<span style="COLOR: #800000">"GET"</span>, alm_project_url + <span style="COLOR: #800000">"/"</span> + type + <span style="COLOR: #800000">"s/"</span> + id, <span style="COLOR: #0000ff">false</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Accept"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    
+    req.onreadystatechange = <span style="COLOR: #0000ff">function</span>(){
+        <span style="COLOR: #008000">// if state is "complete"
+</span>        <span style="COLOR: #0000ff">if</span> (req.readyState == 4) {
+            <span style="COLOR: #008000">// &amp; response status is "OK"
+</span>            <span style="COLOR: #0000ff">if</span> (req.status == 200){
+                entity = JSON.parse(req.responseText);
+            } <span style="COLOR: #0000ff">else</span> {
+                console.log(<span style="COLOR: #800000">"Failed. Response status:"</span> + req.statusText);
+            }
+        }
+    }
+    
+    req.send();
+    console.log(<span style="COLOR: #800000">"getEntityById end."</span>);
+    <span style="COLOR: #0000ff">return</span> entity;
+}
+
+<span style="COLOR: #0000ff">function</span> postNewDefect(name)
+{
+    <span style="COLOR: #0000ff">var</span> createdEntity;
+    console.log(<span style="COLOR: #800000">"postNewDefect was called..."</span>);
+    <span style="COLOR: #0000ff">var</span> req = <span style="COLOR: #0000ff">new</span> XMLHttpRequest();
+    req.open(<span style="COLOR: #800000">"POST"</span>, alm_project_url + <span style="COLOR: #800000">"/defects/"</span>, <span style="COLOR: #0000ff">false</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Accept"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Content-Type"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    
+    req.onreadystatechange = <span style="COLOR: #0000ff">function</span>(){
+        <span style="COLOR: #008000">// if state is "complete"
+</span>        <span style="COLOR: #0000ff">if</span> (req.readyState == 4) {
+            <span style="COLOR: #008000">// &amp; response status is "OK"
+</span>            <span style="COLOR: #0000ff">if</span> (req.status == 201){
+                createdEntity = JSON.parse(req.responseText);
+            } <span style="COLOR: #0000ff">else</span> {
+                console.log(<span style="COLOR: #800000">"Failed. Response status:"</span> + req.statusText);
+            }
+        }
+    }
+    req.send(getNewDefect_json(name));
+    console.log(<span style="COLOR: #800000">"postNewDefect end."</span>);
+    <span style="COLOR: #0000ff">return</span> createdEntity;
+}
+
+<span style="COLOR: #0000ff">function</span> updateEntityNameById(type, id, name)
+{
+    <span style="COLOR: #0000ff">var</span> updatedEntity;
+    console.log(<span style="COLOR: #800000">"updateDefect was called..."</span>);
+    <span style="COLOR: #0000ff">var</span> req = <span style="COLOR: #0000ff">new</span> XMLHttpRequest();
+    req.open(<span style="COLOR: #800000">"PUT"</span>, alm_project_url + <span style="COLOR: #800000">"/"</span> + type + <span style="COLOR: #800000">"s/"</span> + id, <span style="COLOR: #0000ff">false</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Accept"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Content-Type"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    
+    req.onreadystatechange = <span style="COLOR: #0000ff">function</span>(){
+        <span style="COLOR: #008000">// if state is "complete"
+</span>        <span style="COLOR: #0000ff">if</span> (req.readyState == 4) {
+            <span style="COLOR: #008000">// &amp; response status is "OK"
+</span>            <span style="COLOR: #0000ff">if</span> (req.status == 200){
+                updatedEntity = JSON.parse(req.responseText);
+            } <span style="COLOR: #0000ff">else</span> {
+                console.log(<span style="COLOR: #800000">"Failed. Response status:"</span> + req.statusText);
+            }
+        }
+    }
+    req.send(<span style="COLOR: #800000">"{\"name\": \""</span> + name + <span style="COLOR: #800000">"\"}"</span>);
+    console.log(<span style="COLOR: #800000">"updateDefect end."</span>);
+    <span style="COLOR: #0000ff">return</span> updatedEntity;
+}
+
+<span style="COLOR: #0000ff">function</span> deleteEntityById(type, id)
+{
+    <span style="COLOR: #0000ff">var</span> deletedEntity;
+    console.log(<span style="COLOR: #800000">"deleteEntityById was called..."</span>);
+    <span style="COLOR: #0000ff">var</span> req = <span style="COLOR: #0000ff">new</span> XMLHttpRequest();
+    req.open(<span style="COLOR: #800000">"DELETE"</span>, alm_project_url + <span style="COLOR: #800000">"/"</span> + type + <span style="COLOR: #800000">"s/"</span> + id, <span style="COLOR: #0000ff">false</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Accept"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Content-Type"</span>, <span style="COLOR: #800000">"application/json"</span>);
+    
+    req.onreadystatechange = <span style="COLOR: #0000ff">function</span>(){
+        <span style="COLOR: #008000">// if state is "complete"
+</span>        <span style="COLOR: #0000ff">if</span> (req.readyState == 4) {
+            <span style="COLOR: #008000">// &amp; response status is "OK"
+</span>            <span style="COLOR: #0000ff">if</span> (req.status == 200){
+                deletedEntity = JSON.parse(req.responseText);
+            } <span style="COLOR: #0000ff">else</span> {
+                console.log(<span style="COLOR: #800000">"Failed. Response status:"</span> + req.statusText);
+            }
+        }
+    }
+    req.send();
+    console.log(<span style="COLOR: #800000">"deleteEntityById end."</span>);
+    <span style="COLOR: #0000ff">return</span> deletedEntity;
+}
+
+<span style="COLOR: #0000ff">function</span> getNewDefect_json(name){
+    <span style="COLOR: #0000ff">return</span> <span style="COLOR: #800000">"{  \"type\": \"defect\",\
+</span>            \<span style="COLOR: #800000">"name\": \""</span> + name + <span style="COLOR: #800000">"\",\
+</span>            \<span style="COLOR: #800000">"severity\": \"1-Low\",\
+</span>            \<span style="COLOR: #800000">"detected-by\" : \"sa\",\
+</span>            \<span style="COLOR: #800000">"creation-time\" : \"2014-01-01\" \
+</span>        }<span style="COLOR: #800000">";
+</span>}
+
+<span style="COLOR: #0000ff">function</span> printEntity(title, entity){
+    console.log(title + <span style="COLOR: #800000">": {id = "</span> + entity.id + <span style="COLOR: #800000">", name = "</span> + entity.name + <span style="COLOR: #800000">", type = "</span> + entity.type + <span style="COLOR: #800000">"}"</span>);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: CRUD example">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

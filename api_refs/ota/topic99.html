@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Using group-by fields</title>
+    <meta name="Title" content="Using group-by fields"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Sub GetGroupItems()
+
+'Using group-by fields
+    
+    Dim aField As TDField
+    Dim severityF As TDField, priorityF As TDField, statusF As TDField
+    Dim fieldList As List
+    Dim bFact As BugFactory
+" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="659153ca-5483-41a8-8725-b528e9bd643d"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Using group-by fields</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-05ce4897-71df-40cb-91bd-e9ac2194543b"></a></li>
+    </ul>
+
+    <div id="TabContent-05ce4897-71df-40cb-91bd-e9ac2194543b" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Sub</span> GetGroupItems()
+
+<span style="COLOR: #008000">'Using group-by fields
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> aField <span style="COLOR: #0000ff">As</span> TDField
+    <span style="COLOR: #0000ff">Dim</span> severityF <span style="COLOR: #0000ff">As</span> TDField, priorityF <span style="COLOR: #0000ff">As</span> TDField, statusF <span style="COLOR: #0000ff">As</span> TDField
+    <span style="COLOR: #0000ff">Dim</span> fieldList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> bFact <span style="COLOR: #0000ff">As</span> BugFactory
+    
+    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> bFact = tdc.BugFactory
+    <span style="COLOR: #0000ff">Set</span> fieldList = tdc.Fields(<span style="COLOR: #800000">"BUG"</span>)
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> aField <span style="COLOR: #0000ff">In</span> fieldList
+        <span style="COLOR: #0000ff">Select</span> <span style="COLOR: #0000ff">Case</span> aField.Name
+            <span style="COLOR: #0000ff">Case</span> <span style="COLOR: #800000">"BG_SEVERITY"</span>
+                <span style="COLOR: #0000ff">Set</span> severityF = aField
+            <span style="COLOR: #0000ff">Case</span> <span style="COLOR: #800000">"BG_PRIORITY"</span>
+                <span style="COLOR: #0000ff">Set</span> priorityF = aField
+            <span style="COLOR: #0000ff">Case</span> <span style="COLOR: #800000">"BG_STATUS"</span>
+                <span style="COLOR: #0000ff">Set</span> statusF = aField
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">Select</span>
+    <span style="COLOR: #0000ff">Next</span> aField
+    
+    Debug.Print
+    Debug.Print <span style="COLOR: #800000">"BG_SEVERITY can group = "</span> + <span style="COLOR: #0000ff">CStr</span>(severityF.Property.IsCanGroup)
+    Debug.Print <span style="COLOR: #800000">"BG_PRIORITY can group = "</span> + <span style="COLOR: #0000ff">CStr</span>(priorityF.Property.IsCanGroup)
+    Debug.Print <span style="COLOR: #800000">"BG_STATUS can group = "</span> + <span style="COLOR: #0000ff">CStr</span>(statusF.Property.IsCanGroup)
+<span style="COLOR: #008000">'    BG_SEVERITY can group = True
+'    BG_PRIORITY can group = True
+'    BG_STATUS can group = True
+</span>
+    <span style="COLOR: #0000ff">Dim</span> bf <span style="COLOR: #0000ff">As</span> IBaseFactory2
+    <span style="COLOR: #0000ff">Set</span> bf = tdc.BugFactory
+    <span style="COLOR: #0000ff">Dim</span> gm <span style="COLOR: #0000ff">As</span> IGroupingManager
+    <span style="COLOR: #0000ff">Set</span> gm = bf.GroupingManager
+    
+    gm.Group(<span style="COLOR: #800000">"BG_SEVERITY"</span>) = 1
+    gm.Group(<span style="COLOR: #800000">"BG_PRIORITY"</span>) = 2
+    gm.Group(<span style="COLOR: #800000">"BG_STATUS"</span>) = 3
+    
+    gm.Refresh
+     
+    <span style="COLOR: #0000ff">Dim</span> GroupList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Set</span> GroupList = gm.GroupList
+   
+    <span style="COLOR: #0000ff">Dim</span> <span style="COLOR: #0000ff">Group</span> <span style="COLOR: #0000ff">As</span> GroupingItem
+    Debug.Print
+<span style="COLOR: #008000">' GroupList is a list of groups at the first level
+' under the one in which it was created.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> <span style="COLOR: #0000ff">Group</span> <span style="COLOR: #0000ff">In</span> GroupList
+        Debug.Print <span style="COLOR: #800000">"Name: "</span> + <span style="COLOR: #0000ff">Group</span>.FieldName + <span style="COLOR: #800000">" Value: "</span> + <span style="COLOR: #0000ff">Group</span>.FieldValue
+<span style="COLOR: #008000">'        Name: BG_SEVERITY Value: 1-Low
+'        Name: BG_SEVERITY Value: 2-Medium
+'        Name: BG_SEVERITY Value: 3-High
+'        Name: BG_SEVERITY Value: 4-Very High
+'        Name: BG_SEVERITY Value: 5-Urgent
+</span>
+    <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #008000">'
+</span>
+    Debug.Print
+    <span style="COLOR: #0000ff">Dim</span> itm <span style="COLOR: #0000ff">As</span> Bug, cnt <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+<span style="COLOR: #008000">' ItemList is a list of the objects
+' included in the group.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> itm <span style="COLOR: #0000ff">In</span> gm.ItemList
+      <span style="COLOR: #0000ff">With</span> itm
+      Debug.Print .ID, .Field(<span style="COLOR: #800000">"BG_SEVERITY"</span>), .Field(<span style="COLOR: #800000">"BG_PRIORITY"</span>), .Field(<span style="COLOR: #800000">"BG_STATUS"</span>)
+      <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">Next</span>
+    
+    <span style="COLOR: #0000ff">Set</span> <span style="COLOR: #0000ff">Group</span> = GroupList.Item(1)
+    Debug.Print
+    Debug.Print <span style="COLOR: #800000">"Name: "</span> + <span style="COLOR: #0000ff">Group</span>.FieldName + <span style="COLOR: #800000">" Value: "</span> + <span style="COLOR: #0000ff">Group</span>.FieldValue
+    <span style="COLOR: #008000">'Name: BG_SEVERITY Value: 1-Low
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> oList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Set</span> oList = <span style="COLOR: #0000ff">Group</span>.GroupList
+    
+    <span style="COLOR: #0000ff">Dim</span> sg <span style="COLOR: #0000ff">As</span> GroupingItem
+    Debug.Print
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> sg <span style="COLOR: #0000ff">In</span> oList
+        Debug.Print <span style="COLOR: #800000">"Name: "</span> + sg.FieldName + <span style="COLOR: #800000">" Value: "</span> + sg.FieldValue
+<span style="COLOR: #008000">'        Name: BG_PRIORITY Value: 1-Low
+'        Name: BG_PRIORITY Value: 2-Medium
+</span>    <span style="COLOR: #0000ff">Next</span>
+    
+    
+<span style="COLOR: #0000ff">Exit Sub</span>
+GetGroupItemsErr:
+<span style="COLOR: #008000">' Handle errors
+</span><span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Using group-by fields">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

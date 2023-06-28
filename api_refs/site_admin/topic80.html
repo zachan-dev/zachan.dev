@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Tracking progress of an upgrade</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="SACLIENTLib~SAapi~ReadMaintenanceTaskProgress~Tracking progress of an upgrade_E"/>
+    <meta name="Description" content="In this sample workflow script, an asynchronous task is initiated, then status is checked in a loop until error or completion." />
+    <meta name="Microsoft.Help.TocParent" content="SACLIENTLib~SAapi~ReadMaintenanceTaskProgress"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" /><meta name="Microsoft.Help.TocOrder" content="100"/>
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Site Administration API Type Library 12.50 and later</div>
+        <div id="PageTitle"><div id="PageTitleText">Tracking progress of an upgrade</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">In this sample workflow script, an asynchronous task is initiated, then status is checked in a loop until error or completion.</div></div>
+            <div class="SectionHeading" id="sourceSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Source code</span></div><div id="sourceSectionContent" class="SectionContent"><pre><span style="color: #0000FF; ">On</span> <span style="color: #0000FF; ">Error</span> <span style="color: #0000FF; ">Resume</span> <span style="color: #0000FF; ">Next</span>
+
+<span style="color: #0000FF; ">Dim</span> sa
+<span style="color: #0000FF; ">Set</span> sa = <span style="color: #0000FF; ">CreateObject</span>(<span style="color: #800000; ">&quot;SAClient.SAapi&quot;</span>)
+sa.Login <span style="color: #800000; ">&quot;http://localhost:8080/qcbin&quot;</span>, <span style="color: #800000; ">&quot;henry&quot;</span>, <span style="color: #800000; ">&quot;tilney&quot;</span>
+WScript.Echo(<span style="color: #800000; ">&quot;Connected&quot;</span>)
+
+<span style="color: #008000; ">'Start the asynchronous task
+</span>sa.Upgrade <span style="color: #800000; ">&quot;DOMAIN_1&quot;</span>, <span style="color: #800000; ">&quot;PROJECT_1&quot;</span>, <span style="color: #800000; ">&quot;&quot;</span> 
+
+
+<span style="color: #0000FF; ">Do</span> <span style="color: #0000FF; ">While</span> <span style="color: #0000FF; ">True</span>
+        WScript.Sleep 1000
+        <span style="color: #008000; ">' ReadMaintenanceTaskProgress returns current state of upgrade in XML
+</span>        WScript.Echo(sa.ReadMaintenanceTaskProgress(<span style="color: #800000; ">&quot;DOMAIN_1&quot;</span>, <span style="color: #800000; ">&quot;PROJECT_1&quot;</span>) )
+
+        <span style="color: #008000; ">' On Exception, display and exit.
+</span>        <span style="color: #008000; ">' ReadMaintenanceTaskProgress throws exception on error 
+</span>        <span style="color: #008000; ">' and when Verify, Repair, Upgrade tasks are completed.
+</span>        <span style="color: #0000FF; ">If</span> Err.Number &lt;&gt; 0 <span style="color: #0000FF; ">Then</span>
+                    WScript.Echo Err.Description
+                    Err.Clear
+                <span style="color: #0000FF; ">Exit</span> <span style="color: #0000FF; ">Do</span>
+        <span style="color: #0000FF; ">End</span> <span style="color: #0000FF; ">If</span>
+<span style="color: #0000FF; ">Loop</span>
+
+sa.Logout
+WScript.Echo(<span style="color: #800000; ">&quot;Disconnected&quot;</span>)</pre>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Site Administration API  Documentation Feedback: Tracking progress of an upgrade">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

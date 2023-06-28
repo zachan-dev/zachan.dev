@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>Undocumented Tables</title>
+    <meta name="Title" content="Undocumented Tables"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="Tables not created by ALM
+
+Extensions and add-ins to ALM may create tables or add fields. These tables and fields are not documented in this reference." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="{3CF96F7B-2154-4D8F-A3C6-104C3B309F40}"/>
+    <meta name="Microsoft.Help.TocParent" content="-1"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.topics.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">Undocumented Tables</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <h2>Tables&nbsp;not created by ALM</h2>
+
+<p>Extensions and add-ins to ALM may create tables or add fields. These tables and fields are not documented in this reference.</p>
+
+<h2>Tables&nbsp;created by ALM after installation</h2>
+
+<p>ALM creates&nbsp;some tables&nbsp;after installation as needed. These tables&nbsp;support&nbsp;calculations and complex activities such as: copying entities with dependencies between projects, capturing baselines, check-in, check-out, comparisons, and others.</p>
+
+<p>All such tables are for internal use. Do not alter or attempt to use the data.</p>
+
+<p>These tables are not documented in this reference.</p>
+
+<p>Examples of such tables are:</p>
+
+<ul>
+    <li>CLOSURE_PERS*</li>
+
+    <li>TTBLCL_*</li>
+</ul>
+
+<p>Tables BP_PARAM_VIRT and BP_ITER_PARAM_VIRT are created in projects under version control when parameters are missing from the BP_PARAM, VC_BP_PARAM, &nbsp;BP_ITER_PARAM or VC_BP_ITER_PARAM tables. These virtual parameters are copied to the primary tables as needed.</p>
+
+<h2>Mirror&nbsp;Tables</h2>
+
+<p>ALM creates tables that mirror other tables for special purposes.</p>
+
+<ul>
+    <li>BL_&lt;primary table&gt; tables support baselining for the primary table.</li>
+
+    <li>HIST_&lt;primary table&gt; tables contain history records for the primary table.</li>
+
+    <li>VC_&lt;primary table&gt; tables support version control for the primary table.</li>
+</ul>
+
+<p>Most of the fields of the mirror tables are the same as those of the primary table. Therefore, mirror tables&nbsp;are not documented in this reference.</p>
+
+<p>Some additional fields in the mirror tables are:</p>
+
+<ul>
+    <li>*_BL_ID - The baseline ID.</li>
+
+    <li>*_VC_CHECKIN_DATE - The date this version was checked in according to the server clock.</li>
+
+    <li>*_VC_CHECKIN_TIME - The time this version was checked in according to the server clock.</li>
+
+    <li>*_VC_CHECKIN_USER_NAME - The user name of the user who checked in this version.</li>
+
+    <li>*_VC_CHECKOUT_COMMENTS - The user's comments when checking out the item.</li>
+
+    <li>*_VC_CHECKOUT_DATE - The date this version was checked&nbsp;out according to the server clock.</li>
+
+    <li>*_VC_CHECKOUT_TIME - The time this version was checked&nbsp;out according to the server clock.</li>
+
+    <li>*_VC_CHECKOUT_USER_NAME - The user who checked out the item under version control.</li>
+
+    <li>*_VC_DATE - The checkin date.</li>
+
+    <li>*_VC_STATUS - The version status: Checked in, checked out, or read only.</li>
+
+    <li>*_VC_TIME - The check-in time.</li>
+
+    <li>*_VC_VERSION_NUMBER - The version ID of the entity.</li>
+
+    <li>*_VER_STAMP - The version number of the record.</li>
+
+    <li>*_VTS - The version time stamp.</li>
+
+    <li>*VC_CHECKIN_COMMENTS - The user's comments when checking in the item.</li>
+</ul>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference 12.50 and later Documentation Feedback: Undocumented Tables">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

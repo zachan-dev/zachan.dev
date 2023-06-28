@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>List the users for a connection</title>
+    <meta name="Title" content="List the users for a connection"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Sub ListUsers()
+' List the users for a connection
+
+
+  Dim custUsers As CustomizationUsers
+  Dim usr As CustomizationUser
+  Dim UList As List
+   
+  Set custUsers = tdc.Customization.Users
+
+  Set ULis" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="49aa4b37-84af-42c4-8a55-42dc34f62544"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">List the users for a connection</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-1036eb59-7aa3-4851-9cd6-ddb516f3182e"></a></li>
+    </ul>
+
+    <div id="TabContent-1036eb59-7aa3-4851-9cd6-ddb516f3182e" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Sub</span> ListUsers()
+<span style="COLOR: #008000">' List the users for a connection
+</span>
+
+  <span style="COLOR: #0000ff">Dim</span> custUsers <span style="COLOR: #0000ff">As</span> CustomizationUsers
+  <span style="COLOR: #0000ff">Dim</span> usr <span style="COLOR: #0000ff">As</span> CustomizationUser
+  <span style="COLOR: #0000ff">Dim</span> UList <span style="COLOR: #0000ff">As</span> List
+   
+  <span style="COLOR: #0000ff">Set</span> custUsers = tdc.Customization.Users
+
+  <span style="COLOR: #0000ff">Set</span> UList = custUsers.Users
+  Debug.Print UList.Count
+  
+  <span style="COLOR: #0000ff">Dim</span> maxU%, uCnt%
+  
+  maxU = 5
+  
+  <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> usr <span style="COLOR: #0000ff">In</span> UList
+    uCnt = uCnt + 1
+    <span style="COLOR: #0000ff">With</span> usr
+        Debug.Print .name &amp; <span style="COLOR: #800000">", "</span> &amp; .Email
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">If</span> uCnt &gt; maxU <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+  <span style="COLOR: #0000ff">Next</span> usr
+
+<span style="COLOR: #0000ff">Exit Sub</span>
+ErrorHandler:
+    ErrHandler err
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: List the users for a connection">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

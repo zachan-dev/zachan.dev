@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>C# Get the Requirements Associated with a Defect</title>
+    <meta name="Title" content="C# Get the Requirements Associated with a Defect"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                Example Title
+
+                
+                    
+                        Copy Code
+                    
+                
+            
+
+            
+                
+                    
+" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="73341b7f-e66d-4d8d-8a4d-414df0f580a1"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    <script type="text/javascript">isNew = true;</script>
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">C# Get the Requirements Associated with a Defect</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentCS">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Example Title</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+<span style="COLOR: #008000">/*
+ How to call:
+    BugFactory tempBugF = (BugFactory)tdConnection.BugFactory;
+    Bug tempbug = (Bug)tempBugF[1];
+    BugReqLink(tempbug);
+ */</span>
+<span style="COLOR: #0000ff">public</span> <span style="COLOR: #0000ff">bool</span> BugReqLink(Bug aBug)
+{
+  <span style="COLOR: #0000ff">try</span>
+  {
+    TDFilter bugFilter, reqFilter;
+    List reqL, bugL;
+
+    BugFactory bugF = (BugFactory)tdConnection.BugFactory;
+    ReqFactory reqF = (ReqFactory)tdConnection.ReqFactory;
+
+    <span style="COLOR: #008000">//Set up the cross filter that specifies only this bug
+</span>    bugFilter = bugF.Filter;
+    bugFilter[<span style="COLOR: #800000">"BG_BUG_ID"</span>] = aBug.ID.ToString();
+
+    bugL = bugFilter.NewList();
+    <span style="COLOR: #0000ff">foreach</span> (Bug thisBug <span style="COLOR: #0000ff">in</span> bugL)
+    {
+      String tempStr = String.Format(<span style="COLOR: #800000">"{0} {1}"</span>, thisBug.ID, thisBug.Summary);
+      Debug.Print(tempStr);
+    }
+
+    reqFilter = reqF.Filter;
+    <span style="COLOR: #008000">// Add the cross filter. The filter now means 
+    // "Return all requirements associated
+    //  with the bugs specified by the cross filter"
+    // In this case, a single Bug.
+</span>    reqFilter.SetXFilter(<span style="COLOR: #800000">"REQ-BUG"</span>, <span style="COLOR: #0000ff">true</span>, bugFilter.Text);
+    reqL = reqF.NewList(reqFilter.Text);
+    <span style="COLOR: #008000">//Check the results
+</span>    <span style="COLOR: #0000ff">if</span> (reqL.Count &gt; 0)
+    {
+      <span style="COLOR: #0000ff">foreach</span> (Req aReq <span style="COLOR: #0000ff">in</span> reqL)
+      {
+        Debug.Print(aReq.Name);
+      }
+    }
+    <span style="COLOR: #0000ff">else</span>
+    {
+      String errmsg = <span style="COLOR: #800000">"No bug links found"</span>;
+      <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+    }
+    <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">true</span>;
+  }
+  <span style="COLOR: #0000ff">catch</span> (Exception ex)
+  {
+    Debug.WriteLine(ex.ToString());
+    <span style="COLOR: #008000">//Handle Error 
+</span>    <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+  }
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: C# Get the Requirements Associated with a Defect">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

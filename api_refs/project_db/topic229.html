@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>td.DELETED_ASSETS_INFO Table</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.db.2012.css" data-mshv2-stylesheet="/stylesheets/dx.db.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.db.2012.mshv1.css" />
+    <script src="script/dx.db.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.db.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="Project Data Tables_db~s-td~t-DELETED_ASSETS_INFO"/>
+    <meta name="Description" content="Records of deleted assets for tracing." />
+    
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.dx.db.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">td.DELETED_ASSETS_INFO Table</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic25.html">Project Data Tables Database</a>
+ > <a href="topic27.html">td Schema</a>
+ : td.DELETED_ASSETS_INFO Table</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Records of deleted assets for tracing.</div></div>
+			
+            <!-- type="FilteredItemList" scrap="PROPERTY_LIST" namespace="property" source="Item" filter="" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=properties,caption=$$properties$$%%%%filtereditemlist%%</div>" --><!--properties --><!-- end -->
+            <div class="SectionHeading" id="columnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Columns</span></div><div id="columnsSectionContent" class="SectionContent"><table class="ColumnListTable"><tr><th align=middle>&nbsp;</th><th NOWRAP class="pivot-column">Column Name</th><th NOWRAP>Description</th><th NOWRAP>Datatype</th><th NOWRAP>Length</th><th NOWRAP>Allow Nulls</th><th NOWRAP>Default</th><th NOWRAP>Formula</th></tr>
+<tr><td Class=centered NOWRAP><img alt="Primary Key" src="dbimages/primarykey.gif">&nbsp;</td><td class="LinkCell"><STRONG>DAI_ID</STRONG></td><td class="DescriptionCell">The record ID.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_ASSET_ID</STRONG></td><td class="DescriptionCell">The ID of the deleted asset in the table given in DAI_ASSET_TYPE.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_ASSET_PATH</STRONG></td><td class="DescriptionCell"><p>For TEST, RESOURCE, and&nbsp;COMPONENT, the path is &lt;QC entity path&gt;\&lt;entity id&gt;.</p>
+
+<p>For USER_ASSET, the path is&nbsp; &lt;QC owner entity path&gt;\&lt;owner entity id&gt;\&lt;user asset id&gt;</p></td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_ASSET_NAME</STRONG></td><td class="DescriptionCell">The name of the deleted entity as it appears in the user interface.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_ASSET_TYPE</STRONG></td><td class="DescriptionCell">For example:
+
+<p>TEST, RESOURCES, COMPONENT, or, USER_ASSET</p></td><td>varchar</td><td>40</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_ASSET_DISPLAY_TYPE</STRONG></td><td class="DescriptionCell">The type of the deleted entity as it appears in the user interface.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_ASSET_DESCRIPTION</STRONG></td><td class="DescriptionCell">A description of the deleted asset.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_DELETED_BY</STRONG></td><td class="DescriptionCell">The user who deleted the user asset.</td><td>varchar</td><td>60</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_DELETED_DATE</STRONG></td><td class="DescriptionCell">The date the user asset was deleted.</td><td>datetime</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_OWNER_ID</STRONG></td><td class="DescriptionCell"><p>For entities that have an owner, the ID of the owner. For example, user assets that are QuickTest Professional actions are owned by the QTP test, so this field would store the ID of the test.</p></td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_OWNER_TYPE</STRONG></td><td class="DescriptionCell">The type of the owner entity. For example, TEST.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_OWNER_DISPLAY_TYPE</STRONG></td><td class="DescriptionCell">The owner&nbsp;type as it appears in the user interface. For example, QUICKTEST_TEST.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_OWNER_NAME</STRONG></td><td class="DescriptionCell">The owner&nbsp;name as it appears in the user interface.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>DAI_OWNER_DESCRIPTION</STRONG></td><td class="DescriptionCell">The description of the owner.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="indexesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Indexes</span></div><div id="indexesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Index</th><th>Description</th><th>Primary</th><th>Unique</th></tr>
+<tr><td class=LinkCell><A HREF="topic230.html">DELETED_ASSET_INFO_IDX1</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic231.html">DELETED_ASSET_INFO_LWR_UIX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic232.html">DELETED_ASSET_INFO_PK</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+</table></div>
+            
+            
+            
+            
+            
+            <!-- start type="Source" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=source,caption=$$SQL$$%%<table class="sqlsource" border=0 cellpadding=0><tr><td NOWRAP><CODE>%%Source%%</CODE></td></tr></table></div>" --><!--Source --><!-- end -->
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><h4 class=dxh4>Related Objects</h4><p><a href="topic27.html">td Schema</a>
+<BR/><a href="topic25.html">Project Data Tables Database</a>
+</p>
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference  Documentation Feedback: td.DELETED_ASSETS_INFO Table">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

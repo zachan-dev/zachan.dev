@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--QCCR1K4344-->
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="ALM_REST_API_TP.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="How to Do Common Tasks|Query a Collection of Entities">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Filtering a Collection of Entities</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+            <link rel="icon" type="image/x-icon" href="https://software.microfocus.com/favicon.ico" />
+		
+			html, body 
+			{
+				height: 100%;
+				margin-right:2em;
+			}
+						
+			.wrapper 
+			{
+				min-height: 100%!important;
+				margin: 0 auto -10em; 
+				padding-left: 0.2em
+						
+			}
+
+			footer, .float 
+			{
+				height: 10em; 
+				margin:0;
+				clear: both;
+			}
+
+			div.roundcorners
+			{
+				-moz-border-radius-bottomleft: 1em;
+				border-bottom-left-radius: 1em;
+				-moz-border-radius-topright: 1em;
+				border-top-right-radius: 1em;
+				background-color: #f2f2f2 ;
+				width: 100% !important;
+				padding: 0em;		 
+			}
+			
+			p.footerlink
+			{
+				font-size: .75em;
+				line-height: 1em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom:.75em;
+			}
+			
+			p.footerlink a,
+			p.footerlink a:visited
+			{
+				color: #5a5a5a;
+			}
+			
+			p.footerlink a:hover
+			{
+				color: #000000!important;
+			}
+						
+			p.spacer
+			{
+				font-size: .5em;
+				line-height: .5em;
+				padding: 0em;
+				margin-top:0;
+				margin-bottom: .5em;
+			}
+	
+    </style>
+        <link href="../../Resources/Stylesheets/API_TechPreview.css" rel="stylesheet" />
+        <script src="../../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../../ALM_REST_API_TP.html#REST_API_Tech_Preview/General/Filtering.html">Open topic with navigation</a>
+        </p>
+        <div class="wrapper">
+            <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span><a class="MCBreadcrumbsLink" href="How_to_Do_Common_Tasks.html">How to Do Common Tasks</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Query_a_Collection_of_Entities.html">Query a Collection of Entities</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Filtering a Collection of Entities</span>
+            </div>
+            <div id="pagebody">
+                <div id="mainbody">
+                    <h1>Filtering a Collection of Entities</h1>
+                    <p>A GET statement that returns a large amount of data can stress the database server and cause performance degradation for all users. To minimize the impact:</p>
+                    <ul>
+                        <li value="1">filter the entities to be returned</li>
+                        <li value="2">retrieve only the fields you actually need</li>
+                    </ul>
+                    <p>To retrieve only the fields you need, add&#160;a <a href="fields.html">fields</a> clause to the URL.</p>
+                    <p>To filter the entities to be returned, add a query to the URL. For example:<br />/<code>tests?query={<em>query statement</em>}</code>.<br />A query can be applied to any GET on a collection of entities.</p>
+                    <p>Queries sent by applications must be URL&#160;encoded. For example, to submit query <code>{status[NOT (Ready or Design)]}</code>, send <code>%7Bstatus%5BNOT%20(Ready%20or%20Design)%5D%7D</code>. See also <a href="General_Notes_and_Limitations.html#URL_Encoding" title="" alt="" class="MCXref xref">URL encoding</a>.</p>
+                    <p>You can generally use spaces in an query entered in a browser.</p>
+                    <p>The examples on this page are not URL encoded so that they are easier to read.</p>
+                    <h2>Query Syntax</h2>
+                    <div id="SectionIdSection" class="section" name="collapseableSection">The elements of a query are:
+
+					<ul><li value="1">Comparison operators:&lt;,&gt;,&lt;&gt;,&gt;=,&lt;=</li><li value="2">Logical operators: and, or, not</li><li value="3">Literals: String that represent the value of an expression. If&#160;a value contains spaces, it must be contained within single or double quotes. Literals can contain the '*' wild card.</li><li value="4">Pairs of parenthesis</li></ul><p>The filter of a query URL is contained in curly brackets "{}".</p><p>The expression applied to a field is contained in square brackets "[]".</p><p>The field delimiter is a semicolon ";" .</p><p>The only operation supported between fields is AND. The AND operation is implicit and is not specified in the query syntax. Only the ";" delimiter is specified.</p><p>For example:</p><blockquote style="MARGIN-RIGHT: 0px;" dir="ltr"><p>tests?query={id[&gt;1 AND NOT 5]; status[Ready or Design]}</p></blockquote><p dir="ltr">This query specifies any test whose ID is above one, excluding test 5, and whose status is Ready or Design.</p><div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_"><img class="MCDropDown_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />Examples of valid queries</a></span><div class="MCDropDownBody dropDownBody"><pre>
+    &gt; 1 AND ( &lt; 3 OR &gt; 5 )
+    &gt; 1 AND (&lt; "3" OR &gt; 5)
+    &gt; 1 AND = "( &lt; 3 OR &gt; 5)"
+    1 AND (&lt;3 OR &gt;5 )
+    &gt; "aaa" or not ( &lt;&gt; "bbbb" OR &gt;= "cccccc")
+    &gt;1 AND NOT (&lt;3 OR &gt;5)
+    &gt;1 OR NOT (&lt;3 OR &gt;5)
+    &gt;=1 or not (&lt;3 OR &gt;5)
+    AAAAAP*
+    &gt; aaa or not ( &lt;&gt; bbbb OR &gt;= cccccc)
+    aaa or not cccccc
+    aaa or cccccc
+    aaa or &gt; cccccc
+    aaa or not &gt; cccccc
+    aaa or not &gt; 'cccccc' AND fff
+    not ( Design Or Repair )
+    = 1 AND (&lt;3 OR &gt;5 )
+    =aaa or cccccc
+    =AAAAAP*
+									</pre></div></div></div>
+                    <h2>Field Names</h2>
+                    <div id="guid1Section" class="section" name="collapseableSection">
+                        <p>Fields are identified by logical name. To get the list of fields for an entity, use the XML returned by a GET on the <a href="../REST/fields_customization.html">customization fields Collection</a>.</p>
+                        <p>This is an example of a Field element:</p>
+                        <blockquote style="MARGIN-RIGHT: 0px;" dir="ltr">
+                            <p><span style="color: blue;">&lt;</span><span style="color: maroon;">Field</span> <span style="color: red;">PhysicalName</span><span style="color: blue;">="</span><span>TS_ATTACHMENT</span><span style="color: blue;">"</span> <![CDATA[  ]]><span style="color: red;">Name</span><span style="color: blue;">="</span>attachment<span style="color: blue;">"</span> <span style="color: red;">Label</span><span style="color: blue;">="</span>Attachment<span style="color: blue;">"</span><span style="color: blue;">"&gt;</span></p>
+                        </blockquote>
+                        <p>The PhysicalName attribute of the Field is the column name in the project database. The Label is the display string that can be customized.</p>
+                        <p>The Name attribute is the logical name. Use the logical name&#160;value&#160;to specify fields in:</p>
+                        <ul>
+                            <li value="1"><a href="../REST/groups.html">group specifications</a>
+                            </li>
+                            <li value="2"><a href="order-by.html">order specifications</a>
+                            </li>
+                            <li value="3">Input XMLs to <a href="Create_an_Entity.html">create</a>&#160;or <a href="Update_an_Entity.html">update</a>&#160;an entity</li>
+                        </ul>
+                        <p>Specify <code>fields?can-filter=true</code> to limit the results to the fields that can be used in a filter.</p>
+                        <p>To specify fields in another entity, use the unique alias that represents the relation of the second entity to the entity your are querying. See <a href="relations_btwn_entities.htm#Aliases" title="" alt="" class="MCXref xref">Aliases</a>. For instance:<br /><code>.../tests?fields=id,<b>contains-test-folder</b>.id,<b>contains-test-folder</b>.name</code>&#160;</p>
+                    </div>
+                    <h2>Cross Filters<a name="Cross_Filters"></a></h2>
+                    <div id="guid1Section" class="section" name="collapseableSection">
+                        <p>If there is a relational connection between two entity types, a collection can be filtered&#160;on the related entities. Use the unique alias that represents the relation for the cross filter. For an example of how to know if an alias is unique, see the example in the <a href="relations_btwn_entities.htm#unique_alias">Relations</a> topic.</p>
+                        <p>The expression for the related entity is &lt;alias&gt;.&lt;logical field name&gt;&lt;filter expression&gt;.</p>
+                        <p> For example, because tests can be linked to defects, the tests collection&#160;can be filtered by defect fields: </p>
+                        <p><code>.../tests?query={connected-to-defect.name["Widget wobbles*"]}</code>
+                        </p>
+                        <p>See <a href="relations_btwn_entities.htm">Relations</a>, the <a href="../REST/relations.html">relations resource</a> and the <a href="../../../../XSD/webframe.html?Relation_xsd.html" target="_blank">Relation XSD</a>.</p>
+                    </div>
+                    <h2>Examples</h2>
+                    <h3>Single entity expressions</h3>
+                    <blockquote style="MARGIN-RIGHT: 0px;" dir="ltr">
+                        <p><code>tests?query={status[NOT (Ready or Design)]}<br />						tests?query={status[(NOT Ready or Design]}<br />						tests?query={status[Ready or&#160;NOT Design]}<br />tests?query={id[&gt;=1 And NOT = 5]}<br />						tests?query={exec-status['Not Completed']}<br />tests?query={exec-status['Not Com*']}</code>
+                        </p>
+                    </blockquote>
+                    <h3>Cross filter expressions with entity names</h3>
+                    <blockquote style="MARGIN-RIGHT: 0px;" dir="ltr">
+                        <p>Tests&#160;in status "Ready" that are&#160;linked to defects&#160;assigned to user SallyQA:<br /><code>tests?query={status[Ready]; defect.owner[SallyQA]}</code></p>
+                        <p>Tests that are linked to defects assigned to user <em>joe</em>:<br /><code>tests?query={defect.owner[joe]}</code></p>
+                    </blockquote>
+                    <h3 data-mc-conditions="REST_ConditionTagSets.Apollo">Cross filter expressions with relation aliases</h3>
+                    <blockquote style="MARGIN-RIGHT: 0px;" dir="ltr">
+                        <p data-mc-conditions="REST_ConditionTagSets.Apollo">Design steps that call tests named D*:<br /><code>design-steps?query={used-by-test.name[D*]}</code></p>
+                        <p data-mc-conditions="REST_ConditionTagSets.Apollo">Design steps that are part of tests named S*:<br /><code>design-steps?query={has-parts-test.name[S*]}</code></p>
+                    </blockquote>
+                    <h2>Exclusive Filter</h2>
+                    <div id="SectionIdSection" class="section" name="collapseableSection">
+                        <p>To return the resources that do not meet the conditions applied to an entity, add <code>{entity}.inclusive-filter[false]</code> to the filter. The effect is to exclude the resources that would be returned if <span style="font-family: 'Courier New';color: #000066;">inclusive-filter[false]</span> were not specified and to&#160;return the rest. For example:</p>
+                        <p>&#160;&#160;&#160;&#160;<code>/tests?query={defect.id[1];defect.status[Closed or Fixed];requirement.id[1];defect.inclusive-filter[false]}</code></p>
+                        <p> This query returns tests that are linked to the requirement whose ID is 1, excluding tests linked to the defect whose ID is 1 and excluding tests linked to defects that are&#160;fixed or closed. Note that since inclusive-filter[false] is applied to the defect entity, only the clauses for defect are treated as exclusion clauses. The&#160;requirement clause is applied as an inclusion clause.</p>
+                    </div>
+                </div>
+            </div>
+            <p>&#160;</p>
+            <!--        hr width="100%" size="4" align="center" padding-bottom="0" style="clear:both" /> -->
+            <div class="float">
+            </div>
+        </div>
+        <div class="footer">
+            <MadCap:conditionalText data-mc-conditions="_rsc_Conditions.Footer">
+                <div class="roundcorners">
+                    <table style="border: none; margin-left: auto;       margin-right: auto;  width: 60%; margin-bottom: 0em">
+                        <tr>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="http://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/software/alm-software-development-testing/try-now" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank" title="ALM on Twitter" alt="ALM on Twitter"><img src="../../Resources/Images/_rsc_Twitter_blue.png" style="width: 20px;height: 20px;" /></a><a href="https://www.linkedin.com/groups/4855477/profile" target="_blank" title="ALM Customer Forum on LinkedIn" alt="ALM Customer Forum on LinkedIn" data-mc-conditions="Project_Conditions.Removed">&#160;&#160;&#160;<img src="../../Resources/Images/_rsc_Linkedin_blue.png" style="width: 20px;height: 20px;" data-mc-conditions="Project_Conditions.Removed" /></a></p></td>
+                            <td style="width: 33.3%;border: none; border-collapse: collapse;"> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]?subject=Feedback on [%=_rscC_Basic_Variables._rsc_Book_Title%] ([%=_rscC_Basic_Variables._rsc_Product_Name%] [%=_rscC_Basic_Variables._rsc_Product_Version%])" title="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_rscC_Basic_Variables._rsc_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+        </p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_rsc_Conditions.Footer">Send Documentation Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;"><div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a></div><div style="text-align:left"><!-- Localizable --><p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p><p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p><!-- Localizable --><hr /><p>Send us an email with the following information:</p><!-- Localizable --><div id="hp-feedbackBody"><br /><br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div><p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0073E7;">docteam@microfocus.com</a></p><!-- Localizable --><hr /></div></div><div style="display:none;" id="hp-feedback-variables" productName="ALM REST API Reference (Technical Preview)" productVersion="12.5x" commentsEmailAddress="docteam@microfocus.com" productAcronym="ALM" topicTitle="Filtering a Collection of Entities" skinLine1="ALM 12.5x REST API Reference (Technical Preview)" skinLine2="">&#160;
+		<p style="display:none;"><script src="../../Resources/MasterPages/_rsc_Feedback.js"></script></p></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/software/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                        </tr>
+                    </table>
+                    <table class="no_lines" style="border-top:1px solid #B9B8BB;  width:80%; margin-left: auto; margin-right: auto;  ">
+                        <tr>
+                            <td style="vertical-align: middle; font-size: .65em; text-align: center;direction: ltr;">Last updated <span class="_rscC_Basic_Variables_rsc_LastUpdatedDate">January 18, 2018</span>&#160;|&#160;<a href="../../Resources/MasterPages/_rsc_Legal_Notices.htm#1">© <span class="_rscC_Basic_Variables_rsc_Copyright_Date_Range">2002 - 2018</span>&#160;<span class="_rscB_Branding_Variables_rsc_Copyright_Name">EntIT Software LLC</span></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </MadCap:conditionalText>
+            <p style="visibility:hidden"> <![CDATA[ ]]></p>
+            <p><a href="../../Resources/MasterPages/_rsc_HTML5_bannerTitle.htm" style="visibility: hidden;"></a><a href="../../Resources/MasterPages/_rsc_aboutSearch.htm" style="visibility: hidden;"></a>
+            </p>
+        </div>
+    </body>
+</html>

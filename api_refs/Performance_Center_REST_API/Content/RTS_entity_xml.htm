@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Performance_Center_REST_API.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Run-time Settings XML</title>
+        <!-- WEBHELP-ONLY: The following statement fixes cropping errors when customers use IE7 at 120 dpi (for example, list numbering problems) -->
+        <!--[if lt IE 8]>
+            <style type="text/css"> 
+                body
+                {
+                        padding-left: 16px;
+                }
+            </style>
+         <![endif]-->
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+			p.footerlink  
+			{
+
+			font-size: 85%;
+			text-align: right;
+			}
+
+			<!--QCCR1K4344--></style>
+        <link href="Resources/Stylesheets/_HP_IE_Experience.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Performance_Center_REST_API.htm#RTS_entity_xml.htm">Open topic with navigation</a>
+        </p>
+        <h1>Run-time Settings XML</h1>
+        <p> The elements of the run status XML are:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Log</td>
+                    <td>
+                        <p>Optional: The Log <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="ignore"</li>
+                            <li value="2">Type="standard" </li>
+                            <li value="3">Type="extended"</li>
+                        </ul>
+                        <p>Restrictions by type:</p>
+                        <table>
+                            <col />
+                            <col />
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Restrictions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ignore</td>
+                                    <td>No contained elements: <code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Log</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="ignore"</span><span style="COLOR: #0000ff"> /&gt;</span></code></td>
+                                </tr>
+                                <tr>
+                                    <td>standard </td>
+                                    <td>Pass the LogOptions element. Do not pass other elements.</td>
+                                </tr>
+                                <tr>
+                                    <td>extended</td>
+                                    <td>Pass the LogOptions element.<br />										Optional: Pass any combination of ParametersSubstitution, DataReturnedByServer, and AdvanceTrace.
+										</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Log/AdvanceTrace</td>
+                    <td><code>true</code> or <code>false</code></td>
+                </tr>
+                <tr>
+                    <td>Log/DataReturnedByServer</td>
+                    <td><code>true</code> or <code>false</code></td>
+                </tr>
+                <tr>
+                    <td>Log/LogOptions</td>
+                    <td>
+                        <p>The LogOptions <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="on error"</li>
+                            <li value="2">Type="always" </li>
+                        </ul>
+                        <p> If <code>Type="on error"</code>, CacheSize is required.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Log/LogOptions/CacheSize</td>
+                    <td>Integer 1-100.</td>
+                </tr>
+                <tr>
+                    <td>Log/ParametersSubstituion</td>
+                    <td><code>true</code> or <code>false</code></td>
+                </tr>
+                <tr>
+                    <td>Pacing</td>
+                    <td>Optional: Number or iterations the script will run and  required delay between iterations.</td>
+                </tr>
+                <tr>
+                    <td>Pacing/NumberOfIterations</td>
+                    <td>Integer</td>
+                </tr>
+                <tr>
+                    <td>Pacing/StartNewIteration</td>
+                    <td>The StartNewIteration <code>Type</code> attribute is one of:
+	<ul><li value="1">Type="immediately"</li><li value="2">Type="fixed delay" </li><li value="3">Type="random delay"</li><li value="4">Type="fixed interval"</li><li value="5">Type="random interval"</li></ul><p>Restrictions by type:</p><table><col /><col /><thead><tr><th>Type</th><th>Restrictions</th></tr></thead><tbody><tr><td>immediately</td><td>No contained elements: <code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartNewIteration </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="immediately"</span><span style="COLOR: #0000ff"> /&gt;</span></code></td></tr><tr><td>fixed delay </td><td>DelayAtRangeOfSeconds is mandatory. Do not pass other fields.</td></tr><tr><td>random delay</td><td>DelayAtRangeOfSeconds is mandatory. Do not pass other fields.</td></tr><tr><td>fixed interval</td><td>DelayAtRangeOfSeconds and DelayAtRangeToSeconds are mandatory.</td></tr><tr><td>random interval</td><td>DelayAtRangeOfSeconds and DelayAtRangeToSeconds are mandatory.</td></tr></tbody></table></td>
+                </tr>
+                <tr>
+                    <td>Pacing/StartNewIteration/DelayAtRangeOfSeconds</td>
+                    <td>Non-negative real number less than DelayAtRangeToSeconds.</td>
+                </tr>
+                <tr>
+                    <td>Pacing/StartNewIteration/DelayAtRangeToSeconds</td>
+                    <td>Non-negative real number</td>
+                </tr>
+                <tr>
+                    <td>ThinkTime</td>
+                    <td>
+                        <p>Optional: The ThinkTime <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="ignore"</li>
+                            <li value="2">Type="replay" </li>
+                            <li value="3">Type="modify"</li>
+                            <li value="4">Type="random"</li>
+                        </ul>
+                        <p>Restrictions by type:</p>
+                        <table>
+                            <col />
+                            <col />
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Restrictions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ignore</td>
+                                    <td>No contained elements: <code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ThinkTime </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="ignore"</span><span style="COLOR: #0000ff"> /&gt;</span></code></td>
+                                </tr>
+                                <tr>
+                                    <td>replay</td>
+                                    <td>LimitThinkTimeSeconds is allowed. Do not pass other fields.</td>
+                                </tr>
+                                <tr>
+                                    <td>modify</td>
+                                    <td>LimitThinkTimeSeconds and MultiplyFactor are allowed. Do not pass other fields.</td>
+                                </tr>
+                                <tr>
+                                    <td>random</td>
+                                    <td>LimitThinkTimeSeconds MinPercentage and MaxPercentage are allowed. Do not pass other fields.</td>
+                                </tr>
+                                <tr>
+                                    <td>ThinkTime/LimitThinkTimeSeconds</td>
+                                    <td>Optional. Positive integer. Invalid if ThinkTime Type is <code>ignored</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td>ThinkTime/MaxPercentage</td>
+                                    <td>Positive integer.</td>
+                                </tr>
+                                <tr>
+                                    <td>ThinkTime/MinPercentage</td>
+                                    <td>Positive integer.</td>
+                                </tr>
+                                <tr>
+                                    <td>ThinkTime/MultiplyFactor</td>
+                                    <td>
+                                 The recorded think time is multiplied by this factor at run time.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_"><img class="MCDropDown_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Closed" data-mc-alt2="Open" />Example</a></span>
+            <div class="MCDropDownBody dropDownBody"><pre><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">RTS </span><span style="COLOR: #ff0000">xmlns</span><span style="COLOR: #0000ff">="http://www.hp.com/PC/REST/API"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Pacing</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">NumberOfIterations</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">NumberOfIterations</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartNewIteration </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="random interval"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">DelayAtRangeOfSeconds</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">DelayAtRangeOfSeconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">DelayAtRangeToSeconds</span><span style="COLOR: #0000ff">&gt;</span>20<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">DelayAtRangeToSeconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StartNewIteration</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Pacing</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Log </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="extended"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ParametersSubstituion</span><span style="COLOR: #0000ff">&gt;</span>true<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ParametersSubstituion</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">DataReturnedByServer</span><span style="COLOR: #0000ff">&gt;</span>true<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">DataReturnedByServer</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">AdvanceTrace</span><span style="COLOR: #0000ff">&gt;</span>true<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">AdvanceTrace</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">LogOptions </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="on error"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">CacheSize</span><span style="COLOR: #0000ff">&gt;</span>4<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">CacheSize</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">LogOptions</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Log</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ThinkTime </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="random"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">MinPercentage</span><span style="COLOR: #0000ff">&gt;</span>50<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">MinPercentage</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">MaxPercentage</span><span style="COLOR: #0000ff">&gt;</span>150<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">MaxPercentage</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">LimitThinkTimeSeconds</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">LimitThinkTimeSeconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ThinkTime</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">RTS</span><span style="COLOR: #0000ff">&gt;</span><br /></pre>
+            </div>
+        </div>
+        <h2>See Also</h2>
+        <p><a href="start_test_run.htm" class="MCXref xref">Start a Test Run</a>
+            <br />
+        </p>
+        <p> <![CDATA[ ]]></p>
+        <!-- hr = horizontal rule -->
+        <hr width="100%" size="0" align="center" padding-bottom="0" style="clear:both" />
+        <table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td style="border: none; border-collapse: collapse;">
+                        <p id="Copyright" style="font-size: 85%; text-align: left;direction: ltr;"><a href="Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2004 - 2015</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                        </p>
+                    </td>
+                    <td style="border: none;">
+                        <div id="Feedback">
+                            <p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Documentation Feedback</a>
+                            </p>
+                            <!-- Localizable -->
+                            <div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;">
+                                <div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a>
+                                </div>
+                                <div style="text-align:left">
+                                    <!-- Localizable -->
+                                    <p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p>
+                                    <p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                    <p>Send us an email with the following information:</p>
+                                    <!-- Localizable -->
+                                    <div id="hp-feedbackBody">
+                                        <br />
+                                        <br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div>
+                                    <p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0066CC;">docteam@hpe.com</a></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                </div>
+                            </div>
+                            <div style="display:none;" id="hp-feedback-variables" productName="ALM Performance Center REST API Reference" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="Run-time Settings XML" skinLine1="ALM Performance Center REST API Reference" skinLine2="">&#160;
+		<p style="display:none;"><script src="Resources/MasterPages/_HP_Feedback.js"></script></p></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--QCCR1K4298 START-->
+        <div style="display:none;" id="HPb-Branding-Variables" Footer="Yes" Feedback="Yes">&#160;
+		</div>
+        <script>/* <![CDATA[ */
+			var BrandingVariables = document.getElementById("HPb-Branding-Variables");
+			if(BrandingVariables.getAttribute('Footer')=="No"){document.getElementById('Copyright').style.display = 'none';}
+			if(BrandingVariables.getAttribute('Feedback')=="No"){document.getElementById('Feedback').style.display = 'none';}
+		/* ]]> */</script>
+        <!--QCCR1K4298 END-->
+        <p> <a href="Resources/MasterPages/_HP_aboutSearch_WebHelp.htm" style="visibility: hidden;"></a></p>
+    </body>
+</html>

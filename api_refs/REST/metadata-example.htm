@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Metadata Example </title>
+    <meta name="Title" content="Metadata Example "/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                Javascript example
+
+                
+                    
+                        Copy Code
+                    
+                
+            
+
+            
+                
+                 " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="8893d60c-b9e8-4413-8f9b-411a708e07b4"/>
+    <meta name="Microsoft.Help.TocParent" content="56054b2a-8165-43b5-8fca-ff5a532e908b"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Metadata Example </div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Code_Samples.htm">Code Samples</a>
+ > Metadata Example </td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentJavascript">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>Javascript example</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+<span style="COLOR: #008000">/**
+ * get_MetaData.js
+ */</span>
+<span style="COLOR: #0000ff">function</span> performGetFieldsMetadata() {
+    console.log(<span style="COLOR: #800000">"&gt;&gt;performGetFieldsMetadata was called..."</span>);
+
+    <span style="COLOR: #008000">// get list-item entities
+</span>    <span style="COLOR: #0000ff">var</span> collection = getFieldsMetadata(<span style="COLOR: #800000">"defect"</span>);
+    printCollection(collection);
+    console.log(<span style="COLOR: #800000">"&gt;&gt;performGetFieldsMetadata end."</span>);
+}
+
+<span style="COLOR: #0000ff">function</span> getFieldsMetadata(type) {
+    <span style="COLOR: #0000ff">var</span> entities;
+    console.log(<span style="COLOR: #800000">"getFieldsMetadata was called..."</span>);
+    <span style="COLOR: #0000ff">var</span> req = <span style="COLOR: #0000ff">new</span> XMLHttpRequest();
+    req.open(<span style="COLOR: #800000">"GET"</span>, alm_project_url + <span style="COLOR: #800000">"/"</span> + type + <span style="COLOR: #800000">"s$metadata/fields"</span>, <span style="COLOR: #0000ff">false</span>);
+    req.setRequestHeader(<span style="COLOR: #800000">"Accept"</span>, <span style="COLOR: #800000">"application/json"</span>);
+
+    req.onreadystatechange = <span style="COLOR: #0000ff">function</span>(){
+        <span style="COLOR: #008000">// if state is "complete"
+</span>        <span style="COLOR: #0000ff">if</span> (req.readyState == 4) {
+            <span style="COLOR: #008000">// &amp; response status is "OK"
+</span>            <span style="COLOR: #0000ff">if</span> (req.status == 200){
+                entities = JSON.parse(req.responseText);
+            } <span style="COLOR: #0000ff">else</span> {
+                console.log(<span style="COLOR: #800000">"Failed. Response status:"</span> + req.statusText);
+            }
+        }
+    }
+
+    req.send();
+    console.log(<span style="COLOR: #800000">"getFieldsMetadata end."</span>);
+    <span style="COLOR: #0000ff">return</span> entities;
+}
+
+<span style="COLOR: #0000ff">function</span> printCollection(collection){
+    console.log(<span style="COLOR: #800000">"entities:"</span>);
+    console.log(<span style="COLOR: #800000">"    total-count:"</span> + collection[<span style="COLOR: #800000">"total-count"</span>]);
+    console.log(<span style="COLOR: #800000">"    actual-count:"</span> + collection[<span style="COLOR: #800000">"data"</span>].length);
+    <span style="COLOR: #0000ff">for</span> (i=0; i &lt; collection[<span style="COLOR: #800000">"data"</span>].length; i++){
+        <span style="COLOR: #0000ff">var</span> entity = collection.data[i];
+        console.log(<span style="COLOR: #800000">"entity : {label="</span> + entity.label + <span style="COLOR: #800000">", name="</span> + entity.name + <span style="COLOR: #800000">", type="</span> +entity.type.name + <span style="COLOR: #800000">"}"</span>);
+    }
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Metadata Example ">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

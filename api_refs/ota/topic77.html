@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Add a condition to a flow</title>
+    <meta name="Title" content="Add a condition to a flow"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+                
+  " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="2c016d49-92aa-4ee2-a720-fe7acbed09b4"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Add a condition to a flow</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Sub</span> addConditionToFlow()
+
+<span style="COLOR: #008000">'--------------------------------------
+' Add a condition to a flow.
+'--------------------------------------
+</span>    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> handle_errors
+    errmsg = <span style="COLOR: #800000">""</span>
+    
+    <span style="COLOR: #0000ff">Dim</span> tstFactory <span style="COLOR: #0000ff">As</span> TestFactory
+    <span style="COLOR: #0000ff">Dim</span> tst <span style="COLOR: #0000ff">As</span> Test
+    <span style="COLOR: #0000ff">Dim</span> fl <span style="COLOR: #0000ff">As</span> IBusinessProcess2
+    <span style="COLOR: #0000ff">Dim</span> bpComp <span style="COLOR: #0000ff">As</span> BPComponent
+    <span style="COLOR: #0000ff">Dim</span> bpParam <span style="COLOR: #0000ff">As</span> BPParameter
+    <span style="COLOR: #0000ff">Dim</span> foundBpComp <span style="COLOR: #0000ff">As</span> BPComponent
+    <span style="COLOR: #0000ff">Dim</span> foundComp <span style="COLOR: #0000ff">As</span> Component
+    <span style="COLOR: #0000ff">Dim</span> foundCompParam <span style="COLOR: #0000ff">As</span> ComponentParam
+    <span style="COLOR: #0000ff">Dim</span> found <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+
+    
+ <span style="COLOR: #008000">' Find a test of type "Flow"
+</span>    <span style="COLOR: #0000ff">Set</span> tstFactory = tdc.TestFactory
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> tst <span style="COLOR: #0000ff">In</span> tstFactory.NewList(<span style="COLOR: #800000">""</span>)
+        <span style="COLOR: #0000ff">If</span> (tst.Type = <span style="COLOR: #800000">"FLOW"</span>) <span style="COLOR: #0000ff">Then</span>
+            <span style="COLOR: #0000ff">Set</span> fl = tst
+            <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    <span style="COLOR: #0000ff">Next</span> tst
+
+    <span style="COLOR: #0000ff">If</span> fl <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span>
+        <span style="COLOR: #0000ff">MsgBox</span> <span style="COLOR: #800000">"No flow tests in project"</span>
+        <span style="COLOR: #0000ff">Exit Sub</span>
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    
+    <span style="COLOR: #0000ff">Dim</span> VersionCntl <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Object</span>
+    <span style="COLOR: #0000ff">Dim</span> NoCheckoutError <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+    
+<span style="COLOR: #008000">' Check the test out of version control and load the test.
+' The code of CheckoutTest is the example to the
+' Test coclass, "Checking out a Test."
+</span>    <span style="COLOR: #0000ff">Set</span> VersionCntl = _
+        CheckoutTest(tst, <span style="COLOR: #800000">"Set condition on input param"</span>, NoCheckoutError)
+    <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">Not</span> NoCheckoutError <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">Exit Sub</span>
+    
+    fl.Load
+    
+    found = <span style="COLOR: #0000ff">False</span>
+    
+
+<span style="COLOR: #008000">' Find an input parameter.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> bpComp <span style="COLOR: #0000ff">In</span> fl.BPComponents
+        <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> bpParam <span style="COLOR: #0000ff">In</span> bpComp.BPParams
+            Debug.Print bpParam.ComponentParamName, bpParam.ComponentParamIsOut
+            <span style="COLOR: #0000ff">If</span> bpParam.ComponentParamIsOut = 0 <span style="COLOR: #0000ff">Then</span>
+                <span style="COLOR: #0000ff">Set</span> foundBpComp = bpComp
+                <span style="COLOR: #0000ff">Set</span> foundComp = bpComp.Component
+                <span style="COLOR: #0000ff">Set</span> foundCompParam = bpParam.ComponentParam
+                found = <span style="COLOR: #0000ff">True</span>
+                <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+            <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+        <span style="COLOR: #0000ff">Next</span> bpParam
+        <span style="COLOR: #0000ff">If</span> found = <span style="COLOR: #0000ff">True</span> <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+    <span style="COLOR: #0000ff">Next</span> bpComp
+    
+    <span style="COLOR: #0000ff">If</span> found = <span style="COLOR: #0000ff">False</span> <span style="COLOR: #0000ff">Then</span>
+        <span style="COLOR: #0000ff">MsgBox</span> <span style="COLOR: #800000">"No input parameters in flow: "</span> &amp; fl.name
+        <span style="COLOR: #0000ff">Exit Sub</span>
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+
+    
+    <span style="COLOR: #008000">' Create a condition for the input parameter as XML:
+</span>    <span style="COLOR: #008000">' For example:
+</span>    <span style="COLOR: #008000">' &lt;expression&gt;&lt;leftParam type="ip" compid="1" compparamorder="0" paramid="7"
+</span>    <span style="COLOR: #008000">' flowtestid="1"&gt;param_name&lt;/leftParam&gt;&lt;operation&gt;eq&lt;/operation&gt;&lt;rightParam type="value"&gt;&lt;![CDATA
+</span>    <span style="COLOR: #008000">' [some_value]]&gt;&lt;/rightParam&gt;&lt;otherwise&gt;Continue&lt;/otherwise&gt;&lt;/expression&gt;
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> compId <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    compId = foundComp.ID
+    
+    <span style="COLOR: #0000ff">Dim</span> paramId <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    paramId = foundCompParam.ID
+    
+    <span style="COLOR: #0000ff">Dim</span> flowTestId <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    flowTestId = fl.ID
+    
+    <span style="COLOR: #008000">' Project must reference Microsoft XML library.
+</span>    <span style="COLOR: #0000ff">Dim</span> conditionDOM <span style="COLOR: #0000ff">As</span> DOMDocument
+    <span style="COLOR: #0000ff">Set</span> conditionDOM = <span style="COLOR: #0000ff">New</span> DOMDocument
+    conditionDOM.async = <span style="COLOR: #0000ff">False</span>
+    
+    
+    <span style="COLOR: #0000ff">Dim</span> expression
+    <span style="COLOR: #008000">' Create the expression.
+</span>    <span style="COLOR: #0000ff">Set</span> expression = conditionDOM.createElement(<span style="COLOR: #800000">"expression"</span>)
+    
+    
+    conditionDOM.appendChild (expression)
+    
+    <span style="COLOR: #0000ff">Dim</span> lparam
+    <span style="COLOR: #0000ff">Set</span> lparam = conditionDOM.createElement(<span style="COLOR: #800000">"leftParam"</span>)
+    
+    <span style="COLOR: #0000ff">Dim</span> attType, attCompId, attCompParamOrder, attParamId, attFlowId
+    
+    <span style="COLOR: #0000ff">Set</span> attType = conditionDOM.createAttribute(<span style="COLOR: #800000">"type"</span>)
+    <span style="COLOR: #008000">' ip - for input parameters, op - for output parameters, rt - for run time parameters
+</span>    attType.value = <span style="COLOR: #800000">"ip"</span>
+    lparam.setAttributeNode (attType)
+    
+    <span style="COLOR: #0000ff">Set</span> attCompId = conditionDOM.createAttribute(<span style="COLOR: #800000">"compid"</span>)
+    attCompId.value = compId
+    lparam.setAttributeNode (attCompId)
+    
+    <span style="COLOR: #0000ff">Set</span> attCompParamOrder = conditionDOM.createAttribute(<span style="COLOR: #800000">"compparamorder"</span>)
+    attCompParamOrder.value = foundCompParam.order
+    lparam.setAttributeNode (attCompParamOrder)
+    
+    <span style="COLOR: #0000ff">Set</span> attParamId = conditionDOM.createAttribute(<span style="COLOR: #800000">"paramid"</span>)
+    attParamId.value = foundCompParam.ID
+    lparam.setAttributeNode (attParamId)
+    
+    <span style="COLOR: #0000ff">Set</span> attFlowId = conditionDOM.createAttribute(<span style="COLOR: #800000">"flowtestid"</span>)
+    attFlowId.value = fl.ID
+    lparam.setAttributeNode (attFlowId)
+    lparam.Text = foundCompParam.name
+    
+    expression.appendChild (lparam)
+    
+    <span style="COLOR: #0000ff">Dim</span> operation
+    <span style="COLOR: #0000ff">Set</span> operation = conditionDOM.createElement(<span style="COLOR: #800000">"operation"</span>)
+    <span style="COLOR: #008000">' eq - equal to
+</span>    <span style="COLOR: #008000">' neq - not equal to
+</span>    <span style="COLOR: #008000">' st - less than
+</span>    <span style="COLOR: #008000">' steq - less than or equal to
+</span>    <span style="COLOR: #008000">' gt - greate than
+</span>    <span style="COLOR: #008000">' gteq - greater than or equal to
+</span>    operation.Text = <span style="COLOR: #800000">"eq"</span>
+    expression.appendChild (operation)
+    
+    <span style="COLOR: #0000ff">Dim</span> rparam
+    <span style="COLOR: #0000ff">Set</span> rparam = conditionDOM.createElement(<span style="COLOR: #800000">"rightParam"</span>)
+    
+    <span style="COLOR: #0000ff">Dim</span> attRightParamType
+    <span style="COLOR: #0000ff">Set</span> attRightParamType = conditionDOM.createAttribute(<span style="COLOR: #800000">"type"</span>)
+    attRightParamType.value = <span style="COLOR: #800000">"value"</span>
+    rparam.setAttributeNode (attRightParamType)
+    
+    <span style="COLOR: #0000ff">Dim</span> rparamValue
+    <span style="COLOR: #008000">' Set the value for the condition.
+</span>    <span style="COLOR: #0000ff">Set</span> rparamValue = conditionDOM.createCDATASection(<span style="COLOR: #800000">"abcd"</span>)
+    rparam.appendChild (rparamValue)
+    
+    expression.appendChild (rparam)
+    
+    <span style="COLOR: #0000ff">Dim</span> otherwise
+    <span style="COLOR: #0000ff">Set</span> otherwise = conditionDOM.createElement(<span style="COLOR: #800000">"otherwise"</span>)
+    <span style="COLOR: #008000">' Can be Continue or Fail.
+</span>    otherwise.Text = <span style="COLOR: #800000">"Continue"</span>
+    expression.appendChild (otherwise)
+    
+    Debug.Print conditionDOM.xml
+    
+    <span style="COLOR: #008000">' Set the condition.
+</span>    foundBpComp.Field(<span style="COLOR: #800000">"BC_BPTA_CONDITION"</span>) = conditionDOM.xml
+    
+    <span style="COLOR: #008000">' Save the flow.
+</span>    fl.Save
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+    NoCheckoutError = CheckinTest(VersionCntl, <span style="COLOR: #800000">"Condition set on input param."</span>)
+    
+    <span style="COLOR: #0000ff">Set</span> VersionCntl = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> tstFactory = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> tst = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> fl = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> bpComp = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> bpParam = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> foundBpComp = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> foundComp = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> foundCompParam = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> conditionDOM = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> expression = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> otherwise = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> attCompId = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> attCompParamOrder = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> attFlowId = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> attParamId = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> attRightParamType = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> attType = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> rparam = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> lparam = <span style="COLOR: #0000ff">Nothing</span>
+    <span style="COLOR: #0000ff">Set</span> operation = <span style="COLOR: #0000ff">Nothing</span>
+
+<span style="COLOR: #0000ff">Exit Sub</span>
+
+handle_errors:
+    errmsg = errmsg &amp; <span style="COLOR: #800000">" Error code "</span> &amp; <span style="COLOR: #0000ff">Str</span>(err.Number)
+    ErrHandler err, <span style="COLOR: #800000">"addConditionToFlow"</span>, errmsg, NON_FATAL_ERROR
+
+    <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Add a condition to a flow">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Lock and unlock a test</title>
+    <meta name="Title" content="Lock and unlock a test"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Function Lock_And_Unlock_Test(testID As Integer) As Boolean
+
+' Lock and unlock a test
+
+' It is good practice to lock existing entities when you
+' change them programmatically.
+'
+' This is an exa" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="7e96bf14-cdb1-4b29-837f-ae7c55f6346e"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Lock and unlock a test</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-d95460cc-7f1e-46d4-9228-d8c1e3bdce74"></a></li>
+    </ul>
+
+    <div id="TabContent-d95460cc-7f1e-46d4-9228-d8c1e3bdce74" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Function</span> Lock_And_Unlock_Test(testID <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>) <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+
+<span style="COLOR: #008000">' Lock and unlock a test
+</span>
+<span style="COLOR: #008000">' It is good practice to lock existing entities when you
+' change them programmatically.
+'
+' This is an example of locking. It is not
+' related to version control.
+</span>
+
+    <span style="COLOR: #0000ff">Dim</span> objTestFactory <span style="COLOR: #0000ff">As</span> TestFactory
+    <span style="COLOR: #0000ff">Dim</span> objTest <span style="COLOR: #0000ff">As</span> Test
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+    Lock_And_Unlock_Test = SUCCESS
+       
+    <span style="COLOR: #0000ff">Set</span> objTestFactory = tdc.TestFactory
+    <span style="COLOR: #0000ff">Set</span> objTest = objTestFactory.Item(testID)
+    
+    objTest.LockObject
+    <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">Not</span> objTest.IsLocked <span style="COLOR: #0000ff">Then</span> Lock_And_Unlock_Test = FAILURE
+   
+     
+    objTest.UnLockObject
+    <span style="COLOR: #0000ff">If</span> objTest.IsLocked <span style="COLOR: #0000ff">Then</span> Lock_And_Unlock_Test = FAILURE
+    
+ 
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+    Lock_And_Unlock_Test = FAILURE
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Lock and unlock a test">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

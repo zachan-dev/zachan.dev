@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>tagTDAPI_ERRORCODES Enumeration</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="TDAPIOLELib~tagTDAPI_ERRORCODES"/>
+    <meta name="Description" content="General error codes." />
+    <meta name="Microsoft.Help.TocParent" content="TDAPIOLELib~-_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Type Library Version 12.5x</div>
+        <div id="PageTitle"><div id="PageTitleText">tagTDAPI_ERRORCODES Enumeration</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">General error codes.</div></div>
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Remarks</span></div><div id="remarksSectionContent" class="SectionContent">The ALM API handles errors as OLE exceptions. To get the ALM error, subtract the Visual Basic vbObjectError constant from the error number, as shown in the example below.</div>
+            <div class="SectionHeading" id="exampleSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Example</span></div><div id="exampleSectionContent" class="SectionContent">This example shows handling of errors on user login. If the error is an illegal password, the login dialog is displayed again. If a different error has occurred, the appropriate error message is displayed.
+            
+             <div class="FilteredContentVB">
+    
+	<div class="TabContainer">
+	    <ul>
+	        <li><a href="#TabContent-c71a645a-8951-479f-9057-26c79d1f3c45">Login Error Handling (Visual Basic)</a></li>
+	    </ul>
+	    <div id="TabContent-c71a645a-8951-479f-9057-26c79d1f3c45" class="FilteredContent"><pre><span style="color: #0000FF; ">Private</span> <span style="color: #0000FF; ">Sub</span> Login(ProjectName <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>, User <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>, _
+        &amp;Password <span style="color: #0000FF; ">As</span> <span style="color: #0000FF; ">String</span>)
+    
+    <span style="color: #0000FF; ">On</span> <span style="color: #0000FF; ">Error</span> <span style="color: #0000FF; ">GoTo</span> CheckError
+    
+     <span style="color: #008000; ">'tdc is a TDConnection object
+</span>    tdc.ConnectProject ProjectName, User, Password
+    <span style="color: #0000FF; ">Exit Sub</span>
+
+CheckError:
+    <span style="color: #0000FF; ">if</span> (Err.Number - vbObjectError) = _
+        TDAPIOLELib.TDOLE_ILLEGALPASSWORD <span style="color: #0000FF; ">Then</span>
+            LoginForm.Show 1
+    <span style="color: #0000FF; ">Else</span>
+        <span style="color: #0000FF; ">MsgBox</span> <span style="color: #800000; ">&quot;Error: &quot;</span> &amp; Err.Description, vbCritical
+    <span style="color: #0000FF; ">End</span> <span style="color: #0000FF; ">If</span>
+<span style="color: #0000FF; ">End Sub</span></pre></div>
+	</div>
+</div>
+</div>
+            <div class="SectionHeading" id="enummembersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Members</span></div><div id="enummembersSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Member</th><th align="right">Value</th><th>Description</th></tr>
+<tr><td class=MemberNameCell>ATT_E_BLOCKED_FILE_TYPE</td><td align="right" Class="EnumValueCell">1462</td><td class="DescriptionCell">Error creating attachment with blocked file type.</td></tr>
+<tr><td class=MemberNameCell>ATT_E_CREATE</td><td align="right" Class="EnumValueCell">1461</td><td class="DescriptionCell">Failed to create attachment.</td></tr>
+<tr><td class=MemberNameCell>ATT_E_INVALID_REQUEST</td><td align="right" Class="EnumValueCell">1463</td><td class="DescriptionCell">Invalid request for attachment.</td></tr>
+<tr><td class=MemberNameCell>ATT_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1460</td><td class="DescriptionCell">The attachment does not exist.</td></tr>
+<tr><td class=MemberNameCell>ATT_E_OBJECT_HAS_ATTACHMENT</td><td align="right" Class="EnumValueCell">1465</td><td class="DescriptionCell">Object cannot have an attachment.</td></tr>
+<tr><td class=MemberNameCell>ATT_E_RENAME</td><td align="right" Class="EnumValueCell">1464</td><td class="DescriptionCell">Failed to rename attachment.</td></tr>
+<tr><td class=MemberNameCell>ATT_E_TOO_LARGE</td><td align="right" Class="EnumValueCell">1466</td><td class="DescriptionCell">File exceeds permitted size.</td></tr>
+<tr><td class=MemberNameCell>BPCOMPONENT_E_CREATE</td><td align="right" Class="EnumValueCell">24004</td><td class="DescriptionCell">New BP Component creation failed.</td></tr>
+<tr><td class=MemberNameCell>BPITERATION_E_CREATE</td><td align="right" Class="EnumValueCell">24005</td><td class="DescriptionCell">New BP Iteration creation failed.</td></tr>
+<tr><td class=MemberNameCell>BPITERATIONPARAM_E_CREATE</td><td align="right" Class="EnumValueCell">24007</td><td class="DescriptionCell">New BP Iteration Parameter creation failed.</td></tr>
+<tr><td class=MemberNameCell>BPPARAMETER_E_CREATE</td><td align="right" Class="EnumValueCell">24006</td><td class="DescriptionCell">New BP Parameter creation failed.</td></tr>
+<tr><td class=MemberNameCell>BUG_E_CREATE</td><td align="right" Class="EnumValueCell">1262</td><td class="DescriptionCell">Failure to create log.</td></tr>
+<tr><td class=MemberNameCell>BUG_E_DELETE</td><td align="right" Class="EnumValueCell">1261</td><td class="DescriptionCell">Failure to delete bug.</td></tr>
+<tr><td class=MemberNameCell>BUG_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1260</td><td class="DescriptionCell">The specified bug does not exist.</td></tr>
+<tr><td class=MemberNameCell>CANT_COPY_CHECKEDOUT_DATA</td><td align="right" Class="EnumValueCell">1662</td><td class="DescriptionCell">Cannot copy. Related entities are checked out.</td></tr>
+<tr><td class=MemberNameCell>COL_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1240</td><td class="DescriptionCell">The specified column does not exist.</td></tr>
+<tr><td class=MemberNameCell>COMPONENT_E_CREATE</td><td align="right" Class="EnumValueCell">7004</td><td class="DescriptionCell">Error creating component.</td></tr>
+<tr><td class=MemberNameCell>COMPONENTFOLDER_E_CREATE</td><td align="right" Class="EnumValueCell">7005</td><td class="DescriptionCell">Error creating component folder.</td></tr>
+<tr><td class=MemberNameCell>COMPONENTPARAM_E_CREATE</td><td align="right" Class="EnumValueCell">7006</td><td class="DescriptionCell">Error creating component parameter.</td></tr>
+<tr><td class=MemberNameCell>COMPONENTSTEP_E_CREATE</td><td align="right" Class="EnumValueCell">7008</td><td class="DescriptionCell">Error creating component.</td></tr>
+<tr><td class=MemberNameCell>COND_E_CREATE</td><td align="right" Class="EnumValueCell">1441</td><td class="DescriptionCell">Failed to create a new condition.</td></tr>
+<tr><td class=MemberNameCell>COND_E_INVALIDTYPE</td><td align="right" Class="EnumValueCell">1442</td><td class="DescriptionCell">The condition type is invalid.</td></tr>
+<tr><td class=MemberNameCell>COND_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1440</td><td class="DescriptionCell">The condition does not exist.</td></tr>
+<tr><td class=MemberNameCell>COPY_SUBJECT_E_TO_ITSELF</td><td align="right" Class="EnumValueCell">1660</td><td class="DescriptionCell">Cannot paste subject to itself.</td></tr>
+<tr><td class=MemberNameCell>DESSTEP_E_CREATE</td><td align="right" Class="EnumValueCell">1501</td><td class="DescriptionCell">Failed to create design step.</td></tr>
+<tr><td class=MemberNameCell>DESSTEP_E_DELETE</td><td align="right" Class="EnumValueCell">1502</td><td class="DescriptionCell">Failed to remove the specified design step.</td></tr>
+<tr><td class=MemberNameCell>DESSTEP_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1500</td><td class="DescriptionCell">The specified design step does not exist.</td></tr>
+<tr><td class=MemberNameCell>EVENT_ERR_DISABLE</td><td align="right" Class="EnumValueCell">1800</td><td class="DescriptionCell">The operation has been prevented by the error handler.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_BLOCKED_FILE_TYPE</td><td align="right" Class="EnumValueCell">1592</td><td class="DescriptionCell">Extended storage upload blocked file type error.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_CANCEL</td><td align="right" Class="EnumValueCell">1580</td><td class="DescriptionCell">The extended storage action has been canceled.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_CANT_CREATE</td><td align="right" Class="EnumValueCell">1586</td><td class="DescriptionCell">Cannot create one of the following objects: path, file or ES object itself.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_EMPTY_ClIENT_PATH</td><td align="right" Class="EnumValueCell">1589</td><td class="DescriptionCell">Client path is empty.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_EMPTY_SERVER_PATH</td><td align="right" Class="EnumValueCell">1588</td><td class="DescriptionCell">Server path is empty.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_ERROR_PERMISSION</td><td align="right" Class="EnumValueCell">1591</td><td class="DescriptionCell">Extended storage access permission error.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_ERROR_SERVER_PATH</td><td align="right" Class="EnumValueCell">1590</td><td class="DescriptionCell">Server path does not exist.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_INTERNET</td><td align="right" Class="EnumValueCell">1587</td><td class="DescriptionCell">Internet connection specific error.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_INVALID_FILTER</td><td align="right" Class="EnumValueCell">1582</td><td class="DescriptionCell">Filter is invalid.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_INVALID_PATH</td><td align="right" Class="EnumValueCell">1585</td><td class="DescriptionCell">The Extended Storage path is not valid.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_IO_OPERATION_DISABLED</td><td align="right" Class="EnumValueCell">1584</td><td class="DescriptionCell">Extended Storage IO operation disabled.</td></tr>
+<tr><td class=MemberNameCell>EXSTORAGE_OCCIPIED</td><td align="right" Class="EnumValueCell">1581</td><td class="DescriptionCell">Extended Storage is currently busy.</td></tr>
+<tr><td class=MemberNameCell>FACET_E_CREATE</td><td align="right" Class="EnumValueCell">24008</td><td class="DescriptionCell">New Facet creation failed.</td></tr>
+<tr><td class=MemberNameCell>FAILED_CHECKIN</td><td align="right" Class="EnumValueCell">22222</td><td class="DescriptionCell">Check-in failure.</td></tr>
+<tr><td class=MemberNameCell>FAILED_CHECKOUT</td><td align="right" Class="EnumValueCell">22223</td><td class="DescriptionCell">Check-out failure.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_IS_KEY</td><td align="right" Class="EnumValueCell">1303</td><td class="DescriptionCell">The field is a database key field.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_NO_EDIT</td><td align="right" Class="EnumValueCell">1304</td><td class="DescriptionCell">The field is a read-only field.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_NO_PERMISSION</td><td align="right" Class="EnumValueCell">1300</td><td class="DescriptionCell">No permission to modify the field.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_NOT_ACTIVE</td><td align="right" Class="EnumValueCell">1302</td><td class="DescriptionCell">The field is not an active field.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_REQUIRED</td><td align="right" Class="EnumValueCell">1307</td><td class="DescriptionCell">The field is a required field.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_SYS_FIELD</td><td align="right" Class="EnumValueCell">1301</td><td class="DescriptionCell">The field is a system field.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_TRANSITION</td><td align="right" Class="EnumValueCell">1306</td><td class="DescriptionCell">Error in field defined transition logic.</td></tr>
+<tr><td class=MemberNameCell>FIELD_E_VERIFIED</td><td align="right" Class="EnumValueCell">1305</td><td class="DescriptionCell">Field verification failure.</td></tr>
+<tr><td class=MemberNameCell>FIELD_INVALID</td><td align="right" Class="EnumValueCell">1308</td><td class="DescriptionCell">Invalid field value.</td></tr>
+<tr><td class=MemberNameCell>FIELD_NAME_INVALID</td><td align="right" Class="EnumValueCell">1309</td><td class="DescriptionCell">Invalid field name.</td></tr>
+<tr><td class=MemberNameCell>FILTER_E_INVALIDNAME</td><td align="right" Class="EnumValueCell">1342</td><td class="DescriptionCell">The filter condition name is invalid.</td></tr>
+<tr><td class=MemberNameCell>FILTER_E_INVALIDPATH_ATTR</td><td align="right" Class="EnumValueCell">1345</td><td class="DescriptionCell">Invalid system node path.</td></tr>
+<tr><td class=MemberNameCell>FILTER_E_INVALIDVALUE</td><td align="right" Class="EnumValueCell">1341</td><td class="DescriptionCell">The defined filter value is invalid.</td></tr>
+<tr><td class=MemberNameCell>FILTER_E_NOVALUE</td><td align="right" Class="EnumValueCell">1340</td><td class="DescriptionCell">No filter value is defined.</td></tr>
+<tr><td class=MemberNameCell>FILTER_S_DATE_COMPLEX</td><td align="right" Class="EnumValueCell">1343</td><td class="DescriptionCell">Invalid date.</td></tr>
+<tr><td class=MemberNameCell>FILTER_S_LIST_BY_CODE</td><td align="right" Class="EnumValueCell">1344</td><td class="DescriptionCell">Invalid code.</td></tr>
+<tr><td class=MemberNameCell>GRAPH_DATA_EMPTY</td><td align="right" Class="EnumValueCell">1700</td><td class="DescriptionCell">No graph data exists.</td></tr>
+<tr><td class=MemberNameCell>HOST_E_DELETE</td><td align="right" Class="EnumValueCell">1620</td><td class="DescriptionCell">Failed to delete host.</td></tr>
+<tr><td class=MemberNameCell>HOST_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1621</td><td class="DescriptionCell">Host does not exist.</td></tr>
+<tr><td class=MemberNameCell>HOSTGROUP_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1640</td><td class="DescriptionCell">Host group does not exist.</td></tr>
+<tr><td class=MemberNameCell>ILLEGAL_DATE</td><td align="right" Class="EnumValueCell">8507</td><td class="DescriptionCell">The entity's start date cannot be earlier than today.</td></tr>
+<tr><td class=MemberNameCell>IMPEXP_RESOURCE_DOESNT_EXIST</td><td align="right" Class="EnumValueCell">7100</td><td class="DescriptionCell">Import/Export resource does not exist.</td></tr>
+<tr><td class=MemberNameCell>ITEM_E_NO_ADD</td><td align="right" Class="EnumValueCell">1421</td><td class="DescriptionCell">No permission to create a new item.</td></tr>
+<tr><td class=MemberNameCell>ITEM_E_NO_REMOVE</td><td align="right" Class="EnumValueCell">1422</td><td class="DescriptionCell">No permission to remove an item.</td></tr>
+<tr><td class=MemberNameCell>ITEM_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1420</td><td class="DescriptionCell">The item does not exist.</td></tr>
+<tr><td class=MemberNameCell>LINK_E_CREATE</td><td align="right" Class="EnumValueCell">1970</td><td class="DescriptionCell">Failure to create a new link.</td></tr>
+<tr><td class=MemberNameCell>LIST_E_EMPTY</td><td align="right" Class="EnumValueCell">1220</td><td class="DescriptionCell">The created list is empty.</td></tr>
+<tr><td class=MemberNameCell>LIST_E_FILTER</td><td align="right" Class="EnumValueCell">1221</td><td class="DescriptionCell">Bad list filter.</td></tr>
+<tr><td class=MemberNameCell>MAILCONDITION_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1850</td><td class="DescriptionCell">Mail condition does not exist.</td></tr>
+<tr><td class=MemberNameCell>MAX_LIMIT_EXCEEDED</td><td align="right" Class="EnumValueCell">9200</td><td class="DescriptionCell">You cannot add more entities of this type to this parent.</td></tr>
+<tr><td class=MemberNameCell>PARAM_E_INVALID</td><td align="right" Class="EnumValueCell">1202</td><td class="DescriptionCell">Invalid parameter value.</td></tr>
+<tr><td class=MemberNameCell>PARAM_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1201</td><td class="DescriptionCell">The necessary parameter was not found.</td></tr>
+<tr><td class=MemberNameCell>PARAM_E_WRONG_NUM</td><td align="right" Class="EnumValueCell">1200</td><td class="DescriptionCell">The wrong number of parameters for the defined statement.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_CREATE</td><td align="right" Class="EnumValueCell">1364</td><td class="DescriptionCell">Failed to create a new requirement.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_DELETE</td><td align="right" Class="EnumValueCell">1366</td><td class="DescriptionCell">Failed to remove the specified requirement.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_INVALIDFATHERID</td><td align="right" Class="EnumValueCell">1362</td><td class="DescriptionCell">The father ID is invalid.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_INVALIDMODE</td><td align="right" Class="EnumValueCell">1365</td><td class="DescriptionCell">The mode flag is invalid for the requirement options: copy, remove and find.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_INVALIDORDER</td><td align="right" Class="EnumValueCell">1361</td><td class="DescriptionCell">The requirement order is invalid.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_INVALIDTYPE</td><td align="right" Class="EnumValueCell">1363</td><td class="DescriptionCell">The requirement type is invalid.</td></tr>
+<tr><td class=MemberNameCell>REQ_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1360</td><td class="DescriptionCell">The specified requirement does not exist.</td></tr>
+<tr><td class=MemberNameCell>REQ_MOVE_LIST_INVALID_PARAMS</td><td align="right" Class="EnumValueCell">1367</td><td class="DescriptionCell">Invalid parameters sent to IReqFactory.MoveRequirements method.</td></tr>
+<tr><td class=MemberNameCell>REQ_PROPERTY_READ_ONLY</td><td align="right" Class="EnumValueCell">1368</td><td class="DescriptionCell">This property is read-only.</td></tr>
+<tr><td class=MemberNameCell>RSC_E_CHANGE_TYPE</td><td align="right" Class="EnumValueCell">1993</td><td class="DescriptionCell">Change of resource type after creation failed.</td></tr>
+<tr><td class=MemberNameCell>RSC_E_EXTENDED_STORAGE_REQUEST_FAIL</td><td align="right" Class="EnumValueCell">1991</td><td class="DescriptionCell">External resource request to extended storage failed.</td></tr>
+<tr><td class=MemberNameCell>RSC_E_INVALID_REQUEST</td><td align="right" Class="EnumValueCell">1990</td><td class="DescriptionCell">Invalid request for external resource.</td></tr>
+<tr><td class=MemberNameCell>RSC_E_VIRTUAL_OBJECT</td><td align="right" Class="EnumValueCell">1992</td><td class="DescriptionCell">Download or upload of virtual object failed.</td></tr>
+<tr><td class=MemberNameCell>RUN_E_CREATE</td><td align="right" Class="EnumValueCell">1541</td><td class="DescriptionCell">Failed to create Run.</td></tr>
+<tr><td class=MemberNameCell>RUN_E_DELETE</td><td align="right" Class="EnumValueCell">1542</td><td class="DescriptionCell">Failed to delete Run.</td></tr>
+<tr><td class=MemberNameCell>RUN_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1540</td><td class="DescriptionCell">Run does not exist.</td></tr>
+<tr><td class=MemberNameCell>SERVER_NOT_CONNECTED</td><td align="right" Class="EnumValueCell">1600</td><td class="DescriptionCell">Server is not connected.</td></tr>
+<tr><td class=MemberNameCell>STEP_E_COPY_STEPS_OF_RUN</td><td align="right" Class="EnumValueCell">1563</td><td class="DescriptionCell">No permission to modify design steps - steps won't be copied to the corresponding test.</td></tr>
+<tr><td class=MemberNameCell>STEP_E_CREATE</td><td align="right" Class="EnumValueCell">1561</td><td class="DescriptionCell">Failed to create Step.</td></tr>
+<tr><td class=MemberNameCell>STEP_E_DELETE</td><td align="right" Class="EnumValueCell">1562</td><td class="DescriptionCell">Failed to delete Step.</td></tr>
+<tr><td class=MemberNameCell>STEP_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1560</td><td class="DescriptionCell">Step does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_BL_AFTER_IMPORT_NOT_EXIST_ERROR_CODE</td><td align="right" Class="EnumValueCell">23002</td><td class="DescriptionCell">The baseline, which was created after last library import or sync, was deleted. Synchronization is impossible.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_BL_NOT_EXIST_ERROR_CODE</td><td align="right" Class="EnumValueCell">23004</td><td class="DescriptionCell">Compare or synchronization operations could not start because one of the baselines does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CANNOT_ADD_USER_BY_DOMAIN</td><td align="right" Class="EnumValueCell">7203</td><td class="DescriptionCell">This user cannot be added to any project in this domain.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CANNOT_CHANGE_USER_DATA_ON_EXTERNAL_AUTHENTICATION</td><td align="right" Class="EnumValueCell">1326</td><td class="DescriptionCell">User data cannot be updated while external authentication is enabled</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CANT_COPY_NO_SUBTYPE</td><td align="right" Class="EnumValueCell">1664</td><td class="DescriptionCell">Cannot copy. Entity Subtype does not exist in target project.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CLIENT_CERTIFICATE_ERROR</td><td align="right" Class="EnumValueCell">1155</td><td class="DescriptionCell">Client certificate error.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_COMPARISON_NODE_EXISTS</td><td align="right" Class="EnumValueCell">8013</td><td class="DescriptionCell">ComparisonNode exists.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CROSSPROJECT_FIELD_INTERSECT_GENERAL_ERROR</td><td align="right" Class="EnumValueCell">24000</td><td class="DescriptionCell">A cross-project field intersection operation failed unexpectedly.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CROSSPROJECT_FIELD_INTERSECT_PROJECTS_MISSING_ERROR</td><td align="right" Class="EnumValueCell">24002</td><td class="DescriptionCell">A cross-project field intersection operation failed because the selected projects do not exist.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CROSSPROJECT_FIELD_INTERSECT_PROJECTS_STATE_ERROR</td><td align="right" Class="EnumValueCell">24001</td><td class="DescriptionCell">A cross-project field intersection operation failed because of an invalid project state.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_CROSSPROJECT_FIELD_INTERSECT_UNSUPPORTED_ENTITY_ERROR</td><td align="right" Class="EnumValueCell">24003</td><td class="DescriptionCell">Indicates that a cross-project field intersection operation has failed because the selected entity or entities are not supported by one or more projects.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_DISCONNECTED_BY_ADMIN</td><td align="right" Class="EnumValueCell">1077</td><td class="DescriptionCell">The project was disconnected by the administrator.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_E_CANNOT_RUN_PINNED_TEST_SET</td><td align="right" Class="EnumValueCell">1289</td><td class="DescriptionCell">Cannot run pinned test. The test calls tests outside of the baseline.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_E_DEFECT_LINKED_TO_ITSELF</td><td align="right" Class="EnumValueCell">1972</td><td class="DescriptionCell">Cannot link a defect to itself.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_E_LINK_EXISTS</td><td align="right" Class="EnumValueCell">1971</td><td class="DescriptionCell">Those entities are already linked.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_E_LINK_TEST_CIRCLUATION</td><td align="right" Class="EnumValueCell">1287</td><td class="DescriptionCell">Cannot link to test because this would create a circular reference.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_ERROR_PATH_PERMISSION</td><td align="right" Class="EnumValueCell">1071</td><td class="DescriptionCell">File system permission error.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_EXP_LIB_BL_NOT_EXIST_ERROR_CODE</td><td align="right" Class="EnumValueCell">23001</td><td class="DescriptionCell">The baseline from which the library was imported was deleted. Comparison is impossible.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_FAIL_TO_SMALL_COMPARE</td><td align="right" Class="EnumValueCell">23005</td><td class="DescriptionCell">Compare entities failed.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_FAILED_TO_LOGIN</td><td align="right" Class="EnumValueCell">30006</td><td class="DescriptionCell">Failed to login.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_FAILED_TO_RECONNECT</td><td align="right" Class="EnumValueCell">1078</td><td class="DescriptionCell">Cannot connect to the project.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_GRAPH_RELEASE_CYCLE_DATE_MISSING</td><td align="right" Class="EnumValueCell">1701</td><td class="DescriptionCell">Cannot create release coverage progress graph. One or more cycles are missing a start date.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_LIB_CANNOT_IMPORT_UNDER_ITSELF</td><td align="right" Class="EnumValueCell">23201</td><td class="DescriptionCell">Cannot import a folder under itself or under one of its sub-folders.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_LIB_NOT_EXIST_ERROR_CODE</td><td align="right" Class="EnumValueCell">23003</td><td class="DescriptionCell">Compare or synchronization operations could not start because one of the libraries does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_LICENSE_RESTICTED_ACTION</td><td align="right" Class="EnumValueCell">1073</td><td class="DescriptionCell">Action restricted by license.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_MAXIMUM_PATH_LIMIT_EXCEEDED</td><td align="right" Class="EnumValueCell">11117</td><td class="DescriptionCell">Maximum path limit exceeded. Cannot add children to entity.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_NON_ACTIVE_USER_ERRCODE</td><td align="right" Class="EnumValueCell">1325</td><td class="DescriptionCell">The user is not an active user.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_OBJECT_NOT_EXISTS</td><td align="right" Class="EnumValueCell">10750</td><td class="DescriptionCell">No object exists.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_PARAM_VALUE_E_DELETE</td><td align="right" Class="EnumValueCell">5002</td><td class="DescriptionCell">Failed to remove the specified Parameter Value.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_PARAM_VALUE_ILLEGAL_PUT_FIELD</td><td align="right" Class="EnumValueCell">5001</td><td class="DescriptionCell">An Illegal put_field command was received (Only actual_value may be modified).</td></tr>
+<tr><td class=MemberNameCell>TDAPI_PROJECT_INACTIVE_ERROR</td><td align="right" Class="EnumValueCell">9002</td><td class="DescriptionCell">Project is inactive. Cannot connect.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_QUERY_VALIDATION_FAILED_BLACK_LIST_EXISTS</td><td align="right" Class="EnumValueCell">2211</td><td class="DescriptionCell">Word from black list appears in SQL.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_QUERY_VALIDATION_FAILED_NOT_SELECT_STATEMENT</td><td align="right" Class="EnumValueCell">2212</td><td class="DescriptionCell">Not a SELECT statement.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_QUERY_VALIDATION_FAILED_TOO_MANY_STATEMENTS</td><td align="right" Class="EnumValueCell">2210</td><td class="DescriptionCell">Too many SQL statements.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REPORT_PROJECT_TEMPLATE_DUPLICATE</td><td align="right" Class="EnumValueCell">12001</td><td class="DescriptionCell">Report Project Template duplicate name.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REPORT_PROJECT_TEMPLATE_ILLEGAL_NAME</td><td align="right" Class="EnumValueCell">12002</td><td class="DescriptionCell">Report Project Template illegal name.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REPORT_PROJECT_TEMPLATE_IS_TEMPLATE</td><td align="right" Class="EnumValueCell">12004</td><td class="DescriptionCell">A Template that is linked to a template cannot be deleted or modified.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REPORT_PROJECT_TEMPLATE_LOAD_FAILED</td><td align="right" Class="EnumValueCell">12003</td><td class="DescriptionCell">Report Project Template load failure.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REPORT_PROJECT_TEMPLATE_NOT_FOUND</td><td align="right" Class="EnumValueCell">12000</td><td class="DescriptionCell">Report Project Template not found.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REQ_EXISTS_ABORT</td><td align="right" Class="EnumValueCell">2056</td><td class="DescriptionCell">Duplicate requirement name - requirement was not created.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REQ_TRACEABILITY_MATRIX_FUSE_ERROR</td><td align="right" Class="EnumValueCell">2062</td><td class="DescriptionCell">Number of core requirements in traceability matrix exceeds fuse.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_REQ_VIOLATION_OF_TYPE_HIER_RULES</td><td align="right" Class="EnumValueCell">2060</td><td class="DescriptionCell">Violation of requirements-tree hierarchy rules.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_RESOURCE_FILE_DOES_NOT_EXIST</td><td align="right" Class="EnumValueCell">8206</td><td class="DescriptionCell">Cannot upload file that does not exist on the file system.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_RESOURCE_FILE_EXISTS</td><td align="right" Class="EnumValueCell">8205</td><td class="DescriptionCell">Resource file exists.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_SHARING_ILLEGAL_DOMAIN</td><td align="right" Class="EnumValueCell">11115</td><td class="DescriptionCell">Could not find domain from which library was created.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_SHARING_ILLEGAL_PROJECT</td><td align="right" Class="EnumValueCell">11116</td><td class="DescriptionCell">Could not find project from which library was created.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_SOME_CONFIGS_NOT_IN_BASELINE</td><td align="right" Class="EnumValueCell">4003</td><td class="DescriptionCell">Some of the test configurations were not added since they do not belong to the required baseline or they do not support pinning to a baseline.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_SOME_TEST_CONFIGS_NOT_CHECKED_IN</td><td align="right" Class="EnumValueCell">4002</td><td class="DescriptionCell">Some of the test configurations were not added to the test set because they were never checked in.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_SOME_TESTS_NOT_IN_BASELINE</td><td align="right" Class="EnumValueCell">4001</td><td class="DescriptionCell">Some of the tests were not added since they do not belong to the required baseline or they do not support pinning to a baseline.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_TEST_CONFIG_EXISTS</td><td align="right" Class="EnumValueCell">8210</td><td class="DescriptionCell">Duplicate Test Configuration name.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_TEST_NOT_IN_BASELINE</td><td align="right" Class="EnumValueCell">4000</td><td class="DescriptionCell">One or more tests does not belong to the requested baseline.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_TEST_PARAM_DUPLICATE_NAME</td><td align="right" Class="EnumValueCell">8203</td><td class="DescriptionCell">Duplicate test parameter names.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_TEXT_SEARCH_INDEX_MISSING</td><td align="right" Class="EnumValueCell">2205</td><td class="DescriptionCell">Columns marked as searchable are not indexed in database.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_USER_ALREADY_EXISTS</td><td align="right" Class="EnumValueCell">1327</td><td class="DescriptionCell">Failed create user. User already exists</td></tr>
+<tr><td class=MemberNameCell>TDAPI_VC_NOT_AUTHORIZED_TO_UNDO</td><td align="right" Class="EnumValueCell">22224</td><td class="DescriptionCell">User is not authorized to force undo.</td></tr>
+<tr><td class=MemberNameCell>TDAPI_VCS_VERSION_ALREADY_EXIST_IN_HIST</td><td align="right" Class="EnumValueCell">11114</td><td class="DescriptionCell">Cannot check in. Version number already exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ADMIN_NOT_CONNECTED</td><td align="right" Class="EnumValueCell">10740</td><td class="DescriptionCell">User is not connected as an administrator.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANALYSIS_ITEM_EXISTS</td><td align="right" Class="EnumValueCell">8112</td><td class="DescriptionCell">Analysis item exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANALYSIS_ITEM_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8111</td><td class="DescriptionCell">Analysis item folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANALYSIS_ITEM_FOLDER_PUBLIC_STATE_MISMATCH</td><td align="right" Class="EnumValueCell">8115</td><td class="DescriptionCell">Analysis item folder public status cannot be set.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANALYSIS_ITEM_INVALID_OWNER</td><td align="right" Class="EnumValueCell">8118</td><td class="DescriptionCell">Owner properties mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANALYSIS_ITEM_PUBLIC_STATE_MISMATCH</td><td align="right" Class="EnumValueCell">8116</td><td class="DescriptionCell">Analysis item public status cannot be set.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANALYSIS_ITEM_TYPE</td><td align="right" Class="EnumValueCell">8114</td><td class="DescriptionCell">Analysis item type missing or invalid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ANSWERLESS_QUESTION_FOUND</td><td align="right" Class="EnumValueCell">1680</td><td class="DescriptionCell">Found a criterion without values.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_APP_ENTITY_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">50055</td><td class="DescriptionCell">Duplicate Application Entity folder name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ATBOF</td><td align="right" Class="EnumValueCell">1016</td><td class="DescriptionCell">The beginning of the table has been reached.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ATEOF</td><td align="right" Class="EnumValueCell">1015</td><td class="DescriptionCell">The end of the table has been reached.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_ATT_STREAM</td><td align="right" Class="EnumValueCell">1066</td><td class="DescriptionCell">Attachment stream is invalid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_1</td><td align="right" Class="EnumValueCell">1101</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_2</td><td align="right" Class="EnumValueCell">1102</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_3</td><td align="right" Class="EnumValueCell">1103</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_4</td><td align="right" Class="EnumValueCell">1104</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_5</td><td align="right" Class="EnumValueCell">1105</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_6</td><td align="right" Class="EnumValueCell">1106</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_7</td><td align="right" Class="EnumValueCell">1107</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_END</td><td align="right" Class="EnumValueCell">1110</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_FILTER_START</td><td align="right" Class="EnumValueCell">1100</td><td class="DescriptionCell">Invalid filter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BAD_REQUEST</td><td align="right" Class="EnumValueCell">1065</td><td class="DescriptionCell">Invalid request format.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BASELINE_CAPTURE_NO_PERMISSION</td><td align="right" Class="EnumValueCell">8012</td><td class="DescriptionCell">No permission to capture baseline.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BASELINE_EXISTS</td><td align="right" Class="EnumValueCell">8010</td><td class="DescriptionCell">Baseline exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BPM_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8209</td><td class="DescriptionCell">BPM folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BUSINESS_VIEW_E_CANNOT_LOAD</td><td align="right" Class="EnumValueCell">9403</td><td class="DescriptionCell">Business Views Customization cannot be loaded.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BUSINESS_VIEW_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">9401</td><td class="DescriptionCell">Duplicate Business View Name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BUSINESS_VIEW_EMPTY_LABEL</td><td align="right" Class="EnumValueCell">9405</td><td class="DescriptionCell">Business View label cannot be empty.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BUSINESS_VIEW_EMPTY_NAME</td><td align="right" Class="EnumValueCell">9402</td><td class="DescriptionCell">Business View name cannot be empty.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BUSINESS_VIEW_LABEL_E_DUPLICATE</td><td align="right" Class="EnumValueCell">9404</td><td class="DescriptionCell">Duplicate Business View Label.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_BUSINESS_VIEW_TECHNICAL_NAME_E_DUPLICATE</td><td align="right" Class="EnumValueCell">9400</td><td class="DescriptionCell">Duplicate Business View Technical Name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CALL_ORDER</td><td align="right" Class="EnumValueCell">5021</td><td class="DescriptionCell">Cannot update Step parameter value.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CAN_NOT_COMNMIT_RBT_CUSTOMIZATION</td><td align="right" Class="EnumValueCell">1682</td><td class="DescriptionCell">Cannot Commit Risk-based Quality Management customizations due to failed validators.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CAN_UPDATE_UDFS</td><td align="right" Class="EnumValueCell">1076</td><td class="DescriptionCell">Cannot update user-defined field customization.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTBUILDTREE</td><td align="right" Class="EnumValueCell">1031</td><td class="DescriptionCell">Cannot build the test plan tree.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENCYCLETB</td><td align="right" Class="EnumValueCell">1028</td><td class="DescriptionCell">Cannot open Cycle table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENDESSTEPTB</td><td align="right" Class="EnumValueCell">1029</td><td class="DescriptionCell">Cannot open Dessteps table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENHISTTB</td><td align="right" Class="EnumValueCell">1030</td><td class="DescriptionCell">Cannot open History table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENRUNTB</td><td align="right" Class="EnumValueCell">1026</td><td class="DescriptionCell">Cannot open Run table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENSTEPTB</td><td align="right" Class="EnumValueCell">1025</td><td class="DescriptionCell">Cannot open Step table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENTESTCYCLTB</td><td align="right" Class="EnumValueCell">1027</td><td class="DescriptionCell">Cannot open Testcycle table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CANNTOPENTESTTB</td><td align="right" Class="EnumValueCell">1024</td><td class="DescriptionCell">Cannot open Test table.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CHANGE_ENTITY_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">50056</td><td class="DescriptionCell">Duplicate Change Entity folder name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CHANGED</td><td align="right" Class="EnumValueCell">1020</td><td class="DescriptionCell">The API has changed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COMPARE_NO_PERMISSION</td><td align="right" Class="EnumValueCell">8014</td><td class="DescriptionCell">No permission to perform Compare.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COMPONENT_EXISTS</td><td align="right" Class="EnumValueCell">7001</td><td class="DescriptionCell">Component exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COMPONENT_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">7002</td><td class="DescriptionCell">Component folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COMPONENT_PARAM_EXISTS</td><td align="right" Class="EnumValueCell">7003</td><td class="DescriptionCell">Component parameter exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COPY_PASTE_ANALYSIS_ELEMENT_EXISTS</td><td align="right" Class="EnumValueCell">8119</td><td class="DescriptionCell">Duplicate item is created during Copy/Paste operation.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COPY_PASTE_DASHBOARD_ELEMENT_EXISTS</td><td align="right" Class="EnumValueCell">8309</td><td class="DescriptionCell">Duplicates created during Dashboard Copy Paste.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COPY_PASTE_SOURCE_ANALYSIS_ELEMENT_DOESNT_EXIST</td><td align="right" Class="EnumValueCell">8120</td><td class="DescriptionCell">Copied Analysis Element either does not exist or is located in a private sub tree to which the logged in user has no access.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COPY_PASTE_SOURCE_DASHBOARD_ELEMENT_DOESNT_EXIST</td><td align="right" Class="EnumValueCell">8310</td><td class="DescriptionCell">Copied Dashboard Element does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COPY_PASTE_TARGET_ANALYSIS_ELEMENT_DOESNT_EXIST</td><td align="right" Class="EnumValueCell">8121</td><td class="DescriptionCell">Target folder either does not exist or is located in a private sub tree to which the logged in user has not access.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_COPY_PASTE_TARGET_DASHBOARD_ELEMENT_DOESNT_EXIST</td><td align="right" Class="EnumValueCell">8311</td><td class="DescriptionCell">Target Dashboard Element does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CORRUPTED_DATA_HIDING</td><td align="right" Class="EnumValueCell">9001</td><td class="DescriptionCell">Failure in data hiding filter for login.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_CYCLE_EXISTS</td><td align="right" Class="EnumValueCell">1082</td><td class="DescriptionCell">Duplicate TestSet name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DASHBOARD_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8301</td><td class="DescriptionCell">Dashboard folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DASHBOARD_FOLDER_PUBLIC_STATE_MISMATCH</td><td align="right" Class="EnumValueCell">8305</td><td class="DescriptionCell">Dashboard folder public status cannot be set.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DASHBOARD_ITEM_IN_PAGE_EXISTS</td><td align="right" Class="EnumValueCell">8304</td><td class="DescriptionCell">Dashboard item in page exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DASHBOARD_PAGE_EXISTS</td><td align="right" Class="EnumValueCell">8302</td><td class="DescriptionCell">Dashboard exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DASHBOARD_PAGE_PUBLIC_STATE_MISMATCH</td><td align="right" Class="EnumValueCell">8306</td><td class="DescriptionCell">Dashboard page public status cannot be set.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DATA_CORRUPTION</td><td align="right" Class="EnumValueCell">5020</td><td class="DescriptionCell">Data is corrupted.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DB_TABLE_NAME</td><td align="right" Class="EnumValueCell">2000</td><td class="DescriptionCell">No table exists by the specific name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DBLIMIT</td><td align="right" Class="EnumValueCell">1008</td><td class="DescriptionCell">The maximum number of projects is open.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DBNOTCONNECTED</td><td align="right" Class="EnumValueCell">1021</td><td class="DescriptionCell">The API is not connected to a project.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DBVERMISMATCH</td><td align="right" Class="EnumValueCell">1009</td><td class="DescriptionCell">Project version mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DIFFERENT_UDFS</td><td align="right" Class="EnumValueCell">1950</td><td class="DescriptionCell">Method is disabled by the event handler.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_DUPLICATENODENAME</td><td align="right" Class="EnumValueCell">1080</td><td class="DescriptionCell">Duplicate SysTreeNode name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_BPT_COMPONENT_STEP_VALIDATION_FAILED</td><td align="right" Class="EnumValueCell">7010</td><td class="DescriptionCell">Business process test component step validation failed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_BPT_ITERATIONS_MISMATCH</td><td align="right" Class="EnumValueCell">7009</td><td class="DescriptionCell">Business process test iterations mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_CANT_DELETE_APPLICATION_AREA_AS_IT_IS_USED</td><td align="right" Class="EnumValueCell">7014</td><td class="DescriptionCell">Cannot delete Application Area resource since it's in use by other objects.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_CHACHE</td><td align="right" Class="EnumValueCell">6700</td><td class="DescriptionCell">Failed to cache object.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_COMPONENT_RESTORE_FOLDER_DOESNT_EXISTS</td><td align="right" Class="EnumValueCell">7015</td><td class="DescriptionCell">Unable to restore component - the original location no longer exists</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_CREATE_LOG_FILE</td><td align="right" Class="EnumValueCell">1112</td><td class="DescriptionCell">Cannot create log file.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_FLOW_OUTPUT_PARAM_NOT_VALID</td><td align="right" Class="EnumValueCell">7011</td><td class="DescriptionCell">Flow output parameter is not valid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_INITIALIZE</td><td align="right" Class="EnumValueCell">5200</td><td class="DescriptionCell">Customization objects not initialized.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_NON_PROJECT_SPECIFIC_BPT</td><td align="right" Class="EnumValueCell">7007</td><td class="DescriptionCell">Non-project-specific business process test.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_PERMISSION</td><td align="right" Class="EnumValueCell">6100</td><td class="DescriptionCell">There is no permission to proceed with this action.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_REMOVE_TYPE_VALIDATION_FAILED</td><td align="right" Class="EnumValueCell">7200</td><td class="DescriptionCell">Cannot remove type.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_E_START_RUNS</td><td align="right" Class="EnumValueCell">1113</td><td class="DescriptionCell">Cannot execute test.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ENTITY_EXISTS</td><td align="right" Class="EnumValueCell">1083</td><td class="DescriptionCell">Duplicate entity.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ERR_SETTING_PARENT_ID_TO_DESCENDANT</td><td align="right" Class="EnumValueCell">11113</td><td class="DescriptionCell">Response has been tampered.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ERROR_CANT_CHANGE_SUBTYPE</td><td align="right" Class="EnumValueCell">1072</td><td class="DescriptionCell">Entity subtype change error.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ERROR_FILESYSTEM</td><td align="right" Class="EnumValueCell">1069</td><td class="DescriptionCell">File system error.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ERROR_PATH_NOT_FOUND</td><td align="right" Class="EnumValueCell">1070</td><td class="DescriptionCell">File system path is not valid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_EXCEL_REPORT_RESULT_SET_TO_LARGE</td><td align="right" Class="EnumValueCell">8122</td><td class="DescriptionCell">Result Frec is to big to be allocated on client machine.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAIL_TO_CHANGE_EMAIL</td><td align="right" Class="EnumValueCell">7202</td><td class="DescriptionCell">Email change is not allowed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAIL_TO_COMMIT_CUSTOMIZATION</td><td align="right" Class="EnumValueCell">7204</td><td class="DescriptionCell">Failed to commit customization.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAIL_TO_REMOVE_TYPE_COVERAGE</td><td align="right" Class="EnumValueCell">7201</td><td class="DescriptionCell">Failed to remove coverage from requirement type.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAILED_LOCK_REMOVE</td><td align="right" Class="EnumValueCell">10710</td><td class="DescriptionCell">Failed to unlock object.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAILED_TO_AUTHENTICATE_TT_VERSION</td><td align="right" Class="EnumValueCell">20950</td><td class="DescriptionCell">Testing tool version not compatible.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAILED_TO_AUTHENTICATE_USER</td><td align="right" Class="EnumValueCell">20900</td><td class="DescriptionCell">Failed to Authenticate User.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAILED_TO_GET_CUR_VER</td><td align="right" Class="EnumValueCell">1044</td><td class="DescriptionCell">Failed to get the working version of the test.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAILED_TO_SET_CUR_VER</td><td align="right" Class="EnumValueCell">1043</td><td class="DescriptionCell">Failed to set the working version of the test.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAVORITE_EXISTS</td><td align="right" Class="EnumValueCell">8102</td><td class="DescriptionCell">Favorite exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FAVORITE_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8101</td><td class="DescriptionCell">Favorite folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_FIELD_ONLY_FOR_VIRTUAL</td><td align="right" Class="EnumValueCell">6032</td><td class="DescriptionCell">Field exists in the virtual object only.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_GENERROR</td><td align="right" Class="EnumValueCell">1002</td><td class="DescriptionCell">General error.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ILLEGALDBNAME</td><td align="right" Class="EnumValueCell">1005</td><td class="DescriptionCell">Wrong Quality Center project name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ILLEGALPASSWORD</td><td align="right" Class="EnumValueCell">1004</td><td class="DescriptionCell">Wrong user name or password.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ILLEGALSUBJECTPATH</td><td align="right" Class="EnumValueCell">1018</td><td class="DescriptionCell">The specified subject path does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_ILLEGALUSERNAME</td><td align="right" Class="EnumValueCell">1152</td><td class="DescriptionCell">Wrong user name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INTERNAL</td><td align="right" Class="EnumValueCell">5010</td><td class="DescriptionCell">An Internal error has occurred.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_INPROCESS</td><td align="right" Class="EnumValueCell">5220</td><td class="DescriptionCell">Statistic object is not initialized.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_OBJECT</td><td align="right" Class="EnumValueCell">6000</td><td class="DescriptionCell">Invalid object has been passed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_OBJECT_KEY</td><td align="right" Class="EnumValueCell">6001</td><td class="DescriptionCell">No object exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_PARAM</td><td align="right" Class="EnumValueCell">5100</td><td class="DescriptionCell">Invalid TD parameter.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_PARAM_ENUM</td><td align="right" Class="EnumValueCell">5105</td><td class="DescriptionCell">Invalid TD parameter list.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_PARAM_FORMAT</td><td align="right" Class="EnumValueCell">5104</td><td class="DescriptionCell">Invalid TD parameter format.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_PARAM_NUM</td><td align="right" Class="EnumValueCell">5103</td><td class="DescriptionCell">Invalid TD parameter number.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_PARAM_RANGE</td><td align="right" Class="EnumValueCell">5102</td><td class="DescriptionCell">Invalid TD parameter range.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_PARAM_TYPE</td><td align="right" Class="EnumValueCell">5101</td><td class="DescriptionCell">Invalid TD parameter type.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALID_REQUEST</td><td align="right" Class="EnumValueCell">5210</td><td class="DescriptionCell">Invalid request.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALIDATTRNAME</td><td align="right" Class="EnumValueCell">1017</td><td class="DescriptionCell">The specified attribute does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_INVALIDNODEID</td><td align="right" Class="EnumValueCell">1022</td><td class="DescriptionCell">The specified node ID is invalid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPI_FAILED_TO_DELETE_THRESHOLD_VALUE</td><td align="right" Class="EnumValueCell">8505</td><td class="DescriptionCell">The Starting and Ending Threshold Values cannot be deleted.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPI_INCORRECT_THRESHOLD_VALUE_DATE</td><td align="right" Class="EnumValueCell">8503</td><td class="DescriptionCell">Invalid threshold date.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPI_MILESTONE_SCOPEITEM_CREATE_NOT_ALLOWED</td><td align="right" Class="EnumValueCell">8515</td><td class="DescriptionCell">Creation of KPIMilestoneScopeItem is not allowed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPI_MILESTONE_SCOPEITEM_DELETE_NOT_ALLOWED</td><td align="right" Class="EnumValueCell">8514</td><td class="DescriptionCell">Deletion of KPIMilestoneScopeItem is not allowed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_E_CANNOT_LOAD</td><td align="right" Class="EnumValueCell">9203</td><td class="DescriptionCell">KPI Types Customization cannot be loaded.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_E_DUPLICATE</td><td align="right" Class="EnumValueCell">9202</td><td class="DescriptionCell">Duplicate KPI Type.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_E_IS_REFERENCED</td><td align="right" Class="EnumValueCell">9206</td><td class="DescriptionCell">A KPI Type that is used by a KPI cannot be deleted.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_E_IS_TEMPLATE</td><td align="right" Class="EnumValueCell">9207</td><td class="DescriptionCell">A KPI Type that is linked to a template cannot be deleted or modified.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">9201</td><td class="DescriptionCell">KPI Type not found.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_EMPTY_NAME</td><td align="right" Class="EnumValueCell">9204</td><td class="DescriptionCell">KPI Types Customization name cannot be empty.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_KPITYPE_NEGATIVE_DEFAULT_TOLERANCE</td><td align="right" Class="EnumValueCell">9205</td><td class="DescriptionCell">KPI Types Customization tolerance cannot be negative.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LIBRARY_EXISTS</td><td align="right" Class="EnumValueCell">8008</td><td class="DescriptionCell">Library exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LIBRARY_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8007</td><td class="DescriptionCell">Library folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LIBRARY_IMPORT_NO_PERMISSION</td><td align="right" Class="EnumValueCell">8009</td><td class="DescriptionCell">No permission to import library.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LIBRARY_SYNC_NO_PERMISSION</td><td align="right" Class="EnumValueCell">8011</td><td class="DescriptionCell">No permission to sync libraries.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_DENIED</td><td align="right" Class="EnumValueCell">1056</td><td class="DescriptionCell">No license to access this module.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_DOMAIN_NOT_FOUND</td><td align="right" Class="EnumValueCell">1061</td><td class="DescriptionCell">Invalid license.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_GENERROR</td><td align="right" Class="EnumValueCell">1059</td><td class="DescriptionCell">Failed to extract license status.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_KEY_EXPIRED</td><td align="right" Class="EnumValueCell">1060</td><td class="DescriptionCell">License expired.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_MUID_NOT_FOUND</td><td align="right" Class="EnumValueCell">1062</td><td class="DescriptionCell">Invalid license.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_NOT_INITILIZED</td><td align="right" Class="EnumValueCell">1058</td><td class="DescriptionCell">No license to access this module.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LICENSE_OVERFLOW_ALERT</td><td align="right" Class="EnumValueCell">1057</td><td class="DescriptionCell">No license to access this module.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LOGIN_INPUT_MANDATORY_PROPERTY_MISSING</td><td align="right" Class="EnumValueCell">30004</td><td class="DescriptionCell">Missing required property.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LOGIN_INPUT_PROPERTY_DOES_NOT_EXIST</td><td align="right" Class="EnumValueCell">30002</td><td class="DescriptionCell">The input property does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_LOGIN_INPUT_VALUE_EXCEED_MAX_LENGTH</td><td align="right" Class="EnumValueCell">30003</td><td class="DescriptionCell">The input string is too long.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_BAD_FROM_FIELD</td><td align="right" Class="EnumValueCell">1052</td><td class="DescriptionCell">The 'From' parameter is invalid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_ERR_PARSING_PARAMS</td><td align="right" Class="EnumValueCell">1048</td><td class="DescriptionCell">The mail format is incorrect.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_ERR_SENDING</td><td align="right" Class="EnumValueCell">1051</td><td class="DescriptionCell">Failure sending mail.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_ERROR_BAD_ENTITY</td><td align="right" Class="EnumValueCell">1081</td><td class="DescriptionCell">Cannot find entity by e-mail.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_GENERROR</td><td align="right" Class="EnumValueCell">1049</td><td class="DescriptionCell">General mail error.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_LOGIN_FAILURE</td><td align="right" Class="EnumValueCell">1050</td><td class="DescriptionCell">The mailbox login is incorrect.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_NO_ERROR</td><td align="right" Class="EnumValueCell">1045</td><td class="DescriptionCell">No error encountered.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_NO_TO_FIELD</td><td align="right" Class="EnumValueCell">1047</td><td class="DescriptionCell">The wrong 'To:' address.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAIL_WARNING_BAD_OR_EMPTY_USER_OR_USERGROUP</td><td align="right" Class="EnumValueCell">1410</td><td class="DescriptionCell">One or more e-mail addresses are invalid.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MANUALTEST</td><td align="right" Class="EnumValueCell">1019</td><td class="DescriptionCell">The specified test type is not an automatic test.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_MAXIMUM_PATH_DEPTH_EXCEEDED</td><td align="right" Class="EnumValueCell">11122</td><td class="DescriptionCell">Maximum path depth limit exceeded.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NO_IDAPI_DLL</td><td align="right" Class="EnumValueCell">1010</td><td class="DescriptionCell">No BDE is installed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NO_MAIL_DLL</td><td align="right" Class="EnumValueCell">1046</td><td class="DescriptionCell">The mail DLL was not found.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOABSOLUTEPATH</td><td align="right" Class="EnumValueCell">1054</td><td class="DescriptionCell">No absolute path.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOASSOCIATEDROOT</td><td align="right" Class="EnumValueCell">1032</td><td class="DescriptionCell">No associated tree root.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOCONFIGFILE</td><td align="right" Class="EnumValueCell">1003</td><td class="DescriptionCell">The BDE configuration file not found.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NODBDIR</td><td align="right" Class="EnumValueCell">1006</td><td class="DescriptionCell">The Quality Center project directory was not found.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NODE_EXISTS</td><td align="right" Class="EnumValueCell">1661</td><td class="DescriptionCell">Duplicate Tree node name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NODIRECTORY</td><td align="right" Class="EnumValueCell">1014</td><td class="DescriptionCell">The specified directory does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOFIELD</td><td align="right" Class="EnumValueCell">1012</td><td class="DescriptionCell">The specified field does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NONODE</td><td align="right" Class="EnumValueCell">1023</td><td class="DescriptionCell">The specified node does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOT_LOGGED_IN</td><td align="right" Class="EnumValueCell">30001</td><td class="DescriptionCell">Attempt to connect to project when no user logged in.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOT_VIRTUAL</td><td align="right" Class="EnumValueCell">6030</td><td class="DescriptionCell">Object not virtual.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOTAUTOTEST</td><td align="right" Class="EnumValueCell">1013</td><td class="DescriptionCell">The test is not an automated test.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_NOTESTDIR</td><td align="right" Class="EnumValueCell">1007</td><td class="DescriptionCell">The Test Repository was not found.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OBJECT_DELETED</td><td align="right" Class="EnumValueCell">6002</td><td class="DescriptionCell">Object was deleted by another user.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OBJECT_LOCKED</td><td align="right" Class="EnumValueCell">10720</td><td class="DescriptionCell">Object locked by another user.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OBJECT_NOT_INITIALIZED</td><td align="right" Class="EnumValueCell">6003</td><td class="DescriptionCell">Object is not initialized.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OBJNOTINITIALIZED</td><td align="right" Class="EnumValueCell">1001</td><td class="DescriptionCell">Quality Center server object not initialized.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OTA_VERSION_NOT_COMPATIBLE</td><td align="right" Class="EnumValueCell">30005</td><td class="DescriptionCell">OTA version is not compatible.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OWNED_BY_INVALID</td><td align="right" Class="EnumValueCell">8402</td><td class="DescriptionCell">The owned by entity does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_OWNER_INVALID</td><td align="right" Class="EnumValueCell">8401</td><td class="DescriptionCell">The owner entity does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_PARENT_ANALYSIS_ITEM_FOLDER_PROPERTY_MISMATCH</td><td align="right" Class="EnumValueCell">8113</td><td class="DescriptionCell">Analysis item folder properties mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_PARENT_ANALYSIS_ITEM_PROPERTY_MISMATCH</td><td align="right" Class="EnumValueCell">8117</td><td class="DescriptionCell">Analysis item properties mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_PARENT_DASHBOARD_FOLDER_PROPERTY_MISMATCH</td><td align="right" Class="EnumValueCell">8303</td><td class="DescriptionCell">Dashboard folder properties mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_PARENT_DASHBOARD_PAGE_PROPERTY_MISMATCH</td><td align="right" Class="EnumValueCell">8307</td><td class="DescriptionCell">Dashboard page properties mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_PARENT_FAVORITE_FOLDER_PROPERTY_MISMATCH</td><td align="right" Class="EnumValueCell">8103</td><td class="DescriptionCell">Favorite folder properties mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_PARENT_PROPERTY_MISMATCH</td><td align="right" Class="EnumValueCell">8308</td><td class="DescriptionCell">Parent property mismatch.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_QUESTION_WITH_DUPLICATE_ANSWERS_FOUND</td><td align="right" Class="EnumValueCell">1681</td><td class="DescriptionCell">Found a criterion with duplicate values.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_READ_ONLY_FIELD</td><td align="right" Class="EnumValueCell">11112</td><td class="DescriptionCell">Cannot modify read-only field.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RECCOVER_EXISTS</td><td align="right" Class="EnumValueCell">1068</td><td class="DescriptionCell">Duplicate requirement coverage.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RECNOTFOUND</td><td align="right" Class="EnumValueCell">1011</td><td class="DescriptionCell">No record matches the key value.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RELEASE_EXISTS</td><td align="right" Class="EnumValueCell">8005</td><td class="DescriptionCell">Release exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RELEASE_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8004</td><td class="DescriptionCell">Release folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RELEASECYCLE_EXISTS</td><td align="right" Class="EnumValueCell">8006</td><td class="DescriptionCell">ReleaseCycle exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_REQ_EXISTS</td><td align="right" Class="EnumValueCell">2055</td><td class="DescriptionCell">Duplicate requirement name - requirement was created.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_REQUEST_CANCELLED</td><td align="right" Class="EnumValueCell">1153</td><td class="DescriptionCell">Request has been cancelled.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RESOURCE_EXISTS</td><td align="right" Class="EnumValueCell">8202</td><td class="DescriptionCell">Resource exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RESOURCE_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">8201</td><td class="DescriptionCell">Resource folder exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_RESPONSE_TAMPERED</td><td align="right" Class="EnumValueCell">1154</td><td class="DescriptionCell">Response has been tampered.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_SERVER_LOCKS_REMOVED</td><td align="right" Class="EnumValueCell">10700</td><td class="DescriptionCell">Server locks removed.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_TARGET_OR_SOURCE_ENTITY_DOESNT_EXIST</td><td align="right" Class="EnumValueCell">1973</td><td class="DescriptionCell">Target or source entity does not exist.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_TEST_EXISTS</td><td align="right" Class="EnumValueCell">1055</td><td class="DescriptionCell">The test exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_TESTS_ALREADY_RUN</td><td align="right" Class="EnumValueCell">1111</td><td class="DescriptionCell">The test has been executed by another user.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_TESTSET_FOLDER_EXISTS</td><td align="right" Class="EnumValueCell">3055</td><td class="DescriptionCell">Duplicate TestSet folder name.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_THRESHOLD_VALUE_CREATE_FAIL</td><td align="right" Class="EnumValueCell">8517</td><td class="DescriptionCell">Creation of Threshold Value with owner type KPIMilestoneScopeItem is not allowed. Call CopyThresholdValues first.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_UNEXPECTED</td><td align="right" Class="EnumValueCell">5000</td><td class="DescriptionCell">An unexpected error has occurred.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_CANNOTLOGIN</td><td align="right" Class="EnumValueCell">1035</td><td class="DescriptionCell">Cannot log into the VCS database.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_LOCKEDMETEST</td><td align="right" Class="EnumValueCell">1037</td><td class="DescriptionCell">The test is locked by the current user.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_LOCKEDTEST</td><td align="right" Class="EnumValueCell">1038</td><td class="DescriptionCell">The test is locked by another user.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOTCHECKEDOUT</td><td align="right" Class="EnumValueCell">1040</td><td class="DescriptionCell">The test is not checked out.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOTCONNECTED</td><td align="right" Class="EnumValueCell">1039</td><td class="DescriptionCell">Not connected to the VCS database.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOTDEFVERFILE</td><td align="right" Class="EnumValueCell">1042</td><td class="DescriptionCell">There is no version file defined for the test type.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOTINVCSDB</td><td align="right" Class="EnumValueCell">1036</td><td class="DescriptionCell">The test is not in the VCS database.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOTLOCKED</td><td align="right" Class="EnumValueCell">1041</td><td class="DescriptionCell">The test is not locked.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOTVCSDB</td><td align="right" Class="EnumValueCell">1034</td><td class="DescriptionCell">The Quality Center project is not connected to the VCS database.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_NOVCS</td><td align="right" Class="EnumValueCell">1033</td><td class="DescriptionCell">VCS support is not installed on the Quality Center server side.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_VERSIONEXISTS</td><td align="right" Class="EnumValueCell">1063</td><td class="DescriptionCell">The version already exists.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VCS_VERSIONNOTEXISTS</td><td align="right" Class="EnumValueCell">1064</td><td class="DescriptionCell">Required version does not exist in the version control.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VIRTUAL</td><td align="right" Class="EnumValueCell">6020</td><td class="DescriptionCell">Cannot get Run Factory for virtual TSTest.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VIRTUAL_FATHER</td><td align="right" Class="EnumValueCell">6010</td><td class="DescriptionCell">No post allowed for object that has a virtual parent.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_VIRTUAL_FIELD</td><td align="right" Class="EnumValueCell">6040</td><td class="DescriptionCell">The field is read-only.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_WARNING_ALERT_NOT_CLEARED</td><td align="right" Class="EnumValueCell">1692</td><td class="DescriptionCell">The alert could not be cleared.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_WARNING_FROM_NOT_FOUND</td><td align="right" Class="EnumValueCell">1053</td><td class="DescriptionCell">The 'From' parameter is missing.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_WARNING_NO_ALERTS_CLEARED</td><td align="right" Class="EnumValueCell">1690</td><td class="DescriptionCell">No alert could be cleared.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_WARNING_SOME_ALERTS_NOT_CLEARED</td><td align="right" Class="EnumValueCell">1691</td><td class="DescriptionCell">Some of the alerts could not be cleared.</td></tr>
+<tr><td class=MemberNameCell>TDOLE_WRONG_ADMIN_PWD</td><td align="right" Class="EnumValueCell">10730</td><td class="DescriptionCell">Wrong administrator password.</td></tr>
+<tr><td class=MemberNameCell>TDPARAM_NOT_FOUND</td><td align="right" Class="EnumValueCell">1900</td><td class="DescriptionCell">No TD parameter exists.</td></tr>
+<tr><td class=MemberNameCell>TEST_CONFIG_DOES_NOT_EXISTS_CANNOT_DELETE_INSTANCES</td><td align="right" Class="EnumValueCell">9302</td><td class="DescriptionCell">Failed to delete instances. Some of the instances are of configurations that do not exist. You may need to check in the tests in order to delete the instances.</td></tr>
+<tr><td class=MemberNameCell>TEST_CONFIG_DOES_NOT_EXISTS_CANNOT_DELETE_TEST_SET</td><td align="right" Class="EnumValueCell">9301</td><td class="DescriptionCell">Failed to delete test set. Some of the instances are of configurations that do not exist. You may need to check in the tests before you can delete the test set.</td></tr>
+<tr><td class=MemberNameCell>TEST_CONFIG_MIN_LIMIT_EXCEEDED</td><td align="right" Class="EnumValueCell">9300</td><td class="DescriptionCell">You cannot delete all the test configurations. You must keep at least one configuration for the test.</td></tr>
+<tr><td class=MemberNameCell>TEST_E_COV_DELETE</td><td align="right" Class="EnumValueCell">1283</td><td class="DescriptionCell">Failed to delete requirement coverage by test.</td></tr>
+<tr><td class=MemberNameCell>TEST_E_CREATE</td><td align="right" Class="EnumValueCell">1281</td><td class="DescriptionCell">Failure to create a new test.</td></tr>
+<tr><td class=MemberNameCell>TEST_E_DELETE</td><td align="right" Class="EnumValueCell">1282</td><td class="DescriptionCell">Failure to delete test.</td></tr>
+<tr><td class=MemberNameCell>TEST_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1280</td><td class="DescriptionCell">The specified test does not exist.</td></tr>
+<tr><td class=MemberNameCell>TEST_E_REPOSITORY</td><td align="right" Class="EnumValueCell">1284</td><td class="DescriptionCell">Invalid test path.</td></tr>
+<tr><td class=MemberNameCell>TEST_E_TEMPLATE_TYPE</td><td align="right" Class="EnumValueCell">1285</td><td class="DescriptionCell">Cannot change test type.</td></tr>
+<tr><td class=MemberNameCell>TESTSET_E_CREATE</td><td align="right" Class="EnumValueCell">1381</td><td class="DescriptionCell">Failure to create TestSet.</td></tr>
+<tr><td class=MemberNameCell>TESTSET_E_DELETE</td><td align="right" Class="EnumValueCell">1382</td><td class="DescriptionCell">Failure to delete TestSet.</td></tr>
+<tr><td class=MemberNameCell>TESTSET_E_DELETE_DEFAULT</td><td align="right" Class="EnumValueCell">1383</td><td class="DescriptionCell">Failure to delete default' TestSet.</td></tr>
+<tr><td class=MemberNameCell>TESTSET_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1380</td><td class="DescriptionCell">The test set does not exist.</td></tr>
+<tr><td class=MemberNameCell>TREE_E_CREATE</td><td align="right" Class="EnumValueCell">1521</td><td class="DescriptionCell">Cannot create Tree node.</td></tr>
+<tr><td class=MemberNameCell>TREE_E_DELETE</td><td align="right" Class="EnumValueCell">1522</td><td class="DescriptionCell">Cannot remove Tree node.</td></tr>
+<tr><td class=MemberNameCell>TREE_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1520</td><td class="DescriptionCell">Tree node not found.</td></tr>
+<tr><td class=MemberNameCell>TREE_E_RENAME</td><td align="right" Class="EnumValueCell">1523</td><td class="DescriptionCell">Cannot rename Tree node.</td></tr>
+<tr><td class=MemberNameCell>TSTEST_E_CREATE</td><td align="right" Class="EnumValueCell">1402</td><td class="DescriptionCell">Failure to create test in TestSet.</td></tr>
+<tr><td class=MemberNameCell>TSTEST_E_DELETE</td><td align="right" Class="EnumValueCell">1401</td><td class="DescriptionCell">Failed to remove the specified test instance.</td></tr>
+<tr><td class=MemberNameCell>TSTEST_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1400</td><td class="DescriptionCell">The test instance does not exist.</td></tr>
+<tr><td class=MemberNameCell>USER_E_CREATE</td><td align="right" Class="EnumValueCell">1321</td><td class="DescriptionCell">Failure to create user.</td></tr>
+<tr><td class=MemberNameCell>USER_E_DELETE</td><td align="right" Class="EnumValueCell">1322</td><td class="DescriptionCell">Failure to delete user.</td></tr>
+<tr><td class=MemberNameCell>USER_E_IN_GROUP</td><td align="right" Class="EnumValueCell">1323</td><td class="DescriptionCell">Failure to add user into group.</td></tr>
+<tr><td class=MemberNameCell>USER_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1320</td><td class="DescriptionCell">The specified user does not exist.</td></tr>
+<tr><td class=MemberNameCell>USER_E_NOT_IN_GROUP</td><td align="right" Class="EnumValueCell">1324</td><td class="DescriptionCell">User does not exist in the group.</td></tr>
+<tr><td class=MemberNameCell>USERSGROUP_E_CREATE</td><td align="right" Class="EnumValueCell">1482</td><td class="DescriptionCell">Failed to create user group.</td></tr>
+<tr><td class=MemberNameCell>USERSGROUP_E_NOT_FOUND</td><td align="right" Class="EnumValueCell">1480</td><td class="DescriptionCell">The specified user group does not exist.</td></tr>
+<tr><td class=MemberNameCell>USERSGROUP_E_SYSTEM</td><td align="right" Class="EnumValueCell">1481</td><td class="DescriptionCell">Users group system error.</td></tr>
+</table></div>
+			
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference  Documentation Feedback: tagTDAPI_ERRORCODES Enumeration">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

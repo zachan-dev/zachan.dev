@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Performance_Center_REST_API.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Resources|Runs/{ID} (Get Run Status)">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Run Status XML</title>
+        <!-- WEBHELP-ONLY: The following statement fixes cropping errors when customers use IE7 at 120 dpi (for example, list numbering problems) -->
+        <!--[if lt IE 8]>
+            <style type="text/css"> 
+                body
+                {
+                        padding-left: 16px;
+                }
+            </style>
+         <![endif]-->
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+			p.footerlink  
+			{
+
+			font-size: 85%;
+			text-align: right;
+			}
+
+			<!--QCCR1K4344--></style>
+        <link href="Resources/Stylesheets/_HP_IE_Experience.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Performance_Center_REST_API.htm#run_status_xml.htm">Open topic with navigation</a>
+        </p>
+        <h1>Run Status XML</h1>
+        <p> The elements of the XML are:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Run</td>
+                    <td>The top-level element.</td>
+                </tr>
+                <tr>
+                    <td>PostRunAction</td>
+                    <td>
+                        <p>One of:</p>
+                        <ul>
+                            <li value="1">Do Not Collate</li>
+                            <li value="2">Collate Results&#160;</li>
+                            <li value="3">
+                                <p>Collate And Analyze</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TestID</td>
+                    <td>The test ID from <span class="PC_API_VarsALM_Long">HP Application Lifecycle Management</span> (<span class="PC_API_VarsALM_Short">ALM</span>).</td>
+                </tr>
+                <tr>
+                    <td>TestInstanceID</td>
+                    <td>The test instance ID from MyPc in the Test Lab perspective.</td>
+                </tr>
+                <tr>
+                    <td>TimeslotID							</td>
+                    <td>The ID of the time slot.</td>
+                </tr>
+                <tr>
+                    <td>VudsMode</td>
+                    <td>If true, the test consumes Virtual User Day (VUD) licenses.</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>The Run ID.</td>
+                </tr>
+                <tr>
+                    <td>RunState</td>
+                    <td>
+                        <p>One of:</p>
+                        <ul>
+                            <li value="1">Before Collating Results</li>
+                            <li value="2">Before Creating Analysis Data</li>
+                            <li value="3">Canceled</li>
+                            <li value="4">Collating Results</li>
+                            <li value="5">Creating Analysis Data</li>
+                            <li value="6">Failed Collating Results</li>
+                            <li value="7">Failed Creating Analysis Data</li>
+                            <li value="8">Initializing</li>
+                            <li value="9">Pending Creating Analysis Data</li>
+                            <li value="10">Run Failure</li>
+                            <li value="11">Running</li>
+                            <li value="12">Stopping</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td>The run time in minutes.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_"><img class="MCDropDown_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Closed" data-mc-alt2="Open" />Example</a></span>
+            <div class="MCDropDownBody dropDownBody"><pre><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Run </span><span style="COLOR: #ff0000">xmlns</span><span style="COLOR: #0000ff">="http://www.hp.com/PC/REST/API"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">PostRunAction</span><span style="COLOR: #0000ff">&gt;</span>Collate And Analyze<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">PostRunAction</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TestID</span><span style="COLOR: #0000ff">&gt;</span>5<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TestID</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TestInstanceID</span><span style="COLOR: #0000ff">&gt;</span>4<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TestInstanceID</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeslotID</span><span style="COLOR: #0000ff">&gt;</span>1015<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeslotID</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">VudsMode</span><span style="COLOR: #0000ff">&gt;</span>false<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">VudsMode</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ID</span><span style="COLOR: #0000ff">&gt;</span>14<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ID</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">RunState</span><span style="COLOR: #0000ff">&gt;</span>Initializing<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">RunState</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Run</span><span style="COLOR: #0000ff">&gt;</span></pre>
+            </div>
+        </div>
+        <h2>See Also</h2>
+        <p><a href="start_test_run.htm" class="MCXref xref">Start a Test Run</a>
+            <br /><a href="Get_Run_Status.htm" class="MCXref xref">Get Run Status</a>
+            <br /><a href="Results_Metadata.htm" class="MCXref xref">Results</a> <br /><a href="Result_Metadata.htm" class="MCXref xref">Results/{ID}</a> <br /><a href="Stop.htm" class="MCXref xref">stop</a><br /><a href="StopNow.htm" class="MCXref xref">stopNow</a><br /><a href="Abort.htm" class="MCXref xref">abort</a><br /></p>
+        <p> <![CDATA[ ]]></p>
+        <!-- hr = horizontal rule -->
+        <hr width="100%" size="0" align="center" padding-bottom="0" style="clear:both" />
+        <table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td style="border: none; border-collapse: collapse;">
+                        <p id="Copyright" style="font-size: 85%; text-align: left;direction: ltr;"><a href="Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2004 - 2015</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                        </p>
+                    </td>
+                    <td style="border: none;">
+                        <div id="Feedback">
+                            <p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Documentation Feedback</a>
+                            </p>
+                            <!-- Localizable -->
+                            <div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;">
+                                <div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a>
+                                </div>
+                                <div style="text-align:left">
+                                    <!-- Localizable -->
+                                    <p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p>
+                                    <p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                    <p>Send us an email with the following information:</p>
+                                    <!-- Localizable -->
+                                    <div id="hp-feedbackBody">
+                                        <br />
+                                        <br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div>
+                                    <p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0066CC;">docteam@hpe.com</a></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                </div>
+                            </div>
+                            <div style="display:none;" id="hp-feedback-variables" productName="ALM Performance Center REST API Reference" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="Run Status XML" skinLine1="ALM Performance Center REST API Reference" skinLine2="">&#160;
+		<p style="display:none;"><script src="Resources/MasterPages/_HP_Feedback.js"></script></p></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--QCCR1K4298 START-->
+        <div style="display:none;" id="HPb-Branding-Variables" Footer="Yes" Feedback="Yes">&#160;
+		</div>
+        <script>/* <![CDATA[ */
+			var BrandingVariables = document.getElementById("HPb-Branding-Variables");
+			if(BrandingVariables.getAttribute('Footer')=="No"){document.getElementById('Copyright').style.display = 'none';}
+			if(BrandingVariables.getAttribute('Feedback')=="No"){document.getElementById('Feedback').style.display = 'none';}
+		/* ]]> */</script>
+        <!--QCCR1K4298 END-->
+        <p> <a href="Resources/MasterPages/_HP_aboutSearch_WebHelp.htm" style="visibility: hidden;"></a></p>
+    </body>
+</html>

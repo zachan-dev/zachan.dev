@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Manage Sessions</title>
+    <meta name="Title" content="Manage Sessions"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="Although RESTful applications are ideally stateless, the ALM platform requires sessions to manage locking, client lifetime, and perform other basic tasks. Session management cookies are returned by the Sign-in resource." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="63c0b257-72cc-4b3e-beef-150be4aa21eb"/>
+    <meta name="Microsoft.Help.TocParent" content="cab1366f-280a-495c-9944-12c55b5e6e44"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Manage Sessions</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Working_with_API.htm">Working with the API</a>
+ > <a href="How_To.htm">How Do I...</a>
+ > Manage Sessions</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <p>Although RESTful applications are ideally stateless, the ALM platform requires sessions to manage locking, client lifetime, and perform other basic tasks. Session management&nbsp;cookies are returned by the&nbsp;<a href="sign_in.htm" data-auto-update-caption="true">Sign-in</a>&nbsp;resource.</p>
+
+<p>Your application should wait for the sign-in request to return before allowing subsequent server calls. Failure to do so may result in your application having several sessions open. Having more than one session open by an application may interfere with activities that require session-dependent functionality, such as entity locking. In addition, the overhead of opening and maintaining sessions affects server performance.</p>
+
+<p>The same session can be used to access resources of different projects in a site.</p>
+
+<p>If a session expires, all locks are released&nbsp;and other session-dependent functionality expire with the session. Therefore, if an application connects to a new session, discard all data downloaded previously. If you do not,&nbsp;the next&nbsp;PUT operation can overwrite changes made by another user while the entity was not locked.</p>
+
+<p>The time-out for a REST Client&nbsp;session is set with&nbsp;the site administration parameter REST_SESSION_MAX_IDLE_TIME.<span style="BACKGROUND-COLOR: rgb(255,255,255)">&nbsp;</span><span style="BACKGROUND-COLOR: rgb(255,255,255)">The default is&nbsp;60 minutes</span>.&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><div class="SeeAlsoLink">
+<a href="Authenticate.htm">Authenticate</a></div>
+<div class="SeeAlsoLink">
+<a href="sign_in.htm">Sign-in</a></div>
+<div class="SeeAlsoLink">
+<a href="sign-out.htm">Sign-out</a></div>
+
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Manage Sessions">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

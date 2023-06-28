@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Adding test coverage and finding tests not run</title>
+    <meta name="Title" content="Adding test coverage and finding tests not run"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub AddCoverageEx()
+' Add all tests under a subject folder to the requirement coverage
+' Get a List of all the covering tests that have not run
+
+    Dim SubNode As SubjectNode, SubjectID As Variant" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="9d14859e-db58-41d2-a0d4-ed1eb9c53355"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Adding test coverage and finding tests not run</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-887c98b5-d0bb-45b3-b8c5-3f30dac983b0"></a></li>
+    </ul>
+
+    <div id="TabContent-887c98b5-d0bb-45b3-b8c5-3f30dac983b0" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> AddCoverageEx()
+<span style="COLOR: #008000">' Add all tests under a subject folder to the requirement coverage
+' Get a List of all the covering tests that have not run
+</span>
+    <span style="COLOR: #0000ff">Dim</span> SubNode <span style="COLOR: #0000ff">As</span> SubjectNode, SubjectID <span style="COLOR: #0000ff">As</span> Variant
+    <span style="COLOR: #0000ff">Dim</span> theReqToCover <span style="COLOR: #0000ff">As</span> Req
+    <span style="COLOR: #0000ff">Dim</span> testFilter <span style="COLOR: #0000ff">As</span> TDFilter
+    
+  
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> AddCoverageExErr
+    <span style="COLOR: #008000">' For code of GetSubjectNodeByPath, see example
+</span>    <span style="COLOR: #008000">' Getting a test subject node by the node path
+</span>    <span style="COLOR: #0000ff">Set</span> SubNode = GetSubjectNodeByPath(<span style="COLOR: #800000">"Flight Reservation"</span>)
+    SubjectID = SubNode.NodeID
+    Debug.Print SubjectID
+<span style="COLOR: #008000">' Get the requirement to cover: "Car Rentals"
+' under "Products/Services On Sale"
+' To see the code of GetReqByPath, see example:
+' "Find a specified requirement in a specified folder"
+' under Req and ReqFactory.
+</span>
+    <span style="COLOR: #0000ff">Dim</span> reqPath$
+    reqPath = <span style="COLOR: #800000">"Mercury Tours Application"</span> _
+            &amp; <span style="COLOR: #800000">"\Online Travel Booking Services"</span> _
+            &amp; <span style="COLOR: #800000">"\Products/Services On Sale"</span> _
+            &amp; <span style="COLOR: #800000">"\Car Rentals"</span>
+    <span style="COLOR: #0000ff">Set</span> theReqToCover = GetReqByPath(reqPath)
+
+        
+<span style="COLOR: #008000">'-------------------------------------------------------
+' Use Req.AddCoverageEx to create the coverage
+</span>    theReqToCover.AddCoverageEx SubjectID, TDPOSITION_LAST
+    theReqToCover.Post
+    
+<span style="COLOR: #008000">' See the covering tests that have not yet run.
+' Get a test filter and set the execution status to "No Run"
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> testFilter = tdc.TestFactory.Filter
+<span style="COLOR: #008000">' Note that the quote marks must be part of the string if
+' the value contains spaces.
+' "No Run" would be passed as the string (No Run)and would fail.
+' """No Run""" is passed as ("No Run") as required.
+</span>    testFilter.Filter(<span style="COLOR: #800000">"TS_EXEC_STATUS"</span>) = <span style="COLOR: #800000">"""No Run"""</span>
+    <span style="COLOR: #0000ff">Dim</span> CovList <span style="COLOR: #0000ff">As</span> List, aTest <span style="COLOR: #0000ff">As</span> ITest
+<span style="COLOR: #008000">'------------------------------------------------------
+' Use Req.GetCoverListByFilter to
+' get the filtered list of all tests, recursively, that
+'  cover the requirement.
+</span>    <span style="COLOR: #0000ff">Set</span> CovList = _
+        theReqToCover.GetCoverListByFilter(testFilter.Text, <span style="COLOR: #0000ff">True</span>)
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> aTest <span style="COLOR: #0000ff">In</span> CovList
+        <span style="COLOR: #0000ff">With</span> aTest
+            Debug.Print .name, .execStatus, .Type
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">Next</span>
+ 
+<span style="COLOR: #0000ff">Exit Sub</span>
+AddCoverageExErr:
+   <span style="COLOR: #008000">' Handle error 
+</span><span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Adding test coverage and finding tests not run">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

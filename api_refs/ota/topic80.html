@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Defect to defect links</title>
+    <meta name="Title" content="Defect to defect links"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+                
+  " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="8053fc40-b81b-4cdf-8f90-aabd09bbea1c"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Defect to defect links</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Function</span> AddBugToBugLink(fromBug <span style="COLOR: #0000ff">As</span> Bug, ToBug <span style="COLOR: #0000ff">As</span> Bug, _
+        <span style="COLOR: #0000ff">Optional</span> LinkComment$ = <span style="COLOR: #800000">""</span>) <span style="COLOR: #0000ff">As</span> Link
+<span style="COLOR: #008000">' Link two defects
+</span>
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+
+    
+    <span style="COLOR: #0000ff">Dim</span> linkF <span style="COLOR: #0000ff">As</span> LinkFactory
+    <span style="COLOR: #0000ff">Dim</span> thelink <span style="COLOR: #0000ff">As</span> Link
+    <span style="COLOR: #0000ff">Dim</span> linkableBug <span style="COLOR: #0000ff">As</span> ILinkable
+     
+    <span style="COLOR: #0000ff">Set</span> linkableBug = fromBug
+    <span style="COLOR: #0000ff">Set</span> linkF = linkableBug.BugLinkFactory
+    <span style="COLOR: #0000ff">Set</span> thelink = linkF.AddItem(ToBug)
+    thelink.comment = LinkComment
+    thelink.Post
+    
+    <span style="COLOR: #0000ff">Set</span> AddBugToBugLink = thelink
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+    <span style="COLOR: #0000ff">Set</span> AddBugToBugLink = <span style="COLOR: #0000ff">Nothing</span>
+<span style="COLOR: #0000ff">End Function</span>
+
+<span style="COLOR: #008000">'#########################################################
+</span>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Function</span> ModifyBugToBugLink(fromBug <span style="COLOR: #0000ff">As</span> Bug, _
+    ToBug <span style="COLOR: #0000ff">As</span> Bug, _
+    LinkComment <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>) <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+<span style="COLOR: #008000">' Change link properties
+</span>
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+        
+    <span style="COLOR: #0000ff">Dim</span> linkF <span style="COLOR: #0000ff">As</span> LinkFactory
+<span style="COLOR: #008000">'    Dim theLink As Link
+</span>    <span style="COLOR: #0000ff">Dim</span> linkableBug <span style="COLOR: #0000ff">As</span> ILinkable
+    <span style="COLOR: #0000ff">Dim</span> BugF <span style="COLOR: #0000ff">As</span> BugFactory
+    <span style="COLOR: #0000ff">Dim</span> Bug <span style="COLOR: #0000ff">As</span> Bug
+    <span style="COLOR: #0000ff">Dim</span> aFilter <span style="COLOR: #0000ff">As</span> TDFilter
+    <span style="COLOR: #0000ff">Dim</span> oList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> Bug1 <span style="COLOR: #0000ff">As</span> Bug
+    <span style="COLOR: #0000ff">Dim</span> thelink <span style="COLOR: #0000ff">As</span> Link
+     
+    <span style="COLOR: #0000ff">Set</span> linkableBug = fromBug
+    <span style="COLOR: #0000ff">Set</span> linkF = linkableBug.BugLinkFactory
+    <span style="COLOR: #0000ff">Set</span> aFilter = linkF.Filter
+    aFilter.Filter(<span style="COLOR: #800000">"LN_ENTITY_ID"</span>) = ToBug.ID
+    aFilter.Filter(<span style="COLOR: #800000">"LN_ENTITY_TYPE"</span>) = <span style="COLOR: #800000">"BUG"</span>
+    <span style="COLOR: #0000ff">Set</span> oList = linkF.NewList(aFilter.Text)
+    <span style="COLOR: #0000ff">Set</span> thelink = oList.Item(1)
+
+    thelink.comment = LinkComment
+    thelink.Post
+    
+    ModifyBugToBugLink = SUCCESS
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+    ModifyBugToBugLink = FAILURE
+<span style="COLOR: #0000ff">End Function</span>
+
+<span style="COLOR: #008000">'#########################################################
+</span>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Function</span> RemoveBugToBugLink(fromBug <span style="COLOR: #0000ff">As</span> Bug, _
+    thelink <span style="COLOR: #0000ff">As</span> Link) <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+<span style="COLOR: #008000">' Delete a link
+</span>
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+    
+    <span style="COLOR: #0000ff">Dim</span> linkF <span style="COLOR: #0000ff">As</span> LinkFactory
+<span style="COLOR: #008000">'    Dim theLink As Link
+</span>    <span style="COLOR: #0000ff">Dim</span> linkableBug <span style="COLOR: #0000ff">As</span> ILinkable
+    <span style="COLOR: #0000ff">Dim</span> BugF <span style="COLOR: #0000ff">As</span> BugFactory
+
+     
+    <span style="COLOR: #0000ff">Set</span> linkableBug = fromBug
+    <span style="COLOR: #0000ff">Set</span> linkF = linkableBug.BugLinkFactory
+    linkF.RemoveItem (thelink.ID)
+
+ 
+    RemoveBugToBugLink = SUCCESS
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+    RemoveBugToBugLink = FAILURE
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Defect to defect links">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

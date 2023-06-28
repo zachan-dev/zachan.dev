@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins__TopNav_Skin" data-mc-search-type="Stem" data-mc-help-system-file-name="almhelp.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="PC Help|Performance Center User Help|Data Analyzer|Trending|Trend Reports User Interface">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="page-type" content="other" />
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" /><title>Trend Views</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/_HP_SuperDocs.css" rel="stylesheet" />
+        <style>/*&lt;meta /&gt;*/
+
+.button.expand-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.remove-highlight-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/highlight.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../Resources/Scripts/PIE.htc');
+}
+
+</style>
+        <script src="../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_ImageMapResizer.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_Script.min.js">
+        </script>
+    </head>
+    <body id="TopNav" class="other">
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-left" id="offCanvas" data-off-canvas="" data-position="left" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-left is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" data-mc-ignore="true">
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="relative clearfix"><a class="logo" href="../Resources/_TopNav/_TopNav_Home.htm" alt="Logo"></a>
+                                    <div class="navigation-wrapper nocontent">
+                                        <ul class="navigation clearfix" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="2" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button class="menu-icon" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="nav-search row outer-row">
+                                <form class="search" action="#">
+                                    <div class="search-bar search-bar-container needs-pie">
+                                        <input class="search-field needs-pie" type="search" placeholder="Search" />
+                                        <div class="search-filter-wrapper">
+                                            <div class="search-filter">
+                                                <div class="search-filter-content">
+                                                    <ul>
+                                                        <li>All Files</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search-submit-wrapper" dir="ltr">
+                                            <div class="search-submit" title="Search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <section class="main-section">
+                        <div class="row outer-row" data-mc-content-body="True">
+                            <!-- Google Tag Manager -->
+                            <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJ9842" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>-->
+                            <!-- End Google Tag Manager -->
+                            <div id="contentBody">
+                                <div class="row">
+                                    <div id="proxy-topic-toolbar" class="hidden">
+                                        <div class="buttons popup-container clearfix topicToolbarProxy mc-component nocontent" style="mc-topic-toolbar-items: ExpandAll RemoveHighlight Print">
+                                            <div class="button-group-container-left">
+                                                <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all" data-state1-title="Expand all">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="expand all" />
+                                                </button>
+                                                <button class="button needs-pie remove-highlight-button" title="Remove Highlights">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="remove highlight" />
+                                                </button>
+                                                <button class="button needs-pie print-button" title="Print">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="print" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="hp-toc-tree" class="hidden">
+                    <MadCap:menuProxy style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                </div> -->
+                                    <div id="proxy-menu" class="hide-for-small medium-offset-1 medium-4 columns">
+                                        <nav id="hp-sidebar-menu">
+                                            <ul class="sidebar hidden mc-component" data-mc-is-context-sensitive="True" data-mc-linked-toc="Data/Tocs/QCPC_TOC.js" data-mc-side-menu="True" data-mc-max-depth="1" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div id="proxy-content" class="small-12 medium-7 columns">
+                                        <div id="proxy-breadcrumbs" class="hidden">
+                                            <div class="nocontent">
+                                                <div class="MCBreadcrumbsBox_0 breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="5" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="proxy-body"><a id="top"></a>
+                                            <h1><a name="wp136490"></a>Trend Views</h1>
+                                            <p style="page-break-after: avoid;">A trend view is a display item that presents trending information for a particular performance metric, for example, transaction response time.</p>
+                                            <div align="left">
+                                                <table id="wp109154table109152">
+                                                    <tr align="left" valign="top">
+                                                        <td><b><a name="wp109154"></a>To access</b>
+                                                        </td>
+                                                        <td>
+                                                            <ol type="1">
+                                                                <li value="1">
+                                                                    <p><a name="aanchor651"></a>
+                                                                        <MadCap:concept term="Performance Center Guide" />On the My Performance Center navigation bar, select <b>Runs &amp; <span class="QCPCAnalysis_Short">Analysis</span></b><b> &gt; </b><b>Trending</b>. </p>
+                                                                </li>
+                                                                <li value="2">
+                                                                    <p>On the Performance Trending page, in the Trend Reports grid, click the name of the report to open. The report opens as an additional tab on the My Performance Center Dashboard. The trend view tabs are displayed by default.</p>
+                                                                </li>
+                                                                <p>Trend Views are contained within the trend view tabs. The trend view tabs are displayed by default.</p>
+                                                            </ol>
+                                                        </td>
+                                                    </tr>
+                                                    <tr align="left" valign="top">
+                                                        <td><b><a name="wp109169"></a>See also</b>
+                                                        </td>
+                                                        <td>
+                                                            <p><a href="ui_report_name_trend_report.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">&lt;Report Name&gt; Trend Report </a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />Edit Trend View Menu</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p style="page-break-after: avoid;">This menu contains options that enable you to edit the trend view's display and comparison settings.</p>
+                                                    <div align="left">
+                                                        <table id="wp109196table109194">
+                                                            <col />
+                                                            <col />
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109196"></a>To access</b>
+                                                                </td>
+                                                                <td>
+                                                                    <p>On the trend view, click the <b>Open edit menu</b> button <img src="images/edit menu.png" /> (Not available in the Trend Overview tab). </p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <p style="page-break-after: avoid;">User interface elements are described below:</p>
+                                                    <div align="left">
+                                                        <table id="wp109218table109216">
+                                                            <thead>
+                                                                <tr align="center" valign="top">
+                                                                    <th>
+                                                                        <p>UI Elements </p>
+                                                                    </th>
+                                                                    <th>
+                                                                        <p>Description</p>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134073"></a>3D Mode (stacked bar chart view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to view the chart in 3D.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134077"></a>Color Trends (table view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Activates the trend report's threshold settings. For more information about thresholds, see <a href="c_trend_reports_overview.htm" class="MCXref xref" xrefformat="{para}">Trend Reports Overview</a>.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134084"></a>Compare to baseline/previous (table view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to change the comparison method displayed in the trend view. For more information on comparison methods, see <a href="c_trend_reports_overview.htm" class="MCXref xref" xrefformat="{para}">Trend Reports Overview</a>.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134091"></a>Delete this Trend View</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Deletes the trend view.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134095"></a>Do not show difference (table view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to hide value differentials between test runs. It is recommended to use this setting when exporting the report to a CSV format.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134103"></a>Edit Display Setting</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to change the appearance of the trend view. The available settings are:</p>
+                                                                        <ul>
+                                                                            <li value="1">
+                                                                                <p><b>Table view.</b> This view is best suited for displaying comparisons between measurements. You can view threshold settings in this view only. For more information, see <a href="#Display_Setting:_Table" title="" alt="" class="MCXref xref" xrefformat="{para}">Display Setting: Table</a>.</p>
+                                                                            </li>
+                                                                            <li value="2">
+                                                                                <p><b>Line graph view. </b>This view is best suited for displaying trending information graphically over a timeline. For more information, see <a href="#Display_Setting:_Line_Graph" title="" alt="" class="MCXref xref" xrefformat="{para}">Display Setting: Line Graph</a>.</p>
+                                                                            </li>
+                                                                            <li value="3">
+                                                                                <p><b>Stacked bar chart view.</b> This view displays trending information graphically over a timeline. It is best suited for trending a small number of multiple measurements. For more information, see <a href="#Display_Setting:_Stacked" title="" alt="" class="MCXref xref" xrefformat="{para}">Display Setting: Stacked</a>.</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134099"></a>Edit Trend View Title</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to edit the trend view title.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134119"></a>Export to CSV (table view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to export the report to a CSV format.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134123"></a>Select Measurements</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Opens the Measurements Configuration dialog box, which enables you to add measurements to the trend view. For user interface details, see <a href="ui_trend_measurements_config.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Measurements Configuration Dialog Box</a>.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134130"></a>Show difference as value/percentage (table view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to define how to display value differentials between test runs in the trend view - as values or as percentages.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp134134"></a>Show Values (stacked bar chart view only)</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Enables you to view the measurement values on the actual bar columns.</p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Display_Setting:_Table"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Display Setting: Table</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p>This section explains the Table trend view display setting.</p>
+                                                    <div align="left">
+                                                        <table id="wp109374table109372">
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109374"></a>To access</b>
+                                                                </td>
+                                                                <td>
+                                                                    <ol type="1">
+                                                                        <li value="1">
+                                                                            <p>On the trend view, click the <b>Open edit menu</b> button <img src="images/edit menu.png" />  (Not available in the Trend Overview tab). </p>
+                                                                        </li>
+                                                                        <li value="2">
+                                                                            <p>Select <b>Edit Display Setting</b>.</p>
+                                                                        </li>
+                                                                        <li value="3">
+                                                                            <p>In the Edit Display Setting dialog box, select <b>Table</b>.</p>
+                                                                        </li>
+                                                                    </ol>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109381"></a>Important information</b>
+                                                                </td>
+                                                                <td>
+                                                                    <p>You can view threshold settings in table view only.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <p style="page-break-after: avoid;">User interface elements are described below (unlabeled elements are shown in angle brackets):</p>
+                                                    <div align="left">
+                                                        <table id="wp109290table109288">
+                                                            <thead>
+                                                                <tr align="center" valign="top">
+                                                                    <th>
+                                                                        <p>UI Elements </p>
+                                                                    </th>
+                                                                    <th>
+                                                                        <p>Description</p>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109452"></a>&lt;Measurement value name&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The name of the measurement value being trended, for example, minimum, maximum, average, and so on. </p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109456"></a>&lt;Measurement value&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The actual value of the measurement being trended, and its comparison value, displayed per test run. For more information about comparison methods, see <a href="c_trend_reports_overview.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Trend Reports Overview</a>.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109294"></a>Name</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The name of the measurement being compared.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109302"></a>Type</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The type of measurement being compared.</p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint" style="page-break-after: avoid;"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Display_Setting:_Line_Graph"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Display Setting: Line Graph</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p>This section explains the Line Graph trend view display setting.</p>
+                                                    <div align="left">
+                                                        <table id="wp109482table109480">
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109482"></a>To access</b>
+                                                                </td>
+                                                                <td>
+                                                                    <ol type="1">
+                                                                        <li value="1">
+                                                                            <p>On the trend view, click the <b>Open edit menu</b> button <img src="images/edit menu.png" /> (Not available in the Trend Overview tab). </p>
+                                                                        </li>
+                                                                        <li value="2">Select <b>Edit Display Setting</b>.</li>
+                                                                        <li value="3">
+                                                                            <p>In the Edit Display Setting dialog box, select <b>Line</b>.</p>
+                                                                        </li>
+                                                                    </ol>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109491"></a>Important information</b>
+                                                                </td>
+                                                                <td>
+                                                                    <ul>
+                                                                        <li value="1">
+                                                                            <p>When you hold the cursor over the line graph, a tooltip appears displaying the exact amount of units for that measurement, correct to the nearest test run on the timeline. In other words, if you hold the cursor near the left point of the line graph, you see the value of the first test run.</p>
+                                                                        </li>
+                                                                        <li value="2">
+                                                                            <p>When you click a section in the line graph/measurement in the legend, it becomes highlighted, as does the corresponding section in the legend/line graph.</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <p style="page-break-after: avoid;">User interface elements are described below (unlabeled elements are shown in angle brackets):</p>
+                                                    <div align="left">
+                                                        <table id="wp109343table109341">
+                                                            <col />
+                                                            <col />
+                                                            <thead>
+                                                                <tr align="center" valign="top">
+                                                                    <th>
+                                                                        <p>UI Elements </p>
+                                                                    </th>
+                                                                    <th>
+                                                                        <p>Description</p>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109819"></a>&lt;graph slope&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The upward or downward slope of the line represents an upward or downward change in the measurement's unit. For example, a higher transaction response time (which is a performance regression), or a higher transactions per second value (which is a performance improvement).</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109832"></a>&lt;x-axis&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Lists the test runs according to their run date.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109836"></a>&lt;y-axis&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The relevant unit of measurement.</p>
+                                                                        <p><b>Example:</b> For the Transaction Response Time measurement, the y-axis values represent seconds, while for the transactions per second measurement, the values represent the number of transactions.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109592"></a>B </b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Displays the measurement in bold.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109588"></a>C</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Displays the color of the measurement as it appears in the graph. Click the colored square in the column to select a different color for the measurement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109596"></a>Function</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Displays the value of the measurement being trended.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109600"></a>Name</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The name of the measurement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109604"></a>Scale</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Indicates the scale of the measurement. When viewing information in the line graph view, you can adjust the scale of any measurement to make comparing measurements more meaningful.</p>
+                                                                        <p>To change the scale of a measurement, click the value in the column and select the desired scale from the Set Scale box that opens. You can also apply the selected scale to all the measurements in the graph.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109609"></a>Type</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Contains an acronym that identifies the measurement type. For a full list of available acronyms, see <a href="r_trend_measurement_acronyms.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Measurement Acronyms</a>.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109616"></a>V</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Determines whether the measurement is visible. All measurements are displayed by default. Clear the check box to hide a measurement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint" style="page-break-after: avoid;"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Display_Setting:_Stacked"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Display Setting: Stacked</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p style="page-break-after: avoid;">This section explains the Stacked Bar Chart trend view display setting.</p>
+                                                    <div align="left">
+                                                        <table id="wp109884table109882">
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109884"></a>To access</b>
+                                                                </td>
+                                                                <td>
+                                                                    <ol type="1">
+                                                                        <li value="1">
+                                                                            <p>On the trend view, click the <b>Open edit menu</b> button <img src="images/edit menu.png" /> (Not available in the Trend Overview tab).</p>
+                                                                        </li>
+                                                                        <li value="2">
+                                                                            <p>Select <b>Edit Display Setting</b>.</p>
+                                                                        </li>
+                                                                        <li value="3">
+                                                                            <p>In the Edit Display Setting dialog box, select <b>Stacked</b>.</p>
+                                                                        </li>
+                                                                    </ol>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" valign="top">
+                                                                <td><b><a name="wp109893"></a>Important information</b>
+                                                                </td>
+                                                                <td>
+                                                                    <ul>
+                                                                        <li value="1">
+                                                                            <p>If different values are selected for the same measurement (for example, <b>Maximum</b> and <b>Average</b> transaction response times), then the measurements appear as stacked bars. That is, the values appear above each other for the bar that represents the transaction response time measurement for a specific test run.</p>
+                                                                        </li>
+                                                                        <li value="2">
+                                                                            <p>When you hold the cursor over a bar, a tooltip appears which displays the exact number of units for that measurement, correct for that test run.</p>
+                                                                        </li>
+                                                                        <li value="3">
+                                                                            <p>When you click a section in the bar chart/measurement in the legend, it becomes highlighted, as does the corresponding section in the legend/bar chart.</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <p style="page-break-after: avoid;">User interface elements are described below (unlabeled elements are shown in angle brackets):</p>
+                                                    <div align="left">
+                                                        <table id="wp109912table109910">
+                                                            <col />
+                                                            <col />
+                                                            <thead>
+                                                                <tr align="center" valign="top">
+                                                                    <th>
+                                                                        <p>UI Elements </p>
+                                                                    </th>
+                                                                    <th>
+                                                                        <p>Description</p>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109916"></a>&lt;bar height&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The height of the bar represents the change in the measurement's unit. For example, a higher transaction response time, which represents a performance regression, or a higher transactions per second value, which represents a performance improvement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109920"></a>&lt;x-axis&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Lists the test runs according to their run date.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109924"></a>&lt;y-axis&gt;</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The relevant unit of measurement.</p>
+                                                                        <p><b>Example:</b> For the Transaction Response Time measurement, the y-axis values represent seconds, while for the transactions per second measurement, the values represent the number of transactions.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109933"></a>C</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Displays the color of the measurement as it appears in the graph. Click the colored square in the column to select a different color for the measurement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109937"></a>Function</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Displays the value of the measurement being trended.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109941"></a>Name</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>The name of the measurement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109945"></a>Scale</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Indicates the scale of the measurement. When viewing information in the line graph view, you can adjust the scale of any measurement to make comparing measurements more meaningful.</p>
+                                                                        <p>To change the scale of a measurement, click the value in the column and select the desired scale from the Set Scale box that opens. You can also apply the selected scale to all the measurements in the graph.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109950"></a>Type</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Contains an acronym that identifies the measurement type. For a full list of available acronyms, see <a href="r_trend_measurement_acronyms.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Measurement Acronyms</a>.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="left" valign="top">
+                                                                    <td><b><a name="wp109957"></a>V</b>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>Determines whether the measurement is visible. All measurements are displayed by default. Clear the check box to hide a measurement.</p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div class="footer-inner">
+                                    <table id="highlights">
+                                        <tr>
+                                            <td> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="../Resources/_TopNav/_TopNav_Home.htm">Help Center Home</a></p><p class="footerlink"><a href="https://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                                            <td> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/products/application-lifecycle-management/overview" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank">ALM on Twitter</a></p></td>
+                                            <td> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]?subject=Feedback on [%=_HPc_Basic_Variables._HP_Book_Title%] ([%=_HPc_Basic_Variables._HP_Product_Name%] [%=_HPc_Basic_Variables._HP_Product_Version%])" title="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+		</p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Help Center Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="hp-feedbackDiv"><div class="hp-feedbackDivClose"><a href="javascript:closeFeedback();" id="hp-feedbackClose"><img src="../Resources/_TopNav/Images/_TopNav_ic-close.png" /></a></div><div class="hp-feedbackDivContent"><!-- Localizable --><h1 class="feedback hp-feedbackDivHeader">Send Help Center Feedback</h1><p class="hp-feedbackDivBody">Let us know how we can improve your Help Center experience.</p><p class="hp-feedbackDivBody">Send your email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen">docteam@hpe.com</a></p><img src="../Resources/_TopNav/Images/_TopNav_ic-email.png" /><!-- Localizable --><div style="display:none;" id="hp-feedbackBody">Add your Help Center feedback:</div><!-- Localizable --></div></div><div id="hp-feedbackDimmedDiv"></div><div style="display:none;" id="hp-feedback-variables" productName="ALM&#160;Help Center" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="Trend Views" skinLine1="ALM&#160;Help Center" skinLine2="ALM&#160;Help Center"><script src="../Resources/_TopNav/_TopNav_Feedback.js"></script></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/services/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                                        </tr>
+                                    </table>
+                                    <table id="copyright">
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <img src="../Resources/_TopNav/Images/_TopNav_ic-hpe-logo.png" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <img id="ic-favicon" class="hidden" src="../Resources/_TopNav/Images/_TopNav_hpe_favicon.ico" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <script type="text/javascript">/*<![CDATA[*/
+									var url = document.getElementById('ic-favicon');
+									var ext = document.createElement('link');
+									ext.setAttribute("rel", "shortcut icon");
+									ext.setAttribute("href", url.src);
+									document.getElementsByTagName("head")[0].appendChild(ext);
+								/*]]>*/</script>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="lastUpdated">Last updated <span class="_HPc_Basic_Variables_HP_LastUpdatedDate">June 06, 2018</span></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="http://www8.hp.com/us/en/hpe/legal/terms-of-use.html" target="_blank">Terms of Use</a>&#160;|&#160;<a class="copyright" href="https://www.hpe.com/us/en/legal/privacy.html" target="_blank">Privacy</a></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="../Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2002 - 2017</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="hp-google-custom-search hidden"><span id="hp-online-url" class="_HPc_Basic_VariablesOnlineURL">http://alm-help.saas.hpe.com</span><span id="hp-gcse-id" class="_HPc_Basic_VariablesSearchEngineId">018001665633254540897:42w460c7a-e</span>
+                            </div>
+                            <script>/* <![CDATA[ */
+			(function() {
+				var onlineURL = $('#hp-online-url').text();
+				if (location.href.indexOf(onlineURL)!==0) {
+					if ($('body').hasClass('home'))
+						$('.search-area-bar').css('visibility', 'visible');
+					else
+						$('.nav-search.row.outer-row').css('visibility', 'visible');
+		            
+					if ($('html.searchTopic').length) {
+						var idTips = setInterval(function() {
+							if (document.querySelector('#results-heading')) {
+								clearInterval(idTips);
+								$('<br>')
+									.appendTo('#results-heading');
+								$('#about-search')
+									.appendTo('#results-heading');
+							}
+						} , 100);
+					}
+					return;
+				}
+				
+				if (location.search.match(/^\?gcse-q=/)) {
+					$('#pagination').hide();
+					$('<div class="gcse-searchresults" data-linktarget="_parent"  data-queryParameterName="gcse-q"></div>')
+						.appendTo('#searchPane');
+                    var idFilter = setInterval(function() {
+                        var tab = $('#TopNav.other .gsc-tabsArea .gsc-tabHeader.gsc-tabhActive');
+                        if (tab && tab.text()==='All') {
+                                clearInterval(idFilter);
+                            $('#TopNav.other .gsc-tabHeader.gsc-tabhActive')
+                                .text('All Results');
+                        }
+                    }, 100);
+					/*** Open search results from other help centers in separate tab ***/
+					var shc = location.hostname.split('.')[0];
+                    setInterval(function() {
+                        var urls = $('.gsc-url-bottom');
+                        if (urls.length) {
+                            urls.each(function() {
+                                var thc = $(this).text().split('.')[0];
+                                if (shc!==thc) {
+                                    $(this).siblings('.gs-title').children('a')
+                                        .attr('target','_blank');
+                                }
+                            });
+                        }
+                    }, 1000);
+					var idResults = setInterval(function() {
+						if (document.querySelector('#results-heading')) {
+							clearInterval(idResults);
+							$('#results-heading').hide();
+						}
+					}, 100);
+				}
+				var b = location.href.match(/^.+?\/Content\//)[0];
+				var sbo = $('<div class="gcse-searchbox-only" data-resultsUrl="'+b+'Search.htm" data-newWindow="false" data-queryParameterName="gcse-q"></div>');
+						
+				if ($('body').hasClass('home')) {
+					$('.search-area-bar .search').hide();
+					sbo.appendTo('.search-area-bar');
+					var idHomeBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idHomeBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.search-area-bar')
+								.style.visibility = 'visible';
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				} else {
+                    if ($('html.searchTopic').length) sbo.attr('class','gcse-searchbox');
+					$('.nav-search.row.outer-row .search').hide();
+					sbo.appendTo('.nav-search.row.outer-row');
+					var idOtherBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idOtherBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.nav-search.row.outer-row')
+								.style.visibility = 'visible';
+							$('#TopNav.other #search-wrapper-back')
+								.appendTo('#TopNav.other .search-wrapper .gsc-search-box');
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				}
+                var idGCSE = setInterval(function() {
+                    var cx = $('#hp-gcse-id').text();
+                    var rc = $('.gcse-searchresults-only');
+                    if (!cx||!rc) return;
+                    clearInterval(idGCSE);
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                }, 100); 
+			})();
+		/* ]]> */</script>
+                            <div class="hidden"><a id="about-search" href="../Resources/_TopNav/_TopNav_aboutSearch.htm">Tips to improve your search results...</a><a href="../Resources/_TopNav/_TopNav_TOC.htm">TOC</a>
+                                <!--<img id="feedback-header" src="Images/_TopNav_feedback_header.png" />
+            <img id="feedback-image" src="Images/_TopNav_feedback_image.png" />
+            <img id="feedback-image" src="Images/_TopNav_ic-close-responsive.png" />-->
+                                <img id="search-responsive" src="../Resources/_TopNav/Images/_TopNav_ic-search.png" />
+                                <img id="search-responsive-back" src="../Resources/_TopNav/Images/_TopNav_ic-search-back.png" />
+                                <img id="search-responsive-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear-blue.png" />
+                                <img id="search-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear.png" />
+                                <img id="search-drop" src="../Resources/_TopNav/Images/_TopNav_ic-drop.png" /><span id="hp-help-name" class="_HPc_Basic_Variables_HP_Product_Name_Skin_Line1">ALM&#160;Help Center</span><span id="hp-help-short-name" class="_HPc_Basic_Variables_HP_Product_Name_Short">ALM&#160;Help Center</span><span id="hp-help-version" class="_HPc_Basic_Variables_HP_Product_Version">12.50</span><span id="hp-search-all" class="_TopNav_VariablesSearchFilterAll">All</span><span id="hp-view-local" class="_TopNav_VariablesSettingViewLocal">View Local Help Center</span><span id="hp-view-online" class="_TopNav_VariablesSettingViewOnline">View Online Help Center</span><span id="hp-back-alt" class="_TopNav_VariablesToolbarBackAltText">back</span><span id="hp-back-tooltip" class="_TopNav_VariablesToolbarBackTooltip">Go back in browser history</span><span id="hp-forward-alt" class="_TopNav_VariablesToolbarForwardAltText">forward</span><span id="hp-forward-tooltip" class="_TopNav_VariablesToolbarForwardTooltip">Go forward in browser history</span><span id="hp-highlights-tooltip" class="_TopNav_VariablesToolbarHighlightsTooltip">Remove search highlights</span><span id="hp-next-alt" class="_TopNav_VariablesToolbarNextAltText">next topic</span><span id="hp-next-tooltip" class="_TopNav_VariablesToolbarNextTooltip">Go to next topic</span><span id="hp-previous-alt" class="_TopNav_VariablesToolbarPreviousAltText">previous topic</span><span id="hp-previous-tooltip" class="_TopNav_VariablesToolbarPreviousTooltip">Go to previous topic</span><span id="hp-print-tooltip" class="_TopNav_VariablesToolbarPrintTooltip">Print the current topic</span><span id="hp-version-label" class="_TopNav_VariablesVersionLabel">Version</span><span id="hp-floating-toc-show" class="_HPc_Basic_VariablesFloatingTocShow">(Undefined variable: _HPc_Basic_Variables.FloatingTocShow)</span>
+                            </div>
+                            <script type="text/javascript">/*<![CDATA[*/
+			(function() {
+                TopNav.play.init();
+			})();
+		/*]]>*/</script>
+                        </div>
+                    </section><a data-close="true"></a>
+                </div>
+            </div>
+            <script>/* <![CDATA[ */$(document).foundation();/* ]]> */</script>
+        </div>
+    </body>
+</html>

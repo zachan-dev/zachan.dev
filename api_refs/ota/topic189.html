@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Create a test and change some properties</title>
+    <meta name="Title" content="Create a test and change some properties"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Private Function AddAndEditTest(TestName$, _
+    Optional TestType = &quot;SYSTEM-TEST&quot;, _
+    Optional ByRef containingFolder As SubjectNode) As Test
+    
+' Create a test and change some properties
+    
+' C" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="fc1aadd5-7f2d-469e-bd97-81b6b5f4bf45"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Create a test and change some properties</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-42584210-6a52-4b54-bfc6-851f36486834"></a></li>
+    </ul>
+
+    <div id="TabContent-42584210-6a52-4b54-bfc6-851f36486834" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Function</span> AddAndEditTest(TestName$, _
+    <span style="COLOR: #0000ff">Optional</span> TestType = <span style="COLOR: #800000">"SYSTEM-TEST"</span>, _
+    <span style="COLOR: #0000ff">Optional</span> <span style="COLOR: #0000ff">ByRef</span> containingFolder <span style="COLOR: #0000ff">As</span> SubjectNode) <span style="COLOR: #0000ff">As</span> Test
+    
+<span style="COLOR: #008000">' Create a test and change some properties
+</span>    
+<span style="COLOR: #008000">' Create new test.
+' This example assumes that the subject folder containing the
+' new test is directly under the root "Subject" folder.
+</span>
+    <span style="COLOR: #0000ff">Dim</span> objTest <span style="COLOR: #0000ff">As</span> Test
+    <span style="COLOR: #0000ff">Dim</span> testF <span style="COLOR: #0000ff">As</span> TestFactory
+    
+    
+    <span style="COLOR: #0000ff">Dim</span> SubjRoot <span style="COLOR: #0000ff">As</span> SubjectNode
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+    <span style="COLOR: #0000ff">Set</span> AddAndEditTest = <span style="COLOR: #0000ff">Nothing</span>
+    
+    <span style="COLOR: #0000ff">If</span> containingFolder <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #008000">'Create a folder
+</span>        <span style="COLOR: #0000ff">Set</span> containingFolder = GetTestSubjectFolder(<span style="COLOR: #800000">"Add_And_Edit_Folder"</span>)
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    
+    <span style="COLOR: #0000ff">Set</span> testF = containingFolder.TestFactory
+    <span style="COLOR: #0000ff">Dim</span> tFilter <span style="COLOR: #0000ff">As</span> TDFilter, tList <span style="COLOR: #0000ff">As</span> List, qTName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+ 
+    <span style="COLOR: #008000">' Check if the test already exists
+</span>     <span style="COLOR: #0000ff">Set</span> tFilter = testF.Filter
+     qTName = <span style="COLOR: #800000">""""</span> &amp; TestName &amp; <span style="COLOR: #800000">""""</span>
+     tFilter.Filter(<span style="COLOR: #800000">"TS_NAME"</span>) = qTName
+     <span style="COLOR: #0000ff">Set</span> tList = tFilter.NewList()
+     <span style="COLOR: #0000ff">Dim</span> aT <span style="COLOR: #0000ff">As</span> Test
+     <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> aT <span style="COLOR: #0000ff">In</span> tList
+        <span style="COLOR: #0000ff">If</span> aT.name = TestName <span style="COLOR: #0000ff">Then</span>
+            <span style="COLOR: #0000ff">Set</span> objTest = aT
+            <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+     <span style="COLOR: #0000ff">Next</span> aT
+   
+    <span style="COLOR: #008000">' If test does not exist, create it
+</span>    <span style="COLOR: #0000ff">If</span> objTest <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span>
+        <span style="COLOR: #0000ff">Set</span> objTest = testF.AddItem(Null)
+        objTest.name = TestName
+        objTest.Type = TestType
+        objTest.Post
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+ 
+    <span style="COLOR: #0000ff">Dim</span> VerCtl <span style="COLOR: #0000ff">As</span> VCS
+    <span style="COLOR: #0000ff">Dim</span> bIsLocked <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+    <span style="COLOR: #0000ff">Dim</span> strLockedBy <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    
+    <span style="COLOR: #0000ff">Set</span> VerCtl = objTest.VCS
+    
+    VerCtl.Refresh
+    
+    bIsLocked = VerCtl.IsLocked
+    strLockedBy = VerCtl.LockedBy
+    
+    <span style="COLOR: #008000">' After POST, Test is checked in.
+</span>    Debug.Print <span style="COLOR: #800000">"Version is locked: "</span> &amp; bIsLocked
+    <span style="COLOR: #008000">'Is locked: False
+</span>    Debug.Print <span style="COLOR: #800000">"Version locked by: """</span> &amp; strLockedBy &amp; <span style="COLOR: #800000">""""</span>
+    <span style="COLOR: #008000">'Is locked by: ""
+</span>    
+    VerCtl.CheckOut -1, <span style="COLOR: #800000">"To change state"</span>, <span style="COLOR: #0000ff">True</span>
+    
+    VerCtl.Refresh
+    
+    bIsLocked = VerCtl.IsLocked
+    strLockedBy = VerCtl.LockedBy
+    
+    Debug.Print <span style="COLOR: #800000">"Version is locked: "</span> &amp; bIsLocked
+    <span style="COLOR: #008000">'Is locked: True
+</span>    Debug.Print <span style="COLOR: #800000">"Version is locked by: """</span> &amp; strLockedBy &amp; <span style="COLOR: #800000">""""</span>
+    <span style="COLOR: #008000">'Is locked by: "User1"
+</span>    
+    <span style="COLOR: #008000">' Take an arbitrary field to change.
+</span>    Debug.Print <span style="COLOR: #800000">"Status: """</span> &amp; objTest.Field(<span style="COLOR: #800000">"TS_STATUS"</span>) &amp; <span style="COLOR: #800000">""""</span>
+    <span style="COLOR: #008000">'Status: ""
+</span>    
+    objTest.Field(<span style="COLOR: #800000">"TS_STATUS"</span>) = <span style="COLOR: #800000">"Ready"</span>
+    
+    objTest.Post
+ 
+    VerCtl.CheckIn <span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">"Changed status"</span>
+    
+    VerCtl.Refresh
+    
+    bIsLocked = VerCtl.IsLocked
+    strLockedBy = VerCtl.LockedBy
+    
+    Debug.Print <span style="COLOR: #800000">"Version is locked: "</span> &amp; bIsLocked
+    <span style="COLOR: #008000">'Is locked: False
+</span>    Debug.Print <span style="COLOR: #800000">"Version is locked by: """</span> &amp; strLockedBy &amp; <span style="COLOR: #800000">""""</span>
+    <span style="COLOR: #008000">'Is locked by: ""
+</span>    
+    <span style="COLOR: #0000ff">Set</span> AddAndEditTest = objTest
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+     <span style="COLOR: #0000ff">Set</span> AddAndEditTest = <span style="COLOR: #0000ff">Nothing</span>
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Create a test and change some properties">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

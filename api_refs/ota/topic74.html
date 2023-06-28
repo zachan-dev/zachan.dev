@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Find a component folder by name and create a new subfolder</title>
+    <meta name="Title" content="Find a component folder by name and create a new subfolder"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+                
+  " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="0fc77328-29c0-4eb6-aca5-4fe09c937178"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Find a component folder by name and create a new subfolder</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Function</span> NewComponentsFolder(FolderName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>, _
+        <span style="COLOR: #0000ff">Optional</span> ParentFolder) _
+        <span style="COLOR: #0000ff">As</span> ComponentFolder
+    
+    <span style="COLOR: #0000ff">Dim</span> generalComponentFolderFactory <span style="COLOR: #0000ff">As</span> ComponentFolderFactory
+    <span style="COLOR: #0000ff">Dim</span> rootComponentFolderFactory <span style="COLOR: #0000ff">As</span> ComponentFolderFactory
+    <span style="COLOR: #0000ff">Dim</span> cFolder <span style="COLOR: #0000ff">As</span> ComponentFolder, rootCFolder <span style="COLOR: #0000ff">As</span> ComponentFolder
+    
+<span style="COLOR: #008000">'-----------------------------------------------------------
+' Find a component folder by name and create a new subfolder
+'
+' This example creates a new folder at the specified location.
+' If no parent path is supplied, the folder is created at the highest level
+' under the root.
+'-----------------------------------------------------------
+</span>
+    <span style="COLOR: #008000">' Get a ComponentFolderFactory from the TDConnection object
+</span>    <span style="COLOR: #0000ff">Set</span> generalComponentFolderFactory = tdc.ComponentFolderFactory
+    
+    <span style="COLOR: #008000">' Get the parent folder, either the root or the folder passed as
+</span>    <span style="COLOR: #008000">'    the ParentFolder argument.
+</span>    <span style="COLOR: #0000ff">If</span> IsMissing(ParentFolder) <span style="COLOR: #0000ff">Then</span>
+        <span style="COLOR: #008000">' Get the root folder
+</span>        <span style="COLOR: #0000ff">Set</span> rootCFolder = generalComponentFolderFactory.Root
+    <span style="COLOR: #0000ff">Else</span>
+        <span style="COLOR: #008000">'Example of path: "Components\myCompFolder"
+</span>        <span style="COLOR: #0000ff">Set</span> rootCFolder = generalComponentFolderFactory.FolderByPath(ParentFolder.Path)
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    Debug.Print rootCFolder.name
+    
+    <span style="COLOR: #0000ff">Set</span> rootComponentFolderFactory = rootCFolder.ComponentFolderFactory
+ 
+    
+    <span style="COLOR: #008000">' Add the new folder
+</span>    <span style="COLOR: #0000ff">Set</span> cFolder = rootComponentFolderFactory.AddItem(Null)
+    cFolder.name = FolderName
+    
+    Debug.Print cFolder.Virtual
+    
+    <span style="COLOR: #008000">' Post to Server
+</span>    cFolder.Post
+    
+    Debug.Print cFolder.Virtual
+    <span style="COLOR: #008000">' Return the new folder
+</span>    <span style="COLOR: #0000ff">Set</span> NewComponentsFolder = cFolder
+    
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Find a component folder by name and create a new subfolder">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

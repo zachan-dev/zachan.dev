@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title> Add attachments to a defect and mail them</title>
+    <meta name="Title" content=" Add attachments to a defect and mail them"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Sub AttachFileAndMail()
+' Add attachments to a defect and mail them
+
+' This example shows how to check if a defect has attachments,
+'   how to add attachments to a defect, and how to mail
+'   all the att" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="16b723af-b68f-4e8a-977d-336534d79470"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText"> Add attachments to a defect and mail them</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-a720fd53-10f6-449e-a30a-ec45d922ccc2"></a></li>
+    </ul>
+
+    <div id="TabContent-a720fd53-10f6-449e-a30a-ec45d922ccc2" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Sub</span> AttachFileAndMail()
+<span style="COLOR: #008000">' Add attachments to a defect and mail them
+</span>
+<span style="COLOR: #008000">' This example shows how to check if a defect has attachments,
+'   how to add attachments to a defect, and how to mail
+'   all the attachments of a given defect.
+</span>
+    <span style="COLOR: #0000ff">Dim</span> attachFact <span style="COLOR: #0000ff">As</span> AttachmentFactory
+    <span style="COLOR: #0000ff">Dim</span> theAttachment <span style="COLOR: #0000ff">As</span> Attachment
+    <span style="COLOR: #0000ff">Dim</span> attachList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> BugFact <span style="COLOR: #0000ff">As</span> BugFactory
+    <span style="COLOR: #0000ff">Dim</span> theBug <span style="COLOR: #0000ff">As</span> Bug
+    <span style="COLOR: #0000ff">Dim</span> AttachmentList() <span style="COLOR: #0000ff">As</span> Variant
+    <span style="COLOR: #0000ff">Dim</span> HasAttachs <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+
+<span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> AttachFileAndMailErr
+<span style="COLOR: #008000">' Get an arbitrary defect for this example.
+' To find a particular defect, use
+' BugFactory.FindSimilarBugs or Bug.FindSimilarBugs.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> BugFact = tdc.BugFactory
+    <span style="COLOR: #0000ff">Set</span> theBug = BugFact.Item(1)
+<span style="COLOR: #008000">'------------------------------------------------------
+' Use Bug.Attachments to get the attachment
+' factory for the defect.
+</span>    <span style="COLOR: #0000ff">Set</span> attachFact = theBug.Attachments
+<span style="COLOR: #008000">' For demonstration purposes, print the
+' names of existing attachments.
+</span>    <span style="COLOR: #0000ff">Set</span> attachList = attachFact.NewList(<span style="COLOR: #800000">""</span>)
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> theAttachment <span style="COLOR: #0000ff">In</span> attachList
+        Debug.Print <span style="COLOR: #800000">"The Attachment.FileName is "</span> _
+            &amp; theAttachment.FileName
+    <span style="COLOR: #0000ff">Next</span>
+ <span style="COLOR: #008000">'For this example, guarantee that there are
+' attachments to an email by attaching files if
+' necessary.
+</span> <span style="COLOR: #008000">'To run the example, ensure that your workstation has files:
+' "D:\temp\err.log" and "D:\temp\output.txt."
+</span>    HasAttachs = theBug.HasAttachment
+    <span style="COLOR: #0000ff">If</span> HasAttachs <span style="COLOR: #0000ff">Then</span> Debug.Print vbCrLf &amp; <span style="COLOR: #800000">"----------------------------------"</span>
+    <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">Not</span> HasAttachs <span style="COLOR: #0000ff">Then</span>
+        <span style="COLOR: #0000ff">Set</span> theAttachment = attachFact.AddItem(Null)
+        theAttachment.FileName = <span style="COLOR: #800000">"C:\temp\err.log"</span>
+        theAttachment.Type = TDATT_FILE
+        theAttachment.Post
+<span style="COLOR: #008000">'-------------------------------------------------------------
+' Use AttachmentFactory.AddItem to create the new project entry.
+</span>        <span style="COLOR: #0000ff">Set</span> theAttachment = attachFact.AddItem(Null)
+        theAttachment.FileName = <span style="COLOR: #800000">"C:\temp\output.txt"</span>
+        theAttachment.Type = TDATT_FILE
+        theAttachment.Post
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+<span style="COLOR: #008000">' Populate a variant array of server file names
+' for use in the SendMail method.
+</span>    <span style="COLOR: #0000ff">Set</span> attachList = attachFact.NewList(<span style="COLOR: #800000">""</span>)
+    <span style="COLOR: #008000">'Count starts at one and Variant Array size
+</span>    <span style="COLOR: #008000">' starts at zero (but see Option Base in the Visual
+</span>    <span style="COLOR: #008000">'  Basic help), so array size is Count minus one.
+</span>    <span style="COLOR: #0000ff">ReDim</span> <span style="COLOR: #0000ff">Preserve</span> AttachmentList(attachList.Count - 1)
+    
+    <span style="COLOR: #0000ff">Dim</span> i%
+    i = <span style="COLOR: #0000ff">LBound</span>(AttachmentList)
+<span style="COLOR: #008000">'-------------------------------------------------------------
+' Use Attachment.ServerFileName to specify the attachment.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> theAttachment <span style="COLOR: #0000ff">In</span> attachList
+        AttachmentList(i) = theAttachment.ServerFileName
+        i = i + 1
+    <span style="COLOR: #0000ff">Next</span>
+    Debug.Print vbCrLf &amp; <span style="COLOR: #800000">"----------------------------------"</span>
+<span style="COLOR: #008000">' Array is populated. Let's see what we have:
+</span>    <span style="COLOR: #0000ff">Dim</span> fName
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> fName <span style="COLOR: #0000ff">In</span> AttachmentList
+        Debug.Print <span style="COLOR: #800000">"The AttachmentList element is "</span> &amp; fName
+    <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #008000">'-------------------------------------------------------------
+' Use TDConnection.SendMail to
+' send the attachments.
+</span>    tdc.SendMail <span style="COLOR: #800000">"steves,alex_qc"</span>, tdc.UserName, _
+        <span style="COLOR: #800000">"TestMail TDConnection.SendMail with attachments"</span>, _
+        <span style="COLOR: #800000">"TDConnection.SendMail: This is a test"</span>, AttachmentList
+        
+    
+<span style="COLOR: #0000ff">Exit Sub</span>
+
+AttachFileAndMailErr:
+ErrHandler err, <span style="COLOR: #800000">"AttachFileAndMail"</span>
+
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback:  Add attachments to a defect and mail them">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Get requirements that match or have descendents that match a filter</title>
+    <meta name="Title" content="Get requirements that match or have descendents that match a filter"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Function GetRootsOfFilterMatches(reqID As Long) As HierarchySupportList
+
+' Get requirements that match or have descendents that match a filter
+' Determine if a member of the list matches the filter" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="2e56f881-b585-4378-8a89-b652812af25b"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Get requirements that match or have descendents that match a filter</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-7b1d662e-04b3-41c6-abde-86c0473dc4ab"></a></li>
+    </ul>
+
+    <div id="TabContent-7b1d662e-04b3-41c6-abde-86c0473dc4ab" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Function</span> GetRootsOfFilterMatches(reqID <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Long</span>) <span style="COLOR: #0000ff">As</span> HierarchySupportList
+
+<span style="COLOR: #008000">' Get requirements that match or have descendents that match a filter
+' Determine if a member of the list matches the filter
+</span>
+
+<span style="COLOR: #008000">'###############################################################
+' This example shows the use of the IHierarchyFilter to determine
+' which sub-trees under a specific requirement contain at least
+' one requirement that matches the filter.
+'
+' The example runs on a requirement tree with the requirements below.
+' Each requirement has as ParentID the ID of the requirement one step
+' above according to the numbers that are part of the name.
+' For example, the ParentID of Grandson 1.1.1 is the ID of Child 1.1,
+' and the ParentID of Grandson 1.4.1.1 is the ID of Son 1.4.1
+</span>
+<span style="COLOR: #008000">' The first item, Req1, is the root of the search tree. The
+' ReqID argument to this example is Req1.ID
+'
+' The fiter is:
+'    Requirement.Name = "*Son* OR SubNode*" AND
+'    Requirement.Product = "Emma OR 'Mansfield Park'"
+' The items that match the filter in the example are marked with
+' an asterisk.
+'----------------------------------------------------------------------------
+'    Name               | Description              | Priority     | Product
+'----------------------------------------------------------------------------
+'    Req1               | Root of search tree      | 2-Medium    | Persuasion
+'    Child 1.1          | Child 1 of Req1          | 5-Urgent    | Persuasion
+' *  Grandson 1.1.1     | GrandSon of Req1 1.1.1   | 2-Medium    | Emma
+' *  Grandson 1.1.2     | GrandSon of Req1 1.1.2   | 2-Medium     | Emma
+</span>
+<span style="COLOR: #008000">'    Child 1.2          | Child 2 of Req1          | 4-Very High | Mansfield Park
+' *  Grandson 1.2.1     | GrandSon of Req1 1.2.1   | 5-Urgent    | Emma
+'
+'    Child 1.3          | Child 3 of Req1          | 3-High      | Persuasion
+'    Child 1.3.1        | Grandchild of Req1 1.3.1 | 2-Medium    | Emma
+'    Child 1.3.1.1      | GreatGrandChild of Req1 1.3.1.1
+'            | 2-Medium    | Mansfield Park
+' *  GGGrndSon1.3.1.1.1 | Has Son in name          | 2-Medium    | Mansfield Park
+'
+'    Child 1.4          | Child 4 of Req1          | 2-Medium    | Northanger Abbey
+'    Son 1.4.1          | GrandChild Req1          | 3-High      | Persuasion
+'    Grandson 1.4.1.1   | Grandson of Req 1.4      | 5-Urgent    | Persuasion
+'    Son 1.4.2          | Son 2 of Req 1.4         | 5-Urgent    | Persuasion
+'
+' *  Son 1.5            |Child 5 of Req1           | 3-High      |Emma
+</span>
+
+    <span style="COLOR: #0000ff">Dim</span> reqF <span style="COLOR: #0000ff">As</span> ReqFactory
+    <span style="COLOR: #0000ff">Dim</span> hierFilter <span style="COLOR: #0000ff">As</span> HierarchyFilter
+    <span style="COLOR: #0000ff">Dim</span> reqHierL <span style="COLOR: #0000ff">As</span> HierarchySupportList, reqL <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> rq <span style="COLOR: #0000ff">As</span> Req
+    
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> GetHListErr
+    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> reqF = tdc.ReqFactory
+    <span style="COLOR: #0000ff">Set</span> hierFilter = reqF.Filter
+
+    <span style="COLOR: #008000">'  Get the parent nodes by setting KeepHierarchical = True.
+</span>    <span style="COLOR: #008000">'  Note that this setting is required to get
+</span>    <span style="COLOR: #008000">'  a HierarchySupportList. If KeepHierarchical
+</span>    <span style="COLOR: #008000">'  is False or not set, HierarchyFilter.NewList
+</span>    <span style="COLOR: #008000">'  returns a List, not a HierarchySupportList.
+</span>    hierFilter.KeepHierarchical = <span style="COLOR: #0000ff">True</span>
+ 
+
+    <span style="COLOR: #008000">' Set a filter on RQ_FATHER_ID.
+</span>    <span style="COLOR: #008000">' The subtree with that node as its root
+</span>    <span style="COLOR: #008000">' is searched. The returned requirements are
+</span>    <span style="COLOR: #008000">' the direct children of the RQ_FATHER_ID node
+</span>    <span style="COLOR: #008000">' that either match the filter, or have descendants
+</span>    <span style="COLOR: #008000">' that match the  filter.
+</span>    <span style="COLOR: #008000">' Search in the subtree starting at the node passed
+</span>    <span style="COLOR: #008000">' as a parameter to this routine.
+</span>    hierFilter(<span style="COLOR: #800000">"RQ_FATHER_ID"</span>) = reqID
+
+
+    <span style="COLOR: #008000">' Name filter matches "Son", "GrandSon", and "SubNode."
+</span>    hierFilter(<span style="COLOR: #800000">"RQ_REQ_NAME"</span>) = <span style="COLOR: #800000">"*Son* OR SubNode*"</span>
+    
+    <span style="COLOR: #008000">' Set the product condition to a condition that matches some requirements.
+</span>    hierFilter(<span style="COLOR: #800000">"RQ_REQ_PRODUCT"</span>) = <span style="COLOR: #800000">"Emma OR 'Mansfield Park'"</span>
+   
+
+    
+    <span style="COLOR: #008000">'Set the order of the results.
+</span>    hierFilter.order(<span style="COLOR: #800000">"RQ_REQ_PRODUCT"</span>) = 1
+    hierFilter.order(<span style="COLOR: #800000">"RQ_REQ_PRIORITY"</span>) = 2
+    
+    <span style="COLOR: #0000ff">Set</span> reqHierL = hierFilter.NewList
+    
+    Debug.Print <span style="COLOR: #800000">"Number of records found is "</span> &amp; <span style="COLOR: #0000ff">CStr</span>(reqHierL.Count)
+    <span style="COLOR: #008000">'Number of records found is 4
+</span>    
+    <span style="COLOR: #008000">' Note that there are 5 requirements that match the filter.
+</span>    <span style="COLOR: #008000">' The 4 that are returned are the direct children of the searched
+</span>    <span style="COLOR: #008000">' root node that have at least one match in the sub-tree of which they
+</span>    <span style="COLOR: #008000">' are the root. The number of matching descendents does not affect the result.
+</span>    <span style="COLOR: #008000">'
+</span>    <span style="COLOR: #008000">' Son 1.5 has no descendents that match the filter, but Son 1.5
+</span>    <span style="COLOR: #008000">' itself matches the filter. Since Son 1.5 matches the filter, IsInFilter is True.
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> i%
+    <span style="COLOR: #0000ff">For</span> i = 1 <span style="COLOR: #0000ff">To</span> reqHierL.Count
+        <span style="COLOR: #0000ff">Set</span> rq = reqHierL(i)
+        <span style="COLOR: #0000ff">With</span> rq
+            Debug.Print .name &amp; <span style="COLOR: #800000">" is in list = "</span> &amp; <span style="COLOR: #0000ff">CStr</span>(reqHierL.IsInFilter(i))
+            Debug.Print <span style="COLOR: #800000">"   "</span> &amp; .Product &amp; <span style="COLOR: #800000">", "</span> &amp; .comment &amp; <span style="COLOR: #800000">", "</span> &amp; .Priority
+            <span style="COLOR: #008000">' Son 1.5 is in list = True
+</span>            <span style="COLOR: #008000">'     Emma, Child 5 of Req1, 3-High
+</span>            <span style="COLOR: #008000">' Child 1.2 is in list = False
+</span>            <span style="COLOR: #008000">'     Mansfield Park, Child 2 of Req1, 4-Very High
+</span>            <span style="COLOR: #008000">' Child 1.3 is in list = False
+</span>            <span style="COLOR: #008000">'     Persuasion, Child 3 of Req1, 3-High
+</span>            <span style="COLOR: #008000">' Child 1.1 is in list = False
+</span>            <span style="COLOR: #008000">'     Persuasion, Child 1 of Req1, 5-Urgent
+</span>        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">Next</span> i
+
+    <span style="COLOR: #0000ff">Set</span> GetRootsOfFilterMatches = reqHierL
+
+<span style="COLOR: #0000ff">Exit Function</span>
+GetHListErr:
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">Resume</span> <span style="COLOR: #0000ff">Next</span>
+    <span style="COLOR: #0000ff">Set</span> GetRootsOfFilterMatches = Null
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Get requirements that match or have descendents that match a filter">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

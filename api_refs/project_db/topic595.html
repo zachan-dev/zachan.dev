@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>td.TESTCYCL Table</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.db.2012.css" data-mshv2-stylesheet="/stylesheets/dx.db.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.db.2012.mshv1.css" />
+    <script src="script/dx.db.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.db.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="Project Data Tables_db~s-td~t-TESTCYCL"/>
+    <meta name="Description" content="Instances of design tests in test sets." />
+    
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.dx.db.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">td.TESTCYCL Table</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic25.html">Project Data Tables Database</a>
+ > <a href="topic27.html">td Schema</a>
+ : td.TESTCYCL Table</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Instances of design tests in test sets.</div></div>
+			<div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Remarks</span></div><div id="remarksSectionContent" class="SectionContent"><p>A test can be used more than once in a test set. Each use is an instance. This table stores the position (order) of each instance and some data about the instance.</p>
+
+<p>Multiple values for fields are maintained in the <a href="topic606.html">TESTCYCL_MULTIVALUE Table</a>.</p></div>
+            <!-- type="FilteredItemList" scrap="PROPERTY_LIST" namespace="property" source="Item" filter="" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=properties,caption=$$properties$$%%%%filtereditemlist%%</div>" --><!--properties --><!-- end -->
+            <div class="SectionHeading" id="columnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Columns</span></div><div id="columnsSectionContent" class="SectionContent"><table class="ColumnListTable"><tr><th align=middle>&nbsp;</th><th NOWRAP class="pivot-column">Column Name</th><th NOWRAP>Description</th><th NOWRAP>Datatype</th><th NOWRAP>Length</th><th NOWRAP>Allow Nulls</th><th NOWRAP>Default</th><th NOWRAP>Formula</th></tr>
+<tr><td Class=centered NOWRAP><img alt="Primary Key" src="dbimages/primarykey.gif">&nbsp;</td><td class="LinkCell"><STRONG>TC_TESTCYCL_ID</STRONG></td><td class="DescriptionCell">The&nbsp;record&nbsp;ID.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_CYCLE_ID</STRONG></td><td class="DescriptionCell">The <a href="topic206.html">CYCLE.CY_CYCLE_ID</a> of the test set containing this test.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TEST_ID</STRONG></td><td class="DescriptionCell">The <a href="topic564.html">TEST.TS_TEST_ID</a> of the design test of which this is an instance.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TEST_CONFIG_ID</STRONG></td><td class="DescriptionCell">The <a href="topic575.html">TEST_CONFIGS.TSC_ID</a>&nbsp;of the configuration&nbsp;used by this test instance.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_CYCLE</STRONG></td><td class="DescriptionCell">For backward compatibility. Field may be removed in future version.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TEST_ORDER</STRONG></td><td class="DescriptionCell">The order in which the test instance appears within the test set in the user interface.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_STATUS</STRONG></td><td class="DescriptionCell"><p>The status of the last run of the test instance. The values are from the Status custom list.</p>
+
+<p>Typical values are: Not Completed, No Run, Passed, N/A, Failed.</p></td><td>varchar</td><td>70</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TESTER_NAME</STRONG></td><td class="DescriptionCell">The user name of the person responsible for running the test.</td><td>varchar</td><td>60</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_EXEC_DATE</STRONG></td><td class="DescriptionCell">The date on which the test was last executed.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_EXEC_TIME</STRONG></td><td class="DescriptionCell">The time at which the test was last executed.</td><td>varchar</td><td>10</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_PLAN_SCHEDULING_DATE</STRONG></td><td class="DescriptionCell">The date on which the tester plans to next run the test.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_PLAN_SCHEDULING_TIME</STRONG></td><td class="DescriptionCell">The time at which the tester plans to next run the test.</td><td>varchar</td><td>10</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_HOST_NAME</STRONG></td><td class="DescriptionCell">The name or IP address of the host server on which the test&nbsp;is planned to&nbsp;be executed.</td><td>varchar</td><td>50</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_EPARAMS</STRONG></td><td class="DescriptionCell">The&nbsp;application-dependant configuration string created by the testing tool.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_ATTACHMENT</STRONG></td><td class="DescriptionCell">A value of Y indicates that the test instance has at least one attachment.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_01</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_02</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_03</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_04</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_05</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_06</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_07</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_08</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_09</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_10</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_11</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_12</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TEST_VERSION</STRONG></td><td class="DescriptionCell">For backward compatibility. This field may be removed in a future version.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TESTCYCLE_VER_STAMP</STRONG></td><td class="DescriptionCell">The revision number of this record. Increments each time the record is updated.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_EXEC_EVENT_HANDLE</STRONG></td><td class="DescriptionCell">The actions to be executed in response to various test set execution events. This field is in a proprietary format.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_VTS</STRONG></td><td class="DescriptionCell">The time this record was last updated according to the database server clock.</td><td>varchar</td><td>20</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_TEST_INSTANCE</STRONG></td><td class="DescriptionCell">The number of this test instance inside the cycle. This field enables several test instances with the same TC_TEST_ID to reside within the same test set.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_13</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_14</STRONG></td><td class="DescriptionCell">User-defined field. User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_15</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_16</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_17</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_18</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_19</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_20</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_21</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_22</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_23</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_USER_24</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_OS_CONFIG</STRONG></td><td class="DescriptionCell">For future use.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_ACTUAL_TESTER</STRONG></td><td class="DescriptionCell">The user&nbsp;who last executed this test instance.</td><td>varchar</td><td>60</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_DATA_OBJ</STRONG></td><td class="DescriptionCell">An XML string containing parameter values for Business Process Test iterations.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_ITERATIONS</STRONG></td><td class="DescriptionCell">Contains information about the BPT test iterations that will be performed when executing this test. The format is:&nbsp;&lt;total defined iterations&gt;;&lt;first iteration&gt;;&lt;last iteration&gt;. If all defined iterations are to be run, the field may be empty.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_ASSIGN_RCYC</STRONG></td><td class="DescriptionCell">The&nbsp;<a href="topic403.html">RELEASE_CYCLES.RCYC_ID</a> of the release cycle&nbsp;with which the test instance is associated.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_PINNED_BASELINE</STRONG></td><td class="DescriptionCell">The <a href="topic86.html">Baselines.BL_ID</a> of the baseline to which this test instance is pinned.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_SUBTYPE_ID</STRONG></td><td class="DescriptionCell">The type of the test that was run.</td><td>varchar</td><td>100</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_IS_DYNAMIC</STRONG></td><td class="DescriptionCell"><p>For internal use by HP.</p></td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>TC_ENVIRONMENT</STRONG></td><td class="DescriptionCell">The ID of the&nbsp;<a href="topic247.html" data-auto-update-caption="true">td.ENVIRONMENTS Table</a></td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="indexesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Indexes</span></div><div id="indexesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Index</th><th>Description</th><th>Primary</th><th>Unique</th></tr>
+<tr><td class=LinkCell><A HREF="topic596.html">TC_ASSIGN_RCYC_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic597.html">TC_PRIMARYKEY</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic598.html">TC_STATUS_LWR_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic599.html">TC_TEST_CONFIG_ID_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic600.html">TC_TEST_ID_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic601.html">TC_TESTCYCLE_CVR_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic602.html">TC_TESTCYCLE_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic603.html">TC_TESTER_NAME_LWR_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic604.html">TC_VTS_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+</table></div>
+            
+            <div class="SectionHeading" id="triggersSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Triggers</span></div><div id="triggersSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th NOWRAP>Trigger</th><th>Description</th></tr>
+<tr><td class=LinkCell NOWRAP><A HREF="topic605.html">AUTR_363696399_TESTCYCL</A></td><td class="DescriptionCell">&nbsp;</td></tr>
+</table></div>
+            
+            <div class="SectionHeading" id="childrenSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Objects that depend on td.TESTCYCL </span></div><div id="childrenSectionContent" class="SectionContent"><table class="DependencyListTable"><tr><th>&nbsp;</th><th NOWRAP>Database Object</th><th NOWRAP>Object Type</th><th class="DescriptionCell">Description</th><th NOWRAP>Dep Level</tr>
+<tr><td><img src="dbimages/db-trigger.gif" alt="AUTR_363696399_TESTCYCL trigger"></td><td class="namecell"><a href="topic605.html">AUTR_363696399_TESTCYCL</a></td><td NOWRAP>Trigger</td><td class="DescriptionCell">&nbsp;</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-view.gif" alt="td.V_TESTSET_REQ_COVER view"></td><td class="namecell"><a href="topic633.html">td.V_TESTSET_REQ_COVER</a></td><td NOWRAP>View</td><td class="DescriptionCell">&nbsp;</td><td align="right">1</tr>
+</table></div>
+            <div class="SectionHeading" id="parentsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Objects that td.TESTCYCL depends on</span></div><div id="parentsSectionContent" class="SectionContent"><table class="DependencyListTable"><tr><th>&nbsp;</th><th NOWRAP>Database Object</th><th NOWRAP>Object Type</th><th class="DescriptionCell">Description</th><th NOWRAP>Dep Level</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.AUDIT_LOG table"></td><td class="namecell"><a href="topic74.html">td.AUDIT_LOG</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Events on which history is recorded.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.AUDIT_PROPERTIES table"></td><td class="namecell"><a href="topic78.html">td.AUDIT_PROPERTIES</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Details of the changes recorded in the AUDIT_LOG table.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.BASELINES table"></td><td class="namecell"><a href="topic86.html">td.BASELINES</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Baseline records.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.ENVIRONMENTS table"></td><td class="namecell"><a href="topic247.html">td.ENVIRONMENTS</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Testing environments.</td><td align="right">1</tr>
+<tr><td><img src="dbimages/db-table.gif" alt="td.RELEASE_CYCLES table"></td><td class="namecell"><a href="topic403.html">td.RELEASE_CYCLES</a></td><td NOWRAP>Table</td><td class="DescriptionCell">Details of&nbsp;cycles.&nbsp;A release can contain a number of cycles.</td><td align="right">1</tr>
+</table></div>
+            <!-- start type="Source" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=source,caption=$$SQL$$%%<table class="sqlsource" border=0 cellpadding=0><tr><td NOWRAP><CODE>%%Source%%</CODE></td></tr></table></div>" --><!--Source --><!-- end -->
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><h4 class=dxh4>Related Objects</h4><p><a href="topic27.html">td Schema</a>
+<BR/><a href="topic25.html">Project Data Tables Database</a>
+</p>
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference  Documentation Feedback: td.TESTCYCL Table">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

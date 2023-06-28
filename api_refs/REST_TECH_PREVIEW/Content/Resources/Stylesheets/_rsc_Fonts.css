@@ -1,0 +1,238 @@
+﻿/*<meta />*/
+
+/* This header may be removed before distributing to customers. 
+
+FILE:        _rsc_fonts.css
+DESCRIPTION: Font declarations for MetricHPE fonts
+MODIFIED:    Dec 2017
+LEVEL        CSS Level 3
+VERSION:     For ADM SFFS 7.4.1
+*/
+
+@font-face
+{
+	font-family: 'HPFontIcons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('./_rsc_icons/_rsc_icons.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_icons/_rsc_icons.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./_rsc_icons/_rsc_icons.woff') format('woff'),
+	url('./_rsc_icons/_rsc_icons.ttf') format('truetype'),
+	url('./_rsc_icons/_rsc_icons.otf') format('opentype');
+}
+
+@font-face
+{
+	font-family: 'MetricRegular';
+	font-weight: normal;
+	font-style: normal;
+	src: url('./_rsc_fonts/Regular/MetricWeb-Regular.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Regular/MetricWeb-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   	url('./_rsc_fonts/Regular/MetricWeb-Regular.woff') format('woff'),
+	url('./_rsc_fonts/Regular/MetricHPE-App-Regular.ttf') format('truetype'),
+	url('./_rsc_fonts/Regular/MetricHPE-Desktop-Regular.otf') format('opentype');
+} 
+
+
+/* Added by Penny for semibold*/
+@font-face
+{
+	font-family: 'MetricRegular';
+	font-weight: bold;
+	font-style: normal;
+    src: url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.eot'); /* IE9 Compat Modes */
+    src: 
+    url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.woff') format('woff'),
+	url('./_rsc_fonts/Bold/MetricHPE-App-Semibold.ttf') format('truetype'),
+	url('./_rsc_fonts/Bold/MetricHPE-Desktop-Semibold.otf') format('opentype');
+} 
+
+@font-face
+{
+	font-family: 'MetricRegular';
+	font-weight: bold;
+	font-style: italic;
+    src: url('./_rsc_fonts/Italic/MetricHPE-Web-SemiboldItalic.eot'); /* IE9 Compat Modes */
+    src: 
+    url('./_rsc_fonts/Italic/MetricHPE-Web-SemiboldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./_rsc_fonts/Italic/MetricHPE-Web-SemiboldItalic.woff') format('woff'),
+	url('./_rsc_fonts/Italic/MetricHPE-App-SemiboldItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/Italic/MetricHPE-Desktop-SemiboldItalic.otf') format('opentype');
+} 
+
+@font-face
+{
+    font-family:'MetricSemi';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.eot'); /* IE9 Compat Modes */
+    src: 
+    url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.woff') format('woff'),
+	url('./_rsc_fonts/Bold/MetricHPE-App-Semibold.ttf') format('truetype'),
+	url('./_rsc_fonts/Bold/MetricHPE-Desktop-Semibold.otf') format('opentype');
+} 
+
+/* Added by Penny for italic*/
+@font-face
+{
+	font-family: 'MetricRegular';
+	font-weight: normal;
+	font-style: italic;
+	src: url('./_rsc_fonts/Italic/MetricHPE-Web-RegularItalic.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Italic/MetricHPE-Web-RegularItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  	url('./_rsc_fonts/Italic/MetricHPE-Web-RegularItalic.woff') format('woff'),
+	url('./_rsc_fonts/Italic/MetricHPE-App-RegularItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/Italic/MetricHPE-Desktop-RegularItalic.otf') format('opentype');
+} 
+
+
+/* End of added by Penny */
+
+
+@font-face
+{
+	font-family: 'MetricBold';
+	font-weight: bold;
+	font-style: normal;
+	src: url('./_rsc_fonts/Bold/MetricHPE-Web-Bold.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Bold/MetricHPE-Web-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('./_rsc_fonts/Bold/MetricHPE-Web-Bold.woff') format('woff'),
+	url('./_rsc_fonts/Bold/MetricHPE-App-Bold.ttf') format('truetype'),
+	url('./_rsc_fonts/Bold/MetricHPE-Desktop-Bold.otf') format('opentype');
+} 
+
+
+@font-face
+{
+	font-family: 'MetricBlack';
+	font-weight: black;
+	font-style: normal;
+	src: url('./_rsc_fonts/Bold/MetricHPE-Web-Black.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Bold/MetricHPE-Web-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('./_rsc_fonts/Bold/MetricHPE-Web-Black.woff') format('woff'),
+	url('./_rsc_fonts/Bold/MetricHPE-App-Black.ttf') format('truetype'),
+	url('./_rsc_fonts/Bold/MetricHPE-Desktop-Black.otf') format('opentype');
+} 
+
+
+@font-face
+{
+	font-family: 'MetricMedium';
+	font-weight: normal;
+	font-style: normal;
+    src: url('./_rsc_fonts/Bold/MetricHPE-Web-Medium.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Bold/MetricHPE-Web-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   	url('./_rsc_fonts/Bold/MetricHPE-Web-Medium.woff') format('woff'),
+	url('./_rsc_fonts/Bold/MetricHPE-App-Medium.ttf') format('truetype'),
+	url('./_rsc_fonts/Bold/MetricHPE-Desktop-Medium.otf') format('opentype');
+} 
+
+
+@font-face
+{
+	font-family: 'MetricSemibold';
+	font-weight: normal;
+	font-style: normal;
+    src: url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   	url('./_rsc_fonts/Bold/MetricHPE-Web-Semibold.woff') format('woff'),
+	url('./_rsc_fonts/Bold/MetricHPE-App-Semibold.ttf') format('truetype'),
+	url('./_rsc_fonts/Bold/MetricHPE-Desktop-Semibold.otf') format('opentype');
+} 
+
+
+
+@font-face
+{
+	font-family: 'MetricBoldItalic';
+	font-weight: bold;
+	font-style: italic;
+    src: url('./_rsc_fonts/BoldItalic/MetricHPE-Web-BoldItalic.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/BoldItalic/MetricHPE-Web-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('./_rsc_fonts/BoldItalic/MetricHPE-Web-BoldItalic.woff') format('woff'),
+	url('./_rsc_fonts/BoldItalic/MetricHPE-App-BoldItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/BoldItalic/MetricHPE-Desktop-BoldItalic.otf') format('opentype');
+} 
+
+
+@font-face
+{
+	font-family: 'MetricBlackItalic';
+	font-weight: 900;
+	font-style: italic;
+    src: url('./_rsc_fonts/Italic/MetricHPE-Web-BlackItalic.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Italic/MetricHPE-Web-BlackItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('./_rsc_fonts/Italic/MetricHPE-Web-BlackItalic.woff') format('woff'),
+	url('./_rsc_fonts/Italic/MetricHPE-App-BlackItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/Italic/MetricHPE-Desktop-BlackItalic.otf') format('opentype');
+} 
+
+
+@font-face
+{
+	font-family: 'MetricMediumItalic';
+	font-weight: 500;
+	font-style: italic;
+    src: url('./_rsc_fonts/Italic/MetricHPE-Web-MediumItalic.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Italic/MetricHPE-Web-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('./_rsc_fonts/Italic/MetricHPE-Web-MediumItalic.woff') format('woff'),
+	url('./_rsc_fonts/Italic/MetricHPE-App-MediumItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/Italic/MetricHPE-Desktop-MediumItalic.otf') format('opentype');
+} 
+
+
+@font-face
+{
+	font-family: 'MetricLightItalic';
+	font-weight: 300;
+	font-style: italic;
+    src: url('./_rsc_fonts/Italic/MetricHPE-Web-LightItalic.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Italic/MetricHPE-Web-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('./_rsc_fonts/Italic/MetricHPE-Web-LightItalic.woff') format('woff'),
+	url('./_rsc_fonts/Italic/MetricHPE-App-LightItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/Italic/MetricHPE-Desktop-LightItalic.otf') format('opentype');
+} 
+
+
+
+@font-face
+{
+	font-family: 'MetricThinItalic';
+	font-weight: 100;
+	font-style: italic;
+    src: url('./_rsc_fonts/Italic/MetricHPE-Web-ThinItalic.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Italic/MetricHPE-Web-ThinItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('./_rsc_fonts/Italic/MetricHPE-Web-ThinItalic.woff') format('woff'),
+	url('./_rsc_fonts/Italic/MetricHPE-App-LightItalic.ttf') format('truetype'),
+	url('./_rsc_fonts/Italic/MetricHPE-Desktop-LightItalic.otf') format('opentype');
+} 
+
+
+
+@font-face
+{
+	font-family: 'MetricLight';
+	font-weight: 300;
+	font-style: normal;
+	src: url('./_rsc_fonts/Light/MetricHPE-Web-Light.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Light/MetricHPE-Web-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('./_rsc_fonts/Light/MetricHPE-Web-Light.woff') format('woff'),	
+	url('./_rsc_fonts/Light/MetricHPE-App-Light.ttf') format('truetype'),
+	url('./_rsc_fonts/Light/MetricHPE-Desktop-Light.otf') format('opentype');
+} 
+
+@font-face
+{
+	font-family: 'MetricThin';
+	font-weight: 100;
+	font-style: normal;
+	src: url('./_rsc_fonts/Light/MetricHPE-Web-Thin.eot'); /* IE9 Compat Modes */
+	src: url('./_rsc_fonts/Light/MetricHPE-Web-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('./_rsc_fonts/Light/MetricHPE-Web-Thin.woff') format('woff'),
+	url('./_rsc_fonts/Light/MetricHPE-App-Thin.ttf') format('truetype'),
+	url('./_rsc_fonts/Light/MetricHPE-Desktop-Thin.otf') format('opentype');
+} 
+
+/* Copyright 2007-2016 Hewlett Packard Enterprise Development LP */

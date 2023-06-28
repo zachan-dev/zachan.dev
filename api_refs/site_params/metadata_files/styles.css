@@ -1,0 +1,82 @@
+@font-face {
+	font-family: HPS-Bold-eot;
+	src: url(fonts/HPSimplifiedW04-Bold.eot);
+}
+@font-face {
+	font-family: HPS-Regular-eot;
+	src: url(fonts/HPSimplifiedW04-Regular.eot);
+}
+@font-face {
+	font-family: HPS-Bold-ttf;
+	src: url(fonts/HPSimplifiedW04-Bold.ttf);
+}
+@font-face {
+	font-family: HPS-Regular-ttf;
+	src: url(fonts/HPSimplifiedW04-Regular.ttf);
+}
+@media only screen and (max-width:1034px) and (min-width:0px)
+{
+body {
+	background-position: 116.5% 108%; background-image: url("<%=product_image%>");
+}
+img.alm_image {
+	display: none;
+}
+}
+@media only screen and (max-width:1440px) and (min-width:1034px)
+{
+body {
+	background-position: 89% 84%; background-image: url("<%=product_image%>");
+}
+img.alm_image {
+	display: none;
+}
+}
+body {
+	overflow: auto; background-repeat: no-repeat; leftmargin: 0; marginheight: 0; marginwidth: 0; topmargin: 0;
+}
+div.menu_form {
+	border: 2px solid rgb(204, 204, 204); border-image: none; width: 711px; height: 515px; margin-top: 59px; background-color: rgb(255, 255, 255);
+}
+div.main_form {
+	left: 50%; top: 50%; width: 711px; height: 577px; margin-top: -375px; margin-left: -355px; position: absolute;
+}
+p.alm_header {
+	color: rgb(0, 0, 0); padding-top: 40px; font-family: HPS-Bold-eot, HPS-Bold-ttf; font-size: 22px;
+}
+p.subheader {
+	color: rgb(0, 0, 0); font-family: HPS-Regular-eot, HPS-Regular-ttf; font-size: 18px; margin-top: -10px;
+}
+a {
+	color: rgb(0, 150, 214); padding-left: 7px; font-family: HPS-Bold-eot, HPS-Bold-ttf; font-size: 18px; text-decoration: none;
+}
+a.embeddedFalse {
+	padding-left: 0px;
+}
+a:hover {
+	text-decoration: underline;
+}
+ul.list {
+	color: rgb(0, 150, 214); font-family: HPS-Regular-eot, HPS-Regular-ttf; font-size: 18px; margin-top: 45px; list-style-type: square;
+}
+ul.list li {
+	margin-bottom: 24px; margin-left: 118px; vertical-align: middle;
+}
+td.hp_logo {
+	padding-top: 26px; padding-right: 47px; padding-left: 47px; vertical-align: top;
+}
+td.header {
+	color: rgb(0, 150, 214); font-family: HPS-Regular-eot, HPS-Regular-ttf; font-size: 18px; margin-top: -10px;
+}
+td.subheader {
+	color: rgb(0, 0, 0); font-family: HPS-Regular-eot, HPS-Regular-ttf; font-size: 14px; margin-top: -10px; vertical-align: top;
+}
+img.alm_image {
+	right: -249px; bottom: -172px; position: absolute; z-index: -1;
+}
+img.new_window_hidden {
+	display: none;
+}
+img.large_font_ui_button {
+	display: none;
+}

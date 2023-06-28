@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Create business process test</title>
+    <meta name="Title" content="Create business process test"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+            
+                
+                     
+
+                    
+                        
+                            Copy Code
+                        
+                    
+                
+
+                
+  " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="e2d660ff-adb1-4ae6-91a2-47fa713b7312"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Create business process test</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <innovasys:widgetproperty layout="block" name="Content">
+    <div class="FilteredContentVB">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>&nbsp;</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Sub</span> CreateBPTest(oTest <span style="COLOR: #0000ff">As</span> Test, _
+    oComponent <span style="COLOR: #0000ff">As</span> Component)
+ 
+<span style="COLOR: #008000">' Create a complete Business Process Test
+</span> 
+<span style="COLOR: #008000">' This example creates a complete Business Process Test,
+' with BPComponents, groups, iterations and values.
+' For demonstration purposes, we create three BPComponents by
+' adding the same Component three times. In production code, of
+' course, you may add different Components.
+</span>    <span style="COLOR: #0000ff">Dim</span> myBPTest <span style="COLOR: #0000ff">As</span> BusinessProcess
+    <span style="COLOR: #0000ff">Dim</span> myBPComponent1 <span style="COLOR: #0000ff">As</span> BPComponent
+    <span style="COLOR: #0000ff">Dim</span> myBPComponent2 <span style="COLOR: #0000ff">As</span> BPComponent
+    <span style="COLOR: #0000ff">Dim</span> myBPComponent3 <span style="COLOR: #0000ff">As</span> BPComponent
+    <span style="COLOR: #0000ff">Dim</span> myBPGroup <span style="COLOR: #0000ff">As</span> BPGroup
+    <span style="COLOR: #0000ff">Dim</span> myTempIteration <span style="COLOR: #0000ff">As</span> BPIteration
+    <span style="COLOR: #0000ff">Dim</span> myTempIterationParam <span style="COLOR: #0000ff">As</span> BPIterationParam
+        
+<span style="COLOR: #008000">'Cast the input test to a BPTest and add the component three times.
+'  VisualBasic calls QueryInterface transparently to make this cast.
+'  Each addition creates another BPComponent object.
+</span>        
+    <span style="COLOR: #0000ff">Set</span> myBPTest = oTest
+    <span style="COLOR: #0000ff">Set</span> myBPComponent1 = myBPTest.AddBPComponent(oComponent)
+    myBPComponent1.order = 2
+    myBPComponent1.FailureCondition = <span style="COLOR: #800000">"Continue"</span>
+    
+    <span style="COLOR: #008000">' Adding a component to a Business Process Test automatically
+</span>    <span style="COLOR: #008000">'   adds an iteration and a BPIterationParam for each ComponentParam.
+</span>    <span style="COLOR: #008000">'   The parameters will be handled explicitly later in this routine,
+</span>    <span style="COLOR: #008000">'   so at this point, delete the parameters that were
+</span>    <span style="COLOR: #008000">'   added automatically.
+</span>    myBPComponent1.iterations.Item(1).DeleteIterationParams
+    myBPComponent1.iterations.Item(1).order = 0
+        
+    <span style="COLOR: #0000ff">Set</span> myBPComponent2 = myBPTest.AddBPComponent(oComponent)
+    myBPComponent2.order = 1
+    myBPComponent2.FailureCondition = <span style="COLOR: #800000">"Exit"</span>
+    myBPComponent2.iterations.Item(1).DeleteIterationParams
+    myBPComponent2.iterations.Item(1).order = 0
+        
+    <span style="COLOR: #0000ff">Set</span> myBPComponent3 = myBPTest.AddBPComponent(oComponent)
+    myBPComponent3.order = 3
+    myBPComponent3.FailureCondition = <span style="COLOR: #800000">"Exit"</span>
+    myBPComponent3.iterations.Item(1).DeleteIterationParams
+    myBPComponent3.iterations.Item(1).order = 0
+        
+<span style="COLOR: #008000">'Add the second and third BPComponents to a group.
+</span>    <span style="COLOR: #0000ff">Set</span> myBPGroup = myBPTest.AddGroup
+    myBPGroup.AddBPComponent myBPComponent3
+    myBPGroup.AddBPComponent myBPComponent1
+    
+<span style="COLOR: #008000">'Add iterations
+'   Add the same number of iterations to
+'   BPComponents of the same group, and add the Order values.
+</span>    <span style="COLOR: #0000ff">Set</span> myTempIteration = myBPComponent1.AddIteration
+    myTempIteration.order = 1
+    <span style="COLOR: #0000ff">Set</span> myTempIteration = myBPComponent1.AddIteration
+    myTempIteration.order = 2
+    
+    <span style="COLOR: #0000ff">Set</span> myTempIteration = myBPComponent2.AddIteration
+    myTempIteration.order = 1
+    <span style="COLOR: #0000ff">Set</span> myTempIteration = myBPComponent2.AddIteration
+    myTempIteration.order = 2
+    
+    <span style="COLOR: #0000ff">Set</span> myTempIteration = myBPComponent3.AddIteration
+    myTempIteration.order = 1
+    <span style="COLOR: #0000ff">Set</span> myTempIteration = myBPComponent3.AddIteration
+    myTempIteration.order = 2
+    
+<span style="COLOR: #008000">' Add a run time parameter to the test
+</span>    <span style="COLOR: #0000ff">Dim</span> myRTParam <span style="COLOR: #0000ff">As</span> RTParam
+    <span style="COLOR: #0000ff">Set</span> myRTParam = myBPTest.AddRTParam
+    myRTParam.name = <span style="COLOR: #800000">"RunTimeParam"</span>
+    myRTParam.ValueType = <span style="COLOR: #800000">"String"</span>
+    
+<span style="COLOR: #008000">'Handle group.
+'For each component in the group, for each iteration in the component:
+</span>    <span style="COLOR: #008000">' Set the value of the input parameters to the parameter's name
+</span>    <span style="COLOR: #008000">' concatenated to the component's index + iteration's index + parameter's index.
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> myTempBPParam <span style="COLOR: #0000ff">As</span> BPParameter
+    <span style="COLOR: #0000ff">Dim</span> myTempBPComponent <span style="COLOR: #0000ff">As</span> BPComponent
+    
+    <span style="COLOR: #0000ff">Dim</span> compIdx, iterIdx, paramIdx <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    compIdx = 1: iterIdx = 1: paramIdx = 1
+    
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> myTempBPComponent <span style="COLOR: #0000ff">In</span> myBPGroup.BPComponents
+        <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> myTempIteration <span style="COLOR: #0000ff">In</span> myTempBPComponent.iterations
+            <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> myTempBPParam <span style="COLOR: #0000ff">In</span> myTempBPComponent.BPParams
+                <span style="COLOR: #0000ff">Set</span> myTempIterationParam = myTempIteration.AddParam(myTempBPParam)
+                <span style="COLOR: #008000">' If input
+</span>                
+                <span style="COLOR: #0000ff">If</span> myTempBPParam.ComponentParamIsOut = 0 <span style="COLOR: #0000ff">Then</span>
+                    <span style="COLOR: #008000">' To make this a reference to a run-time parameter,
+</span>                    <span style="COLOR: #008000">' set the value to the name of the source run-time parameter
+</span>                    <span style="COLOR: #008000">' enclosed in curly brackets.
+</span>                    <span style="COLOR: #0000ff">If</span> compIdx = 2 <span style="COLOR: #0000ff">And</span> iterIdx = 1 <span style="COLOR: #0000ff">And</span> paramIdx = 1 <span style="COLOR: #0000ff">Then</span>
+                        myTempIterationParam.value = <span style="COLOR: #800000">"{"</span> &amp; myRTParam.name &amp; <span style="COLOR: #800000">"}"</span>
+                    <span style="COLOR: #0000ff">Else</span>
+                        <span style="COLOR: #008000">' If a constant value, set the value without curly brackets.
+</span>                        myTempIterationParam.value = _
+                            myTempBPParam.ComponentParamName &amp; _
+                            <span style="COLOR: #800000">"_"</span> &amp; compIdx &amp; _
+                            <span style="COLOR: #800000">"_"</span> &amp; iterIdx &amp; _
+                            <span style="COLOR: #800000">"_"</span> &amp; paramIdx
+                    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+                <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+                paramIdx = paramIdx + 1
+            <span style="COLOR: #0000ff">Next</span> myTempBPParam
+            paramIdx = 1
+            iterIdx = iterIdx + 1
+        <span style="COLOR: #0000ff">Next</span> myTempIteration
+        paramIdx = 1
+        iterIdx = 1
+        compIdx = compIdx + 1
+    <span style="COLOR: #0000ff">Next</span> myTempBPComponent
+    
+<span style="COLOR: #008000">'Handle the BPComponent that is not in the above group.
+' Add  parameters to the iterations of myBPComponent2,
+'   which is not in the group and therefore not handled
+'   in the above loop.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> myTempIteration <span style="COLOR: #0000ff">In</span> myBPComponent2.iterations
+        <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> myTempBPParam <span style="COLOR: #0000ff">In</span> myBPComponent2.BPParams
+            myTempIteration.AddParam myTempBPParam
+        <span style="COLOR: #0000ff">Next</span> myTempBPParam
+    <span style="COLOR: #0000ff">Next</span> myTempIteration
+        
+<span style="COLOR: #008000">' Connect an output parameter, myBPComponent2.BPParams.Item(3)to
+'   an input parameter myBPComponent1.BPParams.Item(1).
+'   This makes the value of the input parameter at runtime
+'   equal to the output parameter's value.
+'
+</span>    <span style="COLOR: #008000">' Before the connection can be created, delete any BPIterationParams
+</span>    <span style="COLOR: #008000">'   currently associated with the input parameter.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> myTempIteration <span style="COLOR: #0000ff">In</span> myBPComponent1.iterations
+        myTempIteration.DeleteParam myTempIteration.IterationParams.Item(1)
+    <span style="COLOR: #0000ff">Next</span> myTempIteration
+    <span style="COLOR: #008000">' Connect the output paramter to the input parameter.
+</span>    <span style="COLOR: #008000">' This connection applies to all iterations.
+</span>    myBPComponent1.BPParams.Item(1).Reference = myBPComponent2.BPParams.Item(3)
+                
+<span style="COLOR: #008000">' Save the Business Process Test
+</span>    myBPTest.Save
+
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</innovasys:widgetproperty>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Create business process test">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

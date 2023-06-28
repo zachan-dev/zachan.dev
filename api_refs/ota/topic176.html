@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Find a specified requirement in a specified folder</title>
+    <meta name="Title" content="Find a specified requirement in a specified folder"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Function GetReqByPath(fullPath$, _
+    Optional delimChar As String = &quot;\&quot;) _
+        As Req
+' Find a specified requirement in a specified folder
+
+' This function returns a Req object specified by " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="f0534083-770d-410a-84b1-c1acbfbe5646"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Find a specified requirement in a specified folder</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-abd40660-05a9-480e-af1a-ef2d83b7f606"></a></li>
+    </ul>
+
+    <div id="TabContent-abd40660-05a9-480e-af1a-ef2d83b7f606" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Function</span> GetReqByPath(fullPath$, _
+    <span style="COLOR: #0000ff">Optional</span> delimChar <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span> = <span style="COLOR: #800000">"\"</span>) _
+        <span style="COLOR: #0000ff">As</span> Req
+<span style="COLOR: #008000">' Find a specified requirement in a specified folder
+</span>
+<span style="COLOR: #008000">' This function returns a Req object specified by its
+' full path. For example:
+'
+'  Set r = GetReqByPath("SCRATCH\OTA_REQ_DEMO\OTA_S_O_1")
+'  returns the OTA_S_O_1 object.
+' A requirement name is not unique in the project, but it is
+'  unique as a direct child of another requirement.
+'  Therefore, these routine works by walking down the
+'  requirement tree along the fullPath until the requirement
+'  is found at the end of the path.
+'
+' If a backslash is not used as the folder delimiter, any other
+'   character can be passed in the delimChar argurment.
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> rFact <span style="COLOR: #0000ff">As</span> ReqFactory
+    <span style="COLOR: #0000ff">Dim</span> theReq <span style="COLOR: #0000ff">As</span> Req, ParentReq <span style="COLOR: #0000ff">As</span> Req
+    <span style="COLOR: #0000ff">Dim</span> ReqList <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> NodeArray() <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>, PathArray() <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    <span style="COLOR: #0000ff">Dim</span> WorkingDepth <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> GetReqByPathErr
+    
+<span style="COLOR: #008000">' Trim the fullPath and strip leading and trailing delimiters.
+</span>    fullPath = <span style="COLOR: #0000ff">Trim</span>(fullPath)
+    <span style="COLOR: #0000ff">Dim</span> pos%, ln%
+    pos = <span style="COLOR: #0000ff">InStr</span>(1, fullPath, delimChar)
+    <span style="COLOR: #0000ff">If</span> pos = 1 <span style="COLOR: #0000ff">Then</span>
+        fullPath = <span style="COLOR: #0000ff">Mid</span>(fullPath, 2)
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    ln = <span style="COLOR: #0000ff">Len</span>(fullPath)
+    pos = <span style="COLOR: #0000ff">InStr</span>(ln - 1, fullPath, delimChar)
+    <span style="COLOR: #0000ff">If</span> pos &gt; 0 <span style="COLOR: #0000ff">Then</span>
+        fullPath = <span style="COLOR: #0000ff">Mid</span>(fullPath, 1, ln - 1)
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+<span style="COLOR: #008000">' Get an array of requirements, and the length
+' of the path.
+</span>    NodeArray = <span style="COLOR: #0000ff">Split</span>(fullPath, delimChar)
+    <span style="COLOR: #008000">'WorkingDepth = UBound(NodeArray)
+</span>    
+<span style="COLOR: #008000">' Walk down the tree.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> rFact = tdc.ReqFactory
+    <span style="COLOR: #0000ff">For</span> WorkingDepth = <span style="COLOR: #0000ff">LBound</span>(NodeArray) <span style="COLOR: #0000ff">To</span> <span style="COLOR: #0000ff">UBound</span>(NodeArray)
+    <span style="COLOR: #008000">' First time, find under the root (-1).
+</span>    <span style="COLOR: #008000">'After that, under the previous requirement found: ParentReq.ID
+</span>        <span style="COLOR: #0000ff">If</span> WorkingDepth = <span style="COLOR: #0000ff">LBound</span>(NodeArray) <span style="COLOR: #0000ff">Then</span>
+            <span style="COLOR: #0000ff">Set</span> ReqList = rFact.Find(-1, <span style="COLOR: #800000">"RQ_REQ_NAME"</span>, _
+                    NodeArray(WorkingDepth), TDREQMODE_FIND_EXACT)
+        <span style="COLOR: #0000ff">Else</span>
+            <span style="COLOR: #0000ff">Set</span> ReqList = rFact.Find(ParentReq.ID, <span style="COLOR: #800000">"RQ_REQ_NAME"</span>, _
+                    NodeArray(WorkingDepth), TDREQMODE_FIND_EXACT)
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+        
+        <span style="COLOR: #0000ff">If</span> ReqList.Count = 0 <span style="COLOR: #0000ff">Then</span>
+                <span style="COLOR: #0000ff">Set</span> GetReqByPath = <span style="COLOR: #0000ff">Nothing</span>
+                <span style="COLOR: #0000ff">Exit Function</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+        
+        <span style="COLOR: #008000">' Delete parent. Each loop has to find it again.
+</span>        <span style="COLOR: #0000ff">Set</span> ParentReq = <span style="COLOR: #0000ff">Nothing</span>
+        <span style="COLOR: #0000ff">Dim</span> strItem$, reqID&amp;, strID$, thePath$
+        
+        <span style="COLOR: #008000">'Get a single string from the list returned
+</span>        <span style="COLOR: #008000">'by ReqFactory.Find. We know it's the first
+</span>        <span style="COLOR: #008000">'item because the filter can only return one
+</span>        <span style="COLOR: #008000">'item that exactly matches the RQ_REQ_NAME.
+</span>        strItem = ReqList(1)
+        
+        <span style="COLOR: #008000">' ReqFactory.Find returns a List
+</span>        <span style="COLOR: #008000">' of strings of format: ID,Name.
+</span>        <span style="COLOR: #008000">' For example "9,Products/Services On Sale"
+</span>        <span style="COLOR: #008000">' Extract the ID from the string by splitting the
+</span>        <span style="COLOR: #008000">' string at the comma.
+</span>        pos = <span style="COLOR: #0000ff">InStr</span>(strItem, <span style="COLOR: #800000">","</span>)
+        strID = <span style="COLOR: #0000ff">Mid</span>(strItem, 1, pos - 1)
+        
+        <span style="COLOR: #008000">' Convert the ID to a long, and get the object
+</span>        reqID = <span style="COLOR: #0000ff">CLng</span>(strID)
+        <span style="COLOR: #0000ff">Set</span> theReq = rFact.Item(reqID)
+        
+        <span style="COLOR: #008000">'Now check that the object is at the correct depth.
+</span>        <span style="COLOR: #008000">'If so, we've found the requirement. On the next loop,
+</span>        <span style="COLOR: #008000">'we'll look from here down.
+</span>        thePath = theReq.Path
+        PathArray = <span style="COLOR: #0000ff">Split</span>(thePath, <span style="COLOR: #800000">"\"</span>)
+<span style="COLOR: #008000">'            Debug.Print "Number of elements is " &amp; UBound(PathArray)
+'            Debug.Print theReq.ID, theReq.Name
+</span>        <span style="COLOR: #0000ff">Set</span> ParentReq = theReq
+        <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">UBound</span>(PathArray) = WorkingDepth <span style="COLOR: #0000ff">Then</span>
+            <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+
+        <span style="COLOR: #0000ff">If</span> ParentReq <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+    <span style="COLOR: #0000ff">Next</span> WorkingDepth
+    
+    <span style="COLOR: #0000ff">Set</span> GetReqByPath = ParentReq
+<span style="COLOR: #0000ff">Exit Function</span>
+GetReqByPathErr:
+    <span style="COLOR: #0000ff">Set</span> GetReqByPath = <span style="COLOR: #0000ff">Nothing</span>
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Find a specified requirement in a specified folder">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

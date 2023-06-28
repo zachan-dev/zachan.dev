@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Delete a test attachment</title>
+    <meta name="Title" content="Delete a test attachment"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Private Function DeleteTestAttachment(theTest As TDAPIOLELib.Test, _
+    AttachmentName As String) As Boolean
+    
+' Delete a test attachment
+    
+' This routine deletes the attachment of the test
+'   t" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="1f04396c-dfca-4fed-9c37-bd87e237bb8d"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Delete a test attachment</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-2ba6e20c-e18a-42c3-aba3-56fa05f05afe"></a></li>
+    </ul>
+
+    <div id="TabContent-2ba6e20c-e18a-42c3-aba3-56fa05f05afe" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Private</span> <span style="COLOR: #0000ff">Function</span> DeleteTestAttachment(theTest <span style="COLOR: #0000ff">As</span> TDAPIOLELib.Test, _
+    AttachmentName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>) <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+    
+<span style="COLOR: #008000">' Delete a test attachment
+</span>    
+<span style="COLOR: #008000">' This routine deletes the attachment of the test
+'   that best matches the AttachmentName.
+'   Attachment name may contain the wildcard "*"
+' To see how to get a test object with the name
+' and path, see the Test example:
+'   "Get a test object with name and path"
+</span>
+
+    <span style="COLOR: #0000ff">Dim</span> TestAttachFact <span style="COLOR: #0000ff">As</span> AttachmentFactory
+    <span style="COLOR: #0000ff">Dim</span> attachList <span style="COLOR: #0000ff">As</span> List, TAttach <span style="COLOR: #0000ff">As</span> Attachment
+    <span style="COLOR: #0000ff">Dim</span> theAttachment <span style="COLOR: #0000ff">As</span> Attachment
+    <span style="COLOR: #0000ff">Dim</span> AttachFilter <span style="COLOR: #0000ff">As</span> TDFilter
+    <span style="COLOR: #0000ff">Dim</span> FileName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+    DeleteTestAttachment = SUCCESS
+    
+<span style="COLOR: #008000">'---------------------------------------------
+' Use Test.Attachments to get the AttachmentFactory.
+</span>    <span style="COLOR: #0000ff">Set</span> TestAttachFact = theTest.Attachments
+<span style="COLOR: #008000">'-------------------------
+' Get the filter to find AttachmentName.
+</span>    <span style="COLOR: #0000ff">Set</span> AttachFilter = TestAttachFact.Filter
+<span style="COLOR: #008000">' Because the server files are concatenations
+' of:
+'   "Test_#_"
+' and
+'   the file name as seen in the UI
+' the name must start with "*"
+</span>    AttachmentName = <span style="COLOR: #0000ff">Trim</span>(AttachmentName)
+    <span style="COLOR: #0000ff">Dim</span> pos%
+    pos = <span style="COLOR: #0000ff">InStr</span>(1, AttachmentName, <span style="COLOR: #800000">"*"</span>)
+    <span style="COLOR: #0000ff">If</span> pos = 1 <span style="COLOR: #0000ff">Then</span>
+        AttachFilter.Filter(<span style="COLOR: #800000">"CR_REFERENCE"</span>) = _
+            AttachmentName
+    <span style="COLOR: #0000ff">Else</span>
+        AttachFilter.Filter(<span style="COLOR: #800000">"CR_REFERENCE"</span>) = _
+            <span style="COLOR: #800000">"*"</span> &amp; AttachmentName
+    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    
+<span style="COLOR: #008000">'-------------------------
+' Find the attachment
+</span>    <span style="COLOR: #0000ff">Set</span> attachList = _
+        TestAttachFact.NewList(AttachFilter.Text)
+<span style="COLOR: #008000">' There may be more that one match for *AttachmentName.
+'   For example, Test_99_AttachmentName and
+'   Test_99_SomeMoreChars_AttachmentName.
+' For this example, we take the shortest name
+'   as the best match.
+</span>    <span style="COLOR: #0000ff">Dim</span> minLength <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>
+    minLength = 32000
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> TAttach <span style="COLOR: #0000ff">In</span> attachList
+        <span style="COLOR: #0000ff">With</span> TAttach
+            <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">Len</span>(.name) &lt; minLength <span style="COLOR: #0000ff">Then</span>
+                minLength = <span style="COLOR: #0000ff">Len</span>(.name)
+                <span style="COLOR: #0000ff">Set</span> theAttachment = TAttach
+            <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #008000">'-------------------------
+' If the item is found, use the AttachmentFactory
+'   to delete it.
+</span>    <span style="COLOR: #0000ff">If</span> theAttachment <span style="COLOR: #0000ff">Is</span> <span style="COLOR: #0000ff">Nothing</span> <span style="COLOR: #0000ff">Then</span>
+        errmsg = <span style="COLOR: #800000">"Attachment "</span> &amp; AttachmentName &amp; <span style="COLOR: #800000">" not found"</span>
+        ErrHandler Null, <span style="COLOR: #800000">"DeleteTestAttachment"</span>, errmsg, NON_FATAL_ERROR
+        
+    <span style="COLOR: #0000ff">Else</span>
+<span style="COLOR: #008000">'        Dim msg$, rc
+'        msg = "Do you want to delete" _
+'            &amp; vbCrLf &amp; theAttachment.name _
+'            &amp; vbCrLf &amp; " from  test " _
+'            &amp; vbCrLf &amp; theTest.name _
+'            &amp; "(ID " &amp; theTest.ID &amp; ")?"
+'        rc = MsgBox(msg, vbYesNo)
+'        If rc = vbYes Then
+'-----------------------------------------------------
+</span>            <span style="COLOR: #0000ff">Dim</span> vControl <span style="COLOR: #0000ff">As</span> VCS
+            <span style="COLOR: #0000ff">Dim</span> CheckOutOK <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Boolean</span>
+            
+            <span style="COLOR: #0000ff">Set</span> vControl = CheckoutTest(theTest, <span style="COLOR: #800000">"Check out for attachments"</span>, CheckOutOK)
+            <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">Not</span> CheckOutOK <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+            
+<span style="COLOR: #008000">' Use AttachmentFactory.RemoveItem to delete the item.
+</span>            TestAttachFact.RemoveItem (theAttachment.ID)
+            
+            <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">Not</span> CheckinTest(vControl, <span style="COLOR: #800000">"Finished attaching files"</span>) <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #0000ff">GoTo</span> FUNC_ERR
+<span style="COLOR: #008000">'        End If
+</span>    <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+
+<span style="COLOR: #0000ff">Exit Function</span>
+FUNC_ERR:
+     DeleteTestAttachment = FAILURE
+<span style="COLOR: #0000ff">End Function</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Delete a test attachment">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

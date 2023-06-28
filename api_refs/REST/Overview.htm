@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Overview</title>
+    <meta name="Title" content="Overview"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="Using the REST API, you can create a client application that creates, reads, updates, and deletes data on the ALM (Application Lifecycle Management) platform. Without any coding, you can also use a browser as your client to read information from ALM." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="fdd77a4c-c459-45e9-8087-7afb0b9e5101"/>
+    <meta name="Microsoft.Help.TocParent" content="-1"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Overview</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <p>Using the REST API, you can create a client application that creates, reads, updates, and deletes&nbsp;data on the ALM (Application Lifecycle Management) platform. Without any coding, you can also use a browser as your client to read information from ALM.</p>
+
+<p>The REST API is for use by web programmers familiar with RESTful API technology.</p>
+
+<p>Before working with this API, read the <a href="General_Notes_and_Limitations.htm">General Notes and Limitations</a>.</p>
+
+<p>Before working with data, the user must be authenticated (logged on) and a session opened. See&nbsp;<a href="Authenticate.htm" data-auto-update-caption="true">Authenticate</a> and <a href="Manage_Sessions.htm" data-auto-update-caption="true">Manage Sessions</a>.</p>
+
+<p>Data is available as instance and collection resources. An instance is a complete functional unit of information. Instances are members of collections. An instance is identified by the collection it belongs to and its ID. For example, ..<code>/defects/23</code>.</p>
+
+<p>Most data is passed and returned in JSON format. Some resources support or require other formats. The resource-specific details are in each resource's reference page. To specify the format for the return value, use an <cite>Accept</cite> header. To specify the format for submitted data, use a <cite>Content-Type</cite> header. The header value is usually <code>application/json</code>.</p>
+
+<p>When getting a collection, the results can be filtered, ordered, and grouped by different fields. See&nbsp;<a href="Collections.htm" data-auto-update-caption="true">Collections</a>.</p>
+
+<p>The data is returned in pages. The client application must request each page. The first page is returned by the first GET. See&nbsp;<a href="Data_Paging.htm" data-auto-update-caption="true">Data Paging</a>.</p>
+
+<p>Changing&nbsp; data:</p>
+
+<ul>
+    <li>An instance is created with a POST on a collection.</li>
+
+    <li>An existing instance is changed with a PUT operation on the specific entity.</li>
+
+    <li>An instance is deleted with a DELETE on the specific entity.</li>
+</ul>
+
+<p>For more detail on changing data, see&nbsp;<a href="Instances.htm" data-auto-update-caption="true">Instances</a>.</p>
+
+<p>In addition to entity and entity collection resources, there are general resources such as:</p>
+
+<ul>
+    <li value="2">utility resources such as attachments, locks, and so on</li>
+
+    <li value="3">general resources that apply to the whole site, to all collections, or to the session</li>
+</ul>
+
+<h2>List of Resources</h2>
+
+<p>See&nbsp;<a href="Resources.htm" data-auto-update-caption="true">REST Resources in this API</a></p>
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><div class="SeeAlsoLink">
+<a href="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">ECMA-404 The JSON Data Interchange Standard </a></div>
+<div class="SeeAlsoLink">
+<a href="http://tools.ietf.org/">The Internet Engineering Task Force. For HTTP, see RFCs (7230-7237)</a></div>
+<div class="SeeAlsoLink">
+<a href="http://www.json.org/">Introducing JSON (json.org)</a></div>
+<div class="SeeAlsoLink">
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Network Working Group RFC 2616 Section 10: Status Code Definitions</a></div>
+
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Overview">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

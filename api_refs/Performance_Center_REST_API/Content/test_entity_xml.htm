@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Performance_Center_REST_API.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Resources|tests (Create a performance test)">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>test entity XML</title>
+        <!-- WEBHELP-ONLY: The following statement fixes cropping errors when customers use IE7 at 120 dpi (for example, list numbering problems) -->
+        <!--[if lt IE 8]>
+            <style type="text/css"> 
+                body
+                {
+                        padding-left: 16px;
+                }
+            </style>
+         <![endif]-->
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" data-mc-generated="True" />
+        <style>
+			p.footerlink  
+			{
+
+			font-size: 85%;
+			text-align: right;
+			}
+
+			<!--QCCR1K4344--></style>
+        <link href="Resources/Stylesheets/_HP_IE_Experience.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Performance_Center_REST_API.htm#test_entity_xml.htm">Open topic with navigation</a>
+        </p>
+        <h1>test entity XML</h1>
+        <p> The elements of the XML are:</p>
+        <table style="width: 100%;">
+            <col />
+            <col style="width: 722px;" />
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Controller</td>
+                    <td>Optional. If not passed in the request, the value is set to <code>dedicated</code>, meaning that <span class="PC_API_VarsPC_Short">Performance Center</span> assigns a controller  at the beginning of the test execution.</td>
+                </tr>
+                <tr>
+                    <td>Groups/Group [1..n]</td>
+                    <td>Required.</td>
+                </tr>
+                <tr>
+                    <td>Groups/Group/Name</td>
+                    <td>Any group name valid in <span class="PC_API_VarsLR">LoadRunner</span>.</td>
+                </tr>
+                <tr>
+                    <td>Groups/Group/RTS</td>
+                    <td>An XML segment containing the data used to define Run Time Settings. See <a href="RTS_entity_xml.htm" class="MCXref xref">Run-time Settings XML</a></td>
+                </tr>
+                <tr>
+                    <td>Groups/Group/Scheduler</td>
+                    <td>Required if schedule is by group. The sub-elements of the group scheduler are the same as for a global scheduler. See below, <code>Scheduler/*</code>.</td>
+                </tr>
+                <tr>
+                    <td>Groups/Group/Script/ID</td>
+                    <td>Script ID.</td>
+                </tr>
+                <tr>
+                    <td>Groups/Group/Vusers</td>
+                    <td>
+                        <p>If the test is scheduled by scenario  and the vusers distribution is by number, value is a positive integer. </p>
+                        <p>If the vusers distribution is by percentage, value is 0-100.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LGDistribution/Amount</td>
+                    <td>Required if LGDistribution/Type is <code>all to each group</code>. Non-negative integer.</td>
+                </tr>
+                <tr>
+                    <td>LGDistribution/Type</td>
+                    <td>
+                        <p>Required. One of:</p>
+                        <ul>
+                            <li value="1">
+                                <p>all to each group</p>
+                            </li>
+                            <li value="2">
+                                <p>manual</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Scheduler</td>
+                    <td>Global scheduler. The same element can appear under Groups/Group/Scheduler.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Scheduler/Actions/Action [1..n]</p>
+                        <p>Scheduler actions are affected by the <code>WorkloadType/Type</code>. See the Description of <code>WorkloadType/Type</code>.</p>
+                    </td>
+                    <td>
+                        <p>An action contains exactly one element. The contained element is one of:</p>
+                        <ul>
+                            <li value="1">Duration</li>
+                            <li value="2">Initialize</li>
+                            <li value="3">StartGroup</li>
+                            <li value="4">StartVusers</li>
+                            <li value="5">StopVusers</li>
+                        </ul>
+                        <p>See descriptions of these elements in the following rows.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/Duration</td>
+                    <td>
+                        <p>The Duration <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="indefinitely"</li>
+                            <li value="2">Type="run for"</li>
+                            <li value="3">Type="until complete"</li>
+                        </ul>
+                        <p>If the workload type is <code>Real-World</code>, use Type="run for".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/Duration<br />						&#160;&#160;&#160;&#160; /TimeInterval/Hours<br />						&#160;&#160;&#160;&#160; /TimeInterval/Minutes<br />						&#160;&#160;&#160;&#160; /TimeInterval/Seconds</td>
+                    <td>The time interval. Non-negative integers.</td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/Initialize</td>
+                    <td>Required once for every scheduler. Must be the first action in a global scheduler or the second action in a group scheduler.<p>The Initialize <code>Type</code> attribute is one of:</p><ul><li value="1">Type="gradually"</li><li value="2">Type="just before vuser runs"</li><li value="3">Type="simultaneously"</li></ul></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Scheduler/Actions/Action/Initialize<br />						&#160;&#160;&#160;&#160; /TimeInterval/Hours<br />						&#160;&#160;&#160;&#160; /TimeInterval/Minutes<br />						&#160;&#160;&#160;&#160; /TimeInterval/Seconds<br /></p>
+                    </td>
+                    <td>The time interval. Non-negative integers.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Scheduler/Actions/Action/Initialize<br />						&#160;&#160;&#160;&#160; /WaitAfterInit/Hours<br />						&#160;&#160;&#160;&#160; /WaitAfterInit/Minutes<br />						&#160;&#160;&#160;&#160; /WaitAfterInit/Seconds<br /></p>
+                    </td>
+                    <td>The time to wait after initialization. Non-negative integers.</td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/StartGroup</td>
+                    <td>
+                        <p>Valid only if the test scheduler is set to by group. Each scheduler has only one definition for the StartGroup action. </p>
+                        <p>Cyclic start actions are invalid. For example, if group A starts after group B and group C starts after group B, group A cannot start after group C.</p>
+                        <p>The StartGroup <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="immediately"</li>
+                            <li value="2">Type="with delay"</li>
+                            <li value="3">Type="when group finishes"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Scheduler/Actions/Action/StartGroup<br />						&#160;&#160;&#160;&#160; /TimeInterval/Hours<br />						&#160;&#160;&#160;&#160; /TimeInterval/Minutes<br />						&#160;&#160;&#160;&#160; /TimeInterval/Seconds<br /></p>
+                    </td>
+                    <td>The time interval. Non-negative integers.</td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/StartGroup/Name</td>
+                    <td>Any group name valid in <span class="PC_API_VarsLR">LoadRunner</span>.</td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/StartVusers</td>
+                    <td>
+                        <p>The StartVusers <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="simultaneously"</li>
+                            <li value="2">Type="gradually"</li>
+                        </ul>
+                        <p>Populate this element according to Workload type and the StartVusers type.</p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: bold;">&#160;&#160;&#160;&#160;&#160;&#160;Workload type /<br />StartVusers type</td>
+                                    <td style="font-weight: bold;">basic</td>
+                                    <td style="font-weight: bold;">real-world</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;">simultaneously</td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">basic/simultaneously<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="simultaneously"</span><span style="COLOR: #0000ff">/&gt;</span></code></span></a>
+                                    </td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">real-world/simultaneously<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="simultaneously"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StartVusers</span><span style="COLOR: #0000ff">&gt;</span><br /></code></span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;">gradually</td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">basic/gradually<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="gradually"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>3<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StartVusers</span><span style="COLOR: #0000ff">&gt;</span><br /></code><br /> </span></a>
+                                    </td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">real-world/gradually<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="gradually"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>3<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StartVusers</span><span style="COLOR: #0000ff">&gt;</span><br /></code><br /> </span></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Scheduler/Actions/Action/StopVusers</td>
+                    <td>
+                        <p>The StopVusers <code>Type</code> attribute is one of:</p>
+                        <ul>
+                            <li value="1">Type="simultaneously"</li>
+                            <li value="2">Type="gradually"</li>
+                        </ul>
+                        <p>Populate this element according to the Workload type and StopVusers type.</p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: bold;">&#160;&#160;&#160;&#160;&#160;&#160;Workload type /<br />StopVusers type</td>
+                                    <td style="font-weight: bold;">basic</td>
+                                    <td style="font-weight: bold;">real-world</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;">simultaneously</td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">basic/simultaneously<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StopVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="simultaneously"</span><span style="COLOR: #0000ff">/&gt;</span></code></span></a>
+                                    </td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">real-world/simultaneously<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StopVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="simultaneously"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StopVusers</span><span style="COLOR: #0000ff">&gt;</span><br /></code></span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;">gradually</td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">basic/gradually<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StopVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="gradually"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>3<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StopVusers</span><span style="COLOR: #0000ff">&gt;</span><br /></code><br /></span></a>
+                                    </td>
+                                    <td><a href="javascript:void(0);" class="MCTextPopup popup popupHead">real-world/gradually<span class="MCTextPopupBody MCTextPopupBody_Closed needs-pie popupBody"><span class="MCTextPopupArrow"></span><code><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StopVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="gradually"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>3<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StopVusers</span><span style="COLOR: #0000ff">&gt;</span><br /></code><br /></span></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>WorkloadType/SubType</td>
+                    <td>
+                        <p>Required. One of:</p>
+                        <ul>
+                            <li value="1">by test</li>
+                            <li value="2">by group</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>WorkloadType/Type</td>
+                    <td>
+                        <p>Required. One of:</p>
+                        <ul>
+                            <li value="1">basic</li>
+                            <li value="2">real-world</li>
+                        </ul>
+                        <p>The workload type affects the <code>Scheduler/Actions</code>. If the workload type is <code>basic</code>, there can be only one action each of types <code>StartVusers</code>, <code>Duration</code>, and <code>StopVusers</code>, and these actions must be in exactly that order.</p>
+                        <p> If the workload type is <code>real-world</code>, any order of actions is valid. However, we recommend that <code>StartVusers</code> be before <code>StopVusers</code>.</p>
+                        <p>If the workload type is <code>real-world</code>, you must set the number of vusers to start.  At all times, the number of started vusers must be greater than or equal to the number of stopped vusers .</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>WorkloadType/VusersDistributionMode</td>
+                    <td>
+                        <p>Required if WorkloadType/SubType is <code>by test</code>. One of:</p>
+                        <ul>
+                            <li value="1">
+                                <p>by number</p>
+                            </li>
+                            <li value="2">
+                                <p>by percentage</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_"><img class="MCDropDown_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Closed" data-mc-alt2="Open" />Example</a></span>
+            <div class="MCDropDownBody dropDownBody"><pre><span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Test </span><span style="COLOR: #ff0000">xmlns</span><span style="COLOR: #0000ff">="http://www.hp.com/PC/REST/API"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Name</span><span style="COLOR: #0000ff">&gt;</span>java_client_test_4<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Name</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TestFolderPath</span><span style="COLOR: #0000ff">&gt;</span>Subject\Tests<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TestFolderPath</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Content</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">WorkloadType</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Type</span><span style="COLOR: #0000ff">&gt;</span>real-world<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Type</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">SubType</span><span style="COLOR: #0000ff">&gt;</span>by test<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">SubType</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">VusersDistributionMode</span><span style="COLOR: #0000ff">&gt;</span>by percentage<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">VusersDistributionMode</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">WorkloadType</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">LGDistribution</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Type</span><span style="COLOR: #0000ff">&gt;</span>all to each group<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Type</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Amount</span><span style="COLOR: #0000ff">&gt;</span>5<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Amount</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">LGDistribution</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Groups</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Group</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Name</span><span style="COLOR: #0000ff">&gt;</span>login_logout<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Name</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Script</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ID</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">ID</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Script</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">RTS</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Pacing</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">NumberOfIterations</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">NumberOfIterations</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartNewIteration </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="immediately"</span><span style="COLOR: #0000ff">/&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Pacing</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">ThinkTime </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="replay"</span><span style="COLOR: #0000ff">/&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Log </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="standard"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">LogOptions </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="on error"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">CacheSize</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">CacheSize</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">LogOptions</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Log</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">RTS</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Group</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Groups</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Scheduler</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Actions</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Initialize </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="just before vuser runs"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>0.0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Initialize</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StartVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="gradually"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>100<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Days</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Days</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>10<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StartVusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Duration </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="run for"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Days</span><span style="COLOR: #0000ff">&gt;</span>1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Days</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>3<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>4<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Duration</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">StopVusers </span><span style="COLOR: #ff0000">Type</span><span style="COLOR: #0000ff">="gradually"</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Days</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Days</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Hours</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Minutes</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span>20<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Seconds</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">TimeInterval</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span>2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Vusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Ramp</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">StopVusers</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Action</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Actions</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Scheduler</span><span style="COLOR: #0000ff">&gt;</span><br />&#160;&#160;&#160;&#160;<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Content</span><span style="COLOR: #0000ff">&gt;</span><br /><span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Test</span><span style="COLOR: #0000ff">&gt;</span><br /></pre>
+            </div>
+        </div>
+        <h2>See Also</h2>
+        <p><a href="test_creation.htm" class="MCXref xref">tests</a>
+            <br /><a href="test.htm" class="MCXref xref">tests/{ID}</a>
+        </p>
+        <!-- hr = horizontal rule -->
+        <hr width="100%" size="0" align="center" padding-bottom="0" style="clear:both" />
+        <table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td style="border: none; border-collapse: collapse;">
+                        <p id="Copyright" style="font-size: 85%; text-align: left;direction: ltr;"><a href="Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2004 - 2015</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                        </p>
+                    </td>
+                    <td style="border: none;">
+                        <div id="Feedback">
+                            <p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Documentation Feedback</a>
+                            </p>
+                            <!-- Localizable -->
+                            <div id="hp-feedbackDiv" class="MCTextPopupBody" style="display:none; word-wrap:break-word;">
+                                <div style="position: absolute;top: 2px;right: 2px;text-align: right;"><a href="javascript:closeFeedback();" id="hp-feedbackClose">Close</a>
+                                </div>
+                                <div style="text-align:left">
+                                    <!-- Localizable -->
+                                    <p style="font-weight: bold; margin-top: 1.0em;">Send us feedback</p>
+                                    <p style="margin-top: 1.0em;font-weight: normal;">Can we improve our help? Tell us how! <br /></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                    <p>Send us an email with the following information:</p>
+                                    <!-- Localizable -->
+                                    <div id="hp-feedbackBody">
+                                        <br />
+                                        <br />Product name: <span id="hp-feedbackProduct"></span><span id="hp-feedbackAcronym"></span>&#160;<span id="hp-feedbackVersion"></span><br /><br />Topic title: <span id="hp-feedbackTopic"></span><br /><br />Your feedback<br /><br /><br /><br /></div>
+                                    <p>Send the email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen" style="color: #0066CC;">docteam@hpe.com</a></p>
+                                    <!-- Localizable -->
+                                    <hr />
+                                </div>
+                            </div>
+                            <div style="display:none;" id="hp-feedback-variables" productName="ALM Performance Center REST API Reference" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="test entity XML" skinLine1="ALM Performance Center REST API Reference" skinLine2="">&#160;
+		<p style="display:none;"><script src="Resources/MasterPages/_HP_Feedback.js"></script></p></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--QCCR1K4298 START-->
+        <div style="display:none;" id="HPb-Branding-Variables" Footer="Yes" Feedback="Yes">&#160;
+		</div>
+        <script>/* <![CDATA[ */
+			var BrandingVariables = document.getElementById("HPb-Branding-Variables");
+			if(BrandingVariables.getAttribute('Footer')=="No"){document.getElementById('Copyright').style.display = 'none';}
+			if(BrandingVariables.getAttribute('Feedback')=="No"){document.getElementById('Feedback').style.display = 'none';}
+		/* ]]> */</script>
+        <!--QCCR1K4298 END-->
+        <p> <a href="Resources/MasterPages/_HP_aboutSearch_WebHelp.htm" style="visibility: hidden;"></a></p>
+    </body>
+</html>

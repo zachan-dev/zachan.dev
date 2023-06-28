@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+
+    <title>td.STEP Table</title>
+    <meta name="Title" content=""/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.db.2012.css" data-mshv2-stylesheet="/stylesheets/dx.db.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.db.2012.mshv1.css" />
+    <script src="script/dx.db.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.db.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="Project Data Tables_db~s-td~t-STEP"/>
+    <meta name="Description" content="Test steps performed during a test instance run." />
+    
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/responsive.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/modernizr.custom.min.js" type="text/javascript"></script>
+    <script src="script/responsive.js" type="text/javascript"></script>
+    <script src="script/responsive.navigationheader.js" type="text/javascript"></script>
+    <script src="script/responsive.dx.db.loader.js" type="text/javascript" Id="responsive-marker"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Project Database Reference (12.50 and later)</div>
+        <div id="PageTitle"><div id="PageTitleText">td.STEP Table</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="topic25.html">Project Data Tables Database</a>
+ > <a href="topic27.html">td Schema</a>
+ : td.STEP Table</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Test steps performed during a test instance run.</div></div>
+			
+            <!-- type="FilteredItemList" scrap="PROPERTY_LIST" namespace="property" source="Item" filter="" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=properties,caption=$$properties$$%%%%filtereditemlist%%</div>" --><!--properties --><!-- end -->
+            <div class="SectionHeading" id="columnsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Columns</span></div><div id="columnsSectionContent" class="SectionContent"><table class="ColumnListTable"><tr><th align=middle>&nbsp;</th><th NOWRAP class="pivot-column">Column Name</th><th NOWRAP>Description</th><th NOWRAP>Datatype</th><th NOWRAP>Length</th><th NOWRAP>Allow Nulls</th><th NOWRAP>Default</th><th NOWRAP>Formula</th></tr>
+<tr><td Class=centered NOWRAP><img alt="Primary Key" src="dbimages/primarykey.gif">&nbsp;</td><td class="LinkCell"><STRONG>ST_ID</STRONG></td><td class="DescriptionCell">The record ID.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_RUN_ID</STRONG></td><td class="DescriptionCell">The&nbsp;<a href="topic495.html">RUN.RN_RUN_ID</a> of the test instance run to which this step belongs.</td><td>int</td><td>4</td><td Class="Centered">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_STEP_NAME</STRONG></td><td class="DescriptionCell">The name of the test step.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_STATUS</STRONG></td><td class="DescriptionCell"><p>The status of the test step.</p>
+
+<p>The values are from the Status custom list.<br />
+Typical values are: Not Completed, No Run, Passed, N/A, Failed.</p></td><td>varchar</td><td>70</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_EXECUTION_DATE</STRONG></td><td class="DescriptionCell">The date on which the test step was executed.</td><td>datetime</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_EXECUTION_TIME</STRONG></td><td class="DescriptionCell">The time at which the test step was executed.</td><td>varchar</td><td>10</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_DESCRIPTION</STRONG></td><td class="DescriptionCell">The step description.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_EXPECTED</STRONG></td><td class="DescriptionCell">The expected result of the test step.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_ACTUAL</STRONG></td><td class="DescriptionCell">The actual result of the test step.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_PATH</STRONG></td><td class="DescriptionCell">The folder of the test script containing the test step.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_LINE_NO</STRONG></td><td class="DescriptionCell">The line number on which the step appears in the test script.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_USER_01</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_USER_02</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_USER_03</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_USER_04</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_USER_05</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_USER_06</STRONG></td><td class="DescriptionCell">User-defined field.</td><td>varchar</td><td>40</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_STEP_ORDER</STRONG></td><td class="DescriptionCell">The order in which the step appears within the test.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_DESSTEP_ID</STRONG></td><td class="DescriptionCell">The&nbsp;<a href="topic233.html">DESSTEPS.DS_ID</a> of the design step on which the test step is based.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_ATTACHMENT</STRONG></td><td class="DescriptionCell">A value of Y indicates that the step has at least one attachment.</td><td>varchar</td><td>1</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_TEST_ID</STRONG></td><td class="DescriptionCell">The <a href="topic564.html">TEST.TS_TEST_ID</a> of the test to which the step belongs.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_OBJ_ID</STRONG></td><td class="DescriptionCell"><p>The type of manual step when running test manually. The values are:</p>
+
+<p>0 - Test, 1 - Test iteration, 2 - Group, 3 - Group iteration, 4- Inner Component, 5 - Leaf Component, 6 - Component iteration, 7 - Component Step, 8 - Test instance iteration.</p></td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_LEVEL</STRONG></td><td class="DescriptionCell">The depth in the manual runner tree. Tests in the root are level 0.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_EXTENDED_REFERENCE</STRONG></td><td class="DescriptionCell"><p>For backward compatibility. Field may be removed in future version.</p></td><td>varchar</td><td>50</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_COMPONENT_DATA</STRONG></td><td class="DescriptionCell"><p>For backward compatibility. Field may be removed in future version.</p></td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_PARENT_ID</STRONG></td><td class="DescriptionCell">The record ID of the parent node in the tree. For a component step, for example, the ID of the component that includes the step, which is also the parent node of the step in the manual runner tree.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_BPTA_CONDITION</STRONG></td><td class="DescriptionCell">The business process run condition in XML.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_REL_OBJ_ID</STRONG></td><td class="DescriptionCell">If the step represents a BPTEST_TO_COMPONENT entity, the <a href="topic132.html">BPTEST_TO_COMPONENTS.BC_ID</a>.</td><td>int</td><td>4</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_BPT_PATH</STRONG></td><td class="DescriptionCell">The highest level node has path AAA. Each child node down the tree inherits the parent path and adds three letters,where the current level numeration is concatenated to the inherited path. For example, the child requirements of the first node (AAA) have paths of AAAAAA, AAAAAB, AAAAAC, and so on. The characters V and W are not used.</td><td>varchar</td><td>16</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td Class=centered NOWRAP>&nbsp;</td><td class="LinkCell"><STRONG>ST_BPT_FACET_TYPE</STRONG></td><td class="DescriptionCell">For internal use by HP.</td><td>varchar</td><td>255</td><td Class="Centered"><img src="dbimages/tick.gif"></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="indexesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Indexes</span></div><div id="indexesSectionContent" class="SectionContent"><table class="FilteredItemListTable"><tr><th>Index</th><th>Description</th><th>Primary</th><th>Unique</th></tr>
+<tr><td class=LinkCell><A HREF="topic537.html">ST_PRIMARYKEY</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic538.html">ST_RUN_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered"><img src=dbimages/tick.gif></td></tr>
+<tr><td class=LinkCell><A HREF="topic539.html">ST_TEST_ID_IDX</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+<tr><td class=LinkCell><A HREF="topic540.html">STEP_IDX3</A></td><td class="DescriptionCell">&nbsp;</td><td Class="Centered">&nbsp;</td><td Class="Centered">&nbsp;</td></tr>
+</table></div>
+            
+            
+            
+            
+            
+            <!-- start type="Source" format="%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=source,caption=$$SQL$$%%<table class="sqlsource" border=0 cellpadding=0><tr><td NOWRAP><CODE>%%Source%%</CODE></td></tr></table></div>" --><!--Source --><!-- end -->
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><h4 class=dxh4>Related Objects</h4><p><a href="topic27.html">td Schema</a>
+<BR/><a href="topic25.html">Project Data Tables Database</a>
+</p>
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM Database Reference  Documentation Feedback: td.STEP Table">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

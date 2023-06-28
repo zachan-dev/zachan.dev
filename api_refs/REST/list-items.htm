@@ -1,0 +1,1166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>List-items</title>
+    <meta name="Title" content="List-items"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="The list-items resource returns metadata about the project lists." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="19b92cf3-7330-4709-8de2-066fdcfdf4e8"/>
+    <meta name="Microsoft.Help.TocParent" content="fcc99000-a01d-4460-a256-a0dbd461a985"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">List-items</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Reference_Topics.htm">Reference</a>
+ > <a href="Resources.htm">REST Resources in this API</a>
+ > List-items</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <p>The list-items resource returns metadata about the project lists.</p>
+
+<h2>URI</h2>
+
+<p>/qcbin/api/domains/DOMAIN_NAME/projects/PROJECT_NAME/list-items</p>
+
+<h2>Remarks</h2>
+
+<p><strong>List-item properties</strong></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+
+            <th>Comments</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>id</td>
+
+            <td>The list item's ID.</td>
+        </tr>
+
+        <tr>
+            <td>logical-identifier</td>
+
+            <td>The identifier of the item in code.</td>
+        </tr>
+
+        <tr>
+            <td>name</td>
+
+            <td>The label of the field. For the top-level in a list, it is the list name. For children, the value.</td>
+        </tr>
+
+        <tr>
+            <td>parent</td>
+
+            <td>
+                <p>The list to which the item belongs. <code>"parent": {"id": &lt;x&gt;, "type": "list-item"}</code></p>
+
+                <p>If the id is zero (0), this item is a top-level list. Otherwise, the ID of the containing list-item.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>type</td>
+
+            <td>Generally <span class="UI_Element">list-item</span>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Limitations</p>
+
+<ul>
+    <li>
+        <p>list-items are read-only. Edit lists from the user interface.</p>
+    </li>
+
+    <li>
+        <p>See&nbsp;<a href="General_Notes_and_Limitations.htm" data-auto-update-caption="true">General Notes and Limitations</a></p>
+    </li>
+</ul>
+
+<h2>Header Parameters</h2>
+
+<ul>
+    <li>See&nbsp;<a href="Standard_Headers.htm" data-auto-update-caption="true">Standard Headers</a></li>
+</ul>
+
+<h2>Example</h2>
+
+<div class="FilteredContentHTML" data-title="HTML" data-itemid="HTML">
+    <table class="SyntaxTable">
+        <tbody>
+            <tr>
+                <th>list-items</th>
+
+                <th>
+                    <div class="CopyCodeWrapper">
+                        <span class="CopyCode">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <pre>
+****  Request ***
+GET /qcbin/api/domains/DOMAIN_NAME/projects/PROJECT_NAME/list-items HTTP/1.1
+Accept: application/json, */*
+Accept-Language: en-US
+Accept-Encoding: gzip, deflate
+Host: myserver:8080
+Cookie:
+JSESSIONID=lhoqn9rpk83upuq00o38dxgr;
+QCSession=MzIyNztPNEFyek00VnBRTkJNMEZBNWduaVBBKio7UkVTVCBjbGllbnQ7IDsg;
+ALM_USER=79f1938c55ea14bcee71b55668ab615c8e45b698c9b3d79fae698d706d622200;
+XSRF-TOKEN=941eb982ca45f2a8d9e8d4da0dce4b811f5aa2a1382d3f143675c6275ae263ac;
+LWSSO_COOKIE_KEY=UmSpTTOQi2cjw8_FT8Vky_-6bh2k0hI3Tqa6OhnBIlx0uznxr-trv-u4pOLOD-9e2zzwZlEk72i1H5Tl-jiYjq2gy79L6BlNRNI7uuC_SkJvnZm9y10nKAIO7eEjvyN2-HnHRwsilalaRGvZtN90JNMj3t142d-JyQLpre0ZzgnMMGBwBqnyvtk5LLArEvRywyfaq9UUr6YCOteszXdO-g5KuaaYWy0LkS3QafJqHXrYSzmTRhg_XnKvRqDgoxH4mNbfc0U_8ia8n3-vVQzrmd1tU-edSlPxvPeHzl2R0FMH44jJezu2dInXYn9AZEF0
+
+***  Response *****
+HTTP/1.1 200 OK
+Cache-Control: no-cache, max-age=0
+Pragma: no-cache
+Date: Mon, 1 Dec 2014 14:59:36 GMT
+Content-Type: application/json
+Vary: Accept-Encoding, User-Agent
+Content-Length: 14101
+Server: Jetty(9.1.3.v20140225)
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p class="hs-toggler">Sample Return Value</p>
+
+<div class="hs-toggler-container" style="DISPLAY: none">
+    <div class="FilteredContentJSON" data-title="JSON" data-itemid="JSON">
+        <table class="SyntaxTable">
+            <tbody>
+                <tr>
+                    <th>Example of list-items data</th>
+
+                    <th>
+                        <div class="CopyCodeWrapper">
+                            <span class="CopyCode">Copy Code</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <pre>
+{
+    <span style="COLOR: #800000">"data"</span>: [
+        {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 349,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-functional-complexity-levels"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"RBQM Functional Complexity Levels"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 352,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-functional-complexity-levels.1"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"1"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 349,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 351,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-functional-complexity-levels.2"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"2"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 349,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 350,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-functional-complexity-levels.3"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"3"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 349,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 346,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.testing-mode"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Testing Mode"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 348,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.testing-mode.functional-test"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"FUNCTIONAL_TEST"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 346,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 347,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.testing-mode.dual-test"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"DUAL_TEST"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 346,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 342,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.configurations"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Configurations"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 343,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-mode"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Coverage Mode"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 345,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-mode.selected-configurations"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Selected Configurations"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 343,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 344,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-mode.all-configurations"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"All Configurations"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 343,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 328,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-testing-levels"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"RBT Testing Levels"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 332,
+            <span style="COLOR: #800000">"    : "</span>hp.qc.rbt-testing-levels.none<span style="COLOR: #800000">",
+</span>            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"4-None"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 328,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 331,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-testing-levels.basic"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"3-Basic"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 328,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 330,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-testing-levels.full"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"1-Full"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 328,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 329,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-testing-levels.partial"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"2-Partial"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 328,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 333,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Requirement Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 340,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.requirements-setup-completed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"1-Requirements Setup Completed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 341,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.test-execution-completed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"5-Test Execution Completed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 339,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.closed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Closed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 338,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.cancelled"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Cancelled"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 337,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.test-plan-setup-completed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"2-Test Plan Setup Completed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 336,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.running-tests-in-qc"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"4-Running Tests in Quality Center"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 335,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.test-lab-setup-completed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"3-Test Lab Setup Completed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 334,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.requirement-status.new"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"New"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 333,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 324,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.scope-item-priority"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Scope Item Priority"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 327,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.scope-item-priority.medium"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"2-Medium"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 324,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 326,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.scope-item-priority.low"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"1-Low"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 324,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 325,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.scope-item-priority.high"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"3-High"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 324,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 317,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-business-impact-levels"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"RBT Business Impact Levels"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 320,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-business-impact-levels.a"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"A"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 317,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 319,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-business-impact-levels.c"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"C"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 317,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 318,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbt-business-impact-levels.b"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"B"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 317,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 321,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.model-prototype"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Model Prototype"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 323,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.model-prototype.as-is"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"As-Is"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 321,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 322,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.model-prototype.to-be"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"To-Be"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 321,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 35,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.versions"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Versions"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 309,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Coverage Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 315,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.n-a"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"N/A"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 316,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.not-completed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Not Completed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 314,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.blocked"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Blocked"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 312,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.failed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Failed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 313,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.not-covered"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Not Covered"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 311,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.passed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Passed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 310,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.coverage-status.no-run"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"No Run"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 309,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 304,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.plan-status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Plan Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 307,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.plan-status.imported"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Imported"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 304,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 308,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.plan-status.design"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Design"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 304,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 306,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.plan-status.ready"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Ready"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 304,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 305,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.plan-status.repair"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Repair"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 304,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 82,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.vc-status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"VC Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 83,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.vc-status.checked-out"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Checked_Out"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 82,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 84,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.vc-status.checked-in"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Checked_In"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 82,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 85,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.vc-status.read-only"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Read_Only"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 82,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 293,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Parameter Types"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 299,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types.password"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Password"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 293,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 298,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types.date"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Date"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 293,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 297,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types.table"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Table"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 293,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 295,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types.boolean"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Boolean"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 293,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 296,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types.number"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Number"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 293,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 294,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.parameter-types.string"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"String"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 293,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 300,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.activity-status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Activity Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 303,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.activity-status.requirement-authoring"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Requirement Authoring"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 300,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 302,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.activity-status.requirement-review"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Requirement Review"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 300,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 301,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.activity-status.test-authoring"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Test Authoring"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 300,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 287,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.severity"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Severity"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 292,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.severity.medium"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"2-Medium"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 287,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 291,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.severity.urgent"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"5-Urgent"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 287,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 290,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.severity.low"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"1-Low"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 287,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 289,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.severity.very-high"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"4-Very High"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 287,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 288,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.severity.high"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"3-High"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 287,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 283,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-risk-levels"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"RBQM Risk Levels"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 286,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-risk-levels.a"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"A"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 283,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 285,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-risk-levels.c"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"C"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 283,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 284,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.rbqm-risk-levels.b"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"B"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 283,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 277,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.test-running-status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Test Running Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 279,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.test-running-status.closed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Closed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 277,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 278,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.test-running-status.open"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Open"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 277,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 179,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.task-progress"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Task Progress"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 182,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.task-progress.running"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Running"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 179,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 180,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.task-progress.failed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Failed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 179,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 181,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.task-progress.succeeded"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Succeeded"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 179,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 1,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.yes-no"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"YesNo"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 24,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.yes-no.yes"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Y"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 1,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 23,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.platform.yes-no.no"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"N"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 1,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 280,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.component-instance-fail-condition"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Component Instance Fail Condition"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 282,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.component-instance-fail-condition.exit"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Exit"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 280,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 281,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.component-instance-fail-condition.continue"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Continue"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 280,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 270,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Status"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 275,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status.n-a"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"N/A"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 270,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 276,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status.not-completed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Not Completed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 270,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 274,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status.blocked"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Blocked"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 270,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 273,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status.failed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Failed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 270,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 272,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status.passed"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Passed"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 270,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 271,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.status.no-run"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"No Run"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 270,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 267,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.link-type"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Link Type"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 269,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.link-type.related"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Related"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 267,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 268,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.link-type.duplicate"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Duplicate"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 267,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 266,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.all-projects"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"All Projects"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }, {
+            <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>,
+            <span style="COLOR: #800000">"id"</span>: 260,
+            <span style="COLOR: #800000">"logical-identifier"</span>: <span style="COLOR: #800000">"hp.qc.priority"</span>,
+            <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Priority"</span>,
+            <span style="COLOR: #800000">"parent"</span>: {
+                <span style="COLOR: #800000">"id"</span>: 0,
+                <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"list-item"</span>
+            }
+        }
+    ],
+    <span style="COLOR: #800000">"total-count"</span>: 185
+}
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: List-items">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

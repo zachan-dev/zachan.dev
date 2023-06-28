@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins__TopNav_Skin" data-mc-search-type="Stem" data-mc-help-system-file-name="almhelp.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="PC Help|Performance Center User Help|Performance Testing Assets|Topologies">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="page-type" content="other" />
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" /><title>How to Design Topologies - Use-Case Scenario</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/_HP_SuperDocs.css" rel="stylesheet" />
+        <style>/*&lt;meta /&gt;*/
+
+.button.expand-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.remove-highlight-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/highlight.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../Resources/Scripts/PIE.htc');
+}
+
+</style>
+        <script src="../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_ImageMapResizer.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_Script.min.js">
+        </script>
+    </head>
+    <body id="TopNav" class="other">
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-left" id="offCanvas" data-off-canvas="" data-position="left" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-left is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" data-mc-ignore="true">
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="relative clearfix"><a class="logo" href="../Resources/_TopNav/_TopNav_Home.htm" alt="Logo"></a>
+                                    <div class="navigation-wrapper nocontent">
+                                        <ul class="navigation clearfix" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="2" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button class="menu-icon" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="nav-search row outer-row">
+                                <form class="search" action="#">
+                                    <div class="search-bar search-bar-container needs-pie">
+                                        <input class="search-field needs-pie" type="search" placeholder="Search" />
+                                        <div class="search-filter-wrapper">
+                                            <div class="search-filter">
+                                                <div class="search-filter-content">
+                                                    <ul>
+                                                        <li>All Files</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search-submit-wrapper" dir="ltr">
+                                            <div class="search-submit" title="Search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <section class="main-section">
+                        <div class="row outer-row" data-mc-content-body="True">
+                            <!-- Google Tag Manager -->
+                            <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJ9842" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>-->
+                            <!-- End Google Tag Manager -->
+                            <div id="contentBody">
+                                <div class="row">
+                                    <div id="proxy-topic-toolbar" class="hidden">
+                                        <div class="buttons popup-container clearfix topicToolbarProxy mc-component nocontent" style="mc-topic-toolbar-items: ExpandAll RemoveHighlight Print">
+                                            <div class="button-group-container-left">
+                                                <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all" data-state1-title="Expand all">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="expand all" />
+                                                </button>
+                                                <button class="button needs-pie remove-highlight-button" title="Remove Highlights">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="remove highlight" />
+                                                </button>
+                                                <button class="button needs-pie print-button" title="Print">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="print" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="hp-toc-tree" class="hidden">
+                    <MadCap:menuProxy style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                </div> -->
+                                    <div id="proxy-menu" class="hide-for-small medium-offset-1 medium-4 columns">
+                                        <nav id="hp-sidebar-menu">
+                                            <ul class="sidebar hidden mc-component" data-mc-is-context-sensitive="True" data-mc-linked-toc="Data/Tocs/QCPC_TOC.js" data-mc-side-menu="True" data-mc-max-depth="1" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div id="proxy-content" class="small-12 medium-7 columns">
+                                        <div id="proxy-breadcrumbs" class="hidden">
+                                            <div class="nocontent">
+                                                <div class="MCBreadcrumbsBox_0 breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="5" data-mc-toc="True"><span class="MCBreadcrumbsPrefix"> </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="proxy-body"><a id="top"></a>
+                                            <h1><a name="aanchor612"></a>
+                                                <MadCap:concept term="Performance Center Guide" /><a name="wp121200"></a>How to Design Topologies - Use-Case Scenario</h1>
+                                            <p style="page-break-after: avoid;">This use-case scenario describes how to design a topology that graphically displays the logical components that make up your application under test (AUT) and the relationships between the components. </p>
+                                            <div class="Admonition_Note">
+                                                <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>For a task related to this use-case scenario, see <a href="t_designing_topologies.htm" title="" alt="" class="MCXref xref">How to Design Topologies</a>.</p>
+                                            </div>
+                                            <ol type="1">
+                                                <li value="1">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Background"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Background</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>John is a performance engineer working with HP Web Tours. He would like to design a performance test for the application.</p>
+                                                            <p>As a first step, he would like to model the application in <span class="QCPCALM">ALM</span> <span class="QCPCPerformance Center">Performance Center</span> so that he can keep track of the topology of his application under test. Using this model, he can benefit from the monitoring and online view features that the topology feature offers.</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="2">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /><!-- reapply xref to this target --></a><a name="Create_the_topology_and_design_the_outline"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Create the topology and design the outline</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <ol type="a" style="list-style-type: lower-alpha;">
+                                                                <li value="1">
+                                                                    <p>On the <span class="QCPCPerformance Center">Performance Center</span> navigation bar, John selects <b>Resources &gt;</b> <b>Topologies</b> to open the Topology module, and clicks the <b>New Topology </b><![CDATA[  ]]><img src="images/sl_new.gif" border="0" hspace="0" vspace="0" /> 
+button to create a new topology. He calls the topology <b>WebTours</b>, and enters the details of the SiteScope server with which the application will interact for monitoring purposes. </p>
+                                                                </li>
+                                                                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="images/topol_uc_scenario_new_top.gif"><img class="MCPopupThumbnail img" data-mc-width="742" data-mc-height="191" src="images/topol_uc_scenario_new_top_thumb_0_48.png" style="mc-thumbnail: popup;" tabindex="" /></a>
+                                                                </p>
+                                                                <p>When John clicks <b>OK</b>, the Topology Designer window opens, displaying the Topology canvas which, at this stage, is empty. </p>
+                                                                <li value="2">
+                                                                    <p>John's Web Tours application comprises the following components: A&#160;Web server, an application server, and a database server. The user accesses the application through a client workstation.</p>
+                                                                </li>
+                                                                <p>In the Topology Designer window, from the palette in the left, John drags the nodes representing these components onto the Topology canvas, and changes their captions to names that are relevant to the components they represent. </p>
+                                                                <p>John drags the following nodes:</p>
+                                                                <table style="width: 100%; margin-left: auto; margin-right: auto;">
+                                                                    <col />
+                                                                    <col />
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>
+                                                                                <p>Palette Category</p>
+                                                                            </th>
+                                                                            <th>
+                                                                                <p>Component</p>
+                                                                            </th>
+                                                                            <th>
+                                                                                <p>New Caption</p>
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>Web Servers</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Microsoft IIS</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Web Server</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>Application </p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Microsoft ASP Server</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Application Server</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>Database</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Microsoft SQL Server</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Database Server</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>Miscellaneous</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Workstation</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>Client</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>Miscellaneous</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>User</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p>User</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="images/topol_uc_scenario_drag_node.gif"><img class="MCPopupThumbnail img" data-mc-width="830" data-mc-height="566" src="images/topol_uc_scenario_drag_node_thumb_0_48.png" style="mc-thumbnail: popup;" tabindex="" /></a>
+                                                                </p>
+                                                                <li value="3">
+                                                                    <p>John connects the application server to the Web server by clicking the application server (ensuring that it is not selected) and dragging the cursor over to the Web server. </p>
+                                                                </li>
+                                                                <p>Similarly, he connects the application server to the database server, the client workstation to the Web server, and the user to the client.</p>
+                                                                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="images/topol_uc_scenario_components.gif"><img class="MCPopupThumbnail img" data-mc-width="388" data-mc-height="326" src="images/topol_uc_scenario_components_thumb_0_48.png" style="mc-thumbnail: popup;" tabindex="" /></a>
+                                                                </p>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="3">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Add_the_AUT_hosts"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Add the AUT hosts</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>The AUT hosts are the physical machines that host the relevant components of the application under test. </p>
+                                                            <p>On the Topology Designer window, John clicks <b>AUT Hosts</b>.<b>  <![CDATA[ ]]></b>He then clicks <b>Add New AUT Host <img src="images/add_new_AUT_host_button.png" /></b>, and enters the name and details of the machine that hosts the database server: </p>
+                                                            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="images/topol_uc_scenario_new_aut_host.gif"><img class="MCPopupThumbnail img" data-mc-width="739" data-mc-height="241" src="images/topol_uc_scenario_new_aut_host_thumb_0_48.png" style="mc-thumbnail: popup;" tabindex="" /></a>
+                                                            </p>
+                                                            <p>John then adds the AUT host that hosts both the application and Web servers. </p>
+                                                            <div class="Admonition_Tip">
+                                                                <p class="tip" style="page-break-after: avoid;" data-mc-autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span> <![CDATA[ ]]></p>
+                                                                <ul>
+                                                                    <li value="1">
+                                                                        <p>Alternatively, if John had an Excel file listing the AUT hosts in his system, he could have imported the list of AUT hosts to <span class="QCPCALM">ALM</span>. For details, refer to the <i><span class="QCPCLM Guide">HPE ALM Lab Management Guide</span></i><MadCap:conditionalText data-mc-conditions="_HP_Conditions.ScreenOnly"><i>: </i><a href="../LM/t_import_aut_hosts_from_excel.htm" title="" alt="" class="MCXref xref">How to Import AUT Host Data from Excel</a></MadCap:conditionalText>.</p>
+                                                                    </li>
+                                                                    <li value="2">
+                                                                        <p>John can view the list of AUT hosts in the <b>AUT Hosts</b> tab by clicking <b>AUT Hosts</b> next to the Palette tab.</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="4">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Define_the_component_properties"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Define the component properties</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>For successful integration with SiteScope, John needs to ensure that the properties for each component are defined correctly.</p>
+                                                            <p>John selects each component and, in the <b>Properties</b> pane in the top right corner of the Topology Designer window, he provides the relevant properties. The properties differ from one type of component to another. </p>
+                                                            <div class="Admonition_Tip">
+                                                                <p data-mc-autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span>A description for each property is displayed in the lower area of the Properties pane, and helps John to understand what information to provide for each property.</p>
+                                                            </div>
+                                                            <p>For example, for the database server, John selects <b>machine33</b> from the <b>AUT Host</b> drop-down list, and accepts the default values for all of the other properties. Then he provides the relevant details for the application and Web servers.</p>
+                                                            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="images/topol_uc_scenario_properties.gif"><img class="MCPopupThumbnail img" data-mc-width="963" data-mc-height="554" src="images/topol_uc_scenario_properties_thumb_0_48.png" style="mc-thumbnail: popup;" tabindex="" /></a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="5">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Deploy_the_monitor_templates"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Deploy the monitor templates</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>John selects the three servers and clicks <b>Deploy Monitor Templates</b>. <span class="QCPCPerformance Center">Performance Center</span> creates a monitor <span class="noGlossary">group</span> in SiteScope for each of the selected components, and deploys the relevant system-defined monitor templates for each component. Because the AUT Host Templates property is enabled, the templates for the actual AUT host are deployed as well.</p>
+                                                            <div class="Admonition_Tip">
+                                                                <p data-mc-autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span>If John wants to view or modify these monitors, he can do so by clicking <b>Configure Monitors</b> on the toolbar, which opens HP SiteScope and displays the monitor trees that were created for each component.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="6">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Results"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Results</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>John saves the topology and closes the Topology Designer window. He selects this topology when designing the performance test for the Web&#160;Tours application. When he runs the test, he can view the SiteScope monitor <span class="noGlossary">activity</span> on the relevant components in the application in the Performance Test Run page.</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div class="footer-inner">
+                                    <table id="highlights">
+                                        <tr>
+                                            <td> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="../Resources/_TopNav/_TopNav_Home.htm">Help Center Home</a></p><p class="footerlink"><a href="https://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                                            <td> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/products/application-lifecycle-management/overview" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank">ALM on Twitter</a></p></td>
+                                            <td> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]?subject=Feedback on [%=_HPc_Basic_Variables._HP_Book_Title%] ([%=_HPc_Basic_Variables._HP_Product_Name%] [%=_HPc_Basic_Variables._HP_Product_Version%])" title="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+		</p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Help Center Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="hp-feedbackDiv"><div class="hp-feedbackDivClose"><a href="javascript:closeFeedback();" id="hp-feedbackClose"><img src="../Resources/_TopNav/Images/_TopNav_ic-close.png" /></a></div><div class="hp-feedbackDivContent"><!-- Localizable --><h1 class="feedback hp-feedbackDivHeader">Send Help Center Feedback</h1><p class="hp-feedbackDivBody">Let us know how we can improve your Help Center experience.</p><p class="hp-feedbackDivBody">Send your email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen">docteam@hpe.com</a></p><img src="../Resources/_TopNav/Images/_TopNav_ic-email.png" /><!-- Localizable --><div style="display:none;" id="hp-feedbackBody">Add your Help Center feedback:</div><!-- Localizable --></div></div><div id="hp-feedbackDimmedDiv"></div><div style="display:none;" id="hp-feedback-variables" productName="ALM&#160;Help Center" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="How to Design Topologies - Use-Case Scenario" skinLine1="ALM&#160;Help Center" skinLine2="ALM&#160;Help Center"><script src="../Resources/_TopNav/_TopNav_Feedback.js"></script></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/services/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                                        </tr>
+                                    </table>
+                                    <table id="copyright">
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <img src="../Resources/_TopNav/Images/_TopNav_ic-hpe-logo.png" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <img id="ic-favicon" class="hidden" src="../Resources/_TopNav/Images/_TopNav_hpe_favicon.ico" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <script type="text/javascript">/*<![CDATA[*/
+									var url = document.getElementById('ic-favicon');
+									var ext = document.createElement('link');
+									ext.setAttribute("rel", "shortcut icon");
+									ext.setAttribute("href", url.src);
+									document.getElementsByTagName("head")[0].appendChild(ext);
+								/*]]>*/</script>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="lastUpdated">Last updated <span class="_HPc_Basic_Variables_HP_LastUpdatedDate">June 06, 2018</span></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="http://www8.hp.com/us/en/hpe/legal/terms-of-use.html" target="_blank">Terms of Use</a>&#160;|&#160;<a class="copyright" href="https://www.hpe.com/us/en/legal/privacy.html" target="_blank">Privacy</a></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="../Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2002 - 2017</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="hp-google-custom-search hidden"><span id="hp-online-url" class="_HPc_Basic_VariablesOnlineURL">http://alm-help.saas.hpe.com</span><span id="hp-gcse-id" class="_HPc_Basic_VariablesSearchEngineId">018001665633254540897:42w460c7a-e</span>
+                            </div>
+                            <script>/* <![CDATA[ */
+			(function() {
+				var onlineURL = $('#hp-online-url').text();
+				if (location.href.indexOf(onlineURL)!==0) {
+					if ($('body').hasClass('home'))
+						$('.search-area-bar').css('visibility', 'visible');
+					else
+						$('.nav-search.row.outer-row').css('visibility', 'visible');
+		            
+					if ($('html.searchTopic').length) {
+						var idTips = setInterval(function() {
+							if (document.querySelector('#results-heading')) {
+								clearInterval(idTips);
+								$('<br>')
+									.appendTo('#results-heading');
+								$('#about-search')
+									.appendTo('#results-heading');
+							}
+						} , 100);
+					}
+					return;
+				}
+				
+				if (location.search.match(/^\?gcse-q=/)) {
+					$('#pagination').hide();
+					$('<div class="gcse-searchresults" data-linktarget="_parent"  data-queryParameterName="gcse-q"></div>')
+						.appendTo('#searchPane');
+                    var idFilter = setInterval(function() {
+                        var tab = $('#TopNav.other .gsc-tabsArea .gsc-tabHeader.gsc-tabhActive');
+                        if (tab && tab.text()==='All') {
+                                clearInterval(idFilter);
+                            $('#TopNav.other .gsc-tabHeader.gsc-tabhActive')
+                                .text('All Results');
+                        }
+                    }, 100);
+					/*** Open search results from other help centers in separate tab ***/
+					var shc = location.hostname.split('.')[0];
+                    setInterval(function() {
+                        var urls = $('.gsc-url-bottom');
+                        if (urls.length) {
+                            urls.each(function() {
+                                var thc = $(this).text().split('.')[0];
+                                if (shc!==thc) {
+                                    $(this).siblings('.gs-title').children('a')
+                                        .attr('target','_blank');
+                                }
+                            });
+                        }
+                    }, 1000);
+					var idResults = setInterval(function() {
+						if (document.querySelector('#results-heading')) {
+							clearInterval(idResults);
+							$('#results-heading').hide();
+						}
+					}, 100);
+				}
+				var b = location.href.match(/^.+?\/Content\//)[0];
+				var sbo = $('<div class="gcse-searchbox-only" data-resultsUrl="'+b+'Search.htm" data-newWindow="false" data-queryParameterName="gcse-q"></div>');
+						
+				if ($('body').hasClass('home')) {
+					$('.search-area-bar .search').hide();
+					sbo.appendTo('.search-area-bar');
+					var idHomeBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idHomeBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.search-area-bar')
+								.style.visibility = 'visible';
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				} else {
+                    if ($('html.searchTopic').length) sbo.attr('class','gcse-searchbox');
+					$('.nav-search.row.outer-row .search').hide();
+					sbo.appendTo('.nav-search.row.outer-row');
+					var idOtherBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idOtherBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.nav-search.row.outer-row')
+								.style.visibility = 'visible';
+							$('#TopNav.other #search-wrapper-back')
+								.appendTo('#TopNav.other .search-wrapper .gsc-search-box');
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				}
+                var idGCSE = setInterval(function() {
+                    var cx = $('#hp-gcse-id').text();
+                    var rc = $('.gcse-searchresults-only');
+                    if (!cx||!rc) return;
+                    clearInterval(idGCSE);
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                }, 100); 
+			})();
+		/* ]]> */</script>
+                            <div class="hidden"><a id="about-search" href="../Resources/_TopNav/_TopNav_aboutSearch.htm">Tips to improve your search results...</a><a href="../Resources/_TopNav/_TopNav_TOC.htm">TOC</a>
+                                <!--<img id="feedback-header" src="Images/_TopNav_feedback_header.png" />
+            <img id="feedback-image" src="Images/_TopNav_feedback_image.png" />
+            <img id="feedback-image" src="Images/_TopNav_ic-close-responsive.png" />-->
+                                <img id="search-responsive" src="../Resources/_TopNav/Images/_TopNav_ic-search.png" />
+                                <img id="search-responsive-back" src="../Resources/_TopNav/Images/_TopNav_ic-search-back.png" />
+                                <img id="search-responsive-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear-blue.png" />
+                                <img id="search-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear.png" />
+                                <img id="search-drop" src="../Resources/_TopNav/Images/_TopNav_ic-drop.png" /><span id="hp-help-name" class="_HPc_Basic_Variables_HP_Product_Name_Skin_Line1">ALM&#160;Help Center</span><span id="hp-help-short-name" class="_HPc_Basic_Variables_HP_Product_Name_Short">ALM&#160;Help Center</span><span id="hp-help-version" class="_HPc_Basic_Variables_HP_Product_Version">12.50</span><span id="hp-search-all" class="_TopNav_VariablesSearchFilterAll">All</span><span id="hp-view-local" class="_TopNav_VariablesSettingViewLocal">View Local Help Center</span><span id="hp-view-online" class="_TopNav_VariablesSettingViewOnline">View Online Help Center</span><span id="hp-back-alt" class="_TopNav_VariablesToolbarBackAltText">back</span><span id="hp-back-tooltip" class="_TopNav_VariablesToolbarBackTooltip">Go back in browser history</span><span id="hp-forward-alt" class="_TopNav_VariablesToolbarForwardAltText">forward</span><span id="hp-forward-tooltip" class="_TopNav_VariablesToolbarForwardTooltip">Go forward in browser history</span><span id="hp-highlights-tooltip" class="_TopNav_VariablesToolbarHighlightsTooltip">Remove search highlights</span><span id="hp-next-alt" class="_TopNav_VariablesToolbarNextAltText">next topic</span><span id="hp-next-tooltip" class="_TopNav_VariablesToolbarNextTooltip">Go to next topic</span><span id="hp-previous-alt" class="_TopNav_VariablesToolbarPreviousAltText">previous topic</span><span id="hp-previous-tooltip" class="_TopNav_VariablesToolbarPreviousTooltip">Go to previous topic</span><span id="hp-print-tooltip" class="_TopNav_VariablesToolbarPrintTooltip">Print the current topic</span><span id="hp-version-label" class="_TopNav_VariablesVersionLabel">Version</span><span id="hp-floating-toc-show" class="_HPc_Basic_VariablesFloatingTocShow">(Undefined variable: _HPc_Basic_Variables.FloatingTocShow)</span>
+                            </div>
+                            <script type="text/javascript">/*<![CDATA[*/
+			(function() {
+                TopNav.play.init();
+			})();
+		/*]]>*/</script>
+                        </div>
+                    </section><a data-close="true"></a>
+                </div>
+            </div>
+            <script>/* <![CDATA[ */$(document).foundation();/* ]]> */</script>
+        </div>
+    </body>
+</html>

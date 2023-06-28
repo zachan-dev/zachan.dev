@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>RecordSet Example</title>
+    <meta name="Title" content="RecordSet Example"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub RecordSetExample()
+' Recordset properties and methods
+    
+'********************************************************
+'***  Use of the ICommand interface is not safe.      ***
+'***  Use of SQL " />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="675e4bbb-ae65-4e7e-b703-c9eeedde2324"/>
+    <meta name="Microsoft.Help.TocParent" content="43afd3a1-13cf-48ef-bec6-7fe5d5ce0856"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">RecordSet Example</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-fefa923c-cc92-4e8a-a38d-4941bfe8334e"></a></li>
+    </ul>
+
+    <div id="TabContent-fefa923c-cc92-4e8a-a38d-4941bfe8334e" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> RecordSetExample()
+<span style="COLOR: #008000">' Recordset properties and methods
+</span>    
+<span style="COLOR: #008000">'********************************************************
+'***  Use of the ICommand interface is not safe.      ***
+'***  Use of SQL to change data bypasses all          ***
+'***  logic and error checking. Use of Select         ***
+'***  queries can impact performance.                 ***
+'***  Use ICommand only if there is no good           ***
+'***  alternative.                                    ***
+'********************************************************
+</span>    <span style="COLOR: #0000ff">Dim</span> com <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Command</span>
+    <span style="COLOR: #0000ff">Dim</span> RecSet <span style="COLOR: #0000ff">As</span> Recordset, CloneSet <span style="COLOR: #0000ff">As</span> Recordset
+    <span style="COLOR: #0000ff">Dim</span> i <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>, RecCnt%, ColCnt%
+    <span style="COLOR: #0000ff">Dim</span> OriginalSummary <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>, CloneSummary$
+    <span style="COLOR: #0000ff">Dim</span> TypeCode <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">Integer</span>, TypeString <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> RecordSetExampleErr
+
+
+<span style="COLOR: #008000">' Set and execute the SQL statement to select defects
+' that have tests associated with them and sort them
+' by the defects' summaries.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> com = tdc.Command
+    com.CommandText = _
+        <span style="COLOR: #800000">"select bg_summary, ts_name, ts_exec_status, bg_responsible "</span> _
+       + <span style="COLOR: #800000">"from bug, test where bg_test_reference = ts_test_id and "</span> _
+       + <span style="COLOR: #800000">"bg_responsible IS NOT Null"</span> _
+       + <span style="COLOR: #800000">" order by bg_summary"</span>
+
+<span style="COLOR: #008000">'Execute the query and get the recordset.
+</span>    <span style="COLOR: #0000ff">Set</span> RecSet = com.Execute
+    ColCnt = RecSet.ColCount
+    RecCnt = RecSet.RecordCount
+    Debug.Print <span style="COLOR: #800000">"Record Count = "</span> &amp; RecCnt _
+        &amp; <span style="COLOR: #800000">", Column Count = "</span> _
+        &amp; ColCnt
+ 
+<span style="COLOR: #008000">' Got to the first record.
+</span>    RecSet.First
+    Debug.Print <span style="COLOR: #800000">"Position is "</span> &amp; RecSet.Position <span style="COLOR: #008000">' Reports 0
+' Save the summary field of the first record.
+</span>    OriginalSummary = RecSet.FieldValue(<span style="COLOR: #800000">"BG_SUMMARY"</span>)
+<span style="COLOR: #008000">' Make a copy of the recordset.
+</span>    <span style="COLOR: #0000ff">Set</span> CloneSet = RecSet.Clone
+    CloneSet.First
+    CloneSummary = CloneSet.FieldValue(<span style="COLOR: #800000">"BG_SUMMARY"</span>)
+<span style="COLOR: #008000">'Are they the same?
+</span>    Debug.Print <span style="COLOR: #800000">"Are they the same ? "</span> _
+        &amp; <span style="COLOR: #0000ff">CStr</span>(CloneSummary = OriginalSummary)
+    Debug.Print CloneSummary
+<span style="COLOR: #008000">' Destroy the clone.
+</span>    <span style="COLOR: #0000ff">Set</span> CloneSet = <span style="COLOR: #0000ff">Nothing</span>
+    
+<span style="COLOR: #008000">' Go to the next in the original.
+</span>    RecSet.Next
+    Debug.Print <span style="COLOR: #800000">"Before Recordset? "</span> &amp; RecSet.BOR <span style="COLOR: #008000">'Reports False
+</span>    Debug.Print <span style="COLOR: #800000">"Record number is "</span> &amp; RecSet.Position <span style="COLOR: #008000">' Reports 1
+' Describe the columns.
+</span>    <span style="COLOR: #0000ff">For</span> i = 0 <span style="COLOR: #0000ff">To</span> ColCnt - 1
+        TypeCode = RecSet.ColType(i)
+        <span style="COLOR: #008000">'For code of DataTypeString,
+</span>        <span style="COLOR: #008000">' see example 'Convert data types to string'
+</span>        TypeString = DataTypeString(TypeCode)
+        Debug.Print <span style="COLOR: #800000">"Column name "</span> &amp; RecSet.ColName(i) _
+            &amp; <span style="COLOR: #800000">", Type: "</span> &amp; TypeString &amp; <span style="COLOR: #800000">", Size: "</span> _
+            &amp; RecSet.ColSize(i)
+    <span style="COLOR: #0000ff">Next</span> i
+<span style="COLOR: #008000">' Output the column names and values.
+</span>    <span style="COLOR: #0000ff">For</span> i = 0 <span style="COLOR: #0000ff">To</span> ColCnt - 1
+        Debug.Print <span style="COLOR: #800000">"Column name and value: "</span> _
+            &amp; RecSet.ColName(i) &amp; <span style="COLOR: #800000">", "</span> &amp; RecSet.FieldValue(i)
+    <span style="COLOR: #0000ff">Next</span> i
+<span style="COLOR: #008000">' Output the column index by name.
+</span>    Debug.Print <span style="COLOR: #800000">"The index of the summary column is "</span> _
+        &amp; RecSet.ColIndex(<span style="COLOR: #800000">"BG_SUMMARY"</span>)
+    Debug.Print <span style="COLOR: #800000">"The index of the responsible column is "</span> _
+        &amp; RecSet.ColIndex(<span style="COLOR: #800000">"BG_RESPONSIBLE"</span>)
+
+<span style="COLOR: #008000">' Go to the last record and output the column names and values.
+</span>    RecSet.last
+    Debug.Print <span style="COLOR: #800000">"Are we past the record set? "</span> _
+        &amp; RecSet.EOR <span style="COLOR: #008000">'Reports False
+</span>    Debug.Print <span style="COLOR: #800000">"Record number is "</span> _
+        &amp; RecSet.Position  <span style="COLOR: #008000">' Reports RecordCount - 1
+</span>    
+    <span style="COLOR: #0000ff">For</span> i = 0 <span style="COLOR: #0000ff">To</span> ColCnt - 1
+        Debug.Print <span style="COLOR: #800000">"Column name and value: "</span> _
+            &amp; RecSet.ColName(i) &amp; <span style="COLOR: #800000">", "</span> &amp; RecSet.FieldValue(i)
+    <span style="COLOR: #0000ff">Next</span> i
+
+<span style="COLOR: #008000">' Try to go past the last record.
+</span>    RecSet.Next
+    Debug.Print <span style="COLOR: #800000">"Are we past the record set? "</span> _
+        &amp; RecSet.EOR <span style="COLOR: #008000">'Reports True
+</span>    Debug.Print <span style="COLOR: #800000">"Record number is "</span> _
+        &amp; RecSet.Position <span style="COLOR: #008000">'  Reports RecordCount exactly
+</span>    Debug.Print <span style="COLOR: #800000">"The number of records is "</span> &amp; RecCnt
+
+
+    <span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> BadLoop
+<span style="COLOR: #008000">' This loop fails, as expected, since EOR is true.
+</span>    <span style="COLOR: #0000ff">For</span> i = 0 <span style="COLOR: #0000ff">To</span> ColCnt - 1
+        Debug.Print RecSet.ColName(i) &amp; <span style="COLOR: #800000">", "</span> &amp; RecSet.FieldValue(i)
+    <span style="COLOR: #0000ff">Next</span> i
+
+BadLoop:
+<span style="COLOR: #0000ff">On</span> <span style="COLOR: #0000ff">Error</span> <span style="COLOR: #0000ff">GoTo</span> RecordSetExampleErr
+Debug.Print err.Description
+
+
+<span style="COLOR: #008000">' Now step back to the last record.
+</span>    RecSet.Prev
+    Debug.Print <span style="COLOR: #800000">"Are we past the record set? "</span> _
+        &amp; RecSet.EOR <span style="COLOR: #008000">'Reports True
+</span>    Debug.Print <span style="COLOR: #800000">"Record number is "</span> _
+        &amp; RecSet.Position  <span style="COLOR: #008000">' Reports RecordCount - 1
+</span>
+<span style="COLOR: #008000">' Go to the last record directly.
+</span>    RecSet.last
+    Debug.Print <span style="COLOR: #800000">"Are we past the record set? "</span> _
+        &amp; RecSet.EOR <span style="COLOR: #008000">'Reports True
+</span>    Debug.Print <span style="COLOR: #800000">"Record number is "</span> _
+        &amp; RecSet.Position  <span style="COLOR: #008000">' Reports RecordCount - 1
+</span><span style="COLOR: #0000ff">Exit Sub</span>
+RecordSetExampleErr:
+    ErrorHandler err
+
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: RecordSet Example">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Favorites examples</title>
+    <meta name="Title" content="Favorites examples"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        Favorites Examples
+    
+
+    
+        
+Attribute VB_Name = &quot;Favorites&quot;
+
+Option Explicit
+
+Dim errmsg$
+
+' #Region &quot;PrintDefectsFavoritesByFolderName&quot;
+Sub PrintDefectsFavoritesByFolderName(defectsFolderName As String)
+
+' Ou" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="db1751e6-c66e-4b46-9594-852aa407b847"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Favorites examples</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="Favorites Examples" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-3adc26b3-71f5-4a5c-bf8a-5cb007e36e71">Favorites Examples</a></li>
+    </ul>
+
+    <div id="TabContent-3adc26b3-71f5-4a5c-bf8a-5cb007e36e71" class="FilteredContent code">
+        <pre>
+Attribute VB_Name = <span style="COLOR: #800000">"Favorites"</span>
+
+<span style="COLOR: #0000ff">Option</span> <span style="COLOR: #0000ff">Explicit</span>
+
+<span style="COLOR: #0000ff">Dim</span> errmsg$
+
+<span style="COLOR: #008000">' #Region "PrintDefectsFavoritesByFolderName"
+</span><span style="COLOR: #0000ff">Sub</span> PrintDefectsFavoritesByFolderName(defectsFolderName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>)
+
+<span style="COLOR: #008000">' Output all the names of the Defect Module Favorites under a folder
+</span>
+  <span style="COLOR: #0000ff">Dim</span> objFavoriteFolderFactory <span style="COLOR: #0000ff">As</span> TDAPIOLELib.FavoriteFolderFactory
+  <span style="COLOR: #0000ff">Dim</span> objFavoriteFolderFilter <span style="COLOR: #0000ff">As</span> TDAPIOLELib.TDFilter
+  <span style="COLOR: #0000ff">Dim</span> favoriteFolderList <span style="COLOR: #0000ff">As</span> TDAPIOLELib.List
+  <span style="COLOR: #0000ff">Dim</span> defectsFavoriteFolder <span style="COLOR: #0000ff">As</span> TDAPIOLELib.FavoriteFolder
+
+  <span style="COLOR: #008000">' Get the defects module favorite folder.
+</span>  <span style="COLOR: #0000ff">Set</span> objFavoriteFolderFactory = TDConnection.GetCommonFavoriteFolderFactory
+  <span style="COLOR: #0000ff">Set</span> objFavoriteFolderFilter = objFavoriteFolderFactory.Filter
+  objFavoriteFolderFilter.Filter(<span style="COLOR: #800000">"FF_NAME"</span>) = defectsFolderName
+  <span style="COLOR: #0000ff">Set</span> favoriteFolderList = objFavoriteFolderFilter.NewList()
+  <span style="COLOR: #0000ff">Set</span> defectsFavoriteFolder = favoriteFolderList.Item(1)
+  
+  <span style="COLOR: #008000">' Print the tree for the defects module favorites tree.
+</span>  PrintFavorites defectsFavoriteFolder
+<span style="COLOR: #0000ff">End Sub</span>
+
+<span style="COLOR: #008000">'############################################################
+</span>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> PrintFavorites (parentFavoriteFolder <span style="COLOR: #0000ff">As</span> TDAPIOLELib.FavoriteFolder)
+
+<span style="COLOR: #008000">' Output all the names of the Favorites under a folder
+</span>
+  <span style="COLOR: #0000ff">Dim</span> objFavoriteFactory <span style="COLOR: #0000ff">As</span> TDAPIOLELib.FavoriteFactory
+  <span style="COLOR: #0000ff">Dim</span> favoriteList <span style="COLOR: #0000ff">As</span> TDAPIOLELib.List
+  <span style="COLOR: #0000ff">Dim</span> objFavorite <span style="COLOR: #0000ff">As</span> TDAPIOLELib.Favorite
+  <span style="COLOR: #0000ff">Dim</span> objFavoriteFolderFactory <span style="COLOR: #0000ff">As</span> TDAPIOLELib.FavoriteFolderFactory
+  <span style="COLOR: #0000ff">Dim</span> favoriteFolderList <span style="COLOR: #0000ff">As</span> TDAPIOLELib.List
+  <span style="COLOR: #0000ff">Dim</span> objFavoriteFolder <span style="COLOR: #0000ff">As</span> TDAPIOLELib.FavoriteFolder
+
+  <span style="COLOR: #008000">' Print parent name.
+</span>  Debug.Print (<span style="COLOR: #800000">"Favorite Folder: "</span> + parentFavoriteFolder.name)
+
+  <span style="COLOR: #008000">' Get list of child favorites.
+</span>  <span style="COLOR: #0000ff">Set</span> objFavoriteFactory = parentFavoriteFolder.FavoriteFactory
+  <span style="COLOR: #0000ff">Set</span> favoriteList = objFavoriteFactory.NewList(<span style="COLOR: #800000">""</span>)
+  
+  <span style="COLOR: #008000">' Print child favorites.
+</span>  <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> objFavorite <span style="COLOR: #0000ff">In</span> favoriteList
+    Debug.Print (<span style="COLOR: #800000">"Favorite:"</span> + objFavorite.name)
+  <span style="COLOR: #0000ff">Next</span>
+
+  <span style="COLOR: #008000">' Get list of child favorite folders.
+</span>  <span style="COLOR: #0000ff">Set</span> objFavoriteFolderFactory = parentFavoriteFolder.FavoriteFolderFactory
+  <span style="COLOR: #0000ff">Set</span> favoriteFolderList = objFavoriteFolderFactory.NewList(<span style="COLOR: #800000">""</span>)
+
+  <span style="COLOR: #008000">' Print child favorite folders.
+</span>  <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> objFavoriteFolder <span style="COLOR: #0000ff">In</span> favoriteFolderList
+    PrintFavorites objFavoriteFolder
+  <span style="COLOR: #0000ff">Next</span>
+<span style="COLOR: #0000ff">End Sub</span>
+<span style="COLOR: #008000">' #End Region
+</span>
+
+<span style="COLOR: #008000">' #Region "GetSettings"
+</span><span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> GetSettings()
+
+<span style="COLOR: #008000">' Get the Property for a specific field 
+</span>    
+    <span style="COLOR: #0000ff">Dim</span> aSet <span style="COLOR: #0000ff">As</span> Settings
+    <span style="COLOR: #0000ff">Dim</span> setItems <span style="COLOR: #0000ff">As</span> List
+    <span style="COLOR: #0000ff">Dim</span> aSetItem
+    <span style="COLOR: #0000ff">Dim</span> ItemName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span>
+    <span style="COLOR: #0000ff">Dim</span> aField <span style="COLOR: #0000ff">As</span> TDField
+    <span style="COLOR: #0000ff">Dim</span> fieldList <span style="COLOR: #0000ff">As</span> List
+
+<span style="COLOR: #008000">'------------------------------------------------
+' Get the Settings object for the logged-on user
+' with TDConnection.UserSettings.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> aSet = tdc.UserSettings
+<span style="COLOR: #008000">' Get the list of all setting items.
+</span>    <span style="COLOR: #0000ff">Set</span> setItems = aSet.EnumItems
+    
+<span style="COLOR: #008000">' Print the list of all setting items.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> aSetItem <span style="COLOR: #0000ff">In</span> setItems
+        
+        ItemName = aSetItem
+        Debug.Print aSetItem
+        Debug.Print <span style="COLOR: #800000">"-----------------------"</span>
+        Debug.Print aSet.value(ItemName)
+        Debug.Print <span style="COLOR: #800000">"======================="</span>
+    <span style="COLOR: #0000ff">Next</span> aSetItem
+
+<span style="COLOR: #008000">'------------------------------------------------
+' Use TDConnection.Fields to get the user fields.
+' As we see above, there is a "not PDF"
+' condition for field "BG_USER_29" in the private
+' favorite view. Check how the user field is used.
+' The result is "BG_USER_29    To_Meeting"
+'
+</span>    <span style="COLOR: #0000ff">Set</span> fieldList = tdc.Fields(<span style="COLOR: #800000">"BUG"</span>)
+    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> aField <span style="COLOR: #0000ff">In</span> fieldList
+        <span style="COLOR: #0000ff">If</span> aField.name = <span style="COLOR: #800000">"BG_USER_29"</span> <span style="COLOR: #0000ff">Then</span>
+            Debug.Print aField.name, aField.Property
+            <span style="COLOR: #0000ff">Exit</span> <span style="COLOR: #0000ff">For</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+    <span style="COLOR: #0000ff">Next</span> aField
+    
+<span style="COLOR: #008000">'------------------------------------------------
+'OUTPUT:
+'*  The first setting item output is the grid setup for the user.
+'*  The user views open defects assigned to user "steves"
+'*  Note that this setting has no name.
+</span>
+<span style="COLOR: #008000">'        -----------------------
+'        {
+'        grid: "1,0;64,BG_BUG_ID;64,BG_STATUS;64,BG_PRIORITY;64,BG_RESPONSIBLE;460,BG_SUMMARY;",
+'        filter: "[Filter]{
+'        TableName:BUG,
+'        ColumnName:BG_PRIORITY,
+'        SortOrder:1,
+'        SortDirection:0,
+'        NO_CASE:
+'        }
+'        {
+'        TableName:BUG,
+'        ColumnName:BG_RESPONSIBLE,
+'        LogicalFilter:steves,
+'        VisualFilter:\" steves \",
+'        NO_CASE:
+'        }
+'        {
+'        TableName:BUG,
+'        ColumnName:BG_STATUS,
+'        LogicalFilter:\"New Or Open Or Reopen\",
+'        VisualFilter:\" New  Or  Open  Or  Reopen \",
+'        NO_CASE:
+'        }
+'        ",
+'        show_rdcomment: "y",
+'        show_description: "y"
+'        }
+'********************************************************************
+'***  The second setting item output is a private Favorite view called
+'***  "QC_Open_for_Steves"
+'***  The Favorite is the same as the view above, but excludes items
+'***  with a value of "PDF" in user field BG_USER_29
+'        =======================
+'        QC_Open_for_Steves
+'        -----------------------
+'        {
+'        grid: "1,0;64,BG_BUG_ID;64,BG_STATUS;64,BG_PRIORITY;64,BG_RESPONSIBLE;460,BG_SUMMARY;",
+'        filter: "[Filter]{
+'        TableName:BUG,
+'        ColumnName:BG_PRIORITY,
+'        SortOrder:1,
+'        SortDirection:0,
+'        NO_CASE:
+'        }
+'        {
+'        TableName:BUG,
+'        ColumnName:BG_RESPONSIBLE,
+'        LogicalFilter:steves,
+'        VisualFilter:\" steves \",
+'        NO_CASE:
+'        }
+'        {
+'        TableName:BUG,
+'        ColumnName:BG_STATUS,
+'        LogicalFilter:\"New Or Open Or Reopen\",
+'        VisualFilter:\" New  Or  Open  Or  Reopen \",
+'        NO_CASE:
+'        }
+'        {
+'        TableName:BUG,
+'        ColumnName:BG_USER_29,
+'        LogicalFilter:\"not \\\"PDF\\\"\",
+'        VisualFilter:\"not \\\"PDF\\\"\",
+'        NO_CASE:
+'        }
+'        "
+'        }
+'
+</span>
+
+<span style="COLOR: #0000ff">End Sub</span>
+<span style="COLOR: #008000">' #End Region
+</span>
+
+
+
+
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Favorites examples">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

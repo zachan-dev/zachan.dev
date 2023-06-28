@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Get the list of fields in a table and compare TDField properties and FieldProperty properties</title>
+    <meta name="Title" content="Get the list of fields in a table and compare TDField properties and FieldProperty properties"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="
+    
+        
+    
+
+    
+        
+Public Sub GetFields(Optional TableName As String = &quot;ALERT&quot;)
+
+' Get the list of fields in a table and compare 
+' TDField properties and FieldProperty properties
+    
+
+Dim aField As TDField
+Dim fieldLis" />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="b1b47162-1a69-40c8-8e2b-1234d62b064f"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Reference (Version 12.5x)</div>
+        <div id="PageTitle"><div id="PageTitleText">Get the list of fields in a table and compare TDField properties and FieldProperty properties</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="FilteredContentVisual Basic TabContainer TabContainerWidget" data-title="&nbsp;" data-itemid="Visual Basic">
+    <ul>
+        <li><a href="#TabContent-1cfe60d3-1aa0-4411-9f31-f376c0f6d2a5"></a></li>
+    </ul>
+
+    <div id="TabContent-1cfe60d3-1aa0-4411-9f31-f376c0f6d2a5" class="FilteredContent code">
+        <pre>
+<span style="COLOR: #0000ff">Public</span> <span style="COLOR: #0000ff">Sub</span> GetFields(<span style="COLOR: #0000ff">Optional</span> TableName <span style="COLOR: #0000ff">As</span> <span style="COLOR: #0000ff">String</span> = <span style="COLOR: #800000">"ALERT"</span>)
+
+<span style="COLOR: #008000">' Get the list of fields in a table and compare 
+' TDField properties and FieldProperty properties
+</span>    
+
+<span style="COLOR: #0000ff">Dim</span> aField <span style="COLOR: #0000ff">As</span> TDField
+<span style="COLOR: #0000ff">Dim</span> fieldList <span style="COLOR: #0000ff">As</span> List
+<span style="COLOR: #0000ff">Dim</span> FieldProp <span style="COLOR: #0000ff">As</span> FieldProperty
+
+<span style="COLOR: #008000">'----------------------------------
+'Get a list of TDField objects from
+' TDConnection.Fields.
+</span>    <span style="COLOR: #008000">'tdc is the global TDConnection object.
+</span>    <span style="COLOR: #0000ff">Set</span> fieldList = tdc.Fields(TableName)
+
+<span style="COLOR: #008000">'-------------------------------------------
+' Use List.Count to check the number of items.
+</span>    Debug.Print <span style="COLOR: #800000">"The number of field in the table is "</span> _
+        &amp; fieldList.Count
+    Debug.Print
+
+<span style="COLOR: #008000">'-------------------------------------------
+' Use List.Item to get a TDField object.
+' Use the TDField name property to check
+' what the first item is.
+</span>    <span style="COLOR: #0000ff">Set</span> aField = fieldList.Item(0)
+    Debug.Print <span style="COLOR: #800000">"The first item is "</span> &amp; aField.name
+    
+<span style="COLOR: #008000">' Walk through the list and output the properties.
+'Note that although the TDField and the FieldProperty objects
+' return information on the same field, they do this
+' from different perspectives and, in some cases, the information
+' is slightly different.
+'Run the example and study the output to see these differences.
+</span>    <span style="COLOR: #0000ff">For</span> <span style="COLOR: #0000ff">Each</span> aField <span style="COLOR: #0000ff">In</span> fieldList
+        <span style="COLOR: #0000ff">With</span> aField
+<span style="COLOR: #008000">'-------------------------------------------
+' Get the FieldProperty object.
+</span>        <span style="COLOR: #0000ff">Set</span> FieldProp = aField.Property
+        <span style="COLOR: #0000ff">If</span> <span style="COLOR: #0000ff">True</span> <span style="COLOR: #0000ff">Then</span> <span style="COLOR: #008000">'fieldProp.IsActive Then
+</span>            Debug.Print <span style="COLOR: #800000">"---------------------------"</span>
+            Debug.Print <span style="COLOR: #800000">"TDField.Name: "</span> &amp; .name
+            <span style="COLOR: #008000">'TDField.Name: AT_ENTITY_TYPE
+</span>            Debug.Print vbTab &amp; <span style="COLOR: #800000">"FieldProperty.DBColumnName: "</span> _
+                &amp; FieldProp.DBColumnName
+            <span style="COLOR: #008000">'    FieldProperty.DBColumnName: AT_ENTITY_TYPE
+</span>            Debug.Print vbTab &amp; <span style="COLOR: #800000">"TDField.Property: "</span> &amp; .Property
+            <span style="COLOR: #008000">'    FieldProperty.UserLabel: Entity
+</span>            Debug.Print vbTab &amp; <span style="COLOR: #800000">"FieldProperty.UserLabel: "</span> _
+                &amp; FieldProp.UserLabel
+            <span style="COLOR: #008000">'    FieldProperty.UserLabel: Entity
+</span>            Debug.Print vbTab &amp; <span style="COLOR: #800000">"TDField.Type: "</span> &amp; .Type _
+                &amp; <span style="COLOR: #800000">" = "</span> &amp; DataTypeString(.Type)
+            <span style="COLOR: #008000">'    TDField.Type: 3 = TDOLE_STRING
+</span>            Debug.Print vbTab &amp; <span style="COLOR: #800000">"FieldProperty.DBColumnType: "</span> _
+                &amp; FieldProp.DBColumnType
+            <span style="COLOR: #008000">'    FieldProperty.DBColumnType: char
+</span>            Debug.Print vbTab &amp; <span style="COLOR: #800000">"FieldProperty.UserColumnType: "</span> _
+                &amp; FieldProp.UserColumnType
+            <span style="COLOR: #008000">'    FieldProperty.UserColumnType: char
+</span>            <span style="COLOR: #0000ff">If</span> FieldProp.IsKey <span style="COLOR: #0000ff">Then</span>
+                  Debug.Print vbTab _
+                    &amp; <span style="COLOR: #800000">"Key Field - FieldProperty.KeyOrder: "</span> _
+                    &amp; FieldProp.KeyOrder
+                  <span style="COLOR: #008000">'    Key Field - FieldProperty.KeyOrder: 0
+</span>            <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+            Debug.Print vbTab &amp; <span style="COLOR: #800000">"This field"</span> _
+                &amp; <span style="COLOR: #0000ff">IIf</span>(FieldProp.IsActive, <span style="COLOR: #800000">" is "</span>, <span style="COLOR: #800000">" is not "</span>) _
+                &amp; <span style="COLOR: #800000">"visible in the UI"</span>
+            <span style="COLOR: #008000">'    This field is not visible in the UI
+</span>        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">If</span>
+        <span style="COLOR: #0000ff">End</span> <span style="COLOR: #0000ff">With</span>
+    <span style="COLOR: #0000ff">Next</span> aField
+
+<span style="COLOR: #0000ff">End Sub</span>
+</pre>
+    </div>
+</div>
+            <a name="seealsobookmark"></a>
+            
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference 12.5x Documentation Feedback: Get the list of fields in a table and compare TDField properties and FieldProperty properties">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

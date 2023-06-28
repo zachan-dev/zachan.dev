@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Sanitizing Output</title>
+    <meta name="Title" content="Sanitizing Output"/>    
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <meta name="Description" content="REST API output sanitization removes or encodes data returned by requests, thus reducing security risks. Output sanitization is enabled by default. You can disable it or configure the feature using site parameters." />
+    
+    <link rel="styleSheet" type="text/css" href="stylesheets/topics.2012.css" data-mshv2-stylesheet="/stylesheets/topics.2012.mshv2.css" />
+    <script src="script/topics.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/topics.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="518b1b2b-ff04-459d-8d2f-7017ec5e1d38"/>
+    <meta name="Microsoft.Help.TocParent" content="f82848d6-6e42-4b58-b253-17e49c016d48"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM 12.5x REST API Reference</div>
+        <div id="PageTitle"><div id="PageTitleText">Sanitizing Output</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    <div class="BreadcrumbsContainer"><table><tr><td>
+<a href="Working_with_API.htm">Working with the API</a>
+ > Sanitizing Output</td></tr></table></div>
+    
+    
+    <div id="BodyContent">
+        <p>REST API output sanitization removes or encodes data returned by requests, thus reducing security risks. Output sanitization is enabled by default. You can disable it or configure the feature using site parameters.</p>
+
+<p>You can configure HTML sanitization for the values of fields of various collections in the project customization interface. You can select:</p>
+
+<ul>
+    <li>Do nothing - return the value as it is stored in the database.</li>
+
+    <li>Text encoding - values are HTML encoded. Used especially with text fields.</li>
+
+    <li>HTML sanitization - value is sanitized according to a predefined&nbsp;<a href="sanitizing_html_whitelist.htm">whitelist</a>.</li>
+</ul>
+
+<p>For more information about site-level and field-level configuration, search for "sanitization" in the <i>Application Lifecycle Management Administrator Guide</i>.</p>
+
+<p>Data to be sanitized must be inside the &lt;html&gt; and &lt;body&gt; tags of a valid HTML document. Otherwise, a tag might be sanitized even though it is allowed by the whitelist.</p>
+
+<p>If data cannot be stored as a valid HTML document, you can prevent unwanted sanitizing by configuring the specific field for no sanitation. Consider the security implications before doing this.</p>
+
+<h2>HTML&nbsp;Sanitization</h2>
+
+<p>There is a default HTML sanitization whitelist. You can override the defaults by configuring HTML sanitization at the level of protocols, tags, and attributes using a custom HTML sanitizer whitelist. See Output Sanitization Whitelist.</p>
+
+<p>The tags and attributes specified in the whitelist are returned without change.</p>
+
+<p>Tags that are not in the whitelist are HTML encoded. For example, if tag <code>&lt;abc&gt;</code> is in the field value, but tag <code>abc</code> is not in the whitelist, the returned value is <code>&amp;lt;abc&amp;gt;</code>.</p>
+
+<p>Attributes not in the whitelist are removed, even if they are attributes of a tag that is in the whitelist. For example:<br />
+The field value contains <code>&lt;img src="http://mypage.com/1.jpg" onClick="alert('a');" /&gt;</code>. The <code>img</code> tag and the <code>src</code> attribute of <code>img</code> are in the whitelist, but the <code>onClick</code> attribute is not. <code>onClick</code> is stripped and the return value is <code>&lt;img src="http://mypage.com/1.jpg" /&gt;</code>.</p>
+
+<p>Attributes that reference a protocol that is not in the whitelist are removed, even if the attributes and tag are in the whitelist. For example:<br />
+The field value contains <code>&lt;img src="ftp://mypage.com/1.jpg" /&gt;</code>. The <code>img</code> tag and the <code>src</code> attribute of <code>img</code> are in the whitelist, but the <code>ftp</code> protocol is not. <code>src</code> is stripped and the return value is <code>&lt;img /&gt;</code>.</p>
+
+<p>The default whitelist allows &lt;img src=””…/&gt; in the <span class="UI_Element">http&nbsp;</span>and <span class="UI_Element">https</span> protocols. For more strict sanitization, provide a custom whitelist.</p>
+            <a name="seealsobookmark"></a>
+            <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><div class="SeeAlsoLink">
+<a href="sanitizing_html_whitelist.htm">Output Sanitization Whitelist</a></div>
+
+</div>
+        
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994-2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM REST API Reference 12.5x Documentation Feedback: Sanitizing Output">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>

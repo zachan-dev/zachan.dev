@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins__TopNav_Skin" data-mc-search-type="Stem" data-mc-help-system-file-name="almhelp.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="Admin Help|ALM Administrator Help|Project Customization|Business Views">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="page-type" content="other" />
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" /><title>Working with DQL</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/_HP_SuperDocs.css" rel="stylesheet" />
+        <style>/*&lt;meta /&gt;*/
+
+.button.expand-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.remove-highlight-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/highlight.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../Resources/Scripts/PIE.htc');
+}
+
+</style>
+        <script src="../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_ImageMapResizer.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_Script.min.js">
+        </script>
+    </head>
+    <body id="TopNav" class="other">
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-left" id="offCanvas" data-off-canvas="" data-position="left" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-left is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" data-mc-ignore="true">
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="relative clearfix"><a class="logo" href="../Resources/_TopNav/_TopNav_Home.htm" alt="Logo"></a>
+                                    <div class="navigation-wrapper nocontent">
+                                        <ul class="navigation clearfix" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="2" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button class="menu-icon" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="nav-search row outer-row">
+                                <form class="search" action="#">
+                                    <div class="search-bar search-bar-container needs-pie">
+                                        <input class="search-field needs-pie" type="search" placeholder="Search" />
+                                        <div class="search-filter-wrapper">
+                                            <div class="search-filter">
+                                                <div class="search-filter-content">
+                                                    <ul>
+                                                        <li>All Files</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search-submit-wrapper" dir="ltr">
+                                            <div class="search-submit" title="Search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <section class="main-section">
+                        <div class="row outer-row" data-mc-content-body="True">
+                            <!-- Google Tag Manager -->
+                            <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJ9842" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>-->
+                            <!-- End Google Tag Manager -->
+                            <div id="contentBody">
+                                <div class="row">
+                                    <div id="proxy-topic-toolbar" class="hidden">
+                                        <div class="buttons popup-container clearfix topicToolbarProxy mc-component nocontent" style="mc-topic-toolbar-items: ExpandAll RemoveHighlight Print">
+                                            <div class="button-group-container-left">
+                                                <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all" data-state1-title="Expand all">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="expand all" />
+                                                </button>
+                                                <button class="button needs-pie remove-highlight-button" title="Remove Highlights">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="remove highlight" />
+                                                </button>
+                                                <button class="button needs-pie print-button" title="Print">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="print" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="hp-toc-tree" class="hidden">
+                    <MadCap:menuProxy style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                </div> -->
+                                    <div id="proxy-menu" class="hide-for-small medium-offset-1 medium-4 columns">
+                                        <nav id="hp-sidebar-menu">
+                                            <ul class="sidebar hidden mc-component" data-mc-is-context-sensitive="True" data-mc-linked-toc="Data/Tocs/QCPC_TOC.js" data-mc-side-menu="True" data-mc-max-depth="1" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div id="proxy-content" class="small-12 medium-7 columns">
+                                        <div id="proxy-breadcrumbs" class="hidden">
+                                            <div class="nocontent">
+                                                <div class="MCBreadcrumbsBox_0 breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="5" data-mc-toc="True"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="proxy-body"><a id="top"></a>
+                                            <h1><a name="aanchor896"></a>
+                                                <MadCap:concept term="ALM Administrator Guide" />Working with DQL</h1>
+                                            <p>The process of creating business view queries utilizes DQL, a domain query language.</p>
+                                            <p>For the most part, DQL is an exact match to ANSI SQL 9.2, however there are some significant differences.</p>
+                                            <div class="Admonition_Note">
+                                                <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>DQL&#160;only supports SELECT&#160;statements.</p>
+                                            </div>
+                                            <p style="page-break-after: avoid;">This section includes:</p>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Advantages_of_DQL"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Advantages of DQL</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p style="page-break-after: avoid;">Building queries with DQL has the following advantages:</p>
+                                                    <ul>
+                                                        <li value="1">DQL enforces data hiding in accordance with user's permission levels. In other words, reports are generated according to the permission levels of the user generating them. Information that is included in a business view that is not available to a user does not appear in any report that the user creates. </li>
+                                                        <li value="2">The DQL query creates a database abstraction which is then used as a basis for the business view. Since the basis of the view is an abstraction of the database and not the database itself, you do not need to identify entity fields according to their actual names. Rather the query simplifies them and makes them easier to identify. For example, all fields that relate to an object's identification appear with the suffix "ID", such as Defect ID, Cycle ID, and Release ID.</li>
+                                                        <li value="3">DQL queries run equally well on Oracle and SQL database servers.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Additions_to_ANSI_SQL"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Additions to SQL</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p style="page-break-after: avoid;">DQL provides the following options, which are not available in ANSI SQL:</p>
+                                                    <ul>
+                                                        <li value="1">
+                                                            <p style="page-break-after: avoid;"><b>Variables.</b> Three variables have been added:</p>
+                                                            <ul>
+                                                                <li value="1">
+                                                                    <p><b>:me.</b> Returns information relevant to the user creating the report. Meaning different users who create reports based on the same business view will receive different results. </p>
+                                                                </li>
+                                                                <li style="font-weight: normal;" value="2"><b>:current_<span class="noGlossary">project</span>_name. </b>Returns information relevant for the project from which the reports is created. </li>
+                                                                <li value="3"><b>:current_domain_name. </b>Returns information relevant for the domain from which the report is created.</li>
+                                                            </ul>
+                                                            <p style="page-break-after: avoid;">Following is an example of the <b>Me</b> variable:</p>
+                                                            <div class="example" style="page-break-inside: avoid;"><pre xml:space="preserve" data-mc-autonum="&lt;b&gt;Example: &lt;/b&gt;"><span class="autonumber"><span><b>Example: </b></span></span>Select *</pre><pre xml:space="preserve">From <span class="noGlossary">defect</span></pre><pre xml:space="preserve">Where defect.detected_by = :me</pre>
+                                                            </div>
+                                                        </li>
+                                                        <li value="2"><b>Select Top.</b> This option enables you to limit the query results to a defined number of items. </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead dropDownHeadboldPrint"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Supported_Functions"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Supported Functions</a></span>
+                                                <div class="MCDropDownBody dropDownBody">
+                                                    <p style="page-break-after: avoid;">The following table lists the DQL functions that are supported in <span class="QCPCALM">ALM</span>. DQL&#160;functions are converted to the corresponding SQL&#160;functions for use in the database. The table lists the conversions of the DQL&#160;functions to MS SQL and Oracle. For more information, refer to the MS&#160;SQL&#160;and Oracle documentation.</p>
+                                                    <table style="width: 100%;border-left-style: solid;border-left-width: 1pt;border-left-color: #cccccc;border-right-style: solid;border-right-width: 1pt;border-right-color: #cccccc;border-top-style: solid;border-top-width: 1pt;border-top-color: #cccccc;border-bottom-style: solid;border-bottom-width: 1pt;border-bottom-color: #cccccc;margin-left: 0;margin-right: auto;">
+                                                        <col />
+                                                        <col />
+                                                        <col />
+                                                        <col />
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <p>Function</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>Signature</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>Return Type</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>Description</p>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="4"><b>Aggregation</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>count   </td>
+                                                                <td>count(expression)   </td>
+                                                                <td>integer </td>
+                                                                <td>Returns the number of rows in a query.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>count_big 
+</td>
+                                                                <td>count_big(expression) </td>
+                                                                <td>integer (bigint) </td>
+                                                                <td>
+                                                                    <p>Returns the number of rows in a query. The only difference between <b>count</b> and <b>count_big</b> is their return values. In MS SQL, <b>count_big</b> always returns a bigint data type value, and <b>count</b> always returns an int data type value.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is converted to <b>count</b>. </p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>variance 
+</td>
+                                                                <td>variance(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the variance of the expression .</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>var</b>. In Oracle, the function is coded as <b>round(variance(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>var_pop 
+</td>
+                                                                <td>var_pop(expression) 
+</td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the population variance of a set of numbers after discarding the nulls in the set.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>varp</b>.  In Oracle, the function is coded as <b>round(var_pop(&lt;expression&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>stddev </td>
+                                                                <td>stddev(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the standard deviation of a set of numbers. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>stdev</b>.  In Oracle, the function is coded as <b>round(stddev(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>stddev_pop 
+</td>
+                                                                <td>stddev_pop(expression) 
+</td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Computes the population standard deviation and returns the square root of the population variance. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>stdevp</b>.  In Oracle, the function is coded as <b>round(stddev_pop(&lt;expression&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>avg </td>
+                                                                <td>avg(expression) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the average value of an expression.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>  In Oracle, the function is coded as <b>round(avg(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>sum </td>
+                                                                <td>sum(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>Returns the summed value of an expression.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>min </td>
+                                                                <td>min(expression) </td>
+                                                                <td>expression </td>
+                                                                <td>Returns the minimum value of an expression.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>max </td>
+                                                                <td>max(expression) </td>
+                                                                <td>expression </td>
+                                                                <td>Returns the maximum value of an expression. 
+</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>String Manipulation</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>upper </td>
+                                                                <td>upper(string) </td>
+                                                                <td>string </td>
+                                                                <td>Returns the given string with all letters converted to upper case. </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lower </td>
+                                                                <td>lower(string) </td>
+                                                                <td>string </td>
+                                                                <td>Returns the given string with all letters converted to lower case. </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>rtrim </td>
+                                                                <td>rtrim(string) </td>
+                                                                <td>string </td>
+                                                                <td>Returns the given string with all trailing spaces removed from the right-hand side.
+</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ltrim </td>
+                                                                <td>ltrim(String) 
+</td>
+                                                                <td>string </td>
+                                                                <td>Returns the given string with all leading spaces removed.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>replace </td>
+                                                                <td>replace(string, string_to_replace, replacement_string) 
+</td>
+                                                                <td>string </td>
+                                                                <td>Returns the given string with all sequences of <b>&lt;string_to_replace&gt;</b> replaced with <b>&lt;replacement_string&gt;</b>.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>substring </td>
+                                                                <td>substring(string, int_start_position, int_length) 
+</td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns a substring from the given string.</p>
+                                                                    <ul>
+                                                                        <li value="1">
+                                                                            <p><b>int_start_position</b>. The position from which to start extracting the substring.</p>
+                                                                        </li>
+                                                                        <li value="2">
+                                                                            <p><b>int_length</b>. The number of characters to extract. </p>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is converted to <b>substr</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>length </td>
+                                                                <td>length(string) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the length of the specified string.
+</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>len</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>chr </td>
+                                                                <td>chr(integer) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Converts an int ASCII code into a character.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>char</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>soundex </td>
+                                                                <td>soundex(string) </td>
+                                                                <td>string </td>
+                                                                <td>Returns a phonetic representation of a string.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ascii </td>
+                                                                <td>ascii(string) </td>
+                                                                <td>integer </td>
+                                                                <td>Returns the ASCII code value of the leftmost character of a character expression. </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>concat </td>
+                                                                <td>concat(string1, string2) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Concatenates two strings together .</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>+</b>, and the function is coded as <b>&lt;string1&gt; + &lt;string2&gt;</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>leftstr </td>
+                                                                <td>leftstr(string, integer) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns the left part of a character string with the specified number of characters. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>left</b>. In Oracle, the function is converted to <b>substr</b> and is coded as <b>substr(&lt;string&gt;, 1, &lt;integer&gt;)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lpad </td>
+                                                                <td>lpad(string1, integer, string2) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns <b>&lt;string1&gt;</b>, left-padded to length <b>&lt;integer&gt;</b> characters with the sequence of characters in <b>&lt;string2&gt;</b>. This function is useful for formatting the output of a query. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>left padding</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>reverse </td>
+                                                                <td>reverse(string) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns the reverse of a string value. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is  coded as <b>reverse(to_char(&lt;string&gt;))</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>rightstr </td>
+                                                                <td>rightstr(string, integer) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns the right part of a character string with the specified number of characters. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span> In MS&#160;SQL, the function is converted to <b>right</b>. In Oracle, the function is converted to <b>substr</b> with the <b>right part</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>rpad </td>
+                                                                <td>rpad(string1, integer, string2) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns <b>&lt;string1&gt;</b>,  right-padded to length <b>&lt;integer&gt;</b> characters with <b>&lt;string2&gt;</b>, replicated as many times as necessary. This function is useful for formatting the output of a query.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>left</b> with the <b>right padding</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>stuff </td>
+                                                                <td>stuff(string, integer, integer, string) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Inserts a string into another string. It deletes a specified length of characters in the first string at the start position, and then inserts the second string into the first string at the start position. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the <b>stuff</b> function is converted to an expression that implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>in_string </td>
+                                                                <td>in_string(string1, string2, integer_start_location) </td>
+                                                                <td>integer </td>
+                                                                <td>
+                                                                    <p>Returns the location of substring <b>string2</b> in <b>string1</b>, if it exists. Otherwise, returns 0. The search starts at <b>integer_start_location</b>, which starts at 1.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>charindex</b>. In Oracle, the function is converted to <b>instr</b> and is coded as <b>instr(&lt;string2&gt;, &lt;string1&gt;, &lt;integer_start_location&gt;)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>replicate</td>
+                                                                <td>replicate(string, integer)</td>
+                                                                <td>string</td>
+                                                                <td>
+                                                                    <p>Repeats the <b>&lt;string&gt;</b> value the number of times given in the <b>&lt;integer&gt;</b> parameter.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is converted to <b>rpad</b> and is coded as <b>rpad(&lt;string&gt;, length(&lt;string&gt;*&lt;integer&gt;), &lt;string&gt;)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>Math</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>sin </td>
+                                                                <td>sin(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the sine of the <b>decimal</b> parameter. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(sin(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>asin </td>
+                                                                <td>asin(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the arc sine of the <b>decimal</b> parameter. The argument must be in the range of -1 to 1.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(asin(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>cos </td>
+                                                                <td>cos(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the cosine of the <b>decimal</b> parameter. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(cos(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>acos </td>
+                                                                <td>acos(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the arc cosine of the <b>decimal</b> parameter. The argument must be in the range of -1 to 1. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(acos(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>tan </td>
+                                                                <td>tan(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the tangent of the <b>decimal</b> parameter. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(tan(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>atan </td>
+                                                                <td>atan(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the arc tangent of the <b>decimal</b> parameter. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(atan(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>atan2 </td>
+                                                                <td>atan2(decimal1, decimal2) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the angle, in radians, between the positive x-axis and the ray from the origin to the point (y, x), where x and y are the values of <b>decimal1</b> and <b>decimal2</b>.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>atn2</b>. In Oracle, the function is coded as <b>round(atan2(&lt;decimal1&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>tanh </td>
+                                                                <td>tanh(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the hyperbolic tangent of the <b>decimal</b> parameter.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>tanh</b> expression, which implements the above logic. In Oracle, the function is coded as <b>round(tanh(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>sqrt </td>
+                                                                <td>sqrt(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the square root of decimal parameters.
+</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(sqrt(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>exp </td>
+                                                                <td>exp(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns <b>e</b> raised to the <b>decimal</b> parameter power, where e = 2.71828183. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is coded as <b>round(exp(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>sign </td>
+                                                                <td>sign(decimal) </td>
+                                                                <td>decimal</td>
+                                                                <td>
+                                                                    <p>Returns a value indicating the sign of a number. If the number &lt; 0, then <b>sign</b> returns -1. If the number = 0, then <b>sign</b> returns 0. If the number &gt; 0, then <b>sign</b> returns 1. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>sign</b> expression, which implements the above logic, and is coded as <b>CAST(sign(&lt;decimal&gt;) AS int)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>floor </td>
+                                                                <td>floor(decimal) </td>
+                                                                <td>integer </td>
+                                                                <td>Returns the largest integer less than or equal to the specified decimal argument.
+</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ln </td>
+                                                                <td>ln(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the natural logarithm of the decimal argument. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>log</b>. In Oracle, the function is coded as <b>round(ln(&lt;decimal&gt;), 14)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>abs </td>
+                                                                <td>abs(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>Returns the absolute value of a number. </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>round </td>
+                                                                <td>round(decimal, integer) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns <b>decimal</b> rounded to <b>integer</b> places to the right of the decimal point. The <b>integer</b> parameter can be negative to round off digits left of the decimal point.
+</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is  coded as <b>CAST(round(&lt;decimal&gt;, &lt;integer&gt;) AS int)</b> or as <b>CAST(round(&lt;decimal&gt;, &lt;integer&gt;) AS float)</b>, depending on whether <b>integer</b> is valued with zero.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>mod </td>
+                                                                <td>mod(decimal1, decimal2) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the remainder of <b>decimal1</b> divided by <b>decimal2</b>. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>%</b> and is coded as <b>&lt;decimal1&gt; % &lt;decimal2&gt;</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>trunc_number </td>
+                                                                <td>trunc_number(decimal, integer) </td>
+                                                                <td>decimal</td>
+                                                                <td>
+                                                                    <p>Returns <b>decimal</b> truncated to <b>integer</b> decimal places. If <b>integer</b> is omitted, then <b>decimal</b> is truncated to 0 places.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>truncation</b> expression, which implements the above logic. In Oracle, the function is converted to <b>trunc</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>str </td>
+                                                                <td>str(decimal, integer1, integer2) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns character data converted from numeric data.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is converted to the <b>string construction</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ceil</td>
+                                                                <td>ceil(decimal) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Returns the smallest integer greater than or equal to the decimal parameter.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>ceiling</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>Cast</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>to_number </td>
+                                                                <td>to_number(string) </td>
+                                                                <td>decimal </td>
+                                                                <td>
+                                                                    <p>Converts a string to a number.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>CAST(&lt;string&gt; AS float)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>number_to_char 
+</td>
+                                                                <td>number_to_char(decimal) 
+</td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Converts a number to a string.
+</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>CAST(&lt;decimal&gt; AS varchar(50))</b>. In Oracle, the function is converted to <b>to_char</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>char_to_char </td>
+                                                                <td>char_to_char(string) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Converts NCHAR, NVARCHAR2, CLOB, or NCLOB data to the database character set. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>CAST(&lt;string&gt; AS varchar(50))</b>. In Oracle, the function is converted to <b>to_char</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>datetime_to_char 
+</td>
+                                                                <td>datetime_to_char(expression) 
+</td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Converts a date or datetime to a string. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>convert(varchar, &lt;date&gt;, 121)</b>. In Oracle, the function is converted to <b>to_char</b> and is coded as <b>to_char(&lt;date&gt;, 'YYYY-MM-DD HH24:MI:SS:FF3')</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>Miscellaneous</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>nullif </td>
+                                                                <td>nullif(expression1, expression2) </td>
+                                                                <td>expression </td>
+                                                                <td>Compares <b>expression1</b> and <b>expression2</b>. If <b>expression1</b> and <b>expression2</b> are equal, the function returns NULL. Otherwise, it returns <b>expression1</b>. 
+</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>coalesce</td>
+                                                                <td>coalesce()</td>
+                                                                <td>expression</td>
+                                                                <td>Returns the first non-null expression among its arguments. The data type of the returned value is the data type of the parameter with the highest data type precedence.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>isnull </td>
+                                                                <td>isnull(check_expression, replace_expression) </td>
+                                                                <td>expression </td>
+                                                                <td>
+                                                                    <p>Substitutes a value when a null value is encountered. If <b>check_expression</b> is null, then the function returns 
+<b>replace_expression</b>. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is converted to <b>nvl</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>Date</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>currentdate </td>
+                                                                <td>currentdate() 
+</td>
+                                                                <td>date </td>
+                                                                <td>
+                                                                    <p>Returns the current date. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>CAST(CAST(getdate() AS date) AS datetime)</b>. In Oracle, the function is coded as <b>to_date(to_char(sysdate))</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>dateadd </td>
+                                                                <td>dateadd(integer, date) 
+</td>
+                                                                <td>date </td>
+                                                                <td>
+                                                                    <p>Adds days to date 
+parameters: 
+ </p>
+                                                                    <ul>
+                                                                        <li value="1">
+                                                                            <p> <b>integer</b>. The numbers of days to add. </p>
+                                                                        </li>
+                                                                        <li value="2">
+                                                                            <p><b>date</b>. The date to add to.</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>dateadd(DAY, &lt;int days&gt;, &lt;Date date&gt;)</b>. In Oracle, the function is converted to <b>+</b> and is coded as <b>&lt;int days&gt; + &lt;Date date&gt;</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>datediff </td>
+                                                                <td>datediff(start_date, end_date) </td>
+                                                                <td>integer </td>
+                                                                <td>
+                                                                    <p>Returns the count (signed integer) of dates crossed between the specified <b>start_date</b> and <b>end_date</b>.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is coded as <b>datediff(DAY, &lt;date&gt;, &lt;date&gt;)</b>. In Oracle, the function is converted to <b>-</b> and is coded as <b>trunc(&lt;date&gt; - &lt;date&gt;, 0)</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>get_time </td>
+                                                                <td>get_time() </td>
+                                                                <td>datetime </td>
+                                                                <td>
+                                                                    <p>Returns the current date and time. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>getdate</b> and is coded as <b>convert(datetime, getdate(), 126)</b>. In Oracle, the function is converted to <b>LOCALTIMESTAMP</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>trunc_date </td>
+                                                                <td>trunc_date(date, string_format) </td>
+                                                                <td>date </td>
+                                                                <td>
+                                                                    <p>Returns a date truncated to a specific unit of measure. <b>string_format</b> is the unit of measure to apply for truncating. The following formats are supported: year, y, yy, yyyy, q, quarter, mm, month, d, dd, day, hh, mi </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>dateadd</b> and is coded as <b>dateadd(&lt;unquoted string_format&gt;,  datediff(&lt;unquoted string_format&gt;, 0, &lt;date&gt;), 0)</b>. In Oracle, the function is converted to <b>trunc</b> and is coded as <b>trunc(&lt;date&gt;, &lt;string_format&gt;</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>to_date </td>
+                                                                <td>to_date(string) </td>
+                                                                <td>date </td>
+                                                                <td>
+                                                                    <p>Converts a string to a date. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is  coded as <b>CAST(&lt;string&gt; AS datetime)</b>. In Oracle, the function is coded as <b>to_date(&lt;string&gt;, 'YYYY-MM-DD')</b>.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>timestamp_tz </td>
+                                                                <td>timestamp_tz() </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns the current server time zone .</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>sysdatetimeoffset</b>. In Oracle, the function is converted to <b>CURRENT_TIMESTAMP</b>. This function is not supported in MS&#160;SQL&#160;Server 2005.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>from_tz </td>
+                                                                <td>from_tz(date, string) </td>
+                                                                <td>date </td>
+                                                                <td>
+                                                                    <p>Converts a timestamp value (<b>date</b>)and a time zone (<b>string</b>)to a timestamp with time zone value. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>time stamp</b> and <b>zone</b> expressions, which implement the above logic. This function is not supported in MS&#160;SQL&#160;Server 2005.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>sysdatetimeoffset </td>
+                                                                <td>sysdatetimeoffset() 
+</td>
+                                                                <td>datetime with time zone </td>
+                                                                <td>
+                                                                    <p>Returns the system date, including fractional seconds, and the time zone of the system on which the database resides. 
+</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In Oracle, the function is converted to <b>SYSTIMESTAMP</b>. This function is not supported in MS&#160;SQL&#160;Server 2005.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>getyear </td>
+                                                                <td>getyear(date) </td>
+                                                                <td>integer </td>
+                                                                <td>
+                                                                    <p>Returns an integer that represents the year of the specified date.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span> 
+In MS&#160;SQL, the function is converted to <b>year</b>. In Oracle, the function is converted to <b>to_char</b> and is coded as <b>CAST(to_char(&lt;date&gt;, 'yyyy') AS number)</b>. </p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>getmonth </td>
+                                                                <td>getmonth(date) </td>
+                                                                <td>integer </td>
+                                                                <td>
+                                                                    <p>Returns an integer that represents the month of the specified date.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>month</b>. In Oracle, the function is converted to <b>to_char</b> and is coded as <b>CAST(to_char(&lt;date&gt;, 'mm') AS number)</b>. </p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>getday </td>
+                                                                <td>getday(date) </td>
+                                                                <td>integer </td>
+                                                                <td>
+                                                                    <p>Returns an integer representing the day of the month of the specified date.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to <b>day</b>. In Oracle, the function is converted to <b>to_char</b> and is coded as <b>CAST(to_char(&lt;date&gt;, 'dd') AS number)</b>. </p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>datepart </td>
+                                                                <td>datepart(string_datepart, date) </td>
+                                                                <td>integer </td>
+                                                                <td>
+                                                                    <p>Returns an integer that represents the specified <b>string_datepart</b> of the specified date.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is  coded as <b>datepart(&lt;unquoted string_datepart&gt;, &lt;date&gt;)</b>. In Oracle, the function is converted to the <b>datepart</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>datename </td>
+                                                                <td>datename(string_datepart, date) </td>
+                                                                <td>string </td>
+                                                                <td>
+                                                                    <p>Returns a character string that represents the specified <b>string_datepart</b> of the specified date. The following formats are supported: yyyy, yy, year, q, quarter, m, month, d, dd, day, hh, mi </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is  coded as <b>datename(&lt;unquoted string_datepart&gt;, &lt;date&gt;)</b>. In Oracle, the function is converted to the <b>datename</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>Case</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>decode </td>
+                                                                <td>decode(expression, search, result [, search, result]... [, default] ) </td>
+                                                                <td>expression </td>
+                                                                <td>
+                                                                    <p>Das the functionality of an IF-THEN-ELSE statement. Compares the expression to each search value one by one. If the expression is equal to a search, then an Oracle Database returns the corresponding result. If no match is found, then Oracle returns <b>default</b>. If default is omitted, then Oracle returns <b>null</b>. </p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>case-when-else</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>greatest</td>
+                                                                <td>greatest()</td>
+                                                                <td>expression</td>
+                                                                <td>
+                                                                    <p>Returns the greatest of the list of parameters.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>greatest</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>least</td>
+                                                                <td>least()</td>
+                                                                <td>expression</td>
+                                                                <td>
+                                                                    <p>Returns the least of the list of parameters.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>In MS&#160;SQL, the function is converted to the <b>least</b> expression, which implements the above logic.</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"><b>Special Date</b> <div class="Admonition_Note"><p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>For each function, the requested date is returned in the respective date format. In MS&#160;SQL, the requested date in yyyy-MM-dd format is cast as datetime. In Oracle, to_date(&lt;requested date in dd-MMM-yy format&gt;, DD-MON-YY)</p></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfCurrentMonth</td>
+                                                                <td>firstDayOfCurrentMonth()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the current month.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfCurrentWeek</td>
+                                                                <td>firstDayOfCurrentWeek()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the current week.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfCurrentYear</td>
+                                                                <td>firstDayOfCurrentYear()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the current year.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfNextMonth</td>
+                                                                <td>firstDayOfNextMonth()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the next month.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfNextWeek</td>
+                                                                <td>firstDayOfNextWeek()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the next week.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfNextYear</td>
+                                                                <td>firstDayOfNextYear()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the next year.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfPreviousMonth</td>
+                                                                <td>firstDayOfPreviousMonth()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the previous month.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfPreviousWeek</td>
+                                                                <td>firstDayOfPreviousWeek()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the previous week.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>firstDayOfPreviousYear</td>
+                                                                <td>firstDayOfPreviousYear()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the first day of the previous year.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfCurrentMonth</td>
+                                                                <td>lastDayOfCurrentMonth()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the current month.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfCurrentWeek</td>
+                                                                <td>lastDayOfCurrentWeek()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the current week.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfCurrentYear</td>
+                                                                <td>lastDayOfCurrentYear()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the current year.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfNextMonth</td>
+                                                                <td>lastDayOfNextMonth()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the next month.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfNextWeek</td>
+                                                                <td>lastDayOfNextWeek()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the next week.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfNextYear</td>
+                                                                <td>lastDayOfNextYear()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the next year.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfPreviousMonth</td>
+                                                                <td>lastDayOfPreviousMonth()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the previous month.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfPreviousWeek</td>
+                                                                <td>lastDayOfPreviousWeek()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the previous week.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastDayOfPreviousYear</td>
+                                                                <td>lastDayOfPreviousYear()</td>
+                                                                <td>date</td>
+                                                                <td>Returns the date of the last day of the previous year.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div class="footer-inner">
+                                    <table id="highlights">
+                                        <tr>
+                                            <td> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="../Resources/_TopNav/_TopNav_Home.htm">Help Center Home</a></p><p class="footerlink"><a href="https://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                                            <td> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/products/application-lifecycle-management/overview" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank">ALM on Twitter</a></p></td>
+                                            <td> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]?subject=Feedback on [%=_HPc_Basic_Variables._HP_Book_Title%] ([%=_HPc_Basic_Variables._HP_Product_Name%] [%=_HPc_Basic_Variables._HP_Product_Version%])" title="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+		</p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Help Center Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="hp-feedbackDiv"><div class="hp-feedbackDivClose"><a href="javascript:closeFeedback();" id="hp-feedbackClose"><img src="../Resources/_TopNav/Images/_TopNav_ic-close.png" /></a></div><div class="hp-feedbackDivContent"><!-- Localizable --><h1 class="feedback hp-feedbackDivHeader">Send Help Center Feedback</h1><p class="hp-feedbackDivBody">Let us know how we can improve your Help Center experience.</p><p class="hp-feedbackDivBody">Send your email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen">docteam@hpe.com</a></p><img src="../Resources/_TopNav/Images/_TopNav_ic-email.png" /><!-- Localizable --><div style="display:none;" id="hp-feedbackBody">Add your Help Center feedback:</div><!-- Localizable --></div></div><div id="hp-feedbackDimmedDiv"></div><div style="display:none;" id="hp-feedback-variables" productName="ALM&#160;Help Center" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="Working with DQL" skinLine1="ALM&#160;Help Center" skinLine2="ALM&#160;Help Center"><script src="../Resources/_TopNav/_TopNav_Feedback.js"></script></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/services/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                                        </tr>
+                                    </table>
+                                    <table id="copyright">
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <img src="../Resources/_TopNav/Images/_TopNav_ic-hpe-logo.png" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <img id="ic-favicon" class="hidden" src="../Resources/_TopNav/Images/_TopNav_hpe_favicon.ico" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <script type="text/javascript">/*<![CDATA[*/
+									var url = document.getElementById('ic-favicon');
+									var ext = document.createElement('link');
+									ext.setAttribute("rel", "shortcut icon");
+									ext.setAttribute("href", url.src);
+									document.getElementsByTagName("head")[0].appendChild(ext);
+								/*]]>*/</script>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="lastUpdated">Last updated <span class="_HPc_Basic_Variables_HP_LastUpdatedDate">June 06, 2018</span></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="http://www8.hp.com/us/en/hpe/legal/terms-of-use.html" target="_blank">Terms of Use</a>&#160;|&#160;<a class="copyright" href="https://www.hpe.com/us/en/legal/privacy.html" target="_blank">Privacy</a></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="../Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2002 - 2017</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="hp-google-custom-search hidden"><span id="hp-online-url" class="_HPc_Basic_VariablesOnlineURL">http://alm-help.saas.hpe.com</span><span id="hp-gcse-id" class="_HPc_Basic_VariablesSearchEngineId">018001665633254540897:42w460c7a-e</span>
+                            </div>
+                            <script>/* <![CDATA[ */
+			(function() {
+				var onlineURL = $('#hp-online-url').text();
+				if (location.href.indexOf(onlineURL)!==0) {
+					if ($('body').hasClass('home'))
+						$('.search-area-bar').css('visibility', 'visible');
+					else
+						$('.nav-search.row.outer-row').css('visibility', 'visible');
+		            
+					if ($('html.searchTopic').length) {
+						var idTips = setInterval(function() {
+							if (document.querySelector('#results-heading')) {
+								clearInterval(idTips);
+								$('<br>')
+									.appendTo('#results-heading');
+								$('#about-search')
+									.appendTo('#results-heading');
+							}
+						} , 100);
+					}
+					return;
+				}
+				
+				if (location.search.match(/^\?gcse-q=/)) {
+					$('#pagination').hide();
+					$('<div class="gcse-searchresults" data-linktarget="_parent"  data-queryParameterName="gcse-q"></div>')
+						.appendTo('#searchPane');
+                    var idFilter = setInterval(function() {
+                        var tab = $('#TopNav.other .gsc-tabsArea .gsc-tabHeader.gsc-tabhActive');
+                        if (tab && tab.text()==='All') {
+                                clearInterval(idFilter);
+                            $('#TopNav.other .gsc-tabHeader.gsc-tabhActive')
+                                .text('All Results');
+                        }
+                    }, 100);
+					/*** Open search results from other help centers in separate tab ***/
+					var shc = location.hostname.split('.')[0];
+                    setInterval(function() {
+                        var urls = $('.gsc-url-bottom');
+                        if (urls.length) {
+                            urls.each(function() {
+                                var thc = $(this).text().split('.')[0];
+                                if (shc!==thc) {
+                                    $(this).siblings('.gs-title').children('a')
+                                        .attr('target','_blank');
+                                }
+                            });
+                        }
+                    }, 1000);
+					var idResults = setInterval(function() {
+						if (document.querySelector('#results-heading')) {
+							clearInterval(idResults);
+							$('#results-heading').hide();
+						}
+					}, 100);
+				}
+				var b = location.href.match(/^.+?\/Content\//)[0];
+				var sbo = $('<div class="gcse-searchbox-only" data-resultsUrl="'+b+'Search.htm" data-newWindow="false" data-queryParameterName="gcse-q"></div>');
+						
+				if ($('body').hasClass('home')) {
+					$('.search-area-bar .search').hide();
+					sbo.appendTo('.search-area-bar');
+					var idHomeBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idHomeBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.search-area-bar')
+								.style.visibility = 'visible';
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				} else {
+                    if ($('html.searchTopic').length) sbo.attr('class','gcse-searchbox');
+					$('.nav-search.row.outer-row .search').hide();
+					sbo.appendTo('.nav-search.row.outer-row');
+					var idOtherBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idOtherBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.nav-search.row.outer-row')
+								.style.visibility = 'visible';
+							$('#TopNav.other #search-wrapper-back')
+								.appendTo('#TopNav.other .search-wrapper .gsc-search-box');
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				}
+                var idGCSE = setInterval(function() {
+                    var cx = $('#hp-gcse-id').text();
+                    var rc = $('.gcse-searchresults-only');
+                    if (!cx||!rc) return;
+                    clearInterval(idGCSE);
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                }, 100); 
+			})();
+		/* ]]> */</script>
+                            <div class="hidden"><a id="about-search" href="../Resources/_TopNav/_TopNav_aboutSearch.htm">Tips to improve your search results...</a><a href="../Resources/_TopNav/_TopNav_TOC.htm">TOC</a>
+                                <!--<img id="feedback-header" src="Images/_TopNav_feedback_header.png" />
+            <img id="feedback-image" src="Images/_TopNav_feedback_image.png" />
+            <img id="feedback-image" src="Images/_TopNav_ic-close-responsive.png" />-->
+                                <img id="search-responsive" src="../Resources/_TopNav/Images/_TopNav_ic-search.png" />
+                                <img id="search-responsive-back" src="../Resources/_TopNav/Images/_TopNav_ic-search-back.png" />
+                                <img id="search-responsive-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear-blue.png" />
+                                <img id="search-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear.png" />
+                                <img id="search-drop" src="../Resources/_TopNav/Images/_TopNav_ic-drop.png" /><span id="hp-help-name" class="_HPc_Basic_Variables_HP_Product_Name_Skin_Line1">ALM&#160;Help Center</span><span id="hp-help-short-name" class="_HPc_Basic_Variables_HP_Product_Name_Short">ALM&#160;Help Center</span><span id="hp-help-version" class="_HPc_Basic_Variables_HP_Product_Version">12.50</span><span id="hp-search-all" class="_TopNav_VariablesSearchFilterAll">All</span><span id="hp-view-local" class="_TopNav_VariablesSettingViewLocal">View Local Help Center</span><span id="hp-view-online" class="_TopNav_VariablesSettingViewOnline">View Online Help Center</span><span id="hp-back-alt" class="_TopNav_VariablesToolbarBackAltText">back</span><span id="hp-back-tooltip" class="_TopNav_VariablesToolbarBackTooltip">Go back in browser history</span><span id="hp-forward-alt" class="_TopNav_VariablesToolbarForwardAltText">forward</span><span id="hp-forward-tooltip" class="_TopNav_VariablesToolbarForwardTooltip">Go forward in browser history</span><span id="hp-highlights-tooltip" class="_TopNav_VariablesToolbarHighlightsTooltip">Remove search highlights</span><span id="hp-next-alt" class="_TopNav_VariablesToolbarNextAltText">next topic</span><span id="hp-next-tooltip" class="_TopNav_VariablesToolbarNextTooltip">Go to next topic</span><span id="hp-previous-alt" class="_TopNav_VariablesToolbarPreviousAltText">previous topic</span><span id="hp-previous-tooltip" class="_TopNav_VariablesToolbarPreviousTooltip">Go to previous topic</span><span id="hp-print-tooltip" class="_TopNav_VariablesToolbarPrintTooltip">Print the current topic</span><span id="hp-version-label" class="_TopNav_VariablesVersionLabel">Version</span><span id="hp-floating-toc-show" class="_HPc_Basic_VariablesFloatingTocShow">(Undefined variable: _HPc_Basic_Variables.FloatingTocShow)</span>
+                            </div>
+                            <script type="text/javascript">/*<![CDATA[*/
+			(function() {
+                TopNav.play.init();
+			})();
+		/*]]>*/</script>
+                        </div>
+                    </section><a data-close="true"></a>
+                </div>
+            </div>
+            <script>/* <![CDATA[ */$(document).foundation();/* ]]> */</script>
+        </div>
+    </body>
+</html>

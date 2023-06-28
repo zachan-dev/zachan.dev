@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins__TopNav_Skin" data-mc-search-type="Stem" data-mc-help-system-file-name="almhelp.xml" data-mc-path-to-help-system="../../" data-mc-has-content-body="True" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="User Help|Business Process Testing User Help|Test Runs|Introducing Test and Flow Execution">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="page-type" content="other" />
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" /><title>How to Run Automated Business Process Tests and Flows</title>
+        <!-- Google Tag Manager -->
+        <script type="text/javascript">/*<![CDATA[*/(function(w,d,s,l,i){if(location.protocol.toLowerCase().indexOf('file:')===0)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NJ9842');/*]]>*/</script>
+        <!-- End Google Tag Manager -->
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/foundation.6.2.3.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Styles.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Tablet.css" rel="stylesheet" />
+        <link href="../../Skins/Fluid/Stylesheets/Mobile.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/_HP_SuperDocs.css" rel="stylesheet" />
+        <style>/*&lt;meta /&gt;*/
+
+.button.expand-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.remove-highlight-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/highlight.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../Resources/Scripts/PIE.htc');
+}
+
+</style>
+        <script src="../../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../../Resources/Scripts/foundation.6.2.3_custom.js">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_ImageMapResizer.js">
+        </script>
+        <script src="../Resources/_TopNav/_TopNav_Script.min.js">
+        </script>
+    </head>
+    <body id="TopNav" class="other">
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-left" id="offCanvas" data-off-canvas="" data-position="left" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-left is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" data-mc-ignore="true">
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="relative clearfix"><a class="logo" href="../Resources/_TopNav/_TopNav_Home.htm" alt="Logo"></a>
+                                    <div class="navigation-wrapper nocontent">
+                                        <ul class="navigation clearfix" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="2" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button class="menu-icon" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="nav-search row outer-row">
+                                <form class="search" action="#">
+                                    <div class="search-bar search-bar-container needs-pie">
+                                        <input class="search-field needs-pie" type="search" placeholder="Search" />
+                                        <div class="search-filter-wrapper">
+                                            <div class="search-filter">
+                                                <div class="search-filter-content">
+                                                    <ul>
+                                                        <li>All Files</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search-submit-wrapper" dir="ltr">
+                                            <div class="search-submit" title="Search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <section class="main-section">
+                        <div class="row outer-row" data-mc-content-body="True">
+                            <!-- Google Tag Manager -->
+                            <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJ9842" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>-->
+                            <!-- End Google Tag Manager -->
+                            <div id="contentBody">
+                                <div class="row">
+                                    <div id="proxy-topic-toolbar" class="hidden">
+                                        <div class="buttons popup-container clearfix topicToolbarProxy mc-component nocontent" style="mc-topic-toolbar-items: ExpandAll RemoveHighlight Print">
+                                            <div class="button-group-container-left">
+                                                <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all" data-state1-title="Expand all">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="expand all" />
+                                                </button>
+                                                <button class="button needs-pie remove-highlight-button" title="Remove Highlights">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="remove highlight" />
+                                                </button>
+                                                <button class="button needs-pie print-button" title="Print">
+                                                    <img src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="print" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="hp-toc-tree" class="hidden">
+                    <MadCap:menuProxy style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                </div> -->
+                                    <div id="proxy-menu" class="hide-for-small medium-offset-1 medium-4 columns">
+                                        <nav id="hp-sidebar-menu">
+                                            <ul class="sidebar hidden mc-component" data-mc-is-context-sensitive="True" data-mc-linked-toc="Data/Tocs/QCPC_TOC.js" data-mc-side-menu="True" data-mc-max-depth="1" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div id="proxy-content" class="small-12 medium-7 columns">
+                                        <div id="proxy-breadcrumbs" class="hidden">
+                                            <div class="nocontent">
+                                                <div class="MCBreadcrumbsBox_0 breadcrumbs" data-mc-breadcrumbs-divider=" &gt; " data-mc-breadcrumbs-count="5" data-mc-toc="True"><span class="MCBreadcrumbsPrefix"> <![CDATA[ ]]></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="proxy-body"><a id="top"></a>
+                                            <h1>How to Run Automated Business Process Tests and Flows</h1>
+                                            <p>This task describes how to run automated business process tests and flows.</p>
+                                            <div class="Admonition_Note">
+                                                <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>This task is part of a higher-level task. For details, see <a href="c_basics_BPTroadmap.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Working with Business Process Testing</a>.</p>
+                                            </div>
+                                            <ol type="1">
+                                                <li value="1">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a name="BPTWrapper"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />Prerequisites</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <ul>
+                                                                <li value="1">
+                                                                    <p>Before running a test within a test set, you can specify the values for any test parameters defined for the test. If you do not specify values, and valid default values have not been specified, the test run may fail.</p>
+                                                                </li>
+                                                                <li value="2">
+                                                                    <p>Before you run an automated test on a host computer, ensure that the relevant testing tool on the host allows <span class="QCPCALM">ALM</span> to run tests. </p>
+                                                                    <div class="example">
+                                                                        <p data-mc-autonum="&lt;b&gt;Example: &lt;/b&gt;"><span class="autonumber"><span><b>Example: </b></span></span><b>Example</b>
+                                                                        </p>
+                                                                        <p>To enable <span class="QCPCALM">ALM</span> access to a specific <span class="QCPCUFT">UFT</span> client, open <span class="QCPCUFT">UFT</span> on the host computer, select <b>Tools &gt; Options &gt;&#160;GUI&#160;Testing &gt;&#160;Test Runs</b>, and ensure that <b>Allow other HP products to run tests and components</b> is selected.</p>
+                                                                    </div>
+                                                                </li>
+                                                                <li value="3">
+                                                                    <p>Test results are, by default, saved in <span class="QCPCALM">ALM</span>. When running an automated test from within <span class="QCPCALM">ALM</span> you can avoid saving large test results by setting the <b>UPLOAD_RESULTS_AFTER_TEST_RUN</b> site parameter. For details, see the <span style="font-style: italic;" class="QCPCAdmin Guide">HPE Application Lifecycle Management Administrator Guide</span><MadCap:conditionalText data-mc-conditions="_HP_Conditions.ScreenOnly">: <a href="../Admin/sa_configuration_parameters_toc.htm" target="_self" title="" alt="" class="MCXref xref" xrefformat="{para}">Setting ALM Configuration Parameters</a></MadCap:conditionalText>.</p>
+                                                                </li>
+                                                                <li value="4">
+                                                                    <p>When running default test sets on remote hosts, <span class="QCPCALM">ALM</span> communicates directly with the testing host to initiate the test. See your testing tool documentation for information about what ports must be opened and what other security settings must be adjusted to enable communication. </p>
+                                                                </li>
+                                                                <li value="5">
+                                                                    <p>To run a <span class="QCPCUFT">UFT</span> component from <span class="QCPCALM">ALM</span>, you must have the necessary <span class="QCPCALM">ALM</span> permissions. For details, see the <span style="font-style: italic;" class="QCPCAdmin Guide">HPE Application Lifecycle Management Administrator Guide</span><MadCap:conditionalText data-mc-conditions="_HP_Conditions.ScreenOnly">: <a href="../Admin/cust_groups_perms_managing_toc.htm" target="_self" title="" alt="" class="MCXref xref" xrefformat="{para}">Managing User Groups and Permissions</a></MadCap:conditionalText>.</p>
+                                                                </li>
+                                                                <li value="6">
+                                                                    <p>When you run a <span class="QCPCQuickTest">UFT</span> business process test from <span class="QCPCALM">ALM</span>, the test run may be influenced by <span class="QCPCQuickTest">UFT</span> Remote Agent settings on the <span class="QCPCQuickTest">UFT</span> computer. For details on the <span class="QCPCQuickTest">UFT</span> Remote Agent, see the <span style="font-style: italic;" class="QCPCUFTQTP Guide">HPE Unified Functional Testing User Guide</span>.</p>
+                                                                </li>
+                                                                <li value="7">
+                                                                    <p>In preparation for running <span class="QCPCQuickTest">UFT</span> business process tests remotely , you must first register your <span class="QCPCALM">ALM</span> client in common mode on the remote machine. For more information, refer to the<i>  <![CDATA[ ]]></i><span style="font-style: italic;" class="QCPCInstall Guide">HPE Application Lifecycle Management Installation and Upgrade Guide</span>.</p>
+                                                                    <div class="Admonition_Note">
+                                                                        <p data-mc-autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>To run a <span class="QCPCQuickTest">UFT</span> business process test on a remote  Windows 2012 machine,  if the COM+ Network Access feature is not installed, you must restart the Windows 2012 remote machine after registration.</p>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="2">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Debug"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Debug tests and flows - optional</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>Debug automated tests and flows to make sure that they run properly. For task details on debugging, see <a href="t_testplan_debugtestsauto.htm" target="_self" title="" alt="" class="MCXref xref" xrefformat="{para}">How to Debug Tests and Flows Containing Automated Components</a>.</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="3">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Add"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Add iterations to business process tests and flows - optional</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>In the Test Lab module, you can determine how many times a business process test runs (iterates) and with what data. For task details on iterating tests, see <a href="t_data_setdataforiterations.htm" target="_self" title="" alt="" class="MCXref xref" xrefformat="{para}">How to Set Data for Iterations</a>.</p>
+                                                            <div class="Admonition_Tip">
+                                                                <p data-mc-autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span>Parameter values can also be provided using the Test Configurations tab in the Test Plan module.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="4" data-mc-conditions="Project_Conditions.BPT_EE">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Determine"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">
+                            Determine if tests and flows should be run in change detection mode</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>If you have <span class="QCPCBPT4SAP">BPT Packaged Apps Kit</span> enabled, you can run automated tests containing learned flows in change detection mode. This enables you to determine if the packaged app being tested has been modified. For task details on detecting changes, see <a href="t_run_changedetect.htm" target="_self" title="" alt="" class="MCXref xref" xrefformat="{para}">How to Run Tests in Change Detection Mode</a>.</p>
+                                                            <div class="Admonition_Tip">
+                                                                <p data-mc-autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span>Tests and flows that are run in Change Detection mode run only the first iteration of the selected range of iterations of any component, flow, or test, even if multiple iterations are defined.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="5">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Use"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Use the Automatic Runner to run the tests</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>You can run manual and automated tests automatically on your machine or on remote hosts using the Automatic Runner. </p>
+                                                            <p>In the Test Lab module &gt; Test Sets tab, use one of the following:</p>
+                                                            <ul>
+                                                                <li value="1">
+                                                                    <p>Select a test set that includes one or more automated tests and click the <b>Run Test Set </b>button.</p>
+                                                                </li>
+                                                                <li value="2">
+                                                                    <p>To run selected tests, select a test set and click the <b>Execution Grid</b> tab or <b>Execution Flow</b> tab. Select one or more tests and click the <b>Run</b> button.</p>
+                                                                </li>
+                                                                <li value="3">
+                                                                    <p>To run only manual tests, select the tests and click the <b>Run</b> button. In the Manual Test Run dialog box, select <b>Automatic Runner</b> and click <b>OK</b>.</p>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="Admonition_Note_Custom">
+                                                                <p class="avoidPageBreak"><b>Notes</b>
+                                                                </p>
+                                                                <ul>
+                                                                    <li value="1">
+                                                                        <p>Dynamic dates are converted to the actual dates they represent.</p>
+                                                                    </li>
+                                                                    <li value="2">
+                                                                        <p>If running an automatic test that contains component requests with manual implementations, those component requests are ignored during the run. </p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <p>For user interface details on the Automatic Runner, see the <i><span class="QCPCUser Guide">HPE Application Lifecycle Management User Guide</span></i><MadCap:conditionalText data-mc-conditions="_HP_Conditions.ScreenOnly">: <a href="../UG/ui_auto_runner.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Automatic Runner Dialog Box</a></MadCap:conditionalText>.</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="6" data-mc-conditions="Project_Conditions.BPT_EE">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><a name="Resolve"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_">Resolve detected changes
+					</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>If you have <span class="QCPCBPT4SAP">BPT Packaged Apps Kit</span> enabled, and you ran the business process test or flow in change detection mode, you can resolve changes detected in the packaged app during the run. For task details on resolving changes, see <a href="t_run_changeresolve.htm" target="_self" title="" alt="" class="MCXref xref" xrefformat="{para}">How to View and Resolve Detected Changes</a>.</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="7">
+                                                    <div class="MCDropDown MCDropDown_Open dropDown"><span class="MCDropDownHead dropDownHead"><a name="TestLab_ViewRunResults"></a><a href="javascript:void(0);" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage"><img class="MCDropDown_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />View run results</a></span>
+                                                        <div class="MCDropDownBody dropDownBody">
+                                                            <p>After you run the test or flow from the Test Lab module, you can view the results in various formats:</p>
+                                                            <ul>
+                                                                <li value="1">
+                                                                    <p><b>View results in the Test Lab module. </b>You can view the results of the latest test run in the Test Lab module &gt;&#160;Execution Grid &gt;&#160;Last Run Report tab. This pane lists each step of all the business components in the test, and, where applicable, the summarized results of main events reported by the testing tool.</p>
+                                                                    <p>For user interface details on the Last Run Report tab, see the <i><span class="QCPCUser Guide">HPE Application Lifecycle Management User Guide</span></i><MadCap:conditionalText data-mc-conditions="_HP_Conditions.ScreenOnly">: <a href="../UG/ui_execution_grid.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Execution Grid Tab</a></MadCap:conditionalText>.</p>
+                                                                    <p>When a test or flow run ends, the parameters displayed in Last Run Report show the date used in the run and not the dynamic date value.</p>
+                                                                </li>
+                                                                <li value="2">
+                                                                    <p><b>View the execution log. </b>You can view details about the automatic test execution after execution is complete in the Automatic Runner dialog box &gt; Run &gt; View Execution Log. For user interface details, see the <span style="font-style: italic;" class="QCPCUser Guide">HPE Application Lifecycle Management User Guide</span><MadCap:conditionalText data-mc-conditions="_HP_Conditions.ScreenOnly">: <a href="../UG/ui_execution_log.htm" title="" alt="" class="MCXref xref" xrefformat="{para}">Execution Log Dialog Box</a></MadCap:conditionalText>.</p>
+                                                                </li>
+                                                                <li value="3">
+                                                                    <p><b style="font-weight: bold">View <span class="QCPCQuickTest">UFT</span> reports. </b>If you have <span class="QCPCQuickTest Professional">Unified Functional Testing</span> or the <span class="QCPCQuickTest Professional">Unified Functional Testing</span> Add-in for <span class="QCPCBPT">Business Process Testing</span> installed on your computer, you can view a complete <span class="QCPCQuickTest">UFT</span> report. The hierarchical report contains details on all the steps for all the different iterations and business components within the automated test run. The add-ins are available from the <span class="QCPCALM (long)">HPE Application Lifecycle Management</span> Add-ins page (<b>Help &gt;&#160;Add-ins</b>).</p>
+                                                                    <p>From the Test Lab module &gt;&#160;Execution Grid tab &gt;&#160;Last Run Report tab, click the link to the report about each iteration in the <b>Status</b> column of the pane. The Run Results Viewer opens.</p>
+                                                                    <p>For details on viewing and analyzing the results of tests in the Run Results Viewer, see the <span style="font-style: italic;" class="QCPCUFT4BPT Guide">HPE Unified Functional Testing User Guide</span>.</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div class="footer-inner">
+                                    <table id="highlights">
+                                        <tr>
+                                            <td> Explore  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="../Resources/_TopNav/_TopNav_Home.htm">Help Center Home</a></p><p class="footerlink"><a href="https://admhelp.microfocus.com/" target="_blank">More ADM Help Centers</a></p></td>
+                                            <td> Connect  <!--Localizeable--><p class="spacer">&#160;</p><p class="footerlink"><a href="https://software.microfocus.com/en-us/products/application-lifecycle-management/overview" target="_blank">Try&#160;<span class="QCPCALM">ALM</span></a></p><p class="footerlink"><a href="https://community.softwaregrp.com/t5/Quality-Center-ALM/ct-p/sws-QC" target="_blank">ALM Community</a></p><p class="footerlink"><a href="https://marketplace.microfocus.com/" target="_blank">Marketplace</a></p><p class="footerlink"><a href="http://saastube.software.microfocus.com/category/videos/quality-center" target="_blank">SaaS-Tube</a></p><p class="footerlink"><a href="https://twitter.com/MicroFocusDev" target="_blank">ALM on Twitter</a></p></td>
+                                            <td> Contact  <!--Localizeable--><p class="spacer">&#160;</p><!--<p class="footerlink"><a href="mailto:[%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]?subject=Feedback on [%=_HPc_Basic_Variables._HP_Book_Title%] ([%=_HPc_Basic_Variables._HP_Product_Name%] [%=_HPc_Basic_Variables._HP_Product_Version%])" title="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]" alt="Send your doc feedback to [%=_HPc_Basic_Variables._HP_Product_IE_Team_PDL%]">Send Documentation Feedback&#160;</a>
+		</p>--><p class="footerlink"><a href="javascript:sendFeedback();" class="avoidPrint" data-mc-conditions="_HP_Conditions.Footer">Send Help Center Feedback</a></p><!-- Localizable --><div id="hp-feedbackDiv" class="hp-feedbackDiv"><div class="hp-feedbackDivClose"><a href="javascript:closeFeedback();" id="hp-feedbackClose"><img src="../Resources/_TopNav/Images/_TopNav_ic-close.png" /></a></div><div class="hp-feedbackDivContent"><!-- Localizable --><h1 class="feedback hp-feedbackDivHeader">Send Help Center Feedback</h1><p class="hp-feedbackDivBody">Let us know how we can improve your Help Center experience.</p><p class="hp-feedbackDivBody">Send your email to: <a name="hp-feedbackOpen" id="hp-feedbackOpen">docteam@hpe.com</a></p><img src="../Resources/_TopNav/Images/_TopNav_ic-email.png" /><!-- Localizable --><div style="display:none;" id="hp-feedbackBody">Add your Help Center feedback:</div><!-- Localizable --></div></div><div id="hp-feedbackDimmedDiv"></div><div style="display:none;" id="hp-feedback-variables" productName="ALM&#160;Help Center" productVersion="12.50" commentsEmailAddress="docteam@hpe.com" productAcronym="ALM" topicTitle="How to Run Automated Business Process Tests and Flows" skinLine1="ALM&#160;Help Center" skinLine2="ALM&#160;Help Center"><script src="../Resources/_TopNav/_TopNav_Feedback.js"></script></div><p class="footerlink" data-mc-conditions="_TopNav_Conditions.GetSupport"><a href="https://software.microfocus.com/en-us/services/customer-technical-support-services" target="_blank">Get Support</a></p></td>
+                                        </tr>
+                                    </table>
+                                    <table id="copyright">
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <img src="../Resources/_TopNav/Images/_TopNav_ic-hpe-logo.png" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <img id="ic-favicon" class="hidden" src="../Resources/_TopNav/Images/_TopNav_hpe_favicon.ico" data-mc-conditions="_TopNav_Conditions.HPE" />
+                                                    <script type="text/javascript">/*<![CDATA[*/
+									var url = document.getElementById('ic-favicon');
+									var ext = document.createElement('link');
+									ext.setAttribute("rel", "shortcut icon");
+									ext.setAttribute("href", url.src);
+									document.getElementsByTagName("head")[0].appendChild(ext);
+								/*]]>*/</script>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="lastUpdated">Last updated <span class="_HPc_Basic_Variables_HP_LastUpdatedDate">June 06, 2018</span></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="http://www8.hp.com/us/en/hpe/legal/terms-of-use.html" target="_blank">Terms of Use</a>&#160;|&#160;<a class="copyright" href="https://www.hpe.com/us/en/legal/privacy.html" target="_blank">Privacy</a></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p><a class="copyright" href="../Resources/MasterPages/_HP_Legal_Notices.htm#1">© <span class="_HPc_Basic_Variables_HP_Copyright_Date_Range">2002 - 2017</span>&#160;<span class="_HPb_Branding_Variables_HP_Company_Legal_Name">Hewlett Packard Enterprise Development LP</span></a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="hp-google-custom-search hidden"><span id="hp-online-url" class="_HPc_Basic_VariablesOnlineURL">http://alm-help.saas.hpe.com</span><span id="hp-gcse-id" class="_HPc_Basic_VariablesSearchEngineId">018001665633254540897:42w460c7a-e</span>
+                            </div>
+                            <script>/* <![CDATA[ */
+			(function() {
+				var onlineURL = $('#hp-online-url').text();
+				if (location.href.indexOf(onlineURL)!==0) {
+					if ($('body').hasClass('home'))
+						$('.search-area-bar').css('visibility', 'visible');
+					else
+						$('.nav-search.row.outer-row').css('visibility', 'visible');
+		            
+					if ($('html.searchTopic').length) {
+						var idTips = setInterval(function() {
+							if (document.querySelector('#results-heading')) {
+								clearInterval(idTips);
+								$('<br>')
+									.appendTo('#results-heading');
+								$('#about-search')
+									.appendTo('#results-heading');
+							}
+						} , 100);
+					}
+					return;
+				}
+				
+				if (location.search.match(/^\?gcse-q=/)) {
+					$('#pagination').hide();
+					$('<div class="gcse-searchresults" data-linktarget="_parent"  data-queryParameterName="gcse-q"></div>')
+						.appendTo('#searchPane');
+                    var idFilter = setInterval(function() {
+                        var tab = $('#TopNav.other .gsc-tabsArea .gsc-tabHeader.gsc-tabhActive');
+                        if (tab && tab.text()==='All') {
+                                clearInterval(idFilter);
+                            $('#TopNav.other .gsc-tabHeader.gsc-tabhActive')
+                                .text('All Results');
+                        }
+                    }, 100);
+					/*** Open search results from other help centers in separate tab ***/
+					var shc = location.hostname.split('.')[0];
+                    setInterval(function() {
+                        var urls = $('.gsc-url-bottom');
+                        if (urls.length) {
+                            urls.each(function() {
+                                var thc = $(this).text().split('.')[0];
+                                if (shc!==thc) {
+                                    $(this).siblings('.gs-title').children('a')
+                                        .attr('target','_blank');
+                                }
+                            });
+                        }
+                    }, 1000);
+					var idResults = setInterval(function() {
+						if (document.querySelector('#results-heading')) {
+							clearInterval(idResults);
+							$('#results-heading').hide();
+						}
+					}, 100);
+				}
+				var b = location.href.match(/^.+?\/Content\//)[0];
+				var sbo = $('<div class="gcse-searchbox-only" data-resultsUrl="'+b+'Search.htm" data-newWindow="false" data-queryParameterName="gcse-q"></div>');
+						
+				if ($('body').hasClass('home')) {
+					$('.search-area-bar .search').hide();
+					sbo.appendTo('.search-area-bar');
+					var idHomeBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idHomeBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.search-area-bar')
+								.style.visibility = 'visible';
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				} else {
+                    if ($('html.searchTopic').length) sbo.attr('class','gcse-searchbox');
+					$('.nav-search.row.outer-row .search').hide();
+					sbo.appendTo('.nav-search.row.outer-row');
+					var idOtherBox = setInterval(function() {
+						if (document.querySelector('#TopNav input.gsc-search-button')) {
+							clearInterval(idOtherBox);
+							document.querySelector('#TopNav input.gsc-search-button')
+								.setAttribute('value','');
+							document.querySelector('.nav-search.row.outer-row')
+								.style.visibility = 'visible';
+							$('#TopNav.other #search-wrapper-back')
+								.appendTo('#TopNav.other .search-wrapper .gsc-search-box');
+                            var idPH = setInterval(function() {
+                                var ph = $('.search-field:last').attr('placeholder');
+                                if (ph) {
+                                    clearInterval(idPH);
+                                    document.querySelector('#TopNav input.gsc-input')
+                                        .setAttribute('placeholder',ph);
+                                }
+                            }, 100);
+						}
+					}, 100);
+				}
+                var idGCSE = setInterval(function() {
+                    var cx = $('#hp-gcse-id').text();
+                    var rc = $('.gcse-searchresults-only');
+                    if (!cx||!rc) return;
+                    clearInterval(idGCSE);
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                }, 100); 
+			})();
+		/* ]]> */</script>
+                            <div class="hidden"><a id="about-search" href="../Resources/_TopNav/_TopNav_aboutSearch.htm">Tips to improve your search results...</a><a href="../Resources/_TopNav/_TopNav_TOC.htm">TOC</a>
+                                <!--<img id="feedback-header" src="Images/_TopNav_feedback_header.png" />
+            <img id="feedback-image" src="Images/_TopNav_feedback_image.png" />
+            <img id="feedback-image" src="Images/_TopNav_ic-close-responsive.png" />-->
+                                <img id="search-responsive" src="../Resources/_TopNav/Images/_TopNav_ic-search.png" />
+                                <img id="search-responsive-back" src="../Resources/_TopNav/Images/_TopNav_ic-search-back.png" />
+                                <img id="search-responsive-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear-blue.png" />
+                                <img id="search-clear" src="../Resources/_TopNav/Images/_TopNav_ic-search-clear.png" />
+                                <img id="search-drop" src="../Resources/_TopNav/Images/_TopNav_ic-drop.png" /><span id="hp-help-name" class="_HPc_Basic_Variables_HP_Product_Name_Skin_Line1">ALM&#160;Help Center</span><span id="hp-help-short-name" class="_HPc_Basic_Variables_HP_Product_Name_Short">ALM&#160;Help Center</span><span id="hp-help-version" class="_HPc_Basic_Variables_HP_Product_Version">12.50</span><span id="hp-search-all" class="_TopNav_VariablesSearchFilterAll">All</span><span id="hp-view-local" class="_TopNav_VariablesSettingViewLocal">View Local Help Center</span><span id="hp-view-online" class="_TopNav_VariablesSettingViewOnline">View Online Help Center</span><span id="hp-back-alt" class="_TopNav_VariablesToolbarBackAltText">back</span><span id="hp-back-tooltip" class="_TopNav_VariablesToolbarBackTooltip">Go back in browser history</span><span id="hp-forward-alt" class="_TopNav_VariablesToolbarForwardAltText">forward</span><span id="hp-forward-tooltip" class="_TopNav_VariablesToolbarForwardTooltip">Go forward in browser history</span><span id="hp-highlights-tooltip" class="_TopNav_VariablesToolbarHighlightsTooltip">Remove search highlights</span><span id="hp-next-alt" class="_TopNav_VariablesToolbarNextAltText">next topic</span><span id="hp-next-tooltip" class="_TopNav_VariablesToolbarNextTooltip">Go to next topic</span><span id="hp-previous-alt" class="_TopNav_VariablesToolbarPreviousAltText">previous topic</span><span id="hp-previous-tooltip" class="_TopNav_VariablesToolbarPreviousTooltip">Go to previous topic</span><span id="hp-print-tooltip" class="_TopNav_VariablesToolbarPrintTooltip">Print the current topic</span><span id="hp-version-label" class="_TopNav_VariablesVersionLabel">Version</span><span id="hp-floating-toc-show" class="_HPc_Basic_VariablesFloatingTocShow">(Undefined variable: _HPc_Basic_Variables.FloatingTocShow)</span>
+                            </div>
+                            <script type="text/javascript">/*<![CDATA[*/
+			(function() {
+                TopNav.play.init();
+			})();
+		/*]]>*/</script>
+                        </div>
+                    </section><a data-close="true"></a>
+                </div>
+            </div>
+            <script>/* <![CDATA[ */$(document).foundation();/* ]]> */</script>
+        </div>
+    </body>
+</html>

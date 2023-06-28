@@ -1,0 +1,2445 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0103)http://myd-vm14761.hpswlabs.adapps.hp.com:8081/qcbin/rest/sa/site-params/metadata -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <LINK href="metadata_files/styles.css" 
+rel="stylesheet" type="text/css"> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18015">
+<style>
+TABLE {border: 1px solid black; table-layout: fixed; width: 100%}
+TD    {border: 1px solid black; word-wrap: break-word}
+TH    {border: 1px solid black}
+</style>
+</HEAD> 
+<BODY>
+<H1>Site Parameters</H1>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>Parameter</TH>
+    <TH>Comments</TH></TR>
+  <TR>
+    <TD class="header">ADD_NEW_USERS_FROM_PROJECT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to N, you can add new ALM 
+      users from Site Administration (Site Users tab) only. If this parameter is 
+      set to Y (default), new ALM users can also be added from Project 
+      Customization. In the Project Users page, click Add User. The Add User to 
+      Project dialog box opens. If this parameter is set to Y, a New button is 
+      available for adding new ALM users.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ALI_MAX_PROJECT_SYNC_JOB</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of synchronization jobs that can 
+      run at the same time. The default value is 5.</P>
+      <P><B>Default value: </B>5</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>100</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>SP2</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ALI_MIN_PROJECT_SYNC_PERIOD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The minimum time interval between synchronizations 
+      for a project. The actual run time depends on the number of synchronized 
+      projects and synchronization jobs. The default value is 60 minutes.</P>
+      <P><B>Default value: </B>60</P>
+      <P><B>Min value: </B>5</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>SP2</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ALI_PROJECT_SYNC_DISCOVERY_INTERVAL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The interval between checks to determine if any 
+      project requires synchronization. The default value is 10 minutes.</P>
+      <P><B>Default value: </B>10</P>
+      <P><B>Min value: </B>5</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>SP2</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ALLOW_HTTP_METHOD_OVERRIDE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Controls whether to allow REST API requests with 
+      X-HTTP-Method-Override header.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ALLOW_MULTIPLE_VALUES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter determines whether the Allow 
+      Multiple Values check box is visible in the Project Entities page in 
+      Project Customization. If this parameter is set to N, then the Allow 
+      Multiple Values check box is unavailable. If this parameter does not exist 
+      or is set to "Y", then the Allow Multiple Values check box is 
+      available.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ALLOW_UPDATE_USER_PROPERTIES_FROM_CUSTOMIZATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>User details are set in Site Administration. A 
+      project administrator cannot change details of project users in Project 
+      Customization. If this parameter is set to Y, the project administrator is 
+      able to change the details of project users in Project Customization. This 
+      option may cause a security risk, as it allows the project administrator 
+      to replace a user's e-mail address with his own. By doing so, the project 
+      administrator can then use the Forgot Password link to reset and change a 
+      user's password. If this parameter does not exist, or is set to N, only 
+      the user can change his details in Project Customization.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ALLOW_WEBUI_ACCESS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Controls whether to allow access to Web UI client. 
+      If value is "Y" or site parameter is not defined, access is allowed 
+      otherwise, if value is "N" access is not allowed. In case that access is 
+      allowed, access is allowed to users who belongs to at least one group  
+      where "Allow Web UI Project Access" permission item is checked.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ALLOW_WEBUI_HTTP_METHOD_OVERRIDE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Controls whether to allow REST API requests with 
+      X-HTTP-Method-Override header for Web UI.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ASYNC_MAIL_ENABLED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This flag affects mailing services behavior in ALM 
+      UI/WorkFlow and OTA. By default all mails sent are delivered 
+      asynchronously. The site administrator can override this behavior and set 
+      the mailing services to be synchronous. Valid values: Y - send mail 
+      asynchronously, N - send mail synchronously.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ATTACH_MAX_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum size (in kilobytes) of an attachment 
+      that can be sent with email from ALM. If the attachment size is greater 
+      than the specified value, the email is sent without the attachment. By 
+      default, the maximum email attachment size is 3,000 KB.</P>
+      <P><B>Default value: </B>3000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ATTACH_TOTAL_MAX_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum size (in kilobytes) of all attachments 
+      that can be sent with email from ALM (takes in account ATTACH_MAX_SIZE). 
+      If the total attachments size is greater than the specified value, the 
+      email is sent without the attachments.</P>
+      <P><B>Default value: </B>10000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">AUDIT_LOG_FILE_MAX_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Max audit log file size in kilobytes (Maximum size 
+      is 1GB). When audit log file will reach this size next audit log file will 
+      be created.</P>
+      <P><B>Default value: </B>10240</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>1048576</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">AUTO_LOGOUT_ON_SERVER_DISCONNECT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The ALM server can disconnect an ALM client 
+      session. This occurs if: * The site administrator disconnects the session.
+       * The session is automatically disconnected, according to the inactivity 
+      time interval setting. For more information on setting a timeout, see 
+      WAIT_BEFORE_DISCONNECT. The ALM client machine displays a message, 
+      informing the user that the session has been disconnected. If this 
+      parameter is set to Y, the client machine also automatically performs 
+      logout actions and returns the user to the ALM Login window. This ensures 
+      that the user does not continue to work in a session which is no longer 
+      connected to the server. If this parameter is set to N, no logout action 
+      is performed on disconnect.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 9.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">AUTO_MAIL_SUBJECT_FORMAT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to customize the subject 
+      line of defect email sent automatically to users. For example, you can 
+      define a subject line such as Defect no. 4321 has changed by providing the 
+      value Defect no. ?BG_BUG_ID has changed , where Defect no. and has changed 
+      are strings, and BG_BUG_ID is an ALM field name.</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">AUTO_MAIL_USER_NOTIFICATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to prevent ALM sending 
+      automatic email notification to project administrators when users are 
+      assigned or removed from a project in Site Administration. If this 
+      parameter is set to N, then automatic notification is not sent to project 
+      administrators. If this parameter does not exist, is empty, or is set to 
+      Y, then automatic notification is sent.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">AUTO_MAIL_WITH_ATTACHMENT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y (default), defect 
+      email is sent with attachments. This applies only if you select Send mail 
+      automatically in the Site Projects tab.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">AUTO_MAIL_WITH_HISTORY</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y (default), defect 
+      email is sent with the history. This applies only if you select Send mail 
+      automatically in the Site Projects tab. Note: The former parameter name 
+      (SAQ_MAIL_WITH_HISTORY) is supported for purposes of backward 
+      compatibility.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">BACKWARD_SUPPORT_ALL_DOMAINS_PROJECTS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables the use of DomainsList and 
+      ProjectsList properties for the purposes of backward compatibility. If 
+      this parameter is set to Y, then the DomainsList and ProjectsList 
+      properties are supported. If the parameter does not exist or is empty, the 
+      default value is N, and these properties are not supported.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">BASE_REPOSITORY_PATH</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The base repository path. The ALM and Site 
+      Administration repositories are sub-folders of this repository. If you 
+      change this parameter value, new projects you create are stored in this 
+      location. After you change the value of this parameter, you must restart 
+      all servers in the cluster. The initial repository path is set during ALM 
+      server configuration. For more information, refer to the HP Application 
+      Lifecycle Management Installation and Upgrade Guide.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">BPT_USE_ORIGINAL_VALUE_TYPE</TD>
+    <TD class="subheader">
+      <P><B>Description: 
+      </B>siteparams.BPT_USE_ORIGINAL_VALUE_TYPE.description</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">BV_EXCEL_REPORT_MAX_ROWS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter defines the max rows of a BV excel 
+      report.</P>
+      <P><B>Default value: </B>100000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">CLEAN_ORPHAN_ANALYSIS_DATA_JOB_SLEEP_INTERVAL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter is related to the "Orphan Analysis 
+      Data File Cleanup Job" scheduled job, responsible to delete generated data 
+      files (graphs or project reports) left in the server repository due to 
+      client crashes during the report generation. The parameter defines the 
+      duration in minutes between executions of the job. The default value is 30 
+      days (43200 minutes), and the minimum value is one week (10080 
+      minutes).</P>
+      <P><B>Min value: </B>10080</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.52</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">COMMUNICATION_SECURITY_PASSPHRASE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Communication between the ALM server and other HP 
+      BTO applications is enabled after authentication by a Single Sign-On (SSO) 
+      token. Changing the COMMUNICATION_SECURITY_PASSPHRASE in the ALM server 
+      requires that the equivalent value on other servers, such as the PC server 
+      and the host machine for PC, must be updated as well. An ALM server 
+      restart is needed when changing this parameter for all the nodes in a 
+      cluster.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">COPY_CHANGES_USER_FIELDS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to specify that the user 
+      who copies a record is listed in the specified User List fields of the 
+      copy. For more information on fields that have User List as their Field 
+      Type, see Customizing Project Entities. The value of this parameter is a 
+      comma-separated list of User List fields. For example, set the value of 
+      the parameter to BG_DETECTED_BY. Assume defect 10 is detected by user 
+      Cecil_qc, and user Shelly_qc copies defect 10. ALM creates a copy of the 
+      defect with Shelly_qc as the user who detected the defect, not 
+      Cecil_qc.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">CREATE_HTTP_SESSION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>You can use this parameter if you are working with 
+      load balancing over a cluster of application servers. If the parameter is 
+      set to Y, ALM creates an HTTP session. This causes the load balancer to 
+      operate in sticky mode, meaning that after a request sent by a client is 
+      directed to a particular node in the cluster, all subsequent requests sent 
+      by that client are directed to the same node. By default, this parameter 
+      is set to N. For details, see the HP Application Lifecycle Management 
+      Installation and Upgrade Guide.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">CUSTOM_HELP_MENU_LINK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to add a custom entry to 
+      the Help menu that links to a URL address. For example, if you want to 
+      allow users local access to ALM product movies, you can save the movies on 
+      the server, and create a link to a movies index page. Use the following 
+      syntax to enter a parameter value: &lt;link alias&gt;;&lt;URL&gt;, where 
+      the values of both &lt;link alias&gt; and &lt;URL&gt; are surrounded by 
+      quotation marks, and separated by a semicolon. For example, set the value 
+      of the parameter to "MyBusiness - Online Help 
+      Page";"http://mybusiness/ALMHelp". The above example adds the MyBusiness - 
+      Online Help Page entry to the Help menu. Clicking the entry opens a custom 
+      Web page located at http://mybusiness/ALMHelp.</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">CUSTOM_PREREQUISITES_PAGE_URL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to handle missing 
+      prerequisites during the deployment phase of starting the ALM client. The 
+      value of this parameter is either: * A valid URL to a page that contains 
+      links for downloading alternate prerequisites. * NO_URL or blank. The 
+      deployment phase opens the default URL. The default value is blank. Note: 
+      Setting a separate URL for each prerequisite is not supported. The page 
+      must contain information for all prerequisites.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>5</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DASHBOARD_PAGE_ITEM_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter specifies the limitation of number 
+      of items per dash board page. This parameter is used when other limit than 
+      the default is needed.</P>
+      <P><B>Default value: </B>4</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DATA_HIDING_MODE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Server side data hiding mode. (ON - data hiding is 
+      enabled, LEGACY - data hiding is enabled but certain clients may skip data 
+      hiding)</P>
+      <P><B>Default value: </B>ON</P>
+      <P><B>Allowed values: </B>LEGACYON</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>Case sensitive: </B>false</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DAYS_TO_KEEP_IMAGE_FILES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter will determine time period of image 
+      attachment files' storage on Client machine.</P>
+      <P><B>Default value: </B>30</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>1000</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DEBUG_CLOSURE_LOG_DOM_PROJ</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>per each project, or for the whole domain set if 
+      the special closure log is enabled.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DENY_EXTERNAL_IMAGES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to "Y", images from 
+      external resources (images that are not attachments in the project but are 
+      references to resources outside ALM) will be sanitized and will not be 
+      presented by clients. WARNING: If value is set to “Y” and text field 
+      containing images from external resources – those references will be saved 
+      as a sanitized text in the database and not as URLs. Default value is 
+      "N".</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_ASYNC_CUSTOMIZATION_LOAD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This flag affects customization loading by OTA
+       Valid values: N - load customization asynchronously, Y - load 
+      customization synchronously.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_COMMAND_INTERFACE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y (default), only users 
+      belonging to the TDAdmin group can use the OTA Command object. If it is 
+      set to N, any user can use it. If it is set to ALL, no users can use it.
+       For more information, refer to the HP ALM Open Test Architecture API 
+      Reference.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Allowed values: </B>YNAllReadOnly</P>
+      <P><B>Introduced in release: </B>TD 8.21</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>Case sensitive: </B>false</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_CONSOLE_DEBUG_INFO</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Enables/disables access to the QC debug console. 
+      The console, when enabled, is accessible using 
+      http://&lt;qcserver&gt;/qcbin/tdservlet?method=debuginfo URI or 
+      http://&lt;qcserver&gt;/qcbin/debug.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>QC 9.20</P>
+      <P><B>Introduced in patch: </B>1</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_DEFAULT_VALUES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, default values for 
+      certain entities (such as defects, tests, and test configurations) cannot 
+      be set per user per project.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_EXTENDED_STORAGE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter controls user access to the OTA 
+      ExtendedStorage object. This is a security feature that can be used to 
+      limit access to the file system of the project. If this parameter is set 
+      to Y (default), the ExtendedStorage object cannot be accessed from 
+      TDConnection. Users can access the object from a specific entity for 
+      read-only, but no changes can be made. If it is set to N, the 
+      ExtendedStorage object can be accessed by all users, from a specific 
+      entity or from TDConnection. For more information about the 
+      ExtendedStorage object, refer to the HP ALM Open Test Architecture API 
+      Reference. Note: This parameter can impact how certain add-ins run, such 
+      as the HP Screen Recorder. For details, see the documentation for the 
+      individual add-ins, available from the HP Application Lifecycle Management 
+      Add-ins page (Help &gt; Add-ins) or the HP Application Lifecycle 
+      Management Tools page (Help &gt; Tools).</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>TD 8.21</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_GET_CHILDREN_LISTS_WITH_VERSIONING</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, this parameter 
+      disables certain performance enhancements that improve the speed at which 
+      various modules display data (such as entity trees). This parameter is 
+      relevant for version controlled projects. The default is N.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>5</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_HTTP_COMPRESSION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>By default, the data transferred from the ALM 
+      server to clients is compressed to improve performance. If this parameter 
+      exists and is set to Y, the data compression is disabled.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_PASSWORD_OTA_ENCRYPTION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>By default, the OTA TDConnection.Password property 
+      is encrypted. If this parameter exists and is set to Y, encryption for 
+      this property is disabled. Note: Setting this parameter has no effect on 
+      password encryption during transport to the server machine.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DISABLE_VERBOSE_ERROR_MESSAGES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter is a security feature that controls 
+      the level of detail that error messages display. If the parameter is set 
+      to N, the user can view system details connected to the error. By default, 
+      this parameter is set to Y.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>QC 9.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">DISPLAY_LAST_USER_INFO</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to add additional 
+      security to the client ALM Login window. By default, ALM displays the last 
+      user login information (user name, domain and project). If this parameter 
+      is set to N, the last user login information is not saved on the client 
+      machine and is not displayed in the ALM Login window. To activate this 
+      parameter, you must log in to ALM, log out, and log in again. If this 
+      parameter is set to Y or does not exist, the last user information is 
+      displayed.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>QC 9.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">DOWNLOAD_REST_ATTACHMENTS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter determines whether attachments are 
+      downloaded automatically in REST. If the value is Y, attachments are 
+      downloaded only after the browser prompts the user to open or save the 
+      attachment. If the value is N, the browser downloads the attachment 
+      automatically</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_AUDIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Enabling or disabling audit ALM events</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_COLUMN_VISIBILITY_TRACKING</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to "Y" then column 
+      visibility changes made via workflow will affect trees/grids and column 
+      selection (will cause the relevant fields to be hidden).</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>13</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_CREATE_DOCGEN</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Enables/Disables the 'Document Generator' menu item 
+      in Tools.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_CREATE_DOCGEN_FAVORITE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter defines whether new project 
+      documents can be added to your favorites list. The available options are:
+       Y. Project documents can be added to the favorites list. N. Project 
+      documents cannot be added to the favorites list. By default, the parameter 
+      is set to N.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_CREATE_LEGACY_EXCEL_REPORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Determines whether legacy Excel Reports should be 
+      included in the 'New Analysis Item' menu.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_CREATE_STANDARD_REPORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Determines whether Standard Reports should be 
+      included in the 'New Analysis Item' menu.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_ENTITY_SELECTION_TREE_REQ_MOVE_TO</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Determines whether the "MoveTo" work flow event 
+      will be thrown by the requirement entity selection tree</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>10</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_JMX_CONSOLE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>By default JMX-console is disabled. For debugging 
+      purposes, it could be enabled by setting this site param to the value 
+      'Y'</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_OUTPUT_SANITIZATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Y/N value for enable or disable the REST Output 
+      Sanitization. Default value is Y.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_PERFORMANCE_MONITOR_BIRT_REPORTS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Specifies the segments by which to group the 
+      collected QC sense information in the time frame that was defined by 
+      PRODUCT_ASSESSMENT_QC_SENSE_DAYS_BACK and 
+      PRODUCT_ASSESSMENT_QC_SENSE_END_DATE as part of Assessment collection 
+      flow.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.52</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_QUICK_FIELD_SEARCH</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, user can use quick 
+      field search feature. Default value is N, which disables the quick field 
+      search feature.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>12.5</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_REST_EDIT_FIELDS_VALIDATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables/disables validation for 
+      read-only entity fields via REST. The default value of the parameter is 
+      'Y' and it means that validation is on and all entity fields which have 
+      SF_IS_EDIT=Y are not editable via REST.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENABLE_XSRF_VALIDATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This site param enables / disables the XSRF token 
+      validation sent from client on request. Possible values: Y / N. When this 
+      site param is set to ''N'', the entire site is exposed to security risk. 
+      Default value: Y.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENTITY_LINK_HOST</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to set the mail server 
+      host name used in the link to an entity when ALM mails an entity. By 
+      default, ALM uses the default host name specified during installation. For 
+      details, see MAIL_SERVER_PORT.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENTITY_LINK_PORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to set the mail server 
+      port number used in the link to an entity when ALM mails an entity. By 
+      default, ALM uses the default port number specified during 
+      installation.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ENTITY_LINK_SCHEMA</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Sets schema used in entity links in mails and in 
+      other references.</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD 
+      class="header">ENTITY_TABLE_NAMES_FOR_FIXING_UPDATE_PERMISSIONS_INCONSISTENCY</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Sets DB tables that will be checked by the 
+      verifier, to find the potential permission inconsistencies, which will be 
+      later fixed by the repairer. The permission inconsistencies means that for 
+      an entity, a specific user group has the permission (SF_GRANT_MODIFY) to 
+      modify some fields of it, but doesn't have the permission 
+      (TB_GRANT_MODIFY) to modify the entity itself.</P>
+      <P><B>Default value: </B> </P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>14</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EVENT_LOG_PURGE_PERIOD_DAYS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The time interval in days that deletable events 
+      remain in the EVENT_LOG database table. By default, the value is set to 
+      60. If you set the value to -1, the events period is unlimited.</P>
+      <P><B>Default value: </B>60</P>
+      <P><B>Min value: </B>-1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">EXCEL_ADDIN_GROUP</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter specifies a user group name, only 
+      the users who is in this group have permission to access the Excel 
+      add-in.</P>
+      <P><B>Default value: </B> </P>
+      <P><B>Introduced in release: </B>12.2</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTENDED_MEMO_FIELDS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter extends the maximum number of 
+      memo-type user-defined fields per entity to 15 instead of five. The 
+      default value is N. To extend the number of memo-type fields, set the 
+      parameter to Y.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 9.20</P>
+      <P><B>Introduced in patch: </B>24</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATES_FILE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: a path to a file, where 
+      all the allowed client certificates are listed</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_CRL_CHECK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether to enable the 
+      certificate CRL verification</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_CRL_FOLDER</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: certificate CRL folder</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_DATE_CHECK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether to verify 
+      certificate date </P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_LOCAL_CRL_CHECK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether to enable the 
+      certificate revocation check</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_OCSP_CHECK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Specifies whether the server will perform a client 
+      certificate status check using the "Online Certificate Status Protocol" 
+      (OCSP). The EXTERNAL_AUTH_CERTIFICATES_FILE has to be defined as a file 
+      with allowed client certificates issuers; otherwise, all certificates will 
+      be rejected.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_OCSP_REQUIRED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Specifies whether the client certificate must 
+      contain "Authority Info Access extensions" to perform an online 
+      certificate status check (OCSP). This extension is required only if OCSP 
+      check is enabled. See the EXTERNAL_AUTH_CERTIFICATE_OCSP_CHECK 
+      documentation for details.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_POLICY_CHECK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether to enable the 
+      certificate policy verification</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERTIFICATE_VALID_POLICY</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: stores the certificate's 
+      valid policy</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_CERT_HEADER_NAME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: header that holds the 
+      certificate</P>
+      <P><B>Default value: </B>CERT</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_EXECUTION_MODE_HEADER_NAME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: header that holds the 
+      execution mode of client. Values are enum ExecutionMode: 
+      NOT_SPECIFIED(default), INTERACTIVE, NON_INTERACTIVE</P>
+      <P><B>Default value: </B>EXECUTION_MODE</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_EXTENDED_HARDWARE_KEYS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: stores the extended 
+      hardware keys</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_HARDWARE_CARD_IS_REQUIRED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether hardware card 
+      verification is required</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_HEADER_NAME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: header that holds the 
+      subject of certificate</P>
+      <P><B>Default value: </B>SM_USER</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_IS_POLICY_REQUIRED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether a policy is 
+      required</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_MATCH_DELTACRL_BY_ISSUER</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether to enable the 
+      match delta CRL by issuer verification</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_MODE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Which external 
+      authentication to use. Possible values are: N - do not use external 
+      authentication, Y - use external authentication</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_USER_FIELD_PATTERN</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: regex to find the 
+      username, email</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERNAL_AUTH_USER_FIELD_TYPE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: user field type. I.e. 
+      email, username</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">EXTERN_AUTH_VALIDATE_USER_IN_LDAP</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>External Authentication: Y/N whether to contact 
+      LDAP server (if exists) to make sure that this user still active or 
+not</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FAST_RECONNECT_MODE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Controls the Session Reconnect mode: 0 - Session 
+      Reconnect is disabled, Only Logout button is enabled when Session 
+      Reconnect dialog appears, 100 - Session Reconnect is enabled, password is 
+      required. 200 - Session reconnect is enabled, no password is required.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Allowed values: </B>0100200</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>Case sensitive: </B>false</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">FAVORITES_DEPTH</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Defines the number of most recently used favorite 
+      views displayed on the Favorites menu. By default, ALM displays the four 
+      most recently used views on the menu. To hide the list of recently used 
+      views completely, set the parameter to 0.</P>
+      <P><B>Default value: </B>4</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>1</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FETCH_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>To optimize performance, the maximum number of 
+      records retrieved and displayed in ALM grids is limited. This parameter 
+      enables you to change the default limit. If this parameter does not exist, 
+      the maximum number of records displayed is limited to 500. If the value of 
+      this parameter is set to 0, all results are displayed.</P>
+      <P><B>Default value: </B>500</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>1</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FILE_EXTENSION_BLACK_LIST_DOWNLOAD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The value is the semicolon delimited string with 
+      the file extensions that are not allowed to be downloaded via open 
+      attachments, REST API, or FTP Explorer. Note: *Imported or restored 
+      projects are not blocked even if their repository contains files of 
+      blocked file types. * Projects upgraded from previous versions still 
+      contain files of blocked file types that already exist in the repository.
+       * During optimized repository migration, files of blocked file types are 
+      not blocked.</P>
+      <P><B>Introduced in release: </B>ALM 11.52</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FILE_EXTENSION_BLACK_LIST_UPLOAD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The value is the semicolon delimited string with 
+      the file extensions that are not allowed to be uploaded via open 
+      attachments, extended storage, REST API, or FTP Explorer. Note: * Imported 
+      or restored projects are not blocked even if their repository contains 
+      files of blocked file types. * Projects upgraded from previous versions 
+      still contain files of blocked file types that already exist in the 
+      repository. * During optimized repository migration, files of blocked file 
+      types are not blocked.</P>
+      <P><B>Introduced in release: </B>ALM 11.52</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FORCE_DH_FOR_QTP</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>siteparams.FORCE_DH_FOR_QTP.description</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>19</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FORCE_LOGIN_SSL_MODE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, only the login 
+      process is sent over SSL (HTTPS). All other communication is sent without 
+      SSL (using HTTP). Note: ALM must be configured to work with SSL.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FORCE_SEPARATE_CLIENT_DEPLOYMENT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, you can deploy a 
+      server to its own folder on the client.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FROM_EMAIL_ADDRESS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If a user clicks the Forgot Password link in the 
+      ALM Login window, an email notification is sent to the user with a link to 
+      specify a new password. This parameter enables you to change the email 
+      address in the email From field.</P>
+      <P><B>Introduced in release: </B>TD 8.21</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">FTP_PORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The port number of the FTP service that enables you 
+      to browse ALM project repositories. For more information, see Browsing the 
+      Project Repository. Recommended values are 21 or 2121. Note: Defining the 
+      parameter starts the FTP service on the specified port. Reconfiguring the 
+      parameter restarts the FTP service. Deleting the parameter stops the FTP 
+      service.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>1</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">GET_COVERAGE_FROM_BL_FOR_PINNED_TESTSET</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to get coverage from the 
+      baseline (and not from current view) when selecting tests for a 
+      requirement to be added to a pinned test set. The default value is N.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>10.0</P>
+      <P><B>Introduced in patch: </B>Patch22</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">GRAPH_RESULT_LIFESPAN</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of minutes a cached graph result is 
+      valid.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">GROUP_FETCH_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>To optimize performance, the maximum number of 
+      records retrieved and displayed per group when a group by filter is 
+      applied to ALM grids is limited. This parameter enables you to change the 
+      default limit. If this parameter does not exist, the maximum number of 
+      records displayed per group is limited to 100. If the value of this 
+      parameter is set to 0, all results are displayed for each group.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>1</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">HIDE_EXECUTION_FLOW_VIEW</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, then we will hide 
+      the Execution Flow view for Test Sets. It's default value is N.</P>
+      <P><B>Default value: </B>false</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>18</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">INHERIT_MODULE_ACCESS_TO_VIEWS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>There are modules that have logically connected 
+      views in other modules, for example - BPM module and Business linkage 
+      views in Requirements and Test plan. Project manager may hide access to 
+      modules for some users/groups. This parameter indicate whether such 
+      logically -connected views should hidden if their "parent" modules also 
+      invisible. This parameter affect only "BPM" views.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>5</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">INPUT_VALIDATION_MODE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Controls Input Validation framework mode and has 3 
+      possible values:   OFF - no validation    LOG - perform hidden validation 
+      (never throw exceptions but log all the found errors)    ON - full 
+      validation (default value)</P>
+      <P><B>Default value: </B>ON</P>
+      <P><B>Allowed values: </B>ONOFFLOG</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>Case sensitive: </B>false</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">LAB_MAX_DB_HANDLERS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Enables you to define the maximum number of 
+      connections to the database allowed for LAB_PROJECT. By default, the value 
+      is set to 100.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.52</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">LDAP_IMPORT_ATTRIBUTE_MASK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to define a regular 
+      expression that can be used to distinguish between different values for an 
+      LDAP attribute when importing users from an LDAP directory. When importing 
+      users, ALM chooses a value for the attribute that matches the regular 
+      expression. The parameter should be of the format:&lt; LDAP attribute 
+      name&gt; = &lt;regular expression&gt;, where &lt;LDAP attribute name&gt; 
+      is the name of the LDAP attribute whose value you want to choose, and 
+      &lt;regular expression&gt; is a regular expression. This regular 
+      expression should conform to the standard Java syntax for regular 
+      expressions. For example, a parameter value uid=^Dw+$ would choose values 
+      for the LDAP attribute uid consisting of a non-digit followed by any 
+      number of word characters (letters, numerals or the underscore 
+      character).</P>
+      <P><B>Default value: </B> </P>
+      <P><B>Introduced in release: </B>TD 8.21</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">LDAP_RESULT_SIZE_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of results that LDAP returns for 
+      a filtered query. Valid values are between 100 to 10000. The default value 
+      is 1000.</P>
+      <P><B>Default value: </B>1000</P>
+      <P><B>Min value: </B>100</P>
+      <P><B>Max value: </B>10000</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>SP2</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">LDAP_SEARCH_USER_CRITERIA</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>A comma-separated list of ALM user properties to be 
+      used as LDAP search criteria, if the Domain Authentication property does 
+      not contain the user's distinguished name (DN). The order of the 
+      properties defines their priority if multiple results are found. The 
+      following are the possible values: username, email, fullname, phone, 
+      description.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">LDAP_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The length of time, in milliseconds, that ALM waits 
+      before canceling an LDAP operation. The time limit on LDAP operations 
+      prevents a situation where LDAP encounters a problem and causes ALM to 
+      wait indefinitely. The default timeout value is 10 minutes.</P>
+      <P><B>Default value: </B>600000</P>
+      <P><B>Min value: </B>1000</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">LIBRARY_FUSE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter indicates max library size to handle 
+      it without performance hit on the customer..</P>
+      <P><B>Default value: </B>2500</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">LICENSE_ARCHIVE_PERIOD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The period in days to purge old sessions records 
+      from SESSION_HISTORY table</P>
+      <P><B>Default value: </B>365</P>
+      <P><B>Min value: </B>-1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">LOCK_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of hours that ALM objects can 
+      remain locked. After this time, the lock is removed. By default, the value 
+      is set to 10 hours. </P>
+      <P><B>Default value: </B>10</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">LOGIN_SSL_PORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If the FORCE_LOGIN_SSL_MODE parameter exists and is 
+      set to Y, this parameter enables you to configure the port used for SSL 
+      login. By default, the value is 443.</P>
+      <P><B>Default value: </B>443</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>65535</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_FORMAT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The format ALM uses to send email. By default, the 
+      format is set to HTML. To instruct ALM to send email as plain text, change 
+      the value to Text.</P>
+      <P><B>Default value: </B>HTML</P>
+      <P><B>Allowed values: </B>HTMLTEXT</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>Case sensitive: </B>false</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_HIDE_DETAILS_SECTION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter show/hide entity details in mail 
+      body</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_INTERVAL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The time interval in minutes for sending defect 
+      email according to your mail configuration settings. Note that this 
+      applies only if you select Send mail automatically in the Site Projects 
+      tab.</P>
+      <P><B>Min value: </B>10</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B> </P>
+      <P><B>Introduced in patch: </B> </P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_MESSAGE_CHARSET</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The character set used by ALM to send email to 
+      users. By default, the value is set to UTF-8.</P>
+      <P><B>Default value: </B>UTF-8</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_PROTOCOL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Displays the mail service used to send email 
+      messages to users. To configure the mail protocol, use the Settings 
+      button.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_SERVER_HOST</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Displays the server name used by the SMTP mail 
+      service. To configure the server name, use the Settings button.</P>
+      <P><B>Introduced in release: </B>TD 8.21</P>
+      <P><B>Introduced in patch: </B>13</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_SERVER_PORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The SMTP server port used by ALM to send mail. By 
+      default, the value is set to 25.</P>
+      <P><B>Default value: </B>25</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>65535</P>
+      <P><B>Introduced in release: </B>TD 8.21</P>
+      <P><B>Introduced in patch: </B>13</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_SHOW_SITE_NAME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Indicates whether the site name is displayed in the 
+      subject of the mail. This parameter can be either a project parameter or a 
+      site parameter. If the parameter is defined in both site and project 
+      tables, the project value is considered. The default value is N.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>2</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_SOCKET_CON_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The SMTP server socket connection timeout. By 
+      default, the value is set to 5 minutes.</P>
+      <P><B>Default value: </B>300000</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.01</P>
+      <P><B>Introduced in patch: </B>2</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_SOCKET_READ_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The SMTP server socket read timeout. By default, 
+      the value is set to 1 minute.</P>
+      <P><B>Default value: </B>60000</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.01</P>
+      <P><B>Introduced in patch: </B>2</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAIL_SOCKET_WRITE_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The SMTP server socket write timeout. By default, 
+      the value is set to 5 minutes.</P>
+      <P><B>Default value: </B>300000</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.01</P>
+      <P><B>Introduced in patch: </B>2</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_CONCURRENT_REPORTS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter defines the maximum number of 
+      project reports that can be generated concurrently. Define any value where 
+      the minimum is 1. Where the maximum number has been reached, and you 
+      choose to generate an additional report, the report generation only begins 
+      once one of the original reports finishes generating. For example, if the 
+      maximum number is 5, and you try generate an additional report, the sixth 
+      report only begins generating once one of the original five concludes 
+      generating. The default maximum is 3.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_GRAPH_RESULT_DATA_TABLE_VOLUME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to change the maximum 
+      size of the graph results, as calculated by the number of cells in the 
+      graph's Grid View. The size of a cell is 8 bytes.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_KPIS_PER_MILESTONE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of KPIs allowed under a single 
+      milestone.</P>
+      <P><B>Default value: </B>30</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_MILESTONES_PER_RELEASE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of Milestones allowed under the same 
+      Release. The default Value is 20. we limit the number of Milestones under 
+      the same release due to performance considerations.</P>
+      <P><B>Default value: </B>20</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_PROJECTS_IN_EXCEL_REPORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of projects that can be selected 
+      for BV Excel report.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>SP3</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_QUERY_LENGTH</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to change the maximum 
+      query length (number of letters). It includes the parameters and is valid 
+      for Oracle and for SQL. The default value is 1000000. Some reports are too 
+      large for the default limit query size to handle. In such cases, this 
+      parameter should be set to 100000000.</P>
+      <P><B>Default value: </B>1000000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_SCOPE_ITEMS_PER_RELEASE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of Scope items allowed under the same 
+      Release. The default Value is 20. we limit the number of Scope Items under 
+      the same release due to performance considerations.</P>
+      <P><B>Default value: </B>20</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_STEPS_IN_PROJECT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This is a fuse that limits the max steps can be 
+      fetched in each request, just to protect the server from 
+      OutOfMemoryError.</P>
+      <P><B>Default value: </B>10000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>9</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_TESTS_IN_TEST_SET</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of tests in test set in order to 
+      perform copy-paste or delete test set operations</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>06</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_TEST_INSTANCES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of test instances that server 
+      will handle per call, if there is a call with more test instances than 
+      this value, an exception will be threw causing this operation to fail.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>12</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MAX_THRESHOLD_VALUES_PER_KPI</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of different threshold values allowed 
+      under a single KPI.</P>
+      <P><B>Default value: </B>12</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MEMO_FIELD_ADD_IMAGE_MODE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter is to control users' ability to add 
+      images into memo fields. The optoins are: Y - Users are allowed to add 
+      images into memo fields; N - Users are not allowed to add images into memo 
+      fields; AS_LINK - Users are allowed to add images into memo fields but 
+      only as a link to an image available in the entity's attachments.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Allowed values: </B>YNAS_LINK</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>Case sensitive: </B>false</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">MUTE_SERVER_FOR_OOME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This is a fuse that will not set the server status 
+      to MUTED when the server is OutOfMemoryError.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>19</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">NLS_SEARCH_LOCALE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The language used by the Find Similar Defects 
+      command to tokenize the defect summary. This parameter is needed only if 
+      the default locale on the server does not match the language in which the 
+      defect summary is written, in terms of whether spaces are used to separate 
+      words. The value should be a string value that matches a language code 
+      listed in ISO 639 (http://www.w3.org/WAI/ER/IG/ert/iso639.htm). If this 
+      parameter is not defined or is invalid, the default locale of the server 
+      is used.</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ORACLE_RAC_SUPPORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter must be set to Y to enable RAC 
+      support on Oracle database servers. For more information, refer to the HP 
+      Application Lifecycle Management Installation and Upgrade Guide.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">ORPHAN_ANALYSIS_DATA_FILE_INACTIVE_PERIOD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter is related to the "Orphan Analysis 
+      Data File Cleanup Job" scheduled job. It defines a period in miliseconds. 
+      The job deletes data files older than this period, comparing to current 
+      time. The default value is one day (86400000 ms), and the minimum value is 
+      one hour (3600000 ms).</P>
+      <P><B>Min value: </B>3600000</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">OUTPUT_SANITIZATION_BY_CLIENT_TYPE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Configures output sanitization on/off by client 
+      type. Format: &lt;client type name&gt;=true/false;&lt;client type 
+      name&gt;=true/false; Default value for any client type that is not defined 
+      specifically in this site param is true.</P>
+      <P><B>Default value: </B> </P>
+      <P><B>Allowed patterns: </B>^([^;=]+=[^;=]+;?)+$</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PASSWORD_RESET_DISABLE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter determines whether ALM users can 
+      reset their passwords using the Forgot Password link in the ALM Login 
+      window. If this parameter is not defined or if the parameter is set to 
+      'N', users can reset their passwords using the Forgot Password link. If 
+      LDAP or External authentication is enabled, the Forgot Password link is 
+      not shown.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PASSWORD_RESET_ELAPSED_TIME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Defines the minimum time in minutes user should 
+      wait before he will get new Forgot Password e-mail. Default is 5 
+      minutes.</P>
+      <P><B>Default value: </B>5</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PASSWORD_RESET_SERVER</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If a user clicks the Forgot Password link in the 
+      ALM Login window, an email notification is sent to the user with a link to 
+      specify a new password. This parameter allows you to override the default 
+      URL, or parts of the URL, that is embedded in the reset link. Use one of 
+      the following syntaxes: &lt; server&gt;:&lt;port&gt;. Overrides both the 
+      default server and port.&lt; server&gt;. Overrides the default server.
+      &lt; port&gt;. Overrides the default port.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PASSWORD_RESET_VALID_PERIOD</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Defines the maximum time in hours that the link in 
+      the Forgot Password e-mail is valid. Default is 24 hours.</P>
+      <P><B>Default value: </B>24</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PPT_KPI_FAILURES_PERCENTAGE_PER_RELEASE_FUSE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>enable/disable using route table to calculate 
+      coverage</P>
+      <P><B>Default value: </B>60</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PPT_RECENTLY_USED_PROJECTS_THRESHOLD_MINUTES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Rename of 
+      QPM_RECENTLY_USED_PROJECTS_THRESHOLD_MINUTES. 7 days (in minutes) of the 
+      recently used projects threshold. Used by the PP&amp;T planning 
+      algorithm.</P>
+      <P><B>Default value: </B>10080</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PRODUCT_ASSESSMENT_QC_SENSE_DAYS_BACK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Specifies the number of days to subtract from the 
+      ending time frame of which to record QC Sense information into the file as 
+      part of Assessment collection flow. In other words, this defines the 
+      starting time frame.</P>
+      <P><B>Default value: </B>-90</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PRODUCT_ASSESSMENT_QC_SENSE_END_DATE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Specifies the ending time frame of which to record 
+      QC Sense information into the file as part of Assessment collection 
+      flow.</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PRODUCT_ASSESSMENT_QC_SENSE_GROUPING_SEGMENTS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Specifies the segments by which to group the 
+      collected QC sense information in the time frame that was defined by 
+      PRODUCT_ASSESSMENT_QC_SENSE_DAYS_BACK and 
+      PRODUCT_ASSESSMENT_QC_SENSE_END_DATE as part of Assessment collection 
+      flow.</P>
+      <P><B>Default value: 
+      </B>00:00:00,05:59:59,06:00:00,11:59:59,12:00:00,17:59:59,18:00:00,23:59:59</P>
+      <P><B>Allowed patterns: 
+      </B>((\d{2}\72){2}(\d{2}),)*(\d{2}\72){2}(\d{2})</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">PROJECT_SELECTION_MAX_PROJECTS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Maximum number of projects that ALM allows you to 
+      include in a graph. Default is 6.</P>
+      <P><B>Default value: </B>6</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">QC_SENSE_AUTHORIZATION_DISABLED</TD>
+    <TD class="subheader">
+      <P><B>Description: 
+      </B>siteparams.QC_SENSE_AUTHORIZATION_DISABLED.description</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">QC_SENSE_REPORTS_USERS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>By default, only site administrator users have 
+      access to QC Sense reports. This parameter enables you to grant 
+      permissions to additional users who are not site administrators. Enter 
+      user names using the following syntax: 
+      &lt;user1&gt;;&lt;user2&gt;;&lt;user3&gt;</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">RAISE_TESTSET_MOVETO_EVENT_AFTER_ENTER_MODULE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter changes the order of events raised 
+      when the user enters the TestSet module. </P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPLACE_TITLE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to change the names of 
+      ALM modules across all your projects. Rename one or more modules by 
+      entering the following parameter value: &lt;original title1 
+      singular&gt;;&lt;new title1 singular&gt;; &lt;original title1 
+      plural&gt;;&lt;new title1 plural&gt;; &lt;original title2 
+      singular&gt;;&lt;new title2 singular&gt;;... For example, if you want to 
+      change the name of the Defects module to Bugs, and the Requirements module 
+      to Goals, enter the following: 
+      Defect;Bug;Defects;Bugs;Requirement;Goal;Requirements;Goals  Renaming the 
+      Releases module does not change the module name in the following 
+      locations:  * The Releases command in the Releases module menu bar. * The 
+      New Release Folder menu command and dialog box. * The New Release menu 
+      command and dialogbox.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPORT_MAX_ALLOWED_CONCURRENT_RENDERED_PAGES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Limits the total size of all reports being 
+      generated concurrently. The size is counted by pages. When the limit is 
+      exceeded, generation of the largest report is discontinued and it is saved 
+      as is, i.e., it will include whatever data has been generated up to that 
+      point.</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPORT_MAX_ALLOWED_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter defines the estimated maximum number 
+      of pages that can be included in a project report. when the value is set 
+      to -1 the size is unlimited, which is strongly unrecommended.The minimum 
+      page value should 1.</P>
+      <P><B>Min value: </B>-1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: 
+      </B>com.hp.alm.platform.Version.ALM_115_NAME</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPORT_QUERY_RECORDS_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of records that can be retrieved 
+      from the database for an Excel report. If you set the value to -1, the 
+      number is unlimited.</P>
+      <P><B>Default value: </B>65535</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">REPORT_QUERY_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum length of time in seconds that ALM 
+      waits for an SQL query for an Excel report to be executed. If the query 
+      takes longer than this time to be executed, the query is canceled.</P>
+      <P><B>Default value: </B>60</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">REPORT_RESULT_LIFESPAN</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of minutes a cached project report 
+      result is valid.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPOSITORY_GC_DELAY_CANDIDATE_TIME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to create a delay 
+      between the time of the cleaning processes of each project repository and 
+      the time the files without references are actually deleted. Set a value in 
+      days between 0 and 28. If the parameter does not exist, ALM delays the 
+      deletion of obsolete files in the file system for seven days. For details 
+      on the project repository cleanup process, see Project Repository Cleanup. 
+      Default is 7 days.</P>
+      <P><B>Default value: </B>7</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>28</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>3</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPOSITORY_GC_JOB_PRIORITY</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The parameter determines the speed at which the 
+      repository cleanup process is performed. Set a value between 0 (fastest) 
+      and 10 (slowest). If the parameter does not exist, the speed is set to 3. 
+      For more details on the project repository cleanup process, see Project 
+      Repository Cleanup.</P>
+      <P><B>Default value: </B>3</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>10</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>3</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPOSITORY_GC_PROJECT_CLEANUP_INTERVAL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter defines the time interval in days 
+      between cleaning processes of each project repository. Set a value in days 
+      between 1 and 28. If the parameter does not exist, ALM scans project 
+      repositories once every seven days. For more details on the project 
+      repository cleanup process, see Project Repository Cleanup.</P>
+      <P><B>Default value: </B>7</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>28</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>3</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REPOSITORY_MIGRATION_JOB_PRIORITY</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The parameter determines the speed at which files 
+      are copied from the old to the new project repository. Set a value between 
+      0 (fastest) and 10 (slowest). If the parameter does not exist, the speed 
+      is set to 3. For more details on the project repository migration 
+      process,see Migrating the Repository.</P>
+      <P><B>Default value: </B>3</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>10</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REQUIREMENTS_LIBRARY_FUSE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter indicates max requirements amount in 
+      library  to handle it without performance hit on the customer.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B> </P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REQUIREMENT_AUTHOR_USE_RICHTEXT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter indicates whether rich text field 
+      will be used in author mode in web client.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">REQUIREMENT_REVIEWED_FIELD_AUTOMATIC_UPDATE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y (default), then any 
+      change to a requirement field automatically sets the Reviewed 
+      (RQ_REQ_REVIEWED) field to Not Reviewed. If it is set to N, then a change 
+      to a requirement field does not affect the value of the Reviewed 
+field.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">RESTRICT_SERVER_FOLDERS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to access 
+      restricted-access server directories using the OTA 
+      ExtendedStorage.ServerPath property. If this parameter does not exist, or 
+      is set to Y, you can only use the ExtendedStorage.ServerPath property to 
+      access the following directories: * the Site Administration (SA) directory
+       * the root directory for a project * the attach subdirectory for a 
+      project * the baseline snapshot of a library at a specific point in time. 
+      It includes all the entities defined in the library and the relationships 
+      between them, such as coverage and requirements traceability. You can 
+      compare baselines to track changes in a project over time, or use a 
+      baseline to reuse or share the entities in a library. subdirectory for a 
+      project * the checkouts subdirectory for a project * the components 
+      subdirectory for a project * the hist subdirectory for a project * the 
+      resources subdirectory for a project * the StyleSheets subdirectory for a 
+      project * the tests subdirectory for a project If this parameter is set to 
+      N, you can access all server directories using the 
+      ExtendedStorage.ServerPath property.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_DEFAULT_PAGE_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of entities per page returned by default 
+      with each GET operation on a collection using the REST API (unless the API 
+      consumer specifies a different page size for retrieval). The default is 
+      100 entities.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_DEFAULT_PAGE_SIZE_WITH_ANCESTORS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of entities to extract ancestors 
+      returned by default with each GET operation on a collection using the REST 
+      API with ancestors-needed=y query parameter (unless the API consumer 
+      specifies a different page size for retrieval). The default is 30 
+      entities. If page is bigger remaining entities will be returned without 
+      ancestors.</P>
+      <P><B>Default value: </B>30</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>50</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_HTTP_CACHE_ENABLED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables REST API support for server 
+      side HTTP caching. If enabled, the server supports caching using an ETag 
+      for the following resources: 
+      customization/entities,customization/relations,customization/used-lists,customization/users. 
+      The default is Y.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_MAX_BULK_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum number of entities allowed for a single 
+      bulk operation. A bulk operation over REST means to be able to POST, PUT, 
+      or DELETE a collection of entities of the same type. The default is 2000 
+      entities.</P>
+      <P><B>Default value: </B>2000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_MAX_ENTITY_TREE_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>REST API provides a tree sub-resource for 
+      hierarchical entities. It retrieves an entity collection sorted as an 
+      expanded tree. REST API uses this parameter to limits the max collection 
+      size that may be retrieved in a single request. Note that the tree 
+      sub-resource does not support paging, therefore the REST_API_MAX_PAGE_SIZE 
+      parameter is irrelevant for it. Default is 100 entities. Note: higher 
+      values affect performance.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_MAX_PAGE_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>REST API supports paging capabilities for most of 
+      the entity collection retrieval. REST API uses this parameter to limits 
+      the max page size that the consumer may ask. Default is 2000 entities.</P>
+      <P><B>Default value: </B>2000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_MAX_PAGE_SIZE_WITH_ANCESTORS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>REST API supports paging capabilities for most of 
+      the entity collection retrieval. REST API uses this parameter to limits 
+      the max page size with ancestors that the consumer may ask. Default is 50 
+      entities.</P>
+      <P><B>Default value: </B>50</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>50</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_PAGINATION_DEFAULT_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The number of entities per page returned by default 
+      with each GET operation on a collection using the REST API (unless the API 
+      consumer specifies a different entities page limit for retrieval). The 
+      default is 100 entities.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_API_PAGINATION_MAX_LIMIT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>REST API supports paging capabilities for most of 
+      the entity collection retrieval. REST API uses this parameter to limits 
+      the amount of entities that the consumer may request. Default is 2000 
+      entities.</P>
+      <P><B>Default value: </B>2000</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">REST_SA_CLIENT_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>siteparams.REST_SA_CLIENT_TIMEOUT.description</P>
+      <P><B>Default value: </B>300</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">REST_SESSION_MAX_IDLE_TIME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter sets the REST API session maximum 
+      idle time (in minutes). The idle time is the amount of time a REST API 
+      session token remains valid if there is no activity in the session. After 
+      this period, the session (including the licenses and locks that it holds) 
+      expire. On the next call, the REST API recreates a new session. The 
+      default value is 60 minutes.</P>
+      <P><B>Default value: </B>60</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">RUN_QUERY_MAX_RECORDS_COUNT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This is a fuse that limits the max queries can be 
+      fetched in each request, just to protect the server from 
+      OutOfMemoryError.</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>18</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SA_MAX_DB_HANDLERS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Maximum number of database connections for SA 
+      schema. Default is 50.</P>
+      <P><B>Default value: </B>50</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.52</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SECURED_QC_URL</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>When ALM generates email, it includes a link to ALM 
+      in the email. If this parameter is set to Y, the ALM URL uses an SSL 
+      connection (starting with https:). If it is set to N (default), SSL is not 
+      used.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SEND_EXCEPTION_DEFAULT_TO</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter defines the default email address 
+      for sending an error report in ALM. For information on a related 
+      parameter, see SEND_EXCEPTION_ENABLED. For more information on sending 
+      error details, see the HP Application Lifecycle Management User Guide: 
+      Send Error Details Dialog Box.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SEND_EXCEPTION_ENABLED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, the Send Error 
+      Details option is available on the Help menu in ALM, enabling you to send 
+      details of an error as attachments to an email. For information on a 
+      related parameter, see SEND_EXCEPTION_DEFAULT_TO. For more information on 
+      sending error details, see the HP Application Lifecycle Management User 
+      Guide: Send Error Details Dialog Box.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SHOW_WEBUI_EXPERIMENTAL_CONTENT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Controls whether to show not deliverable Web Ui 
+      content. If value is "N" or site parameter is not defined, not deliverable 
+      content will not be available in Web Ui, if value is "Y" the content will 
+      be shown.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SITE_ANALYSIS</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y (default), you can 
+      track ALM license usage over time from the Site Analysis tab. If this 
+      parameter is set to N, the Site Analysis tab is unavailable.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">SKIP_CLIENT_PREREQUISITES_CHECK</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables you to bypass the 
+      prerequisites check performed in the deployment phase of starting the ALM 
+      client. The default value is N. Tip: For similar functionality in MSI 
+      Generator, check the Skip Prerequisites Check checkbox.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>5</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SMTP_AUTHENTICATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter is used to enable connection to an 
+      SMTP server that requires Authentication. note: This site parameter was 
+      added in one of QC 10 patches as an hidden feature and is also a hidden 
+      feature in QC 11. This feature will be provided by request to customers 
+      through CSO. Default values is 'N'.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>10</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SMTP_SSL_SUPPORT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter enables an SSL tunnel to the SMTP 
+      server. The default value is N.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SQL_QUERY_VALIDATION_BLACK_LIST</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>By default, ALM checks that SQL queries for an 
+      Excel reports do not include any of the following commands: INSERT, 
+      DELETE, UPDATE, DROP, CREATE, COMMIT, ROLLBACK, ALTER, EXEC, EXECUTE, 
+      MERGE, GRANT, REVOKE, SET, INTO, or TRUNCATE. This ensures that you do not 
+      inadvertently modify or delete records in the project database. You can 
+      modify which commands are on this list by adding this parameter. The 
+      parameter's value must be a comma-separated list of SQL commands that ALM 
+      should verify are not included in SQL queries for an Excel report. Note 
+      that this verification is not performed if the 
+      SQL_QUERY_VALIDATION_ENABLED parameter exists and is set to N.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SQL_QUERY_VALIDATION_ENABLED</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>By default, ALM checks SQL queries in Excel reports 
+      to ensure that they are valid and do not alter the project database. For 
+      more information on this validation, see the HP Application Lifecycle 
+      Management User Guide: How to Generate an Excel Report. If this parameter 
+      is set to N, this validation is not performed. If this parameter does not 
+      exist, is empty, or is set to Y, this validation is performed.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SSO_EXPIRATION_TIME</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Expiration time of the LWSSO token (the 
+      authentication token of the REST API) in minutes. After this period of 
+      inactivity, the REST API consumer is required to re-authenticate. The 
+      default value is 11 minutes.</P>
+      <P><B>Default value: </B>11</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SSO_SECURE_ONLY_COOKIE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Mark the  http cookie which contains LWSSO token 
+      (the authentication token of the REST API) with the Secure attribute. It 
+      is meant to keep cookie communication limited to encrypted transmission, 
+      directing browsers to use cookies only via secure/encrypted connections. 
+      This makes the cookie less likely to be exposed to cookie theft via 
+      eavesdropping. Default value is 'N'.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.20</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">STATIC_CONTENT_MAX_CACHED_FILE_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The maximum file size in MB that can be cached in 
+      the Jetty static content cache. You can reduce the cache file size, or 
+      cancel the cache by setting the parameter value to 0. Default value is 2 
+      MB.</P>
+      <P><B>Default value: </B>2</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>50</P>
+      <P><B>Introduced in release: </B>ALM 11.51</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SUPPORT_TESTSET_END</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to "Y" (the default), the 
+      testing tool will be closed after test set execution. This parameter is 
+      sent from the Automatic Runner to the Remote Agent of the testing tool. 
+      QTP requested that it will be on by default so they can close QTP after 
+      test set execution ends.</P>
+      <P><B>Default value: </B>Y</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">SUSPEND_REPOSITORY_GC</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter relates to the project repository 
+      cleaning process. For more details, see Project Repository Cleanup. The 
+      parameter stops the cleanup process on the entire site. Use this only in 
+      special circumstances. For example, to check if the cleanup process is 
+      impacting system performance. Define this parameter and set its value to Y 
+      to temporarily stop the project repository cleaning process. To restart 
+      the cleaning process, set the parameter to N.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">SUSPEND_REPOSITORY_MIGRATION</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter relates to the project repository 
+      migration process. For more details, see Configure Migration Priority. The 
+      parameter stops the migration process on the entire site. Use this only in 
+      special circumstances. For example, to back up projects, or to check if 
+      the migration is affecting system performance. Define this parameter and 
+      set its value to Y to temporarily stop the migration of project files. To 
+      restart the migration, set the parameter to N. Default is 'N'</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">TEXT_ENCODING_BY_CLIENT_TYPE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Configures text encoding on/off by client type. 
+      Meaning, when output sanitization is on, the feature can be fine grained 
+      to disable only the TEXT encoding. Format: &lt;client type 
+      name&gt;=true/false;&lt;client type name&gt;=true/false; Default value for 
+      any client type that is not defined specifically in this site param is 
+      false.</P>
+      <P><B>Default value: </B> </P>
+      <P><B>Allowed patterns: </B>^([^;=]+=[^;=]+;?)+$</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">TEXT_SEARCH_TIMEOUT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The length of time, in seconds, that ALM waits 
+      before canceling the operation of enabling and rebuilding the text search 
+      indexes. This operation is activated by clicking the Enable/Rebuild Text 
+      Search button in the Site Projects tab of the Site Administration. The 
+      default timeout value is 20 minutes (20*60 = 1200 seconds). Setting to -1 
+      also results in a 20 minutes time out.</P>
+      <P><B>Default value: </B>1200</P>
+      <P><B>Min value: </B>-1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">TOTAL_SIZE_ALLOWED_IMAGE_FILES</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter will determine total size (in 
+      megabytes) of image attachment files stored on Client machine.</P>
+      <P><B>Default value: </B>100</P>
+      <P><B>Min value: </B>0</P>
+      <P><B>Max value: </B>1000</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">UNIX_SERVER</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, it enables direct 
+      file access from a testing tool on a Windows machine to a UNIX based 
+      repository. This parameter applies to HP LoadRunner.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">UPGRADE_EXCEPTION_FILE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If you have made changes to a project database user 
+      schema such as the addition of tables or columns, the verification, 
+      repair, or upgrade processes may fail. You can define an exception file 
+      for objects that are added manually to the database user schema, and are 
+      not defined in the schema configuration file. This instructs ALM to ignore 
+      these changes. See documentation library for details.</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">UPLOAD_ATTACH_MAX_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter prevents the upload of attachments 
+      whose size is greater than the integer value specified for this parameter. 
+      The size is in kilobytes. Note: This parameter does not affect uploads of 
+      attachments in integration tools. The default value is -1 (meaning, all 
+      attachments are uploaded regardless of size).</P>
+      <P><B>Default value: </B>-1</P>
+      <P><B>Min value: </B>-1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">UPLOAD_AVATAR_MAX_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter prevents the upload of avatars whose 
+      size is greater than the integer value specified for this parameter. The 
+      size is in kilobytes. Note: This parameter does not affect uploads of 
+      avatars in integration tools. The default value is -1 (meaning, all 
+      avatars are uploaded regardless of size).</P>
+      <P><B>Default value: </B>2000</P>
+      <P><B>Min value: </B>-9223372036854775808</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">UPLOAD_MEMO_IMAGE_FILES_MAX_SIZE</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter prevents the upload of image 
+      attachments (bmp, emf, gif, ico, jpg, png, tif, wmf) to memos whose size 
+      is greater than the integer value specified for this parameter. The size 
+      is in kilobytes.</P>
+      <P><B>Default value: </B>700</P>
+      <P><B>Min value: </B>1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">UPLOAD_RESULTS_AFTER_RUN</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>Determines if run results should be uploaded to the 
+      server repository. Possible values: ALWAYS:  Always upload the results. 
+      NEVER: Never upload the results. ON_RUN_FAIL:  Upload results only when 
+      the status is Failed. ALWAYS_EXCEPT_RUN_PASSED: Upload results only when 
+      the status is not Passed.</P>
+      <P><B>Default value: </B>ALWAYS</P>
+      <P><B>Introduced in release: </B>ALM 12.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">USE_LOCAL_HELP</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>If this parameter is set to Y, all help links and 
+      buttons will open the local Help Center, installed with your server. If 
+      undefined or set to N, all help links and buttons will open the online 
+      Help Center. The online Help Center includes all the latest updates.</P>
+      <P><B>Default value: </B>N</P>
+      <P><B>Introduced in release: </B>ALM 12.50</P>
+      <P><B>Introduced in patch: </B>1</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">VERIFY_REPORT_FOLDER</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter determines where the verification 
+      report is saved when the project verification process completes. By 
+      default, the output is saved in&lt; ALM repository path&gt;\sa\DomsInfo
+       \MaintenanceData\out on your ALM server machine.</P>
+      <P><B>Introduced in release: </B>ALM 11.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR>
+  <TR>
+    <TD class="header">WAIT_BEFORE_DISCONNECT</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>The time interval in minutes that the ALM client 
+      can be inactive before it is disconnected from the ALM server machine. 
+      Disconnecting the client enables the license to be used by another ALM 
+      user. By default, the value is set to 600 minutes. For performance 
+      reasons, it is recommended to set a value of at least 60 minutes. If you 
+      set the value to -1, ALM is not disconnected, regardless of how long the 
+      client is inactive.</P>
+      <P><B>Default value: </B>36000000</P>
+      <P><B>Min value: </B>-1</P>
+      <P><B>Max value: </B>9223372036854775807</P>
+      <P><B>Introduced in release: </B>QC 10.00</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>true</P></TD></TR>
+  <TR>
+    <TD class="header">WORD_ADDIN_GROUP</TD>
+    <TD class="subheader">
+      <P><B>Description: </B>This parameter specifies a user group name, only 
+      the users who is in this group have permission to access the Word 
+      add-in.</P>
+      <P><B>Default value: </B> </P>
+      <P><B>Introduced in release: </B>12.2</P>
+      <P><B>Introduced in patch: </B>GA</P>
+      <P><B>System: </B>false</P></TD></TR></TBODY></TABLE></BODY></HTML>

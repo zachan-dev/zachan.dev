@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<!-- saved from url=(0014)about:internet -->
+
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+
+    
+
+    <title>Recordset Object</title>
+        
+    
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript" id="mshs_support_script"></script>
+    <script src="script/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery-ui-1.8.18.custom.css" />
+    <link rel="styleSheet" type="text/css" href="stylesheets/jquery.qtip.css" />
+	
+    
+	
+
+    <link rel="styleSheet" type="text/css" href="stylesheets/dx.com.2012.css" data-mshv2-stylesheet="/stylesheets/dx.com.2012.mshv2.css" data-mshv1-stylesheet="/stylesheets/dx.com.2012.mshv1.css" />
+    <script src="script/dx.com.jqueryplugins.2012.min.js" type="text/javascript"></script>
+    <script src="script/dx.com.2012.js" type="text/javascript"></script>
+    
+    <meta name="Microsoft.Help.Id" content="TDAPIOLELib~Recordset"/>
+    <meta name="Description" content="Represents the entire set of records resulting from an executed command. At any given time, a Recordset object refers to a single record within the record set as the current record." />
+    <meta name="Microsoft.Help.TocParent" content="TDAPIOLELib~-_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/slimbox2.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-common.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-slimbox.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-jquery-expand.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-boxes.css"></link>
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-expandcollapse.css"></link>
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/slimbox2.js" type="text/javascript"></script>
+    <script src="script/hs-jquery-common.js" type="text/javascript"></script>
+    <script src="script/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="script/jquery-expand.js" type="text/javascript"></script>
+    <script src="script/swfobject.js" type="text/javascript"></script>
+    <script src="script/hs-expandcollapse.js" type="text/javascript"></script>
+
+    
+    
+
+    
+
+    
+</head>
+
+<body>
+    <div id="BeforeHeaderContent">
+        
+    </div>
+    <div id="HeaderContent">
+        
+            
+            <div id="ProjectTitle">ALM Open Test Architecture API Type Library Version 12.5x</div>
+        <div id="PageTitle"><div id="PageTitleText">Recordset Object</div></div>
+    </div>
+    <div id="AfterHeaderContent">
+        <a class="PageLink" href="topic8298.html">Members</a>&nbsp;<!-- Spacing --> <span id="ToggleAllSectionsLink" class="FunctionLink">
+                <label id="CollapseAllLabel">Collapse All</label>
+                <label id="ExpandAllLabel" style="display: none;">Expand All</label>
+            </span>
+        
+    </div>
+    
+    
+    
+    <div id="BodyContent">
+        <div class="SectionHeading" id="descriptionSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Description</span></div><div id="descriptionSectionContent" class="SectionContent"><div class="DescriptionContent">Represents the entire set of records resulting from an executed command. At any given time, a Recordset object refers to a single record within the record set as the current record.</div></div>
+            
+            <div class="SectionHeading" id="remarksSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Remarks</span></div><div id="remarksSectionContent" class="SectionContent"><p>A Recordset object is returned by <a href="topic1005.html">Command.Execute</a>.</p>
+
+<p>The <a href="topic8314.html">Position</a> indicates the record to which the Recordset cursor points, the currently active record. The first record is numbered 0. The <a href="topic8313.html">FieldValue</a> refers to the values in the currently active record.</p>
+
+<p>If&nbsp;there are no records in the Recordset,&nbsp;BOR and <a href="topic8312.html">EOR</a> BOR and EOR are true and the&nbsp;<a href="topic8314.html">Position</a> is 0.</p></div>
+            
+            
+            
+            
+            
+            <div class="SectionHeading" id="publicmethodsSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Public Methods</span></div><div id="publicmethodsSectionContent" class="SectionContent"><table class="FilteredItemListTable">
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8299.html">Clone</a></td><td class="DescriptionCell">Creates a duplicate of this Recordset object.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8300.html">First</a></td><td class="DescriptionCell">Moves to the first record and makes it the current record.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8301.html">Last</a></td><td class="DescriptionCell">Moves to the last record and makes it the current record.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8302.html">Next</a></td><td class="DescriptionCell">Moves to the next record and makes it the current record.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8303.html">Prev</a></td><td class="DescriptionCell">Moves to the previous record and makes it the current record.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Method" src="aximages/PublicMethod.png">&nbsp;<a href="topic8304.html">Refresh</a></td><td class="DescriptionCell">Refreshes the Recordset, overwriting values in memory.</td></tr>
+</table></div>
+            
+            
+            <div class="SectionHeading" id="publicpropertiesSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">Public Properties</span></div><div id="publicpropertiesSectionContent" class="SectionContent"><table class="FilteredItemListTable">
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8305.html">BOR</a></td><td class="DescriptionCell">Checks if the record cursor is on the first record.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8306.html">CacheSize</a></td><td class="DescriptionCell">The number of records in the recordset that are cached locally in memory.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8307.html">ColCount</a></td><td class="DescriptionCell">Gets the number of columns in the current Recordset object.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8308.html">ColIndex</a></td><td class="DescriptionCell">Gets the index (zero-based) of a Recordset column specified by column name.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8309.html">ColName</a></td><td class="DescriptionCell">The name of the Recordset column specified by Index (zero-based).</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8310.html">ColSize</a></td><td class="DescriptionCell">The physical size as defined in the database of the fields in the column specified by Index (zero-based).</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8311.html">ColType</a></td><td class="DescriptionCell">The data type of column.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8312.html">EOR</a></td><td class="DescriptionCell">Checks if the record cursor is after the last record.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8313.html">FieldValue</a></td><td class="DescriptionCell">The value for the specified field.</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8314.html">Position</a></td><td class="DescriptionCell">The current record position (0-based).</td></tr>
+<tr><td class=LinkCell><IMG alt="Public Property" src="aximages/PublicProperty.png">&nbsp;<a href="topic8315.html">RecordCount</a></td><td class="DescriptionCell">The number of records in the Recordset.</td></tr>
+</table></div>
+            
+            
+            
+        <div class="SectionHeading" id="seealsoSectionHeading"><span class="SectionHeadingIcon"><!-- --></span><span class="SectionHeadingText">See Also</span></div><div id="seealsoSectionContent" class="SectionContent"><p id=dxseealsocontent><a href="topic8298.html">Recordset Members</a>
+</p>
+</p></div>
+    </div>
+    <div id="FooterContent">
+        <div id="merc_footer">
+            <!-- Start of Mercury Footer -->
+            <hr width="100%" size="0" align="center" style="clear:both;" />
+			<table style="border: none; border-collapse: collapse; width: 100%; margin-left: 0; margin-right: auto; margin-top: 0; padding-top: 0">
+            <tr>
+                <td style="border: none; border-collapse: collapse;">
+					<p style="font-size: 85%; text-align: left;direction: ltr;">
+					     <a href="_rsc_Legal_Notices.htm#1">&copy 1994 - 2018 EntIT Software LLC</a> | Last updated: January 2018
+					</p>
+				</td>
+                <td style="border: none; border-collapse: collapse;">
+						<div id="hp-feedbackLink" style="font-size: 80%;margin: 0px 0px 4px 0px;line-height: 1.25em;text-align: right;">
+						<a href="mailto:docteam@microfocus.com?subject=ALM OTA API Reference  Documentation Feedback: Recordset Object">Documentation Feedback</a>
+						</div>
+	             </td>
+			</tr>
+			</table>
+            <!-- End of Mercury Footer -->
+        </div>
+    </div>
+    
+</body>
+</html>
